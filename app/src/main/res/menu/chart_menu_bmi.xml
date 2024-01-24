@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:icon="@android:drawable/ic_menu_share"
+        android:title="@string/share"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/SD4"
+        android:title="+4SD"
+        android:checkable="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/SD3"
+        android:title="+3SD"
+        android:checkable="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/SD1neg"
+        android:title="-1SD"
+        android:checkable="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/SD3neg"
+        android:title="-3SD"
+        android:checkable="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/SD4neg"
+        android:title="-4SD"
+        android:checkable="true"
+        app:showAsAction="never" />
+</menu>
