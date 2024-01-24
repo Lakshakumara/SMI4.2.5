@@ -1,0 +1,28 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="sss.yml.smi.ui.child.WpChild">
+    <item
+        android:id="@+id/wp_child_add"
+        android:icon="@drawable/ic_person"
+        android:title="@string/new_child"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/wp_chart"
+        android:icon="@drawable/ic_show_text"
+        android:title="@string/chart"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/wp_child_measure_date"
+        android:icon="@drawable/ic_access_time"
+        android:title="@string/weight_date"
+        app:showAsAction="never" />
+    <item android:id="@+id/wp_child_reset"
+          android:title="@string/reset"/>
+    <item
+        android:id="@+id/wp_child_share"
+        android:icon="@drawable/ic_menu_share"
+        android:title="@string/share"
+        app:showAsAction="never" />
+
+</menu>
