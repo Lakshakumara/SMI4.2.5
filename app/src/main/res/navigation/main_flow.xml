@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/homeView">
+
+    <fragment
+        android:id="@+id/homeView"
+        android:name="sss.yml.smi.Home.HomeView"
+        android:label="@string/nutrition"
+        tools:layout="@layout/homeview">
+        <action
+            android:id="@+id/action_homeView_to_aboutFragment"
+            app:destination="@id/nav_about"
+            app:enterAnim="@anim/slide_in_from_right" />
+        <action
+            android:id="@+id/action_homeView_to_wtpost"
+            app:destination="@id/wtpost"
+            app:popEnterAnim="@anim/slide_in_from_left"
+            app:popExitAnim="@anim/slide_out_to_right" />
+        <action
+            android:id="@+id/action_homeView_to_adminFragment"
+            app:destination="@id/nav_admin" />
+        <action
+            android:id="@+id/action_homeView_to_rate"
+            app:destination="@id/nav_rate" />
+        <action
+            android:id="@+id/action_homeView_to_nav_donate"
+            app:destination="@id/nav_support" />
+        <action
+            android:id="@+id/action_homeView_to_nav_smi"
+            app:destination="@id/nav_smi"
+            app:enterAnim="@anim/slide_in_from_left"
+            app:exitAnim="@anim/slide_out_to_right" />
+        <action
+            android:id="@+id/action_homeView_to_nav_profile"
+            app:destination="@id/nav_profile"
+            app:enterAnim="@anim/slide_in_from_left" />
+        <action
+            android:id="@+id/action_homeView_to_nav_general"
+            app:destination="@id/nav_general" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/childReg"
+        android:name="sss.yml.smi.ui.child.ChildReg"
+        android:label="@string/registration"
+        tools:layout="@layout/child_reg_pop">
+        <argument
+            android:name="childId"
+            android:defaultValue="0"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_childReg_to_wtpost"
+            app:destination="@id/wtpost" />
+        <action
+            android:id="@+id/action_childReg_to_nav_general"
+            app:destination="@id/nav_general" />
+    </fragment>
+    <fragment
+        android:id="@+id/wtpost"
+        android:name="sss.yml.smi.ui.child.WpChild"
+        android:label="@string/wt_post"
+        tools:layout="@layout/child_data_entry_new">
+        <action
+            android:id="@+id/action_wtpost_to_homeView"
+            app:destination="@id/homeView" />
+        <action
+            android:id="@+id/action_wtpost_to_history"
+            app:destination="@id/history"
+            app:enterAnim="@anim/slide_in_from_right" />
+        <action
+            android:id="@+id/action_wtpost_to_WFH_0_2"
+            app:destination="@id/WFH_0_2" />
+        <action
+            android:id="@+id/action_wtpost_to_childReg"
+            app:destination="@id/childReg"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left"
+            app:launchSingleTop="false" />
+        <argument
+            android:name="childId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_wtpost_to_setting"
+            app:destination="@id/setting"
+            app:enterAnim="@anim/slide_in_from_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/WFH_0_2"
+        android:name="sss.yml.smi.chdr.WFH_0_5"
+        tools:layout="@layout/wfa_fragment">
+        <action
+            android:id="@+id/action_WFH_0_2_to_wtpost"
+            app:destination="@id/wtpost" />
+    </fragment>
+    <fragment
+        android:id="@+id/history"
+        android:name="sss.yml.smi.ui.child.History"
+        android:label="@string/history"
+        tools:layout="@layout/fragment_vertical" >
+        <action
+            android:id="@+id/action_history_to_wtpost"
+            app:destination="@id/wtpost" />
+    </fragment>
+    <fragment
+        android:id="@+id/setting"
+        android:name="sss.yml.smi.ui.setting.Settings"
+        android:label="@string/setting"
+        tools:layout="@layout/chart_settings">
+        <action
+            android:id="@+id/action_setting_to_wtpost"
+            app:destination="@id/wtpost" />
+        <action
+            android:id="@+id/action_setting_to_nav_general"
+            app:destination="@id/nav_general" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_about"
+        android:name="sss.yml.smi.ui.about.AboutFragment"
+        android:label="@string/about_app"
+        tools:layout="@layout/fragment_about">
+        <action
+            android:id="@+id/action_aboutFragment_to_homeView"
+            app:destination="@id/homeView" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_admin"
+        android:name="sss.yml.smi.ui.admin.AdminFragment"
+        android:label="Administrator"
+        tools:layout="@layout/admin_fragment">
+        <action
+            android:id="@+id/action_adminFragment_to_homeView"
+            app:destination="@id/homeView" />
+        <action
+            android:id="@+id/action_adminFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
+        <action
+            android:id="@+id/action_adminFragment_to_usersFragment"
+            app:destination="@id/usersFragment" />
+        <action
+            android:id="@+id/action_nav_admin_to_requestFragment"
+            app:destination="@id/requestFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="sss.yml.smi.ui.admin.NewsFragment"
+        android:label="News"
+        tools:layout="@layout/admin_fragment_news">
+        <action
+            android:id="@+id/action_newsFragment_to_adminFragment"
+            app:destination="@id/nav_admin" />
+    </fragment>
+    <fragment
+        android:id="@+id/usersFragment"
+        android:name="sss.yml.smi.ui.admin.UsersFragment"
+        android:label="User"
+        tools:layout="@layout/admin_fragment_users">
+        <action
+            android:id="@+id/action_usersFragment_to_adminFragment"
+            app:destination="@id/nav_admin" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_rate"
+        android:name="sss.yml.smi.ui.about.Rate"
+        android:label="Rate">
+        <action
+            android:id="@+id/action_rate_to_homeView"
+            app:destination="@id/homeView" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_support"
+        android:name="sss.yml.smi.support.Support"
+        android:label="@string/support"
+        tools:layout="@layout/donation_fragment">
+        <action
+            android:id="@+id/action_nav_donate_to_homeView"
+            app:destination="@id/homeView" />
+    </fragment>
+    <activity
+        android:id="@+id/nav_profile"
+        android:name="sss.yml.smi.login.Profile"
+        android:label="@string/profile"
+        tools:layout="@layout/login_personal_data" />
+    <fragment
+        android:id="@+id/nav_general"
+        android:name="sss.yml.smi.person.General"
+        android:label="@string/all_chart"
+        tools:layout="@layout/general_fragment">
+        <argument
+            android:name="childId"
+            app:argType="integer"
+            android:defaultValue="0" />
+        <action
+            android:id="@+id/action_nav_general_to_homeView"
+            app:destination="@id/homeView" />
+        <action
+            android:id="@+id/action_nav_general_to_childReg"
+            app:destination="@id/childReg" />
+        <action
+            android:id="@+id/action_nav_general_to_setting"
+            app:destination="@id/setting" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_smi"
+        android:name="sss.yml.smi.smi.SchoolSelection"
+        android:label="@string/select_school"
+        tools:layout="@layout/school_fragment">
+        <action
+            android:id="@+id/action_nav_smi_to_smi"
+            app:destination="@id/smi"
+            app:enterAnim="@anim/slide_in_from_right"
+            app:exitAnim="@anim/slide_out_to_left" />
+        <action
+            android:id="@+id/action_nav_smi_to_homeView"
+            app:destination="@id/homeView" />
+
+    </fragment>
+    <fragment
+    android:id="@+id/smi"
+    android:name="sss.yml.smi.smi.SmiDataEntry"
+    android:label="@string/smi_abbry"
+    tools:layout="@layout/smi_data_entry_summary_fragment">
+    <action
+        android:id="@+id/action_smi_to_homeView"
+        app:destination="@id/homeView"
+        app:enterAnim="@anim/slide_in_from_left" />
+    <argument
+        android:name="censusNo"
+        app:argType="integer" />
+    <argument
+        android:name="school"
+        app:argType="string" />
+    <argument
+        android:name="student"
+        app:argType="sss.yml.smi.room.Student"
+        app:nullable="true" />
+        <action
+            android:id="@+id/action_smi_to_SMIData"
+            app:destination="@id/SMIData"
+            app:enterAnim="@anim/slide_in_from_left"
+            app:exitAnim="@anim/slide_out_to_right" />
+
+</fragment>
+    <fragment
+        android:id="@+id/SMIData"
+        android:name="sss.yml.smi.smi.SMIData"
+        android:label="Student data"
+        tools:layout="@layout/fragment_s_m_i_data" >
+        <action
+            android:id="@+id/action_SMIData_to_smi"
+            app:destination="@id/smi"
+            app:popUpToInclusive="true"/>
+        <argument
+            android:name="censusNo"
+            app:argType="integer" />
+        <argument
+            android:name="grade"
+            app:argType="string" />
+        <argument
+            android:name="year"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_SMIData_to_smi2"
+            app:destination="@id/smi"
+            app:enterAnim="@anim/slide_in_from_left"
+            app:exitAnim="@anim/slide_out_to_right"
+            app:launchSingleTop="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/requestFragment"
+        android:name="sss.yml.smi.ui.admin.RequestFragment"
+        android:label="Request"
+        tools:layout="@layout/admin_fragment_request">
+        <action
+            android:id="@+id/action_requestFragment_to_nav_admin"
+            app:destination="@id/nav_admin" />
+    </fragment>
+</navigation>

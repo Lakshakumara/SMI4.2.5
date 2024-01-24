@@ -1,0 +1,9 @@
+App Id 1:485801893376:android:714b5b43df2280bf
+App Nic Name BMISimulator
+package name sss.yml.smi
+Web API Key AIzaSyA3QYF7ipEsJUeogyjGRyRz_09JpYe_-uE
+
+
+AdMob App Id ca-app-pub-8089124274727865~9448002468
+Banner Ad Unit ID ca-app-pub-8089124274727865/3095057546
+Interestial Ad Unit Id ca-app-pub-8089124274727865/8322623053

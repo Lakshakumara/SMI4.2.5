@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="phirange">1</string>
+    <string name="agelable">වයස</string>
+    <string name="bmi">ශස්ද</string>
+    <string name="calBMI">Calculated BMI</string>
+    <string name="wt">බර</string>
+    <string name="ht">උස</string>
+    <string name="mm">මම</string>
+    <string name="dd">දිදි</string>
+
+    <string name="sss">Soft Solution Software</string>
+    <!-- Strings related to login -->
+
+    <string name="summary">සාරාංශය</string>
+    <!-- Main Menu -->
+    <string name="y">අ</string>
+    <string name="m">මා</string>
+    <string name="d">දි</string>
+    <string name="wtRequired">බර…</string>
+    <string name="htRequired">උස…</string>
+    <string name="htErrorZero">උස = 0</string>
+    <string name="wtErrorZero">බර = 0</string>
+    <string name="bmiMinError">අවම BMI 10</string>
+    <string name="male">පුරුෂ</string>
+    <string name="female">ස්ත්‍රී</string>
+    <string name="bmiError">අවශ්‍ය නැත</string>
+
+    <string-array name="Chartlhfa_0_5_ledgen">
+        <item>මිටි බව</item>
+        <item>මිටි බව</item>
+        <item>මිටි බවට අවදානම්</item>
+        <item>නියමිත උස</item>
+    </string-array>
+
+    <string-array name="wt_ledgen">
+        <item>උග්‍ර බර අඩු</item>
+        <item>අඩු බර</item>
+        <item>අඩු බරට අවදානම්</item>
+        <item>නියමිත බර</item>
+        <item>අධිබර</item>
+        <item>ස්ථූල</item>
+    </string-array>
+    <string-array name="bmi_ledgen">
+        <item>කෘෂ බව</item>
+        <item>නියමිත බර</item>
+        <item>අධිබර</item>
+        <item>ස්ථූල</item>
+    </string-array>
+    <string-array name="ht_ledgen">
+        <item>මිටි බව</item>
+        <item>නියමිත උස</item>
+    </string-array>
+    <string name="wt_post">බර කිරන මධ්‍යස්ථාන</string>
+    <string name="setting">සැකසීම්</string>
+    <string name="user_guideline">භාවිතයට උපදෙස්</string>
+    <string name="about_app">About App</string>
+    <string name="share">හුවමාරු</string>
+    <string name="rate_app">ශ්‍රේණිගත කිරීම</string>
+    <string name="support">ආධාර</string>
+
+    <!-- Strings related to tableView -->
+
+    <!-- Example General settings -->
+
+    <!-- Example settings for Data & Sync -->
+
+    <!-- Example settings for Notifications -->
+
+    <!-- Strings related Nutritional Report -->
+    <string name="severely_wasted">උග්‍ර කෘෂ</string>
+    <string name="severely_wasted_short">උ කෘෂ</string>
+    <string name="Wasted">කෘෂ</string>
+    <string name="Wasted_short">කෘෂ</string>
+    <string name="normal_wt">සාමාන්‍ය බර</string>
+    <string name="normal_wt_short">සාමාන්‍ය</string>
+    <string name="ideal">ප්‍රශස්ත</string>
+    <string name="ideal_height"><![CDATA[<p>ප්‍රශස්ත උස: <b>]]></string>
+    <string name="ideal_weight">ප්‍රශස්ත බර:</string>
+
+    <string name="weght_loss">අඩු කර ගත යුතු බර:</string>
+    <string name="to_normal">සාමාන්‍ය වීමට</string>
+    <string name="for_normal">සාමාන්‍ය වීමට</string>
+    <string name="low_weight">අඩු බර</string>
+    <string name="low_weight_short">අඩු බර</string>
+    <string name="risk_low_weight">අඩු බරට අවධානම</string>
+    <string name="risk_low_weight_short">අඩු බරට අව.</string>
+    <string name="overweight">අධිබර</string>
+    <string name="overweight_short">අධිබර</string>
+    <string name="obesity">ස්ථූල</string>
+    <string name="obesity_short">ස්ථූල</string>
+    <string name="severely_stunted">උග්‍ර මිටි බව</string>
+    <string name="moderate_stunted">මිටි බව</string>
+    <string name="moderate_stunted_short">මධ්‍යස්ථ මිටි</string>
+    <string name="normal_height">සාමාන්‍ය උස</string>
+    <string name="normal_height_short">සාමාන්‍ය</string>
+    <string name="over_height">සාමාන්‍යට වැඩි</string>
+    <string name="over_height_short">සාමාන්‍යට වැඩි</string>
+    <string name="risk_stunt">මිටි බවට අවධනම</string>
+    <string name="required_ht">වැඩි කර ගත යුතු උස:</string>
+    <string name="required_wt">වැඩි කර ගත යුතු බර:</string>
+    <string name="dob_year_wrong">උපන් දිනය වැරදියි</string>
+    <string name="wtMaxError"><![CDATA[උපරිම බර < 500Kg]]></string>
+    <string name="htMaxError"><![CDATA[උපරිම උස < 210cm]]></string>
+    <string name="htMinZero">අවම උස 45cm</string>
+    <string name="wtMinZero">අවම බර 0.5Kg</string>
+    <string name="change_clinic_date">බර මනින දිනය</string>
+
+    <string name="registration">ලියාපදිංචිය</string>
+    <string name="dob_year_wrong_early">Age Calculation Date</string>
+    <string name="error">වැරදි…</string>
+    <string name="sch_age_group_error"><![CDATA[පාසැල් යන 5 < වයස < 19]]></string>
+    <string name="bmiMaxError"><![CDATA[උපරිම BMI < 50]]></string>
+    <string name="copyright_c">Copyright © 2021</string>
+    <string name="yml_kumara">වයි.එම්.එම්.එල් කුමාර</string>
+    <string name="registration_number">ලියාපදිංචි අංකය*</string>
+    <string name="name">නම*</string>
+    <string name="mother_father_guardian_s_name">මව/පියා/භාරකරුගේ නම</string>
+    <string name="contact_number">දුරකතන අංකය</string>
+    <string name="dob_yyyy">උදි වවවව</string>
+    <string name="height_cm">උස සෙමී</string>
+    <string name="weight_kg">බර කි. ග්‍රෑම්</string>
+    <string name="class_text">පංතිය</string>
+    <string name="student_name_or_id_no">ශිෂ්‍යාගේ නම හෝ අනු අංකය</string>
+    <string name="no_stunted">මිටි ගනණ</string>
+    <string name="no_wasted">කෘෂ ගනණ</string>
+    <string name="no_overweight">අධිබර ගනණ</string>
+    <string name="no_obase">ස්ථූල ගනණ</string>
+    <string name="admin">Admin</string>
+    <string name="cm">සෙමී</string>
+    <string name="nutrition">පෝෂණය</string>
+    <string name="delete">මැකීම</string>
+    <string name="update">Update</string>
+    <string name="save">Save</string>
+    <string name="clear">Clear</string>
+    <string name="chart">ප්‍රස්ථාර</string>
+    <string name="weight_date">සායන දිනය</string>
+    <string name="new_child">New Child</string>
+    <string name="draw_trend_line">Draw Trend Line</string>
+    <string name="show_legend">Show Legend</string>
+    <string name="show_user_values">Show User Values</string>
+
+    <string name="add">Add</string>
+    <string name="special_note_on_birth_or_child">විශේෂයෙන් රැකබලා ගැනීමට හේතු</string>
+    <string name="father_height">පියාගේ උස</string>
+    <string name="mother_height">මවගේ උස</string>
+    <string name="note_on_measurement">විශේෂ කරුණු</string>
+    <string name="kg">කිලෝ ගෑම්</string>
+    <string name="birth_weight">උපත් බර</string>
+    <string name="note">"සටහන: "</string>
+    <string name="soft_solution_software">Soft Solution Software</string>
+    <string name="_94_714_396_453">+94 714 396 453</string>
+    <string name="gileemale">ගිලීමලේ</string>
+    <string name="email">Email*</string>
+    <string name="age_over_5_years">Age over 5 years</string>
+    <string name="wfa_title">දරුවාගේ බර ප්‍රස්ථාරය</string>
+    <string name="hfa_title">දරුවාගේ උස ප්‍රස්ථාරය</string>
+    <string name="wfh_title">උසට සරිලන බර ප්‍රස්ථාරය</string>
+    <string name="please_enter_name">Please enter name</string>
+    <string name="name_already_exists">Name already exists enter Full Name</string>
+    <string name="dob_future">DOB in future</string>
+    <string name="success_data_change">Successfully data Change</string>
+    <string name="maturity_in_weeks">Maturity in Weeks</string>
+    <string name="add_new_child">Add new Child</string>
+    <string name="cancel">අවලංගු</string>
+    <string name="update_child">Update Child</string>
+    <string name="change">Change</string>
+    <string name="select_child">Select a child</string>
+    <string name="child_not_register">දරැවා ලියාපදිංචි වී නැත.</string>
+    <string name="child_deleted">Child Deleted</string>
+    <string name="change_smi_date">Change SMI Date</string>
+    <string name="add_pop">Add</string>
+    <string name="try_again_pop">Try Again</string>
+    <string name="check_maturity_weeks">Check Maturity weeks</string>
+    <string name="data_will_lost_dueto_dob_change">Data will lost due to DOB change</string>
+    <string name="data_will_lost_dueto_sex_change">Data will lost due to sex change</string>
+    <string name="sex_not_selected">Sex is not selected</string>
+    <string name="profile_not_complete">Profile not complete</string>
+    <string name="profile">Profile</string>
+    <string name="user_name">User name</string>
+    <string name="telephone_number">දුරකතන අංකය</string>
+    <string name="district">දිස්ත්‍රීක්කය</string>
+    <string name="txtcontinue">CONTINUE</string>
+    <string name="school_name">පාසලේ නම</string>
+    <string name="smi_date">පාවෛප දිනය</string>
+    <string name="auto">Auto</string>
+    <string name="moh_divison">MOH කොට්ඨාශය</string>
+    <string name="working_division">රජකාරී කොට්ඨාශය</string>
+    <string name="job_title">තනතුර</string>
+    <string name="log_as">Log as</string>
+    <string name="select_category">Select category</string>
+    <string name="name_or_nic">නම හෝ ජා.හැ.අංකය</string>
+    <string name="dob_month_error">උපන් දින මාසය වැරදි…</string>
+    <string name="dob_year_error">උපන් දින අවුරැද්ද වැරදි…</string>
+    <string name="calculate">ගණනය</string>
+    <string name="ft">අඩි</string>
+    <string name="height_input_method">උස ඇතුලත් කරන ක්‍රම</string>
+    <string name="inches">අඟල්</string>
+    <string name="smi_abbry">පා. වෛ. ප.</string>
+    <string name="all_chart">සියළු ප්‍රස්ථාර</string>
+    <string name="education_zonal_area">Education Zonal Area</string>
+    <string name="education_divisional_area">Education Divisional Area*</string>
+    <string name="select_school">Select School</string>
+    <string name="history">History</string>
+    <string name="work_institute">Work Institutes</string>
+    <string name="required_field_empty">Required Field are Empty…</string>
+    <string name="full_screen_toggle">Full Screen Toggle</string>
+    <string name="comments">Comments</string>
+    <string name="nos">Nos</string>
+    <string name="your_account_is_ban">Your Account Is Ban</string>
+    <string name="asstance_contact_lakshakumara_gmail_com_or_94714396453">Asstance Contact Lakshakumara@gmail.com or +94714396453</string>
+    <string name="edit">Edit</string>
+    <string name="filter">Filter</string>
+    <string name="enter_sex">Enter Sex</string>
+    <string name="search">Search</string>
+    <string name="reset">Reset</string>
+</resources>

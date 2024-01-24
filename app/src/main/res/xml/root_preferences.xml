@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="General Settings">
+        <Preference
+            android:defaultValue="true"
+            android:key="my_pin"
+            android:summary="Long Press to copy"
+            android:title="Account Registration Key"
+            app:enableCopying="true"
+            app:icon="@drawable/ic_copy" /> />
+        <ListPreference
+            android:defaultValue="en"
+            android:entries="@array/lang_select"
+            android:entryValues="@array/lang_values"
+            android:key="language"
+            android:summary="Select Your Language"
+            android:title="Language"
+            app:icon="@drawable/ic_language"
+            app:useSimpleSummaryProvider="true" />
+        <ListPreference
+            android:defaultValue="1"
+            android:entries="@array/theme"
+            android:entryValues="@array/theme_values"
+            android:key="theme"
+            android:summary="Experimental Use"
+            android:title="Theme"
+            app:icon="@drawable/ic_dark_mode"
+            app:useSimpleSummaryProvider="true" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:title="Chart Settings">
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="user_value"
+            android:title="@string/show_user_values" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="legend"
+            app:icon="@drawable/ic_legend"
+            android:title="@string/show_legend" />
+        <SwitchPreference
+            android:defaultValue="false"
+            android:key="trend_line"
+            app:icon="@drawable/ic_show_chart"
+            android:title="@string/draw_trend_line" />
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="Database">
+        <Preference
+            android:defaultValue="false"
+            android:key="backup"
+            app:icon="@drawable/ic_backup"
+            android:title="Backup" />
+        <Preference
+            android:defaultValue="false"
+            android:key="restore"
+            app:icon="@drawable/ic_file_download"
+            android:title="Restore" />
+    </PreferenceCategory>
+</PreferenceScreen>
