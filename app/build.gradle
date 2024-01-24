@@ -14,7 +14,7 @@ android {
         multiDexEnabled true
         versionCode 4254 //new version release 2023-02-09
         versionName "4.2.5.4"
-        resConfigs "en", "si", "ta"
+        resConfigs 'en', 'si', 'ta'
         vectorDrawables {
             useSupportLibrary = true
         }

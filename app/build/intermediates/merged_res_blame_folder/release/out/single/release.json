@@ -3644,6 +3644,10 @@
         "source": "sss.yml.smi.app-material-1.11.0-0:/layout/m3_alert_dialog_actions.xml"
     },
     {
+        "merged": "sss.yml.smi.app-merged_res-63:/layout_switch_item.xml.flat",
+        "source": "sss.yml.smi.app-main-64:/layout/switch_item.xml"
+    },
+    {
         "merged": "sss.yml.smi.app-merged_res-63:/drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
         "source": "sss.yml.smi.app-jetified-play-services-base-18.0.1-27:/drawable-xxhdpi-v4/googleg_standard_color_18.png"
     },

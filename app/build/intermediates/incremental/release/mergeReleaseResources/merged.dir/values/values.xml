@@ -2578,6 +2578,7 @@
     <string name="required_field_empty">Required Field are Empty…</string>
     <string name="required_ht">Required Height:</string>
     <string name="required_wt">Required Weight:</string>
+    <string name="reset">Reset</string>
     <string name="risk_low_weight">Low Weight Risk</string>
     <string name="risk_low_weight_short">LW Risk</string>
     <string name="risk_stunt">Stunt Risk</string>

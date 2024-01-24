@@ -35380,6 +35380,7 @@ com.google.firebase.firestore.LoadBundleTask
 com.google.firebase.firestore.LoadBundleTaskProgress$TaskState
 com.google.firebase.firestore.LoadBundleTaskProgress
 com.google.firebase.firestore.OnProgressListener
+com.google.firebase.firestore.Query$Direction
 com.google.firebase.firestore.Query:
     public com.google.firebase.firestore.ListenerRegistration addSnapshotListener(android.app.Activity,com.google.firebase.firestore.EventListener)
     public com.google.firebase.firestore.ListenerRegistration addSnapshotListener(android.app.Activity,com.google.firebase.firestore.MetadataChanges,com.google.firebase.firestore.EventListener)
@@ -35388,16 +35389,24 @@ com.google.firebase.firestore.Query:
     public com.google.firebase.firestore.ListenerRegistration addSnapshotListener(java.util.concurrent.Executor,com.google.firebase.firestore.EventListener)
     public com.google.firebase.firestore.ListenerRegistration addSnapshotListener(java.util.concurrent.Executor,com.google.firebase.firestore.MetadataChanges,com.google.firebase.firestore.EventListener)
     private com.google.firebase.firestore.core.Bound boundFromDocumentSnapshot(java.lang.String,com.google.firebase.firestore.DocumentSnapshot,boolean)
+    private com.google.firebase.firestore.core.Bound boundFromFields(java.lang.String,java.lang.Object[],boolean)
     public com.google.firebase.firestore.Query endAt(com.google.firebase.firestore.DocumentSnapshot)
+    public varargs com.google.firebase.firestore.Query endAt(java.lang.Object[])
     public com.google.firebase.firestore.Query endBefore(com.google.firebase.firestore.DocumentSnapshot)
     public varargs com.google.firebase.firestore.Query endBefore(java.lang.Object[])
     private static com.google.firebase.firestore.core.EventManager$ListenOptions internalOptions(com.google.firebase.firestore.MetadataChanges)
+    public com.google.firebase.firestore.Query limit(long)
     public com.google.firebase.firestore.Query limitToLast(long)
     public com.google.firebase.firestore.Query orderBy(com.google.firebase.firestore.FieldPath)
+    public com.google.firebase.firestore.Query orderBy(com.google.firebase.firestore.FieldPath,com.google.firebase.firestore.Query$Direction)
+    private com.google.firebase.firestore.Query orderBy(com.google.firebase.firestore.model.FieldPath,com.google.firebase.firestore.Query$Direction)
     public com.google.firebase.firestore.Query orderBy(java.lang.String)
+    public com.google.firebase.firestore.Query orderBy(java.lang.String,com.google.firebase.firestore.Query$Direction)
     public com.google.firebase.firestore.Query startAfter(com.google.firebase.firestore.DocumentSnapshot)
     public varargs com.google.firebase.firestore.Query startAfter(java.lang.Object[])
     public com.google.firebase.firestore.Query startAt(com.google.firebase.firestore.DocumentSnapshot)
+    public varargs com.google.firebase.firestore.Query startAt(java.lang.Object[])
+    private void validateOrderByField(com.google.firebase.firestore.model.FieldPath)
     public com.google.firebase.firestore.Query whereArrayContains(com.google.firebase.firestore.FieldPath,java.lang.Object)
     public com.google.firebase.firestore.Query whereArrayContains(java.lang.String,java.lang.Object)
     public com.google.firebase.firestore.Query whereArrayContainsAny(com.google.firebase.firestore.FieldPath,java.util.List)
@@ -35551,8 +35560,11 @@ com.google.firebase.firestore.core.ListenSequence:
     public static final long INVALID
 com.google.firebase.firestore.core.Query:
     public boolean containsCompositeFilters()
+    public com.google.firebase.firestore.core.Query endAt(com.google.firebase.firestore.core.Bound)
     public java.lang.String getCanonicalId()
     public com.google.firebase.firestore.core.Query limitToLast(long)
+    public com.google.firebase.firestore.core.Query orderBy(com.google.firebase.firestore.core.OrderBy)
+    public com.google.firebase.firestore.core.Query startAt(com.google.firebase.firestore.core.Bound)
 com.google.firebase.firestore.core.SyncEngine:
     public java.util.Map getActiveLimboDocumentResolutions()
     public java.util.List getEnqueuedLimboDocumentResolutions()
@@ -49172,7 +49184,6 @@ sss.yml.smi.chdr.ChartShow:
 sss.yml.smi.chdr.Formatter:
     public void <init>()
 sss.yml.smi.chdr.HFA519ViewModel:
-    private static final boolean DRAW_VALUES
     public com.github.mikephil.charting.charts.LineChart getChart()
 sss.yml.smi.chdr.HFA_5_19:
     public static sss.yml.smi.chdr.HFA_5_19 newInstance()
@@ -49403,7 +49414,6 @@ sss.yml.smi.util.LocaleUtils:
 sss.yml.smi.util.Logger:
     static java.lang.String msg
     public void <init>(java.lang.String)
-    public static varargs void setMsg(java.lang.Object[])
 sss.yml.smi.util.SMIConstants$SEX
 sss.yml.smi.util.SMIConstants:
     public static final int ANIMATION_TIME
@@ -50665,6 +50675,8 @@ org.chromium.support_lib_boundary.util.BoundaryInterfaceReflectionUtil:
 sss.yml.smi.Home.HomePage:
     static final synthetic boolean $assertionsDisabled
 sss.yml.smi.ui.admin.RequestFragment$1:
+    static final synthetic boolean $assertionsDisabled
+sss.yml.smi.ui.admin.UsersFragment$2$1:
     static final synthetic boolean $assertionsDisabled
 sss.yml.smi.ui.setting.Settings:
     static final synthetic boolean $assertionsDisabled

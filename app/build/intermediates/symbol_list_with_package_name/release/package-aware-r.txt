@@ -3666,6 +3666,8 @@ id fill_horizontal
 id fill_vertical
 id filled
 id filter
+id filterAll
+id filterName
 id fitCenter
 id fitEnd
 id fitStart
@@ -3695,6 +3697,7 @@ id gradeList
 id graph
 id graph_wrap
 id group_divider
+id group_filter
 id grouping
 id groups
 id header
@@ -3934,6 +3937,7 @@ id preferences_sliding_pane_layout
 id pressed
 id profilePhoto
 id profile_photo
+id progressBar
 id progress_circular
 id progress_horizontal
 id radio
@@ -4075,6 +4079,7 @@ id summary_wfa_status
 id summary_wfh_comment
 id summary_wfh_status
 id supportScrollUp
+id swDrawValue
 id switchWidget
 id tabMode
 id tag_accessibility_actions
@@ -4191,6 +4196,7 @@ id wp_child_add
 id wp_child_measure_date
 id wp_child_name
 id wp_child_pager
+id wp_child_reset
 id wp_child_share
 id wp_chip
 id wp_ht_lay
@@ -4496,6 +4502,7 @@ layout summary_child_new
 layout summary_short_popup
 layout summary_title
 layout support_simple_spinner_dropdown_item
+layout switch_item
 layout vertical_list_item
 layout wfa_fragment
 menu activity_home_page_drawer
@@ -4950,6 +4957,7 @@ string registration_number
 string required_field_empty
 string required_ht
 string required_wt
+string reset
 string risk_low_weight
 string risk_low_weight_short
 string risk_stunt

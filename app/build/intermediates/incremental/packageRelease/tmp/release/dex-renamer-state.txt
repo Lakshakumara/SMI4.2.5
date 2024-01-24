@@ -1,4 +1,4 @@
-#Fri Mar 22 19:56:23 IST 2024
+#Tue Apr 02 05:51:23 IST 2024
 base.1=C\:\\Users\\Thathsanani\\IdeaProjects\\SMI4.2.5\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes2.dex
 path.1=classes2.dex
 base.0=C\:\\Users\\Thathsanani\\IdeaProjects\\SMI4.2.5\\app\\build\\intermediates\\dex\\release\\minifyReleaseWithR8\\classes.dex
