@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/BMISimulator.iml" filepath="$PROJECT_DIR$/.idea/modules/BMISimulator.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/BMISimulator.MPChartLib.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/BMISimulator.MPChartLib.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/BMISimulator.MPChartLib.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/BMISimulator.MPChartLib.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/BMISimulator.MPChartLib.main.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/BMISimulator.MPChartLib.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/MPChartLib/BMISimulator.MPChartLib.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/MPChartLib/BMISimulator.MPChartLib.unitTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BMISimulator.app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BMISimulator.app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BMISimulator.app.androidTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BMISimulator.app.androidTest.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BMISimulator.app.main.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BMISimulator.app.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/BMISimulator.app.unitTest.iml" filepath="$PROJECT_DIR$/.idea/modules/app/BMISimulator.app.unitTest.iml" />
+    </modules>
+  </component>
+</project>
