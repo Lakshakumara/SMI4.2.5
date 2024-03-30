@@ -1,4 +1,0 @@
-all@<html><FONT color='#fdb728' FACE='courier'><marquee behavior='scroll' direction='left' scrollamount=1>common massage</marquee></FONT></html>@2017/02/18
-All@<html><FONT color='#fdb728' FACE='courier'><marquee behavior='scroll' direction='left' scrollamount=1>Happy new Year 2017</marquee></FONT></html>@2017/05/01
-bcbb56b669214164@start@registration Data Error
-all@<html><head><style type="text/css">@font-face {font-family: iskpota;src: url("file:///android_asset/iskpota.ttf")}body {font-family: iskpota;font-size: medium;text-align: justify;}</style></head><body><marquee සුබ නව වසරක්   Happy New Year</marquee></body></html>@2017/05/01
