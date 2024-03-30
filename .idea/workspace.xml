@@ -9,7 +9,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ef01e156-d701-4911-a758-e48a3678bbfb" name="Changes" comment="2024-03-30" />
+    <list default="true" id="ef01e156-d701-4911-a758-e48a3678bbfb" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,7 +24,7 @@
   <component name="ComposerSettings">
     <execution />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[R9KBB18818200692]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -44,7 +44,7 @@
             <expand>
               <path>
                 <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
-                <item name="SMI4.2.5" type="f1a62948:ProjectNode" />
+                <item name="BMISimulator" type="f1a62948:ProjectNode" />
               </path>
             </expand>
             <select />
@@ -96,7 +96,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "android-custom-viewC:/Users/Thathsanani/IdeaProjects/SMI4.2.5/app/src/main/java/sss/yml/smi/util/CircularImageView.java_SELECTED": "CircularImageView",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "FHB",
     "last_opened_file_path": "C:/Users/Thathsanani/IdeaProjects/SMI4.2.5/myCert/SSSCert.jks",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
