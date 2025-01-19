@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          android:installLocation="internalOnly">
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.gms.permission.AD_ID"/>
+    <application
+        android:name=".Home.App"
+        android:label="@string/app_name"
+        android:launchMode="singleInstance"
+        android:icon="@mipmap/ic_launcher"
+        android:theme="@style/Theme.smi"
+        android:allowBackup="true"
+        android:fullBackupContent="true"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".login.Profile"
+            android:label="@string/profile"
+            android:theme="@style/Theme.smi.NoActionBar"/>
+        <activity
+            android:name=".Home.Start"
+            android:configChanges="locale"
+            android:theme="@style/Theme.smi.NoActionBar"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".chdr.ChartShow"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:label="@string/title_activity_chart_show"
+            android:theme="@style/Theme.smi.NoActionBar"
+            android:screenOrientation="portrait"/>
+        <activity android:name=".login.Ban" />
+
+        <activity
+            android:name=".Home.HomePage"
+            android:theme="@style/Theme.smi.NoActionBar"
+            android:screenOrientation="portrait"/>
+
+        <receiver
+            android:name=".service.NotificationReceiver"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+        <service
+            android:name=".service.Notify"
+            android:enabled="true" />
+        <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
+        <!-- my AdMob app ID: ca-app-pub-8089124274727865~9448002468 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8089124274727865~9448002468" />
+    </application>
+</manifest>

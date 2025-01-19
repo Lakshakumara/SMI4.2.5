@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/entry_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    tools:context=".person.General">
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/g_name_lay"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <AutoCompleteTextView
+            android:id="@+id/wp_child_name"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="@string/name_or_nic"
+            android:inputType="textPersonName|textCapWords" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <include
+        android:id="@+id/linearLayout14"
+        layout="@layout/dob"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/g_name_lay" />
+    <LinearLayout
+        android:id="@+id/linearLayout11"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout14">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wp_wt_lay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:endIconDrawable="@drawable/ic_newborn"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toStartOf="@id/wp_ht_lay"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/wp_ht_lay">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/wp_txtWt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/kg"
+                android:inputType="numberDecimal"
+                android:maxLength="7"
+                android:selectAllOnFocus="true"
+                android:singleLine="true"
+                android:textColorHint="#757575" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wp_ht_lay"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            app:endIconContentDescription="Height"
+            app:endIconMode="custom"
+            app:layout_constraintEnd_toStartOf="@+id/wp_chip"
+            app:layout_constraintStart_toEndOf="@id/wp_wt_lay"
+            app:layout_constraintTop_toBottomOf="@+id/wp_name_lay"
+            app:prefixText="H ">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/wp_txtHt"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:hint="@string/cm"
+                android:singleLine="true"
+                android:maxLength="5"
+                android:inputType="number|numberDecimal"
+                android:selectAllOnFocus="true"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <Spinner
+        android:id="@+id/sex"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_weight="1"
+        android:entries="@array/sex"
+        android:spinnerMode="dialog"
+        android:nextFocusLeft="@+id/wp_chip"
+        android:nextFocusDown="@+id/wp_chip"
+        app:layout_constraintBottom_toBottomOf="@+id/wp_chip"
+        app:layout_constraintEnd_toStartOf="@+id/wp_chip"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11" />
+
+    <com.google.android.material.chip.Chip
+        android:id="@+id/wp_chip"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="@string/calculate"
+        app:closeIcon="@android:drawable/ic_menu_close_clear_cancel"
+        app:closeIconVisible="true"
+        app:iconEndPadding="@dimen/widget_margin"
+        app:iconStartPadding="@dimen/widget_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/sex"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout11" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,501 @@
+{
+  "formatVersion": 1,
+  "database": {
+    "version": 2,
+    "identityHash": "be93446cc2f733bf67a6521a16b5e4e4",
+    "entities": [
+      {
+        "tableName": "child",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `regNo` TEXT NOT NULL, `name` TEXT NOT NULL, `sex` TEXT NOT NULL, `dob` INTEGER NOT NULL, `maturity` INTEGER NOT NULL, `guardian` TEXT, `tp` TEXT, `note` TEXT DEFAULT '', `fht` REAL NOT NULL DEFAULT 0.0, `mht` REAL NOT NULL DEFAULT 0.0, `deleted` INTEGER NOT NULL, `accessTime` INTEGER DEFAULT CURRENT_TIMESTAMP)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "regNo",
+            "columnName": "regNo",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sex",
+            "columnName": "sex",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "dob",
+            "columnName": "dob",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "maturity",
+            "columnName": "maturity",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "guardian",
+            "columnName": "guardian",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "tp",
+            "columnName": "tp",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "''"
+          },
+          {
+            "fieldPath": "fht",
+            "columnName": "fht",
+            "affinity": "REAL",
+            "notNull": true,
+            "defaultValue": "0.0"
+          },
+          {
+            "fieldPath": "mht",
+            "columnName": "mht",
+            "affinity": "REAL",
+            "notNull": true,
+            "defaultValue": "0.0"
+          },
+          {
+            "fieldPath": "deleted",
+            "columnName": "deleted",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "accessTime",
+            "columnName": "accessTime",
+            "affinity": "INTEGER",
+            "notNull": false,
+            "defaultValue": "CURRENT_TIMESTAMP"
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_child_name",
+            "unique": false,
+            "columnNames": [
+              "name"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_child_name` ON `${TABLE_NAME}` (`name`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "childWpData",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `childId` INTEGER NOT NULL, `mDate` INTEGER, `wt` REAL NOT NULL, `ht` REAL NOT NULL, `note` TEXT, `ageDays` REAL NOT NULL, `ageYY` INTEGER NOT NULL, `ageMM` INTEGER NOT NULL, `ageDD` INTEGER NOT NULL, `wfaZ` REAL NOT NULL, `hfaZ` REAL NOT NULL, `wfhZ` REAL NOT NULL, `wfaStatus` TEXT, `hfaStatus` TEXT, `wfhStatus` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "childId",
+            "columnName": "childId",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mDate",
+            "columnName": "mDate",
+            "affinity": "INTEGER",
+            "notNull": false
+          },
+          {
+            "fieldPath": "wt",
+            "columnName": "wt",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ht",
+            "columnName": "ht",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "note",
+            "columnName": "note",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "ageDays",
+            "columnName": "ageDays",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ageYY",
+            "columnName": "ageYY",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ageMM",
+            "columnName": "ageMM",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ageDD",
+            "columnName": "ageDD",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wfaZ",
+            "columnName": "wfaZ",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "hfaZ",
+            "columnName": "hfaZ",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wfhZ",
+            "columnName": "wfhZ",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wfaStatus",
+            "columnName": "wfaStatus",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "hfaStatus",
+            "columnName": "hfaStatus",
+            "affinity": "TEXT",
+            "notNull": false
+          },
+          {
+            "fieldPath": "wfhStatus",
+            "columnName": "wfhStatus",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_childWpData_childId",
+            "unique": false,
+            "columnNames": [
+              "childId"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_childWpData_childId` ON `${TABLE_NAME}` (`childId`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "school",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`censusNo` INTEGER NOT NULL, `name` TEXT NOT NULL, `address` TEXT NOT NULL, `province` TEXT NOT NULL, `district` TEXT NOT NULL, `zone` TEXT NOT NULL, `division` TEXT NOT NULL, `level` TEXT NOT NULL, `span` TEXT NOT NULL, `male` INTEGER NOT NULL, `female` INTEGER NOT NULL, `selected` INTEGER NOT NULL, PRIMARY KEY(`censusNo`))",
+        "fields": [
+          {
+            "fieldPath": "censusNo",
+            "columnName": "censusNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "name",
+            "columnName": "name",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "address",
+            "columnName": "address",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "province",
+            "columnName": "province",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "district",
+            "columnName": "district",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "zone",
+            "columnName": "zone",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "division",
+            "columnName": "division",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "level",
+            "columnName": "level",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "span",
+            "columnName": "span",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "male",
+            "columnName": "male",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "female",
+            "columnName": "female",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "selected",
+            "columnName": "selected",
+            "affinity": "INTEGER",
+            "notNull": true
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": false,
+          "columnNames": [
+            "censusNo"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_school_censusNo",
+            "unique": false,
+            "columnNames": [
+              "censusNo"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_school_censusNo` ON `${TABLE_NAME}` (`censusNo`)"
+          }
+        ],
+        "foreignKeys": []
+      },
+      {
+        "tableName": "student",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, `censusNo` INTEGER NOT NULL, `refId` INTEGER NOT NULL DEFAULT 0, `userName` TEXT DEFAULT '', `grade` TEXT DEFAULT '', `dob` INTEGER NOT NULL, `mdate` INTEGER NOT NULL, `sex` TEXT NOT NULL, `height` REAL NOT NULL, `weight` REAL NOT NULL, `ageY` INTEGER NOT NULL, `ageM` INTEGER NOT NULL, `ageD` INTEGER NOT NULL, `bmi` REAL NOT NULL, `wtZ` REAL NOT NULL, `htZ` REAL NOT NULL, `wtStatus` TEXT NOT NULL, `wtColor` INTEGER NOT NULL, `htStatus` TEXT NOT NULL, `htColor` INTEGER NOT NULL, `wtPos` TEXT NOT NULL, `htPos` TEXT NOT NULL, `docRef` TEXT)",
+        "fields": [
+          {
+            "fieldPath": "id",
+            "columnName": "id",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "censusNo",
+            "columnName": "censusNo",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "refId",
+            "columnName": "refId",
+            "affinity": "INTEGER",
+            "notNull": true,
+            "defaultValue": "0"
+          },
+          {
+            "fieldPath": "userName",
+            "columnName": "userName",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "''"
+          },
+          {
+            "fieldPath": "grade",
+            "columnName": "grade",
+            "affinity": "TEXT",
+            "notNull": false,
+            "defaultValue": "''"
+          },
+          {
+            "fieldPath": "dob",
+            "columnName": "dob",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "mdate",
+            "columnName": "mdate",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "sex",
+            "columnName": "sex",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "height",
+            "columnName": "height",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "weight",
+            "columnName": "weight",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ageY",
+            "columnName": "ageY",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ageM",
+            "columnName": "ageM",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "ageD",
+            "columnName": "ageD",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "bmi",
+            "columnName": "bmi",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wtZ",
+            "columnName": "wtZ",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "htZ",
+            "columnName": "htZ",
+            "affinity": "REAL",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wtStatus",
+            "columnName": "wtStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wtColor",
+            "columnName": "wtColor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "htStatus",
+            "columnName": "htStatus",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "htColor",
+            "columnName": "htColor",
+            "affinity": "INTEGER",
+            "notNull": true
+          },
+          {
+            "fieldPath": "wtPos",
+            "columnName": "wtPos",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "htPos",
+            "columnName": "htPos",
+            "affinity": "TEXT",
+            "notNull": true
+          },
+          {
+            "fieldPath": "docRef",
+            "columnName": "docRef",
+            "affinity": "TEXT",
+            "notNull": false
+          }
+        ],
+        "primaryKey": {
+          "autoGenerate": true,
+          "columnNames": [
+            "id"
+          ]
+        },
+        "indices": [
+          {
+            "name": "index_student_id",
+            "unique": false,
+            "columnNames": [
+              "id"
+            ],
+            "orders": [],
+            "createSql": "CREATE INDEX IF NOT EXISTS `index_student_id` ON `${TABLE_NAME}` (`id`)"
+          }
+        ],
+        "foreignKeys": []
+      }
+    ],
+    "views": [],
+    "setupQueries": [
+      "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'be93446cc2f733bf67a6521a16b5e4e4')"
+    ]
+  }
+}

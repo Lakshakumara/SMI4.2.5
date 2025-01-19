@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="lang_select">
+        <item>English</item>
+        <item>සිංහල</item>
+        <item>தமிழ்</item>
+    </string-array>
+    <string-array name="lang_values">
+        <item>en</item>
+        <item>si</item>
+        <item>ta</item>
+    </string-array>
+    <string-array name="theme">
+        <item>Light</item>
+        <item>Dark</item>
+        <item>System default</item>
+    </string-array>
+    <string-array name="theme_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+    <string-array name="district">
+        <item>Ampara</item>
+        <item>Anuradhapura</item>
+        <item>Badulla</item>
+        <item>Batticaloa</item>
+        <item>Colombo</item>
+        <item>Galle</item>
+        <item>Gampaha</item>
+        <item>Hambantota</item>
+        <item>Jaffna</item>
+        <item>Kalutara</item>
+        <item>Kandy</item>
+        <item>Kegalle</item>
+        <item>Kilinochchi</item>
+        <item>Kurunegala</item>
+        <item>Mannar</item>
+        <item>Matale</item>
+        <item>Matara</item>
+        <item>Monaragala</item>
+        <item>Mullaitivu</item>
+        <item>Nuwara Eliya</item>
+        <item>Polonnaruwa</item>
+        <item>Puttalam</item>
+        <item>Ratnapura</item>
+        <item>Trincomalee</item>
+        <item>Vavuniya</item>
+    </string-array>
+    <string-array name="filter">
+        <item>First in First out</item>
+        <item>Last in First out</item>
+        <item>BMI Ascending</item>
+        <item>BMI descending</item>
+        <item>Male->Female</item>
+    </string-array>
+    <string-array name="filter_values">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="ht_legend">
+        <item>சாதாரண உயரம்</item>
+        <item>குள்ளமாதல்</item>
+        <item>Server Stunting</item>
+    </string-array>
+
+    <string-array name="bmi_legend">
+        <item>அதிகளவு உடற்பருமன்</item>
+        <item>அதிக எடை</item>
+        <item>சாதாரண நிறை</item>
+        <item>மெலிவு</item>
+        <item>அதிக மெலிவு</item>
+    </string-array>
+</resources>
