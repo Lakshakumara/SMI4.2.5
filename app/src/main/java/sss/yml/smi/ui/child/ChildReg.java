@@ -310,8 +310,8 @@ public class ChildReg extends Fragment {
         Child savedChild = mViewModel.getChild(regNo.getText().toString().trim());
         Child nameChild = mViewModel.getChild(null, name.getText().toString().trim());
         //Integer childId = mViewModel.getChildId(name.getText().toString().trim());
-        if(savedChild == null){
-            if(nameChild == null){
+        if (savedChild == null) {
+            if (nameChild == null) {
                 child = new Child(regNo.getText().toString(), name.getText().toString(), (male.isChecked()) ? "Male" : "Female",
                         dob.getTime(), maturity, guard.getText().toString(), tp.getText().toString(), note.getText().toString(), fht, mht);
                 new AlertDialog.Builder(view.getContext())
@@ -327,26 +327,25 @@ public class ChildReg extends Fragment {
                         })
                         .setNegativeButton(R.string.cancel, (dialog, whichButton) -> {
                         }).create().show();
-            }else{
+            } else {
                 //Error Duplicate name
                 name.setError(getString(R.string.name_already_exists));
                 name.requestFocus();
                 return;
             }
-        }else{
-            if(nameChild == null){
+        } else {
+            if (nameChild == null) {
                 //update
                 updateChild();
-            }else{
-                if(savedChild.getId() == nameChild.getId()){
+            } else {
+                if (savedChild.getId() == nameChild.getId()) {
                     //update
                     updateChild();
-                }else{
+                } else {
                     //Error Duplicate name
                     name.setError(getString(R.string.name_already_exists));
                     name.requestFocus();
                     return;
-
                 }
             }
         }
@@ -508,16 +507,12 @@ public class ChildReg extends Fragment {
         int id = item.getItemId();
         InputMethodManager imm = (InputMethodManager) HomePage.application.getSystemService(Context.INPUT_METHOD_SERVICE);
         imm.hideSoftInputFromWindow(view.getApplicationWindowToken(), 0);
-        switch (id) {
-            case R.id.save:
-                saveChild();
-                break;
-            case R.id.delete:
-                deleteChild();
-                break;
-            case R.id.clear:
-                clear();
-                break;
+        if (id==R.id.save) {
+            saveChild();
+        } else if (id==R.id.delete) {
+            deleteChild();
+        } else if (id==R.id.clear) {
+            clear();
         }
         return super.onOptionsItemSelected(item);
     }

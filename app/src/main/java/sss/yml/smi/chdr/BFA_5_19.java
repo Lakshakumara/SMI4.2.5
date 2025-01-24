@@ -75,7 +75,7 @@ public class BFA_5_19 extends Fragment {
     public boolean onOptionsItemSelected(MenuItem item) {
         item.setChecked(!item.isChecked());
         switch (item.getItemId()) {
-            case R.id.SD4:
+            /*case R.id.SD4:
                 mViewModel.addPercentile("SD4");
                 break;
             case R.id.SD3:
@@ -90,14 +90,14 @@ public class BFA_5_19 extends Fragment {
             case R.id.SD4neg:
                 mViewModel.addPercentile("SD4neg");
                 break;
-            case R.id.save:
+            case R.id.save:*/
                /* Intent sharingIntent = new Intent(Intent.ACTION_SEND);
                 File f = new File(Environment.getExternalStorageDirectory().getPath()
                         +  "/DCIM/BMISimulator/" + "finalFname" + ".png");
                 sharingIntent.setType("image/jpeg");
                 sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
                 startActivity(Intent.createChooser(sharingIntent, "BMISimulator Share image using"));*/
-                if(mViewModel.saveChart()){
+                /*if(mViewModel.saveChart()){
                     final String finalFname = "fname";
                     Snackbar snackbar = Snackbar
                             .make(view,"Image Saved.. to "+finalFname,
@@ -119,7 +119,7 @@ public class BFA_5_19 extends Fragment {
                             .setAction("Action", null).show();
                 else
                     Snackbar.make(view, "Error Saving Image..", Snackbar.LENGTH_SHORT).show();
-                break;
+                break;*/
         }
         return super.onOptionsItemSelected(item);
     }

@@ -24,8 +24,10 @@ public class LHFA_0_5 extends Fragment {
     View view;
     private LHFA05ViewModel mViewModel;
     public LineChart mChart;
+
     public LHFA_0_5() {
     }
+
     public LHFA_0_5(ChildData childData) {
         this.childData = childData;
     }
@@ -43,30 +45,28 @@ public class LHFA_0_5 extends Fragment {
         mViewModel.updateUserData();
         return view;
     }
+
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.chart_menu_htage, menu);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         item.setChecked(!item.isChecked());
-        switch (item.getItemId()) {
-            case R.id.SD4:
-                mViewModel.addDataSet("SD4");
-                break;
-            case R.id.SD3:
-                mViewModel.addDataSet("SD3");
-                break;
-            case R.id.SD4neg:
-                mViewModel.addDataSet("SD4neg");
-                break;
-            case R.id.save:
-                if (mViewModel.saveChart())
-                    Snackbar.make(view, "Image Saved..", Snackbar.LENGTH_SHORT)
-                            .setAction("Action", null).show();
-                else
-                    Snackbar.make(view, "Error Saving Image..", Snackbar.LENGTH_SHORT).show();
-                break;
+        int id = item.getItemId();
+        if (id == R.id.SD4) {
+            mViewModel.addDataSet("SD4");
+        } else if (id == R.id.SD3) {
+            mViewModel.addDataSet("SD3");
+        } else if (id == R.id.SD4neg) {
+            mViewModel.addDataSet("SD4neg");
+        } else if (id == R.id.save) {
+            if (mViewModel.saveChart())
+                Snackbar.make(view, "Image Saved..", Snackbar.LENGTH_SHORT)
+                        .setAction("Action", null).show();
+            else
+                Snackbar.make(view, "Error Saving Image..", Snackbar.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }

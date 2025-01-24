@@ -78,6 +78,7 @@ public class Settings extends PreferenceFragmentCompat {
             return true;
         });
         ListPreference theme = findPreference("theme");
+        assert theme != null;
         theme.setOnPreferenceChangeListener((preference, newValue) -> {
             AppCompatDelegate.setDefaultNightMode(Integer.parseInt(newValue.toString()));
             return true;
@@ -87,13 +88,13 @@ public class Settings extends PreferenceFragmentCompat {
         if (btnBackup != null) {
             btnBackup.setOnPreferenceClickListener(arg0 -> {
                 if (ContextCompat.checkSelfPermission(
-                        requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-                    if (shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                        requireContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+                    if (shouldShowRequestPermissionRationale(Manifest.permission.WRITE_EXTERNAL_STORAGE)) {
                         new AlertDialog.Builder(requireActivity())
                                 .setMessage("Need Storage access permission to Backup Database Please provide permission to access your Storage.")
                                 .setPositiveButton("Ok", (dialog, whichButton) ->
                                         ActivityCompat.requestPermissions(requireActivity(),
-                                                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                                                new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                                                 201))
                                 .setNegativeButton(getString(R.string.cancel), (dialog, whichButton) -> {})
                                 .create()
@@ -113,7 +114,7 @@ public class Settings extends PreferenceFragmentCompat {
                                 // decision.
                             }
                         }).launch(
-                                Manifest.permission.READ_EXTERNAL_STORAGE);
+                                Manifest.permission.WRITE_EXTERNAL_STORAGE);
                     }
                 } else new DatabaseBackup().execute();
                 return true;
@@ -137,7 +138,7 @@ public class Settings extends PreferenceFragmentCompat {
                         String f = ffl.getName();
                         String nameTime = f.substring(0, f.length() - 4);
                         if (nameTime.length() != 13 ) continue;
-                        Long l = new Long(nameTime);
+                        long l = Long.parseLong(nameTime);
                         fList.add(l);
                         fDates.add(sdf.format(new java.util.Date(l)));
                     } catch (NumberFormatException ignored) {

@@ -15,9 +15,9 @@ public class Rate extends Fragment {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-
         rateApp();
     }
+
     public void rateApp() {
         try {
             Intent rateIntent = rateIntentForUrl("https:facebook.com/bmisimulator");

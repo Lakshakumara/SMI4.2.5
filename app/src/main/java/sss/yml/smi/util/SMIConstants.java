@@ -12,12 +12,13 @@ import java.util.Calendar;
 public class SMIConstants {
     public static final String MALE = "Male";
     public static final String FEMALE = "Female";
+
     public static boolean isMale(String sex) {
         return sex.equalsIgnoreCase("Male");
     }
 
     public enum ChartArea {
-        SD4neg,	SD3neg,	SD2neg,	SD1neg,	SD0, SD1, SD2, SD3, SD4, SD5
+        SD4neg, SD3neg, SD2neg, SD1neg, SD0, SD1, SD2, SD3, SD4, SD5
     }
 
     /**
@@ -55,6 +56,7 @@ public class SMIConstants {
     public static String todayTimeStamp() {
         return dt.format(new java.util.Date());
     }
+
     public static Boolean DRAW_TREND = false;
     /**
      * Chart Lengdn On or Off
@@ -75,11 +77,14 @@ public class SMIConstants {
      * @return
      */
     public static Boolean DRAW_USER_VALUE = false;
-    public enum SEX{
+
+    public enum SEX {
         MALE, FEMALE
     }
+
     public static final int legendNoColor = Color.argb(0, 221, 160, 221);
     public static final int PERCENTILE_COLOR = Color.rgb(0, 255, 0);
+
     public static String getAdFile() {
         return "https://www.dropbox.com/s/mzmi7os7n13isf6/NewadFile.txt?dl=1";
     }

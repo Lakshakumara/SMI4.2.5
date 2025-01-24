@@ -20,6 +20,19 @@ public interface StudentDao extends BaseDao<Student> {
     @Query("SELECT * FROM student where censusNo=:censusNo and mdate BETWEEN :from and :to and upper(grade) like upper(:grade)")
     LiveData<List<Student>> getStudentList(int censusNo, Date from, Date to, String grade);
 
+    /**
+     *
+     * @param censusNo school census number
+     * @param from start date of search
+     * @param to end date of Search
+     * @param grade selected grade
+     * @param order 0 THEN id END ASC,
+     *              1 THEN id END DESC,
+     *              2 THEN bmi END ASC,
+     *              3 THEN bmi END DESC,
+     *              4 THEN sex END DESC
+     * @return student class
+     */
     @Query("SELECT * FROM student where censusNo=:censusNo and mdate BETWEEN :from and :to and upper(grade)" +
             " like upper(:grade) ORDER BY " +
             "CASE WHEN :order = 0 THEN id END ASC, " +
@@ -28,6 +41,14 @@ public interface StudentDao extends BaseDao<Student> {
             "CASE WHEN :order = 3 THEN bmi END DESC, " +
             "CASE WHEN :order = 4 THEN sex END DESC")
     LiveData<List<Student>> getStudentList(int censusNo, Date from, Date to, String grade, int order);
+
+    @Query("SELECT * FROM student where censusNo=:censusNo and mdate BETWEEN :from and :to ORDER BY " +
+            "CASE WHEN :order = 0 THEN id END ASC, " +
+            "CASE WHEN :order = 1 THEN id END DESC, " +
+            "CASE WHEN :order = 2 THEN bmi END ASC, " +
+            "CASE WHEN :order = 3 THEN bmi END DESC, " +
+            "CASE WHEN :order = 4 THEN sex END DESC")
+    LiveData<List<Student>> getStudentList(int censusNo, Date from, Date to, int order);
 
     @Query("SELECT distinct grade FROM student where censusNo=:censusNo and mdate BETWEEN :from and :to order by grade")
     LiveData<List<String>> getGradeList(int censusNo, Date from, Date to);

@@ -5,9 +5,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Switch;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.fragment.NavHostFragment;
+
 import sss.yml.smi.R;
 import sss.yml.smi.util.Logger;
 import sss.yml.smi.util.SMIConstants;

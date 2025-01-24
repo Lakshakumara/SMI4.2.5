@@ -3,13 +3,17 @@ package sss.yml.smi.ui.admin;
 import android.os.Bundle;
 import android.view.*;
 import android.widget.*;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
+
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.firestore.FirebaseFirestore;
+
 import org.jetbrains.annotations.NotNull;
+
 import sss.yml.smi.R;
 import sss.yml.smi.util.CircularImageView;
 import sss.yml.smi.util.Logger;
@@ -22,12 +26,13 @@ import java.util.Objects;
 public class UsersFragment extends Fragment {
     FirebaseFirestore db;
     ProgressBar mProgressDialog;
-    private TextInputEditText txtEmail,txtName,txtTp,pin, txtJobTitle;
+    private TextInputEditText txtEmail, txtName, txtTp, pin, txtJobTitle;
     private Spinner spinner1;
     private AutoCompleteTextView txtDistrict, txtMoh, txtRange;
     private CircularImageView profilePhoto;
     ArrayAdapter<String> cats;
     private Map<String, Object> userData;
+
     @Override
     public View onCreateView(
             LayoutInflater inflater, ViewGroup container,
@@ -60,6 +65,7 @@ public class UsersFragment extends Fragment {
                                 ViewGroup parent) {
                 return super.getView(position, convertView, parent);
             }
+
             public View getDropDownView(int position, View convertView, @NotNull ViewGroup parent) {
                 return super.getDropDownView(position, convertView, parent);
             }
@@ -90,7 +96,7 @@ public class UsersFragment extends Fragment {
             userData.put("endDate", new java.util.Date());*/
 
 
-            Logger.setMsg("Selected userData "+ userData);
+            Logger.setMsg("Selected userData " + userData);
 
             db.collection("users")
                     .document(Objects.requireNonNull(pin.getText()).toString()).set(userData)
@@ -99,7 +105,8 @@ public class UsersFragment extends Fragment {
 
         });
     }
-    private void setMenuProvider(){
+
+    private void setMenuProvider() {
         requireActivity().addMenuProvider(new MenuProvider() {
             @Override
             public void onPrepareMenu(@NonNull Menu menu) {
@@ -115,7 +122,7 @@ public class UsersFragment extends Fragment {
                 searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
                     @Override
                     public boolean onQueryTextSubmit(String query) {
-                        showProgressDialog("Fetching "+query);
+                        showProgressDialog("Fetching " + query);
                         db.collection("users")
                                 .document(query)
                                 .addSnapshotListener((snapshot, e) -> {
@@ -127,13 +134,13 @@ public class UsersFragment extends Fragment {
                                         txtName.setText((CharSequence) userData.get("name"));
                                         txtTp.setText((CharSequence) userData.get("ptp"));
                                         txtDistrict.setText((CharSequence) userData.get("district"));
-                                        spinner1.setSelection(cats.getPosition((String)userData.get("cat")));
+                                        spinner1.setSelection(cats.getPosition((String) userData.get("cat")));
                                         txtMoh.setText((CharSequence) userData.get("moh"));
                                         txtRange.setText((CharSequence) userData.get("range"));
                                         txtJobTitle.setText((CharSequence) userData.get("jobTitle"));
                                         pin.setText((CharSequence) userData.get("uid"));
 
-                                        }
+                                    }
                                     hideProgressDialog();
                                 });
 
@@ -180,13 +187,11 @@ public class UsersFragment extends Fragment {
 
             @Override
             public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.filterName:
-                    case R.id.filterAll:
-                        menuItem.setChecked(!menuItem.isChecked());
-                        return true;
-                    default:
-                        //return super.onMen(item);
+                int id = menuItem.getItemId();
+                if (id == R.id.filterName) {
+                } else if (id == R.id.filterAll) {
+                    menuItem.setChecked(!menuItem.isChecked());
+                    return true;
                 }
                 return false;
             }

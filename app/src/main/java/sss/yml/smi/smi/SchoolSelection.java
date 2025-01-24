@@ -1,5 +1,6 @@
 package sss.yml.smi.smi;
 
+import android.annotation.SuppressLint;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -35,7 +36,7 @@ import sss.yml.smi.room.School;
 import sss.yml.smi.util.DividerItemDecoration;
 
 public class SchoolSelection extends Fragment implements SchoolAdapter.SingleClickListener, SchoolAdapter.LongClickListener,
-        SchoolAdapter.DownloadClickListener{
+        SchoolAdapter.DownloadClickListener {
     private View view;
     private ConstraintLayout layDown;
     private AutoCompleteTextView zone, division;
@@ -46,9 +47,12 @@ public class SchoolSelection extends Fragment implements SchoolAdapter.SingleCli
     private String district;
     private MenuItem delete;
     private School schoolToDelete;
+
     public static SchoolSelection newInstance() {
         return new SchoolSelection();
     }
+
+    private static final int sch_download = R.id.sch_download;
 
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
@@ -61,16 +65,16 @@ public class SchoolSelection extends Fragment implements SchoolAdapter.SingleCli
         division = view.findViewById(R.id.txtdivision);
         district = getDistrict();
         zone.setOnItemClickListener((parent, arg1, pos, id) ->
-                mViewModel.getList("SELECT distinct division FROM `School` where upper(district) = upper('"+district+"') and zone='"
-                                +zoneAdapter.getItem(pos)+"' order by division",
+                mViewModel.getList("SELECT distinct division FROM `School` where upper(district) = upper('" + district + "') and zone='"
+                                + zoneAdapter.getItem(pos) + "' order by division",
                         Collections.singletonList("division")).observe(getViewLifecycleOwner(),
                         nameList -> {
-                    divisionAdapter = new ArrayAdapter<>(requireContext(), R.layout.list_item, nameList);
-                    division.setAdapter(divisionAdapter);
-                }));
+                            divisionAdapter = new ArrayAdapter<>(requireContext(), R.layout.list_item, nameList);
+                            division.setAdapter(divisionAdapter);
+                        }));
         division.setOnItemClickListener((parent, arg1, pos, id) ->
                 sAdapter.setData(false,
-                mViewModel.downloadSchool("SELECT * FROM `School` where division='"+divisionAdapter.getItem(pos)+"' order by name")));
+                        mViewModel.downloadSchool("SELECT * FROM `School` where division='" + divisionAdapter.getItem(pos) + "' order by name")));
         mRecyclerView = view.findViewById(R.id.vertical_fragment_recycler_view);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         Drawable dividerDrawable = ContextCompat.getDrawable(requireContext(), R.drawable.divider_drawable);
@@ -84,7 +88,7 @@ public class SchoolSelection extends Fragment implements SchoolAdapter.SingleCli
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         mViewModel = new ViewModelProvider(this).get(SchoolViewModel.class);
-        sAdapter.setData(true,  mViewModel.getSchoolList(true));
+        sAdapter.setData(true, mViewModel.getSchoolList(true));
     }
 
     @Override
@@ -98,7 +102,7 @@ public class SchoolSelection extends Fragment implements SchoolAdapter.SingleCli
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                sAdapter.setData(false, mViewModel.downloadSchool("SELECT * FROM `School` where upper(district) = upper('"+district+"') and upper(name) like upper('%"+query+"%') order by name"));
+                sAdapter.setData(false, mViewModel.downloadSchool("SELECT * FROM `School` where upper(district) = upper('" + district + "') and upper(name) like upper('%" + query + "%') order by name"));
                 return false;
             }
 
@@ -112,24 +116,21 @@ public class SchoolSelection extends Fragment implements SchoolAdapter.SingleCli
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-        switch (id) {
-            case R.id.sch_download:
-                setAdapter();
-                String district = getDistrict();
-                if(layDown.getVisibility() == View.GONE){
-                    if(zoneAdapter == null)
-                        mViewModel.getList("SELECT distinct zone FROM `School` where upper(district) = upper('"+district+"') order by zone", Collections.singletonList("zone")).observe(getViewLifecycleOwner(), nameList -> {
+        if (id == R.id.sch_download) {
+            setAdapter();
+            String district = getDistrict();
+            if (layDown.getVisibility() == View.GONE) {
+                if (zoneAdapter == null)
+                    mViewModel.getList("SELECT distinct zone FROM `School` where upper(district) = upper('" + district + "') order by zone", Collections.singletonList("zone")).observe(getViewLifecycleOwner(), nameList -> {
                         zoneAdapter = new ArrayAdapter<>(requireContext(), R.layout.list_item, nameList);
                         zone.setAdapter(zoneAdapter);
                     });
-                    layDown.setVisibility(View.VISIBLE);
-                } else  layDown.setVisibility(View.GONE);
-                break;
-            case R.id.sch_delete:
-                mViewModel.delete(schoolToDelete);
-                sAdapter.setData(true,  mViewModel.getSchoolList(true));
-                delete.setVisible(false);
-                break;
+                layDown.setVisibility(View.VISIBLE);
+            } else layDown.setVisibility(View.GONE);
+        } else if (id == R.id.sch_delete) {
+            mViewModel.delete(schoolToDelete);
+            sAdapter.setData(true, mViewModel.getSchoolList(true));
+            delete.setVisible(false);
         }
         return super.onOptionsItemSelected(item);
     }
@@ -142,25 +143,29 @@ public class SchoolSelection extends Fragment implements SchoolAdapter.SingleCli
         sAdapter.setOnDownloadClickListener(this);
     }
 
-    private String getDistrict(){
-        if(district == null) {
-            if (getActivity() == null) Snackbar.make(Objects.requireNonNull(requireActivity().getCurrentFocus()), "Filter based on profile District", Snackbar.LENGTH_LONG).show();
+    private String getDistrict() {
+        if (district == null) {
+            if (getActivity() == null)
+                Snackbar.make(Objects.requireNonNull(requireActivity().getCurrentFocus()), "Filter based on profile District", Snackbar.LENGTH_LONG).show();
             district = PreferenceManager.getDefaultSharedPreferences(getContext()).getString("district", "");
         }
         return district;
     }
+
     @Override
     public void onItemClick(School school) {
-        if(layDown.getVisibility() == View.VISIBLE) return;
-        if(school == null) return;
+        if (layDown.getVisibility() == View.VISIBLE) return;
+        if (school == null) return;
         NavDirections navDirections = SchoolSelectionDirections.actionNavSmiToSmi(school.getCensusNo(), school.getName(), null);
         Navigation.findNavController(view).navigate(navDirections);
     }
+
     @Override
     public void onItemLongClick(School school) {
         delete.setVisible(true);
         schoolToDelete = school;
     }
+
     @Override
     public void onDownloadClick(School school) {
         mViewModel.insert(school);

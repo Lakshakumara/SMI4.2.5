@@ -22,6 +22,7 @@ import sss.yml.smi.util.DividerItemDecoration;
 public class History extends Fragment implements HistoryAdapter.SingleClickListener {
     ChildData childData;
     private static SingleClickListener listener;
+
     public History() {
     }
 

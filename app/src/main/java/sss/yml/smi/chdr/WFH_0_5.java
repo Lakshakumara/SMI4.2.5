@@ -53,20 +53,19 @@ public class WFH_0_5 extends Fragment {
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
         inflater.inflate(R.menu.chart_menu_save, menu);
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         item.setChecked(!item.isChecked());
-        switch (item.getItemId()) {
-            case R.id.SD4:
-                mViewModel.addPercentile("SD4");
-                break;
-            case R.id.save:
-                if (mViewModel.saveChart())
-                    Snackbar.make(view, "Image Saved..", Snackbar.LENGTH_SHORT)
-                            .setAction("Action", null).show();
-                else
-                    Snackbar.make(view, "Error Saving Image..", Snackbar.LENGTH_SHORT).show();
-                break;
+        int id = item.getItemId();
+        if (id == R.id.SD4) {
+            mViewModel.addPercentile("SD4");
+        } else if (id == R.id.save) {
+            if (mViewModel.saveChart())
+                Snackbar.make(view, "Image Saved..", Snackbar.LENGTH_SHORT)
+                        .setAction("Action", null).show();
+            else
+                Snackbar.make(view, "Error Saving Image..", Snackbar.LENGTH_SHORT).show();
         }
         return super.onOptionsItemSelected(item);
     }

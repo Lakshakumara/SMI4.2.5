@@ -25,7 +25,6 @@ import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Source;
-import sss.yml.smi.BuildConfig;
 import sss.yml.smi.R;
 import sss.yml.smi.login.Ban;
 import sss.yml.smi.login.Profile;
@@ -184,7 +183,6 @@ public class Start extends AppCompatActivity {
         bundle.putBoolean("welcome", showWelComeScreen);
         i.putExtra("myself", bundle);
         startActivity(i, bundle);
-
     }
 
     public void createSignInIntent() {
@@ -238,7 +236,7 @@ public class Start extends AppCompatActivity {
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
                         .setLogo(R.drawable.ic_logo_120)
-                        .setIsSmartLockEnabled(!BuildConfig.DEBUG, true /* hints */) //!BuildConfig.DEBUG /* credentials */
+                        //.setIsSmartLockEnabled(!BuildConfig.DEBUG, true /* hints */) //!BuildConfig.DEBUG /* credentials */
                         //.setDefaultProvider(providers.get(1))
                         .build(),
                 SIGN_IN_REQUEST_CODE);

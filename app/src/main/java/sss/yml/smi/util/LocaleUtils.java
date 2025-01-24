@@ -58,7 +58,7 @@ public class LocaleUtils {
         else return null;
     }
 
-    public static String getSelectedLanguageId(){
+    public static String getSelectedLanguageId() {
         return getDefaultSharedPreference(App.getInstance().getApplicationContext())
                 .getString("language", "en");
     }

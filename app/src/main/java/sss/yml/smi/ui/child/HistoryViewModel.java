@@ -19,11 +19,16 @@ public class HistoryViewModel extends AndroidViewModel {
         super(application);
         repository = new DbRepository();
     }
-    public void insert(ChildWpData childWpData){repository.insert(childWpData);}
-    public void update(ChildWpData childWpData){repository.update(childWpData);}
-    //public void delete(ChildWpData childWpData){repository.delete(childWpData);}
-    //public Integer getChildId(String name){ return repository.getChildId(name);}
-    public LiveData<List<ChildData>> getChild(String name){
+
+    public void insert(ChildWpData childWpData) {
+        repository.insert(childWpData);
+    }
+
+    public void update(ChildWpData childWpData) {
+        repository.update(childWpData);
+    }
+
+    public LiveData<List<ChildData>> getChild(String name) {
         return repository.getChildData(name, false);
     }
 }

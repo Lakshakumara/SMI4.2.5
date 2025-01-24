@@ -60,6 +60,7 @@ public class Profile extends AppCompatActivity {
     private CircularImageView profilePhoto;
     private Map<String, Object> userData;
     private boolean isCreate = false;
+
     @SuppressLint("HardwareIds")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,7 +73,7 @@ public class Profile extends AppCompatActivity {
 
         Intent i = getIntent();
         Bundle b = i.getBundleExtra("data");
-        if(b != null) isCreate = b.getBoolean("create");
+        if (b != null) isCreate = b.getBoolean("create");
         mAuth = FirebaseAuth.getInstance();
         currentUser = mAuth.getCurrentUser();
         profilePhoto = findViewById(R.id.profilePhoto);
@@ -96,6 +97,7 @@ public class Profile extends AppCompatActivity {
                                 ViewGroup parent) {
                 return super.getView(position, convertView, parent);
             }
+
             public View getDropDownView(int position, View convertView, ViewGroup parent) {
                 return super.getDropDownView(position, convertView, parent);
             }
@@ -106,7 +108,7 @@ public class Profile extends AppCompatActivity {
         spinner1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                switch (position){
+                switch (position) {
                     case 0:
                         findViewById(R.id.lay_moh).setVisibility(View.GONE);
                         findViewById(R.id.lay_range).setVisibility(View.GONE);
@@ -116,13 +118,13 @@ public class Profile extends AppCompatActivity {
                     case 2:
                     case 3:
                         findViewById(R.id.lay_moh).setVisibility(View.VISIBLE);
-                        ((TextInputLayout)findViewById(R.id.lay_range)).setHint(getString(R.string.working_division));
+                        ((TextInputLayout) findViewById(R.id.lay_range)).setHint(getString(R.string.working_division));
                         findViewById(R.id.lay_range).setVisibility(View.VISIBLE);
                         findViewById(R.id.lay_job_title).setVisibility(View.GONE);
                         break;
                     case 4:
                         findViewById(R.id.lay_moh).setVisibility(View.GONE);
-                        ((TextInputLayout)findViewById(R.id.lay_range)).setHint(R.string.work_institute);
+                        ((TextInputLayout) findViewById(R.id.lay_range)).setHint(R.string.work_institute);
                         findViewById(R.id.lay_range).setVisibility(View.VISIBLE);
                         findViewById(R.id.lay_job_title).setVisibility(View.VISIBLE);
                         break;
@@ -141,7 +143,7 @@ public class Profile extends AppCompatActivity {
         });
         Button btnContinue = findViewById(R.id.btnContinue);
         btnContinue.setOnClickListener(v -> {
-            if (spinner1.getSelectedItemPosition() == 0){
+            if (spinner1.getSelectedItemPosition() == 0) {
                 Snackbar.make(spinner1, "Select category", Snackbar.LENGTH_LONG).show();
                 return;
             }
@@ -156,7 +158,7 @@ public class Profile extends AppCompatActivity {
                 userData.put("pname", txtName.getText().toString());
                 userData.put("ptp", (txtTp.getText() == null) ? "" : txtTp.getText().toString());
                 userData.put("district", (txtDistrict.getText() == null) ? "" : txtDistrict.getText().toString());
-                if(isCreate) {
+                if (isCreate) {
                     userData.put("cat", spinner1.getSelectedItem().toString());
                     userData.put("isSMI", isSMImodule());
                     userData.put("isWP", isWPmodule());
@@ -186,11 +188,11 @@ public class Profile extends AppCompatActivity {
                         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("uid", FirebaseAuth.getInstance().getUid()).apply();
                         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putBoolean("profile", true).apply();
                         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putString("cat", userData.get("cat").toString()).apply();
-                        if(isCreate) {
+                        if (isCreate) {
                             PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putBoolean("isSMI", (Boolean) userData.get("isSMI")).apply();
                             PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putBoolean("isWP", (Boolean) userData.get("isWP")).apply();
                         }
-                        replyIntent.putExtra(EXTRA_REPLY, (Serializable)userData);
+                        replyIntent.putExtra(EXTRA_REPLY, (Serializable) userData);
                         setResult(RESULT_OK, replyIntent);
                         finish();
                     });
@@ -213,7 +215,7 @@ public class Profile extends AppCompatActivity {
                         Map<String, Object> data = snapshot.getData();
                         txtTp.setText((CharSequence) data.get("ptp"));
                         txtDistrict.setText((CharSequence) data.get("district"));
-                        spinner1.setSelection(cats.getPosition((String)data.get("cat")));
+                        spinner1.setSelection(cats.getPosition((String) data.get("cat")));
                         txtMoh.setText((CharSequence) data.get("moh"));
                         txtRange.setText((CharSequence) data.get("range"));
                         txtJobTitle.setText((CharSequence) data.get("jobTitle"));
@@ -222,15 +224,15 @@ public class Profile extends AppCompatActivity {
                         //PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putBoolean("isWP", (Boolean) data.get("isWP")).apply();
                     }
                 });
-        if(!isCreate) {
+        if (!isCreate) {
             ConstraintLayout pnlRequest = findViewById(R.id.request);
             pnlRequest.setVisibility(View.VISIBLE);
             TextInputLayout pinCopy = findViewById(R.id.lay_my_pin);
             pinCopy.setEndIconOnClickListener(v -> {
-                    android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
-                    android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Pin", pin.getText());
-                    clipboard.setPrimaryClip(clip);
-                    Toast.makeText(Profile.this, "Pin Copied", Toast.LENGTH_SHORT).show();
+                android.content.ClipboardManager clipboard = (android.content.ClipboardManager) getApplicationContext().getSystemService(getApplicationContext().CLIPBOARD_SERVICE);
+                android.content.ClipData clip = android.content.ClipData.newPlainText("Copied Pin", pin.getText());
+                clipboard.setPrimaryClip(clip);
+                Toast.makeText(Profile.this, "Pin Copied", Toast.LENGTH_SHORT).show();
             });
 
             final CheckBox rqsmi = findViewById(R.id.rqsmi);
@@ -243,11 +245,11 @@ public class Profile extends AppCompatActivity {
             final Button btnUpgrade = findViewById(R.id.btnUpgrade);
             btnUpgrade.setOnClickListener(v -> {
                 Map<String, Object> request = new HashMap<>();
-                if(isSMI) {
+                if (isSMI) {
                     request.put("smi", rqsmi.isChecked());
                     request.put("gsmi", null);
                 }
-                if(isWP) {
+                if (isWP) {
                     request.put("wp", rqwp.isChecked());
                     request.put("gwp", null);
                 }
@@ -286,17 +288,19 @@ public class Profile extends AppCompatActivity {
         return true;
     }
 
-    private boolean isSMImodule(){
+    private boolean isSMImodule() {
         int x = spinner1.getSelectedItemPosition();
-        return x == 1 || x==2;
+        return x == 1 || x == 2;
     }
-    private boolean isWPmodule(){
+
+    private boolean isWPmodule() {
         int x = spinner1.getSelectedItemPosition();
         return x == 1 || x == 2 || x == 3;
     }
+
     private boolean iscat() {
         boolean ok = false;
-        switch (spinner1.getSelectedItemPosition()){
+        switch (spinner1.getSelectedItemPosition()) {
             case 0:
                 break;
             case 1:
@@ -310,17 +314,20 @@ public class Profile extends AppCompatActivity {
             case 5:
                 ok = true;
                 break;
-            default: ok= false;
+            default:
+                ok = false;
         }
-        if(!ok) Snackbar.make(spinner1, R.string.required_field_empty, Snackbar.LENGTH_SHORT).show();
+        if (!ok)
+            Snackbar.make(spinner1, R.string.required_field_empty, Snackbar.LENGTH_SHORT).show();
         //Toast.makeText(this,  R.string.required_field_empty, Toast.LENGTH_SHORT).show();//
         return ok;
     }
 
     private class getImage extends AsyncTask<String, Void, Boolean> {
         Bitmap bitmap;
+
         @Override
-        protected Boolean doInBackground(String...strings) {
+        protected Boolean doInBackground(String... strings) {
             URL imageurl;
             boolean saved = false;
             try {
@@ -328,7 +335,7 @@ public class Profile extends AppCompatActivity {
                 bitmap = BitmapFactory.decodeStream(imageurl.openConnection().getInputStream());
                 File folder = new File(getFilesDir().getAbsoluteFile(), "/profile/");
                 folder.mkdir();
-                File file = new File(folder.getAbsoluteFile(),  "profile.jpg") ;
+                File file = new File(folder.getAbsoluteFile(), "profile.jpg");
                 try {
                     FileOutputStream out = new FileOutputStream(file);
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
@@ -355,7 +362,7 @@ public class Profile extends AppCompatActivity {
                 profilePhoto.setImageDrawable(getResources().getDrawable(R.drawable.ic_full_sad));
             }*/
             File f = new File(getFilesDir().getPath() + "/profile/profile.jpg");
-           profilePhoto.setImageURI(Uri.parse(f.toString()));
+            profilePhoto.setImageURI(Uri.parse(f.toString()));
         }
     }
 

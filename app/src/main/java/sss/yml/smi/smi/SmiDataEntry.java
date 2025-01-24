@@ -66,6 +66,7 @@ public class SmiDataEntry extends Fragment {
     private int year;
     private Spinner gradeList;
     private String gradeSelected = "%";
+
     public static SmiDataEntry newInstance() {
         return new SmiDataEntry();
     }
@@ -82,8 +83,7 @@ public class SmiDataEntry extends Fragment {
         if (adEnable) {
             MobileAds.initialize(requireContext(), initializationStatus ->
                     mAdView.loadAd(AdLoader.getRequest()));
-        }
-        else mAdView.setVisibility(View.GONE);
+        } else mAdView.setVisibility(View.GONE);
 
         txtGrade = view.findViewById(R.id.grade);
         yy = view.findViewById(R.id.yy);
@@ -156,7 +156,7 @@ public class SmiDataEntry extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.toString().length() == 1){
+                if (s.toString().length() == 1) {
                     int month = Integer.parseInt(s.toString());
                     if (month > 2) dd.requestFocus();
                 }
@@ -181,7 +181,7 @@ public class SmiDataEntry extends Fragment {
 
             @Override
             public void afterTextChanged(Editable s) {
-                if(s.toString().length() == 1){
+                if (s.toString().length() == 1) {
                     int dd = Integer.parseInt(s.toString());
                     if (dd > 3) txtHt.requestFocus();
                 }
@@ -260,47 +260,48 @@ public class SmiDataEntry extends Fragment {
         txtTotal.setSelected(true);
         txtTotal.setMarqueeRepeatLimit(-1);
 
-        gradeList =  view.findViewById(R.id.gradeList);
+        gradeList = view.findViewById(R.id.gradeList);
 
         gradeList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 gradeSelected = gradeList.getSelectedItem().toString();
-                int year = Calendar.getInstance().get(Calendar.YEAR)-1900;
+                int year = Calendar.getInstance().get(Calendar.YEAR);//-1900;
                 loadStudentSummary(year);
             }
+
             @Override
             public void onNothingSelected(AdapterView<?> parent) {
-                gradeSelected= "%";
+                gradeSelected = "%";
             }
         });
 
-        if (getArguments() != null){
+        if (getArguments() != null) {
             censusNo = SmiDataEntryArgs.fromBundle(getArguments()).getCensusNo();
-            ((HomePage) getActivity()) .setActionBarTitle(SmiDataEntryArgs.fromBundle(getArguments()).getSchool());
-            year = Calendar.getInstance().get(Calendar.YEAR)-1900;
+            ((HomePage) getActivity()).setActionBarTitle(SmiDataEntryArgs.fromBundle(getArguments()).getSchool());
+            year = Calendar.getInstance().get(Calendar.YEAR);//-1900;
 
             mViewModel.getGradeList(censusNo, year).observe(getViewLifecycleOwner(), grades ->
                     gradeList.setAdapter(new ArrayAdapter<>(requireContext(),
-                    R.layout.list_item, grades)));
+                            R.layout.list_item, grades)));
             Student s = SmiDataEntryArgs.fromBundle(getArguments()).getStudent();
-            if(s !=null){
+            if (s != null) {
                 isStudentUpdate = true;
                 student = s;
                 fillStudentData();
-            }else isStudentUpdate = false;
+            } else isStudentUpdate = false;
         }
         return view;
     }
 
     private void fillStudentData() {
         txtGrade.setText(student.getGrade());
-        if(student.getSex().equalsIgnoreCase(SMIConstants.MALE)) male.setChecked(true);
+        if (student.getSex().equalsIgnoreCase(SMIConstants.MALE)) male.setChecked(true);
         else female.setChecked(true);
         Calendar c = Calendar.getInstance();
         c.setTime(student.getDob());
         yy.setText(String.valueOf(c.get(Calendar.YEAR)));
-        mm.setText(String.valueOf(c.get(Calendar.MONTH)+1));
+        mm.setText(String.valueOf(c.get(Calendar.MONTH) + 1));
         dd.setText(String.valueOf(c.get(Calendar.DATE)));
         txtHt.setText(String.valueOf(student.getHeight()));
         txtWt.setText(String.valueOf(student.getWeight()));
@@ -314,7 +315,7 @@ public class SmiDataEntry extends Fragment {
 
     private void fillSummary(List<Student> students) {
         int sTot = students.size();
-        if(sTot <= 0) sTot = 1;
+        if (sTot <= 0) sTot = 1;
         int nosStunting = 0;
         int nosHtNormal = 0;
         int nosHBothNormal = 0;
@@ -323,27 +324,34 @@ public class SmiDataEntry extends Fragment {
         int nosWtNormal = 0;
         int nosOverWeight = 0;
         int nosObese = 0;
-        for (Student student:students ) {
+        for (Student student : students) {
             String wPos = student.getWtPos();
             boolean isNormal = false;
-            if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD4neg.toString())) nosWasted++;
-            else if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD3neg.toString())) nosWasted++;
-            else if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD2neg.toString())) nosWasted++;
-            else if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD1neg.toString())) {nosWtNormal++;isNormal = true;}
-            else if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD0.toString())) {nosWtNormal++;isNormal = true;}
-            else if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD1.toString())) {nosWtNormal++;isNormal = true;}
-            else if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD2.toString())) nosOverWeight++;
-            else if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD3.toString())) nosObese++;
-            else if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD4.toString())) nosObese++;
-            else if(wPos.equalsIgnoreCase(SMIConstants .ChartArea.SD5.toString())) nosObese++;
+            if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD4neg.toString())) nosWasted++;
+            else if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD3neg.toString())) nosWasted++;
+            else if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD2neg.toString())) nosWasted++;
+            else if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD1neg.toString())) {
+                nosWtNormal++;
+                isNormal = true;
+            } else if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD0.toString())) {
+                nosWtNormal++;
+                isNormal = true;
+            } else if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD1.toString())) {
+                nosWtNormal++;
+                isNormal = true;
+            } else if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD2.toString()))
+                nosOverWeight++;
+            else if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD3.toString())) nosObese++;
+            else if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD4.toString())) nosObese++;
+            else if (wPos.equalsIgnoreCase(SMIConstants.ChartArea.SD5.toString())) nosObese++;
 
             String hPos = student.getHtPos();
-            if(hPos.equalsIgnoreCase(SMIConstants .ChartArea.SD4neg.toString())) nosStunting++;
-            else if(hPos.equalsIgnoreCase(SMIConstants .ChartArea.SD3neg.toString())) nosStunting++;
-            else if(hPos.equalsIgnoreCase(SMIConstants .ChartArea.SD2neg.toString())) nosStunting++;
+            if (hPos.equalsIgnoreCase(SMIConstants.ChartArea.SD4neg.toString())) nosStunting++;
+            else if (hPos.equalsIgnoreCase(SMIConstants.ChartArea.SD3neg.toString())) nosStunting++;
+            else if (hPos.equalsIgnoreCase(SMIConstants.ChartArea.SD2neg.toString())) nosStunting++;
             else {
                 nosHtNormal++;
-                if(isNormal) nosHBothNormal++;
+                if (isNormal) nosHBothNormal++;
             }
         }
         txtStunting.setText(String.valueOf(nosStunting));
@@ -352,15 +360,16 @@ public class SmiDataEntry extends Fragment {
         txtOW.setText(String.valueOf(nosOverWeight));
         txtObesity.setText(String.valueOf(nosObese));
         txtWtNor.setText(String.valueOf(nosWtNormal));
-        String tot = "Total "+sTot+"; "+"Healthy "+(nosHBothNormal)*100/sTot+"%"+"==> "+"S-"+nosStunting*100/sTot+"%"+" "+"W-"+nosWasted*100/sTot+"%"+" "+"OW-"+nosOverWeight*100/sTot+"%"+" "+"OB-"+nosObese*100/sTot+"%";
+        String tot = "Total " + sTot + "; " + "Healthy " + (nosHBothNormal) * 100 / sTot + "%" + "==> " + "S-" + nosStunting * 100 / sTot + "%" + " " + "W-" + nosWasted * 100 / sTot + "%" + " " + "OW-" + nosOverWeight * 100 / sTot + "%" + " " + "OB-" + nosObese * 100 / sTot + "%";
         txtTotal.setText(tot);
-        if(!TextUtils.isEmpty(txtGrade.getText())
-                && !txtGrade.getText().toString().equalsIgnoreCase(gradeList.getSelectedItem().toString())){
+        if (!TextUtils.isEmpty(txtGrade.getText())
+                && !txtGrade.getText().toString().equalsIgnoreCase(gradeList.getSelectedItem().toString())) {
             gradeSelected = txtGrade.getText().toString().toUpperCase();
             selectValue(gradeList, gradeSelected);
         }
 
     }
+
     private void selectValue(Spinner spinner, Object value) {
         for (int i = 0; i < spinner.getCount(); i++) {
             if (spinner.getItemAtPosition(i).equals(value)) {
@@ -383,20 +392,18 @@ public class SmiDataEntry extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.auto:
-                setAuto();
-                break;
-            case R.id.sch_measure_date:
-                showChangeMeasureDate();
-                break;
-            case R.id.showData:
-                if(gradeList.getSelectedItem() == null) break;
+        int id = item.getItemId();
+        if (id == R.id.auto) {
+            setAuto();
+        } else if (id == R.id.sch_measure_date) {
+            showChangeMeasureDate();
+        } else if (id == R.id.showData) {
+            if (gradeList.getSelectedItem() != null) {
                 String grade = gradeList.getSelectedItem().toString();
                 //Navigation.findNavController(view).navigate(R.id.SMIData);
                 NavDirections navDirections = SmiDataEntryDirections.actionSmiToSMIData(censusNo, grade, year);
                 Navigation.findNavController(view).navigate(navDirections);
-                break;
+            }
         }
         return super.onOptionsItemSelected(item);
     }
@@ -416,6 +423,7 @@ public class SmiDataEntry extends Fragment {
         AlertDialog b = dialogBuilder.create();
         b.show();
     }
+
     private void isMeasureDateChange() {
         Calendar now = Calendar.getInstance();
         boolean sameDay = measureDate.get(Calendar.DAY_OF_YEAR) == now.get(Calendar.DAY_OF_YEAR) &&
@@ -424,6 +432,7 @@ public class SmiDataEntry extends Fragment {
             Snackbar.make(view, "SMI date changed to " + getMeasureDateString(), Snackbar.LENGTH_LONG).show();
         }
     }
+
     private String getMeasureDateString() {
         return SMIConstants.d.format(measureDate.getTime());
     }
@@ -537,8 +546,8 @@ public class SmiDataEntry extends Fragment {
         } catch (NumberFormatException ex) {
             return false;
         }
-        if (dobY == 0 && dobM == 0 && dobD == 0)  return false;
-        if (dobY < 1900 || dobY > 2099)  return false;
+        if (dobY == 0 && dobM == 0 && dobD == 0) return false;
+        if (dobY < 1900 || dobY > 2099) return false;
         Calendar birthDay = Calendar.getInstance();
         try {
             birthDay.set(dobY, dobM, dobD);
@@ -551,10 +560,10 @@ public class SmiDataEntry extends Fragment {
         int days;
         years = measureDate.get(Calendar.YEAR) - birthDay.get(Calendar.YEAR);
 
-        int diff = (birthDay.get(Calendar.MONTH) == 0)?4:5;
+        int diff = (birthDay.get(Calendar.MONTH) == 0) ? 4 : 5;
         int gradeX = years - diff;
-        String grade = (gradeX < 1 || gradeX > 13)?"": String.valueOf(gradeX);
-        if(TextUtils.isEmpty(txtGrade.getText())) txtGrade.setText(grade);
+        String grade = (gradeX < 1 || gradeX > 13) ? "" : String.valueOf(gradeX);
+        if (TextUtils.isEmpty(txtGrade.getText())) txtGrade.setText(grade);
         int currMonth = measureDate.get(Calendar.MONTH) + 1;
         int birthMonth = birthDay.get(Calendar.MONTH) + 1;
         long ageDays = measureDate.getTime().getTime() - birthDay.getTime().getTime();
@@ -598,7 +607,7 @@ public class SmiDataEntry extends Fragment {
             showToast(getString(R.string.sch_age_group_error));
             return false;
         }
-        student = (isStudentUpdate)?student:new Student();
+        student = (isStudentUpdate) ? student : new Student();
         student.setCensusNo(censusNo);
         student.setDob(birthDay.getTime());
         student.setMdate(measureDate.getTime());
@@ -644,12 +653,12 @@ public class SmiDataEntry extends Fragment {
                 isStudentUpdate = false;
                 Navigation.findNavController(view).popBackStack();
             });
-        }else
+        } else
             dialogBuilder.setPositiveButton(R.string.add_pop, (dialog, whichButton) -> {
-            addToDatabase(Objects.requireNonNull(name.getText()).toString());
-            clear();
-            mm.requestFocus();
-        });
+                addToDatabase(Objects.requireNonNull(name.getText()).toString());
+                clear();
+                mm.requestFocus();
+            });
 
         dialogBuilder.setNegativeButton(R.string.try_again_pop, (dialog, whichButton) -> yy.requestFocus());
         dialogBuilder.setNeutralButton(R.string.chart, (dialog, whichButton) -> showGraphs());
@@ -660,11 +669,13 @@ public class SmiDataEntry extends Fragment {
     private void addToDatabase(String name) {
         student.setUserName(name);
         try {
-            if(mViewModel.insert(student) > 0)
+            if (mViewModel.insert(student) > 0)
                 Snackbar.make(view, "Added to Database", Snackbar.LENGTH_SHORT).show();
             clear();
-        }catch (ExecutionException | InterruptedException ignored){}
+        } catch (ExecutionException | InterruptedException ignored) {
+        }
     }
+
     private void updateDatabase(String name) {
         student.setUserName(name);
         mViewModel.update(student);
@@ -673,16 +684,17 @@ public class SmiDataEntry extends Fragment {
     }
 
     private void setAuto() {
-        if(heightLength == 5 && weightLength == 5){
+        if (heightLength == 5 && weightLength == 5) {
             heightLength = 3;
             weightLength = 2;
             Snackbar.make(view, "Auto Mode On", Snackbar.LENGTH_SHORT).show();
-        }else{
+        } else {
             heightLength = 5;
             weightLength = 5;
             Snackbar.make(view, "Auto Mode Off", Snackbar.LENGTH_SHORT).show();
         }
     }
+
     private void showGraphs() {
         if (student == null) return;
         Intent i = new Intent(getContext(), ChartShow.class);

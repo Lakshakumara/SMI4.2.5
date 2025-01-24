@@ -25,9 +25,9 @@ public class ImageStorage {
 
         File folder = new File(sdcard.getAbsoluteFile(), "/directoryName/");
         folder.mkdir();
-        File file = new File(folder.getAbsoluteFile(), filename + ".jpg") ;
+        File file = new File(folder.getAbsoluteFile(), filename + ".jpg");
 
-        if (file.exists()) return stored ;
+        if (file.exists()) return stored;
 
         try {
             FileOutputStream out = new FileOutputStream(file);
@@ -50,23 +50,24 @@ public class ImageStorage {
             if (!myDir.exists())
                 return null;
 
-            mediaImage = new File(myDir.getPath() + "/directoryName/"+filename+".jpg");
+            mediaImage = new File(myDir.getPath() + "/directoryName/" + filename + ".jpg");
         } catch (Exception e) {
             //FirebaseCrash.report(e);
             e.printStackTrace();
         }
         return mediaImage;
     }
+
     public static boolean checkifImageExists() {
-        Bitmap b = null ;
+        Bitmap b = null;
         File file = ImageStorage.getImage();
         String path = file.getAbsolutePath();
         if (path != null) b = BitmapFactory.decodeFile(path);
 
-        if(b == null ||  b.equals("")) {
-            return false ;
+        if (b == null || b.equals("")) {
+            return false;
 
         }
-        return true ;
+        return true;
     }
 }

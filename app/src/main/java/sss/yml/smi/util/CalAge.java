@@ -32,7 +32,6 @@ public class CalAge {
     }
 
     /**
-     *
      * @return age in completed Years
      */
     public int getYears() {
@@ -40,7 +39,6 @@ public class CalAge {
     }
 
     /**
-     *
      * @return age in Completed Months
      */
     public int getMonths() {
@@ -48,7 +46,6 @@ public class CalAge {
     }
 
     /**
-     *
      * @return age in Completed Days
      */
     public int getDays() {
@@ -56,7 +53,6 @@ public class CalAge {
     }
 
     /**
-     *
      * @return age in days from birth
      */
     public float getAgeDays() {
@@ -64,20 +60,20 @@ public class CalAge {
     }
 
     /**
-     *
      * @return In School Grade
      */
-    public int getGrade(){
+    public int getGrade() {
         return grade;
     }
+
     private boolean calAge() {
         years = measureDate.get(Calendar.YEAR) - birthDay.get(Calendar.YEAR);
         /**
          * cal Grade
          */
-        int diff = (birthDay.get(Calendar.MONTH) == 0)?4:5;
+        int diff = (birthDay.get(Calendar.MONTH) == 0) ? 4 : 5;
         int gradex = years - diff;
-        grade = (gradex < 1 || gradex > 13)?-1:gradex;
+        grade = (gradex < 1 || gradex > 13) ? -1 : gradex;
         /**
          * End of Grade
          */

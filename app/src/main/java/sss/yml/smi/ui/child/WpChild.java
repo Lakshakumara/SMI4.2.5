@@ -14,6 +14,7 @@ import android.util.TypedValue;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
+
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -28,12 +29,14 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
+
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+
 import sss.yml.smi.Home.HomePage;
 import sss.yml.smi.Home.HomeView;
 import sss.yml.smi.R;
@@ -76,6 +79,7 @@ public class WpChild extends Fragment implements History.SingleClickListener {
     private PagerAdapter pagerAdapter;
     private WpChildViewModel mViewModel;
     private DataTable dataTableMonth;
+
     public static WpChild newInstance() {
         return new WpChild();
     }
@@ -83,9 +87,11 @@ public class WpChild extends Fragment implements History.SingleClickListener {
     public static float roundLowestHalf(double number) {
         return (number - (int) number < 0.5) ? (int) number : (int) number + 0.5f;
     }
-    private enum CHOICE{
-        ADD,UPDATE,DELETE
+
+    private enum CHOICE {
+        ADD, UPDATE, DELETE
     }
+
     private final ActivityResultLauncher<String> requestPermissionLauncher =
             registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
                 if (isGranted) {
@@ -99,11 +105,12 @@ public class WpChild extends Fragment implements History.SingleClickListener {
                     // decision.
                 }
             });
+
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.child_data_entry_new, container, false);
         setHasOptionsMenu(true);
-        ((HomePage) getActivity()) .setActionBarTitle(getString(R.string.wt_post));
+        ((HomePage) getActivity()).setActionBarTitle(getString(R.string.wt_post));
 
         if (ContextCompat.checkSelfPermission(
                 requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
@@ -112,9 +119,10 @@ public class WpChild extends Fragment implements History.SingleClickListener {
                         .setMessage("Need Storage access permission to Save Charts. Please provide permission to access your Storage.")
                         .setPositiveButton("Ok", (dialog, whichButton) ->
                                 ActivityCompat.requestPermissions(requireActivity(),
-                                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                                201))
-                        .setNegativeButton(getString(R.string.cancel), (dialog, whichButton) -> {})
+                                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
+                                        201))
+                        .setNegativeButton(getString(R.string.cancel), (dialog, whichButton) -> {
+                        })
                         .create()
                         .show();
             } else {
@@ -160,7 +168,8 @@ public class WpChild extends Fragment implements History.SingleClickListener {
                 try {
                     if (updateData.getWt() != Double.parseDouble(s.toString()))
                         chip.setText(R.string.update);
-                } catch(NumberFormatException ignored){}
+                } catch (NumberFormatException ignored) {
+                }
             }
         });
 
@@ -182,7 +191,8 @@ public class WpChild extends Fragment implements History.SingleClickListener {
                 try {
                     if (updateData.getHt() != Double.parseDouble(s.toString()))
                         chip.setText(R.string.update);
-                } catch(NumberFormatException ignored){}
+                } catch (NumberFormatException ignored) {
+                }
             }
         });
         htLay.setEndIconOnClickListener(v -> {
@@ -210,7 +220,7 @@ public class WpChild extends Fragment implements History.SingleClickListener {
     }
 
     private void setHLHint() {
-        if(childWpData != null) {
+        if (childWpData != null) {
             if (htLay.getPrefixText().toString().startsWith("H")) {
                 htLay.setPrefixText("L ");
                 htLay.setHelperText("Length" + ((childWpData.getAgeYY() < 2) ? "" : " - 0.7"));
@@ -224,6 +234,7 @@ public class WpChild extends Fragment implements History.SingleClickListener {
             }
         }
     }
+
     private int getChipEvent() {
         int event = R.string.add;
         if (updateData != null) {
@@ -233,28 +244,6 @@ public class WpChild extends Fragment implements History.SingleClickListener {
         chip.setText(event);
         return event;
     }
-
-   /* private double genZScore() {
-        int ageMM = childWpData.getAgeYY() * 12 + childWpData.getAgeMM();
-        float L = dataTableMonth.getZScore(ageMM, "L");
-        float M = dataTableMonth.getZScore(ageMM, "M");
-        float S = dataTableMonth.getZScore(ageMM, "S");
-        //Log.e("xyz", "L " + L + " M " + M + " S " + S + " wt " + childWpData.getWt() + " ageMM " + ageMM + " Age Days " + childWpData.getAgeDays());
-        double Zind = (Math.pow(childWpData.getWt() / M, L) - 1) / (S * L);
-        if (Zind < -3) {
-            double SD2neg = M * Math.pow(1 + L * S * -2, 1 / L);
-            double SD3neg = M * Math.pow(1 + L * S * -3, 1 / L);
-            double SD23neg = SD2neg - SD3neg;
-            Zind = -3 + ((childWpData.getWt() - SD3neg) / SD23neg);
-        } else if (Zind > 3) {
-            //Log.e("xyz", "Zind >3");
-            double SD3pos = M * Math.pow(1 + L * S * 3, 1 / L);
-            double SD2pos = M * Math.pow(1 + L * S * 2, 1 / L);
-            double SD23pos = SD3pos - SD2pos;
-            Zind = 3 + ((childWpData.getWt() - SD3pos) / SD23pos);
-        }
-        return Zind;
-    }*/
 
     private void analyse() {
         HashMap<String, Float> idealWeightMap;
@@ -337,20 +326,20 @@ public class WpChild extends Fragment implements History.SingleClickListener {
         TableRow row_hfa = dialogView.findViewById(R.id.row_hfa);
         TableRow row_wfh = dialogView.findViewById(R.id.row_wfh);
         float wtDeviate = ac.getWtDeviate();
-        String wd = (wtDeviate == 0) ? "" : f.format(wtDeviate)+ " "+getResources().getString(R.string.kg);
+        String wd = (wtDeviate == 0) ? "" : f.format(wtDeviate) + " " + getResources().getString(R.string.kg);
         wfa_status.setText(ac.getWtTitle());
         wfa_comment.setText(wd);
         wfa_status.setBackgroundColor(ac.getWtColor());
 
         if (childWpData.getHt() > 0) {
             float htDeviate = ac.getHtDeviate();
-            String hd = (htDeviate == 0) ? "" : f.format(htDeviate)+ " "+getResources().getString(R.string.cm);
+            String hd = (htDeviate == 0) ? "" : f.format(htDeviate) + " " + getResources().getString(R.string.cm);
             hfa_status.setText(ac.getHtTitle());
             hfa_comment.setText(hd);
             hfa_status.setBackgroundColor(ac.getHtColor());
 
             float wfhDeviate = ac.getWfhDeviate();
-            String wfh = (wfhDeviate == 0) ? "" : f.format(wfhDeviate)+" "+getResources().getString(R.string.kg);
+            String wfh = (wfhDeviate == 0) ? "" : f.format(wfhDeviate) + " " + getResources().getString(R.string.kg);
             wfh_status.setText(ac.getWfhTitle());
             wfh_comment.setText(wfh);
             wfh_status.setBackgroundColor(ac.getWfhColor());
@@ -392,9 +381,12 @@ public class WpChild extends Fragment implements History.SingleClickListener {
 
     private String getAgeText(int ageYY, int ageMM, int ageDD) {
         if (ageYY == 0 && ageMM == 0 && ageDD == 0) return getString(R.string.birth_weight);
-        else if (ageYY == 0 && ageMM == 0) return getString(R.string.agelable)+": " + ageDD + getString(R.string.d);
-        else if (ageYY == 0) return getString(R.string.agelable)+": " + ageMM + getString(R.string.m) + ageDD + getString(R.string.d);
-        else return getString(R.string.agelable)+": " + ageYY + getString(R.string.y) + ageMM + getString(R.string.m) + ageDD + getString(R.string.d);
+        else if (ageYY == 0 && ageMM == 0)
+            return getString(R.string.agelable) + ": " + ageDD + getString(R.string.d);
+        else if (ageYY == 0)
+            return getString(R.string.agelable) + ": " + ageMM + getString(R.string.m) + ageDD + getString(R.string.d);
+        else
+            return getString(R.string.agelable) + ": " + ageYY + getString(R.string.y) + ageMM + getString(R.string.m) + ageDD + getString(R.string.d);
     }
 
     @Override
@@ -409,37 +401,31 @@ public class WpChild extends Fragment implements History.SingleClickListener {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         isChild();
-        switch (id) {
-            case R.id.wp_child_add:
-                int childId = (childdata == null) ? 0 : (childdata.child.getName().equalsIgnoreCase(childName.getText().toString())) ? childdata.child.getId() : 0;
-                NavDirections navDirections = WpChildDirections.actionWtpostToChildReg().setChildId(childId);
-                NavHostFragment.findNavController(WpChild.this)
-                        .navigate(navDirections);
-                break;
-            case R.id.wp_chart:
-                graphics = !graphics;
-                item.setIcon((graphics) ? R.drawable.ic_show_text : R.drawable.ic_show_chart);
-                pagerAdapter = new WpChartPagerAdapter(getChildFragmentManager(), null);
-                mViewPager.setAdapter(pagerAdapter);
-                break;
-            case R.id.wp_child_measure_date:
-                showChangeMeasureDate();
-                break;
-            case R.id.wp_child_share:
-                shareIt();
-                break;
-            case R.id.wp_child_reset:
-                childdata = null;
-                clear();
-                pagerAdapter = new WpChartPagerAdapter(getChildFragmentManager(), null);
-                mViewPager.setAdapter(pagerAdapter);
-                break;
+        if (id == R.id.wp_child_add) {
+            int childId = (childdata == null) ? 0 : (childdata.child.getName().equalsIgnoreCase(childName.getText().toString())) ? childdata.child.getId() : 0;
+            NavDirections navDirections = WpChildDirections.actionWtpostToChildReg().setChildId(childId);
+            NavHostFragment.findNavController(WpChild.this)
+                    .navigate(navDirections);
+        } else if (id == R.id.wp_chart) {
+            graphics = !graphics;
+            item.setIcon((graphics) ? R.drawable.ic_show_text : R.drawable.ic_show_chart);
+            pagerAdapter = new WpChartPagerAdapter(getChildFragmentManager(), null);
+            mViewPager.setAdapter(pagerAdapter);
+        } else if (id == R.id.wp_child_measure_date) {
+            showChangeMeasureDate();
+        } else if (id == R.id.wp_child_share) {
+            shareIt();
+        } else if (id == R.id.wp_child_reset) {
+            childdata = null;
+            clear();
+            pagerAdapter = new WpChartPagerAdapter(getChildFragmentManager(), null);
+            mViewPager.setAdapter(pagerAdapter);
         }
         return super.onOptionsItemSelected(item);
     }
 
     private void shareIt() {
-        if(childdata == null) {
+        if (childdata == null) {
             Snackbar.make(view, R.string.select_child, Snackbar.LENGTH_SHORT).show();
             return;
         }
@@ -570,17 +556,18 @@ public class WpChild extends Fragment implements History.SingleClickListener {
         if (childName.getText() == null || childName.getText().toString().trim().isEmpty()) return;
         String name = childName.getText().toString();
         mViewModel.getChild(name).observe(getViewLifecycleOwner(), nameList -> {
-            if (nameList.size() == 0) {
+            if (nameList.isEmpty()) {
                 childdata = null;
                 updateData = null;
             } else {
                 childdata = nameList.get(0);
-                Collections.sort(childdata.childWpData, new Comparator<ChildWpData>() {
-                    @Override
-                    public int compare(ChildWpData o1, ChildWpData o2) {
-                        return o1.getmDate().compareTo(o2.getmDate());
-                    }
-                });
+                if (childdata.childWpData != null)
+                    Collections.sort(childdata.childWpData, new Comparator<ChildWpData>() {
+                        @Override
+                        public int compare(ChildWpData o1, ChildWpData o2) {
+                            return o1.getmDate().compareTo(o2.getmDate());
+                        }
+                    });
 
                 updateData = (updateData != null && updateData.getChildId() != childdata.child.getId()) ? null : updateData;
                 getChipEvent();
@@ -599,7 +586,7 @@ public class WpChild extends Fragment implements History.SingleClickListener {
 
         updateData = null;
         childWpData = null;
-       // measureDate.setTime(new java.util.Date());
+        // measureDate.setTime(new java.util.Date());
         isMeasureDateChange();
         childName.requestFocus();
     }
@@ -634,7 +621,7 @@ public class WpChild extends Fragment implements History.SingleClickListener {
         if (sameDay) {
             TypedValue typedValue = new TypedValue();
             if (this.getActivity().getTheme().resolveAttribute(android.R.attr.windowBackground,
-                    typedValue, true)){
+                    typedValue, true)) {
                 int colorWindowBackground = typedValue.data;// **just add this line to your code!!**
                 wtLay.setBoxBackgroundColor(colorWindowBackground);
                 htLay.setBoxBackgroundColor(colorWindowBackground);
@@ -654,6 +641,7 @@ public class WpChild extends Fragment implements History.SingleClickListener {
                     .hideSoftInputFromWindow(view.getWindowToken(), 0);
         }
     }
+
     @Override
     public void onItemClickListener(final ChildWpData childData) {
         updateData = childData;

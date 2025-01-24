@@ -53,7 +53,7 @@ public class WFA_0_5 extends Fragment {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         item.setChecked(!item.isChecked());
-        switch (item.getItemId()) {
+        /*switch (item.getItemId()) {
             case R.id.SD4:
                 mViewModel.addPercentile("SD4");
                 break;
@@ -67,7 +67,7 @@ public class WFA_0_5 extends Fragment {
                 else
                     Snackbar.make(view, "Error Saving Image..", Snackbar.LENGTH_SHORT).show();
                 break;
-        }
+        }*/
         return super.onOptionsItemSelected(item);
     }
 }

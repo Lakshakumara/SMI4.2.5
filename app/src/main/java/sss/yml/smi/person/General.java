@@ -1,5 +1,6 @@
 package sss.yml.smi.person;
 
+import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.graphics.Color;
@@ -161,10 +162,9 @@ public class General extends Fragment implements History.SingleClickListener {
             MobileAds.initialize(requireContext(), initializationStatus -> {
                 mAdView.loadAd(AdLoader.getRequest());
             });
-        }
-        else mAdView.setVisibility(View.GONE);
+        } else mAdView.setVisibility(View.GONE);
 
-       // adContainerView = view.findViewById(R.id.ad_view_container);
+        // adContainerView = view.findViewById(R.id.ad_view_container);
 
         // Since we're loading the banner based on the adContainerView size, we need to wait until this
         // view is laid out before we can get the width.
@@ -254,10 +254,10 @@ public class General extends Fragment implements History.SingleClickListener {
         });
         chip = view.findViewById(R.id.wp_chip);
         chip.setOnClickListener(v -> {
-            if(HomePage.progress != null) HomePage.progress.show();
+            if (HomePage.progress != null) HomePage.progress.show();
             isChild();
             checkStatus();
-            if(HomePage.progress.isShowing()) HomePage.progress.dismiss();
+            if (HomePage.progress.isShowing()) HomePage.progress.dismiss();
         });
         chip.setOnCloseIconClickListener(v -> clear());
 
@@ -452,6 +452,7 @@ public class General extends Fragment implements History.SingleClickListener {
         }
         return view;
     }
+
     private void loadBanner() {
         // Create an ad request.
         adView = new AdView(requireContext());
@@ -486,6 +487,7 @@ public class General extends Fragment implements History.SingleClickListener {
         int adWidth = (int) (adWidthPixels / density);
         return AdSize.getCurrentOrientationAnchoredAdaptiveBannerAdSize(requireContext(), adWidth);
     }
+
     private void setHLHint() {
        /* if (htLay.getPrefixText().toString().startsWith("H")) {
             htLay.setPrefixText("L ");
@@ -556,7 +558,7 @@ public class General extends Fragment implements History.SingleClickListener {
             return null;
         }
         double in = 0;
-        if(!TextUtils.isEmpty(inches)) {
+        if (!TextUtils.isEmpty(inches)) {
             try {
                 in = Double.parseDouble(inches.toString());
             } catch (NumberFormatException e) {
@@ -605,16 +607,16 @@ public class General extends Fragment implements History.SingleClickListener {
             return;
         }
         String gender = getSex();
-        if (gender == null){
+        if (gender == null) {
             Snackbar.make(chip, R.string.sex_not_selected, Snackbar.LENGTH_SHORT).show();
             return;
         }
         if (age.getYears() >= 5 && age.getYears() <= 19) {
             ageCat = AgeCat.STUDENT;
             analyseSchool(age);
-        }else if (age.getYears() >= 0 && age.getYears() < 5) {
+        } else if (age.getYears() >= 0 && age.getYears() < 5) {
             ageCat = AgeCat.BABY;
-             analyseUnder5yrs(age, gender);
+            analyseUnder5yrs(age, gender);
         }
     }
 
@@ -657,15 +659,15 @@ public class General extends Fragment implements History.SingleClickListener {
 
         if (18.5f > bmi) {
             wtDeviate = 18.5 * (calculatedHt * calculatedHt) / 10000 - calculatedWt;
-            wtTitleShort = requireContext().getString(R.string.Wasted_short) + " +"+wtDeviate;
+            wtTitleShort = requireContext().getString(R.string.Wasted_short) + " +" + wtDeviate;
         } else if (18.5f <= bmi && bmi < 25) {
             wtTitleShort = requireContext().getString(R.string.normal_wt);
         } else if (25f <= bmi && bmi < 30) {
             wtDeviate = 25 * (calculatedHt * calculatedHt) / 10000 - calculatedWt;
-            wtTitleShort = requireContext().getString(R.string.overweight_short)+ " -"+wtDeviate;
+            wtTitleShort = requireContext().getString(R.string.overweight_short) + " -" + wtDeviate;
         } else if (bmi >= 30) {
             wtDeviate = 25 * (calculatedHt * calculatedHt) / 10000 - calculatedWt;
-            wtTitleShort = requireContext().getString(R.string.obesity_short)+ " -"+wtDeviate;
+            wtTitleShort = requireContext().getString(R.string.obesity_short) + " -" + wtDeviate;
         }
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(view.getContext());
@@ -863,7 +865,7 @@ public class General extends Fragment implements History.SingleClickListener {
         dialogBuilder.show();
     }
 
-    private void analyseUnder5yrs(final CalAge age,String sex) {
+    private void analyseUnder5yrs(final CalAge age, String sex) {
         final ChildWpData wpData;
         CHOICE event;
         Integer childId;
@@ -876,7 +878,7 @@ public class General extends Fragment implements History.SingleClickListener {
                 event = CHOICE.NONE;
                 wpData = new ChildWpData();
             } else
-                wpData = (childData.childWpData.size() <= 0)?new ChildWpData():childData.childWpData.get(0);
+                wpData = (childData.childWpData.size() <= 0) ? new ChildWpData() : childData.childWpData.get(0);
             wpData.setWt(calculatedWt);
             wpData.setHt(calculatedHt);
             if (updateData != null) {
@@ -1018,7 +1020,8 @@ public class General extends Fragment implements History.SingleClickListener {
         if (ageYY == 0 && ageMM == 0 && ageDD == 0) return getString(R.string.birth_weight);
         else if (ageYY == 0 && ageMM == 0) return ageDD + getString(R.string.d);
         else if (ageYY == 0) return ageMM + getString(R.string.m) + ageDD + getString(R.string.d);
-        else return ageYY + getString(R.string.y) + ageMM + getString(R.string.m) + ageDD + getString(R.string.d);
+        else
+            return ageYY + getString(R.string.y) + ageMM + getString(R.string.m) + ageDD + getString(R.string.d);
     }
 
     @Override
@@ -1031,29 +1034,25 @@ public class General extends Fragment implements History.SingleClickListener {
         itemS.setEnabled(false);
     }
 
+    @SuppressLint("NonConstantResourceId")
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         // isChild();
-        switch (id) {
-            case R.id.wp_child_add:
-                int childId = (childData == null) ? 0 : (childData.child.getName().equalsIgnoreCase(childName.getText().toString())) ?
-                        childData.child.getId() : 0;
-                NavDirections navDirections = GeneralDirections.actionNavGeneralToChildReg().setChildId(childId);
-                NavHostFragment.findNavController(General.this)
-                        .navigate(navDirections);
-                break;
-            case R.id.wp_chart:
-                graphics = !graphics;
-                item.setIcon((graphics) ? R.drawable.ic_show_chart : R.drawable.ic_show_text);
-                toggle();
-                break;
-            case R.id.wp_child_measure_date:
-                showChangeMeasureDate();
-                break;
-            case R.id.wp_child_share:
-                shareIt();
-                break;
+        if (id == R.id.wp_child_add) {
+            int childId = (childData == null) ? 0 : (childData.child.getName().equalsIgnoreCase(childName.getText().toString())) ?
+                    childData.child.getId() : 0;
+            NavDirections navDirections = GeneralDirections.actionNavGeneralToChildReg().setChildId(childId);
+            NavHostFragment.findNavController(General.this)
+                    .navigate(navDirections);
+        } else if (id == R.id.wp_chart) {
+            graphics = !graphics;
+            item.setIcon((graphics) ? R.drawable.ic_show_chart : R.drawable.ic_show_text);
+            toggle();
+        } else if (id == R.id.wp_child_measure_date) {
+            showChangeMeasureDate();
+        } else if (id == R.id.wp_child_share) {
+            shareIt();
         }
         return super.onOptionsItemSelected(item);
     }
@@ -1236,7 +1235,7 @@ public class General extends Fragment implements History.SingleClickListener {
         childName.requestFocus();
         childData = null;
         childWpData = null;
-        updateData= null;
+        updateData = null;
         elder = null;
         student.clear();
     }
@@ -1271,7 +1270,7 @@ public class General extends Fragment implements History.SingleClickListener {
         if (sameDay) {
             TypedValue typedValue = new TypedValue();
             if (this.getActivity().getTheme().resolveAttribute(android.R.attr.windowBackground,
-                    typedValue, true)){
+                    typedValue, true)) {
                 int colorWindowBackground = typedValue.data;// **just add this line to your code!!**
                 wtLay.setBoxBackgroundColor(colorWindowBackground);
                 htLay.setBoxBackgroundColor(colorWindowBackground);
@@ -1345,13 +1344,14 @@ public class General extends Fragment implements History.SingleClickListener {
         mVisible = true;
     }
 
-    private void msg(@StringRes int resId){
+    private void msg(@StringRes int resId) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         bottomSheetDialog.setContentView(R.layout.msg_text);
         MaterialTextView msg = bottomSheetDialog.findViewById(R.id.msg);
         msg.setText(resId);
         bottomSheetDialog.show();
     }
+
     private class WpChartPagerAdapter extends FragmentStatePagerAdapter {
         private ChildData child;
         private Student student;
@@ -1390,7 +1390,7 @@ public class General extends Fragment implements History.SingleClickListener {
                 return his;
             }
             if (ageCat == AgeCat.BABY) {
-                Logger.setMsg("in AgeCat.BABY  "+position);
+                Logger.setMsg("in AgeCat.BABY  " + position);
                 if (position == 0) return new WFA_0_5(child);
                 if (position == 1) return new LHFA_0_5(child);
                 if (position == 2) return new WFH_0_5(child, true);

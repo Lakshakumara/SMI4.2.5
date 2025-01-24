@@ -51,30 +51,37 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.WPHolder
         return new WPHolder(LayoutInflater.from(parent.getContext())
                 .inflate(R.layout.vertical_list_item, parent, false));
     }
+
     @Override
     public int getItemViewType(int position) {
         if (childWpDataList != null && childWpDataList.size() > 0) {
             return VIEW_TYPE_NORMAL;
         } else return VIEW_TYPE_EMPTY;
     }
+
     @Override
     public void onBindViewHolder(@NonNull final WPHolder holder, final int position) {
-        if(childWpDataList == null || childWpDataList.size() == 0) return;
+        if (childWpDataList == null || childWpDataList.size() == 0) return;
         final ChildWpData currentItem = childWpDataList.get(position);
         @SuppressLint("SimpleDateFormat") String sqlDate = new SimpleDateFormat("yyyy-MM-dd").format(currentItem.getmDate());
         holder.madte.setText(String.format("%s  %s", sqlDate,
                 getAgeText(currentItem.getAgeYY(), currentItem.getAgeMM(), currentItem.getAgeDD())));
 
-        holder.show_wt.setText("Status   Wt - "+currentItem.getWt() + "  Ht - " + currentItem.getHt());
-        holder.show_ht.setText(String.format("%s %s", ctx.getString(R.string.note), (currentItem.getNote() == null)?"":currentItem.getNote()));
+        holder.show_wt.setText("Status   Wt - " + currentItem.getWt() + "  Ht - " + currentItem.getHt());
+        holder.show_ht.setText(String.format("%s %s", ctx.getString(R.string.note), (currentItem.getNote() == null) ? "" : currentItem.getNote()));
 
     }
+
     private String getAgeText(int ageYY, int ageMM, int ageDD) {
         if (ageYY == 0 && ageMM == 0 && ageDD == 0) return ctx.getString(R.string.birth_weight);
-        else if (ageYY == 0 && ageMM == 0) return ctx.getString(R.string.agelable)+": " + ageDD + ctx.getString(R.string.d);
-        else if (ageYY == 0) return ctx.getString(R.string.agelable)+": " + ageMM + ctx.getString(R.string.m) + ageDD + ctx.getString(R.string.d);
-        else return ctx.getString(R.string.agelable)+": " + ageYY + ctx.getString(R.string.y) + ageMM + ctx.getString(R.string.m) + ageDD + ctx.getString(R.string.d);
+        else if (ageYY == 0 && ageMM == 0)
+            return ctx.getString(R.string.agelable) + ": " + ageDD + ctx.getString(R.string.d);
+        else if (ageYY == 0)
+            return ctx.getString(R.string.agelable) + ": " + ageMM + ctx.getString(R.string.m) + ageDD + ctx.getString(R.string.d);
+        else
+            return ctx.getString(R.string.agelable) + ": " + ageYY + ctx.getString(R.string.y) + ageMM + ctx.getString(R.string.m) + ageDD + ctx.getString(R.string.d);
     }
+
     @Override
     public int getItemCount() {
         if (childWpDataList != null && childWpDataList.size() > 0) {
@@ -112,7 +119,8 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.WPHolder
                 mBackground.setSelected(true);
                 int position = getAdapterPosition();
                 if (listener != null && position != RecyclerView.NO_POSITION) {
-                    if(childWpDataList.size() != 0) listener.onItemClickListener(childWpDataList.get(position));
+                    if (childWpDataList.size() != 0)
+                        listener.onItemClickListener(childWpDataList.get(position));
                 }
             });
         }

@@ -68,7 +68,7 @@ public class DataTable {
                     if (precision) {
                         float val = Float.parseFloat(wordsArray[0]);
                         //if (val == 1 || val % DEEP == 0)
-                            dataTableFloat.put(val, inner);
+                        dataTableFloat.put(val, inner);
                     } else {
                         int age = Integer.parseInt(wordsArray[0]);
                         //if(age == 60 || age == 228 || age % DEEP == 0)

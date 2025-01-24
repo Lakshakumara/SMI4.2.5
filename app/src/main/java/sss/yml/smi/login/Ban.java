@@ -25,17 +25,18 @@ public class Ban extends AppCompatActivity {
                 .commit();
         //finish();*/
         WebView web = findViewById(R.id.webViewer);
-        if(isConnected())
+        if (isConnected())
             web.getSettings().setCacheMode(WebSettings.LOAD_DEFAULT);
-        else  web.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
+        else web.getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
         web.getSettings().setLoadsImagesAutomatically(true);
         web.getSettings().setJavaScriptEnabled(true);
         web.setScrollBarStyle(View.SCROLLBARS_INSIDE_OVERLAY);
         web.loadUrl(PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getString("urlban", ""));
         web.setWebViewClient(new MyBrowser());
     }
+
     public boolean isConnected() {
-        ConnectivityManager cm = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if (null != cm) {
             NetworkInfo info = cm.getActiveNetworkInfo();
             return (info != null && info.isConnected());
@@ -49,10 +50,11 @@ public class Ban extends AppCompatActivity {
             view.loadUrl(url);
             return true;
         }
+
         @Override
         public void onReceivedError(WebView view, int errorCode, String description, String failingUrl) {
-            if(errorCode == -2)
-                view.loadData("Connect to internet for more info","Text/html", "utf-8");
+            if (errorCode == -2)
+                view.loadData("Connect to internet for more info", "Text/html", "utf-8");
         }
 
         @Override

@@ -216,4 +216,7 @@
     <string name="reset">Reset</string>
     <string name="export">Export</string>
     <string name="year">Year</string>
+    <string name="wt_normal">WT Normal</string>
+    <string name="ht_normal">HT Normal</string>
+    <string name="total">Total</string>
 </resources>

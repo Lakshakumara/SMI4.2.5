@@ -1,10 +1,15 @@
 package sss.yml.smi.smi;
 
+import static sss.yml.smi.smi.SMIDataArgs.*;
+
 import android.app.AlertDialog;
-import android.database.Cursor;
+import android.content.ContentResolver;
+import android.content.ContentValues;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
-import android.util.Log;
+import android.provider.MediaStore;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -23,7 +28,6 @@ import androidx.appcompat.widget.PopupMenu;
 import androidx.core.view.MenuProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Lifecycle;
-import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDirections;
@@ -35,8 +39,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.google.android.material.textview.MaterialTextView;
 
-import java.io.File;
-import java.io.FileWriter;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -45,8 +48,6 @@ import sss.yml.smi.Home.HomePage;
 import sss.yml.smi.R;
 import sss.yml.smi.room.School;
 import sss.yml.smi.room.Student;
-import sss.yml.smi.util.CSVWriter;
-import sss.yml.smi.util.Logger;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -118,7 +119,7 @@ public class SMIData extends Fragment implements SMIDataAdapter.SingleClickListe
             censusNo = SMIDataArgs.fromBundle(getArguments()).getCensusNo();
             grade = SMIDataArgs.fromBundle(getArguments()).getGrade();
             ((HomePage) requireActivity()).setActionBarTitle(grade);
-            year = Calendar.getInstance().get(Calendar.YEAR) - 1900;
+            year = Calendar.getInstance().get(Calendar.YEAR);// - 1900;
             //getStudents(year, grade);
         }
         mViewModel.getStudentList(censusNo, year, grade, 1).observe(getViewLifecycleOwner(), students ->
@@ -132,25 +133,22 @@ public class SMIData extends Fragment implements SMIDataAdapter.SingleClickListe
 
             @Override
             public boolean onMenuItemSelected(@NonNull MenuItem menuItem) {
-                switch (menuItem.getItemId()) {
-                    case R.id.filter:
-                        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
-                        builder.setTitle("Filter By");
-                        builder.setSingleChoiceItems(R.array.filter, -1, (dialog, which) -> {
-                            mViewModel.getStudentList(censusNo, year, grade, which).observe(getViewLifecycleOwner(), students ->
-                                    sAdapter.setData(false, students, requireContext()));
-                        });
-                        AlertDialog dialog = builder.create();
-                        dialog.show();
-                        break;
-                    case R.id.sc_export:
-                        exportToCSV();
-                        break;
-                    case R.id.sc_chart:
-                        /*Intent i = new Intent(getContext(), ChartShow.class);
+                int id = menuItem.getItemId();
+                if (id == R.id.filter) {
+                    AlertDialog.Builder builder = new AlertDialog.Builder(getActivity());
+                    builder.setTitle("Filter By");
+                    builder.setSingleChoiceItems(R.array.filter, -1, (dialog, which) -> {
+                        mViewModel.getStudentList(censusNo, year, grade, which).observe(getViewLifecycleOwner(), students ->
+                                sAdapter.setData(false, students, requireContext()));
+                    });
+                    AlertDialog dialog = builder.create();
+                    dialog.show();
+                } else if (id == R.id.sc_export) {
+                    exportToCSV();
+                } else if (id == R.id.sc_chart) {
+                    /*Intent i = new Intent(getContext(), ChartShow.class);
                         i.putExtra("student", new Student());
                         startActivity(i);*/
-                        break;
                 }
                 return false;
             }
@@ -238,28 +236,27 @@ public class SMIData extends Fragment implements SMIDataAdapter.SingleClickListe
         MenuInflater inflater = popup.getMenuInflater();
         inflater.inflate(R.menu.smi_data_card, popup.getMenu());
         popup.setOnMenuItemClickListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.edit:
-                    try {
-                        NavDirections navDirections = SMIDataDirections.actionSMIDataToSmi2(censusNo, grade, student);
-                        Navigation.findNavController(view).navigate(navDirections);
-                    } catch (Exception ignored) {
-                    }
-                    return true;
-                case R.id.delete:
-                    AlertDialog.Builder builder2 = new AlertDialog.Builder(requireContext());
-                    builder2.setTitle("Delete ?");
-                    builder2.setPositiveButton(getString(R.string.delete), (dialogInterface, i) -> {
-                        mViewModel.delete(student);
-                    });
-                    builder2.setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
-                    });
-                    AlertDialog dialog2 = builder2.create();
-                    dialog2.show();
-                    return true;
-                default:
-                    return false;
+            int id = item.getItemId();
+            if (id == R.id.edit) {
+
+                try {
+                    NavDirections navDirections = SMIDataDirections.actionSMIDataToSmi2(censusNo, grade, student);
+                    Navigation.findNavController(view).navigate(navDirections);
+                } catch (Exception ignored) {
+                }
+            } else if (id == R.id.delete) {
+                AlertDialog.Builder builder2 = new AlertDialog.Builder(requireContext());
+                builder2.setTitle("Delete ?");
+                builder2.setPositiveButton(getString(R.string.delete), (dialogInterface, i) -> {
+                    mViewModel.delete(student);
+                });
+                builder2.setNegativeButton(getString(R.string.cancel), (dialogInterface, i) -> {
+                });
+                AlertDialog dialog2 = builder2.create();
+                dialog2.show();
+
             }
+            return true;
         });
         popup.show();
     }
@@ -267,6 +264,7 @@ public class SMIData extends Fragment implements SMIDataAdapter.SingleClickListe
     private void exportToCSV() {
         final int[] selectedCensusNo = {0};
         final int[] selectedYear = {0};
+        final String[] selectedGrade = {""};
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(requireContext());
         bottomSheetDialog.setContentView(R.layout.smi_data_export);
         MaterialTextView title = bottomSheetDialog.findViewById(R.id.txtTitle);
@@ -291,12 +289,17 @@ public class SMIData extends Fragment implements SMIDataAdapter.SingleClickListe
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedCensusNo[0] = (schoolList.get(position)).getCensusNo();
-                mViewModel.getYearList(schoolList.get(position).getCensusNo())
+                assert spGrade != null;
+                spGrade.setAdapter(new ArrayAdapter<>(requireContext(),
+                        R.layout.list_item, new String[]{}));
+
+                mViewModel.getYearList(selectedCensusNo[0])
                         .observe(getViewLifecycleOwner(), years ->
                         {
                             assert spYear != null;
                             spYear.setAdapter(new ArrayAdapter<>(requireContext(),
                                     R.layout.list_item, years));
+
                         });
             }
 
@@ -310,10 +313,10 @@ public class SMIData extends Fragment implements SMIDataAdapter.SingleClickListe
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 selectedYear[0] = (int) spYear.getAdapter().getItem(position);
-                Logger.setMsg("selected Year", selectedYear[0]);
                 mViewModel.getGradeList(selectedCensusNo[0], selectedYear[0])
                         .observe(getViewLifecycleOwner(), grades ->
                         {
+                            grades.add(0, "All");
                             assert spGrade != null;
                             spGrade.setAdapter(new ArrayAdapter<>(requireContext(),
                                     R.layout.list_item, grades));
@@ -324,19 +327,49 @@ public class SMIData extends Fragment implements SMIDataAdapter.SingleClickListe
             public void onNothingSelected(AdapterView<?> parent) {
             }
         });
-
-
-        bottomSheetDialog.findViewById(R.id.btnExport).setOnClickListener(v -> {
-            Logger.setMsg("Exported Click");
-            String fileName = "smi_data";
-            File exportDir = new File(Environment.getExternalStorageDirectory(), "bmiExport");
-            if (!exportDir.exists()) {
-                exportDir.mkdirs();
+        assert spGrade != null;
+        spGrade.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                selectedGrade[0] = (String) spGrade.getAdapter().getItem(position);
             }
 
-            File file = new File(exportDir, fileName + ".csv");
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
+
+        bottomSheetDialog.findViewById(R.id.btnExport).setOnClickListener(v -> {
+            /*Logger.setMsg("Exported Click");
+            String fileName = "smi_data";
+            File exportDir = new File(Environment.getExternalStorageDirectory().getPath()+ "/BMISimulator");
+            //File exportDir = new File(Environment.getExternalStorageDirectory(), "bmiExport");
+            if (!exportDir.exists()) {
+                boolean mkdirs = exportDir.mkdirs();
+                Logger.setMsg("not exists dir",mkdirs);
+            }
+
+
+            // Create a new file in the Downloads folder
+            ContentValues contentValues = new ContentValues();
+            contentValues.put(MediaStore.Downloads.DISPLAY_NAME, fileName);
+            contentValues.put(MediaStore.Downloads.MIME_TYPE, "text/csv");
+            contentValues.put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+
+
+            //
+            //File file = new File(exportDir, fileName + ".csv");
             try {
-                file.createNewFile();
+                //file.createNewFile();
+
+                // Insert the file into MediaStore
+                OutputStream outputStream = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+                    outputStream = context.getContentResolver().openOutputStream(
+                            MediaStore.Downloads.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY), "w");
+                }
+
+
                 CSVWriter csvWrite = new CSVWriter(new FileWriter(file));
                 Cursor curCSV = mViewModel.getcursor("SELECT * FROM student", null);
                 csvWrite.writeNext(curCSV.getColumnNames());
@@ -353,11 +386,96 @@ public class SMIData extends Fragment implements SMIDataAdapter.SingleClickListe
                 //ToastHelper.showToast(this, "Exported", Toast.LENGTH_SHORT);
             } catch (Exception sqlEx) {
                 Log.e("MainActivity", sqlEx.getMessage(), sqlEx);
-            }
+            }*/
 
+            mViewModel.getStudentList(selectedCensusNo[0], selectedYear[0], selectedGrade[0], 0)
+                    .observe(getViewLifecycleOwner(), students ->
+                    {
+// CSV File Content
+                        StringBuilder csvBuilder = new StringBuilder();
+                        csvBuilder.append("ID,Name,BMI,Grade\n"); // Add headers
+
+                        for (Student student : students) {
+                            csvBuilder.append(student.getId()).append(",")
+                                    .append(student.getUserName()).append(",")
+                                    .append(student.getBmi()).append(",")
+                                    .append(student.getGrade()).append("\n");
+                        }
+                        String csvContent = csvBuilder.toString();
+
+                        // Save to Downloads folder
+                        String fileName = "students.csv";
+                        try {
+                            ContentValues contentValues = new ContentValues();
+                            contentValues.put(MediaStore.Downloads.DISPLAY_NAME, fileName);
+                            contentValues.put(MediaStore.Downloads.MIME_TYPE, "text/csv");
+                            contentValues.put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+
+                            // Get content URI
+                            ContentResolver contentResolver = requireContext().getContentResolver();
+                            Uri uri;
+                            OutputStream outputStream = null;
+
+                            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+                                uri = contentResolver.insert(MediaStore.Downloads.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY), contentValues);
+                                if (uri == null) {
+                                    throw new Exception("Failed to create new file entry.");
+                                }
+                                outputStream = requireContext().getContentResolver().openOutputStream(
+                                        MediaStore.Downloads.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY));
+                            }
+                            if (outputStream != null) {
+                                outputStream.write(csvContent.getBytes());
+                                outputStream.close();
+                                Toast.makeText(requireContext(), "File saved to Downloads folder", Toast.LENGTH_SHORT).show();
+                                bottomSheetDialog.hide();
+                            } else {
+                                throw new Exception("Failed to create output stream.");
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(requireContext(), "Error saving file: " + e.getMessage(), Toast.LENGTH_LONG).show();
+                        }
+                    });
+
+
+            // Create Workbook and Sheet
+           /* Workbook workbook = new XSSFWorkbook();
+            Sheet sheet = workbook.createSheet("Students");
+
+            Row headerRow = sheet.createRow(0);
+            headerRow.createCell(0).setCellValue("ID");
+            headerRow.createCell(1).setCellValue("Name");
+            headerRow.createCell(2).setCellValue("Age");
+            headerRow.createCell(3).setCellValue("Grade");
+
+            // Save to Downloads folder
+            String fileName = "students.xlsx";
+            try {
+                ContentValues contentValues = new ContentValues();
+                contentValues.put(MediaStore.Downloads.DISPLAY_NAME, fileName);
+                contentValues.put(MediaStore.Downloads.MIME_TYPE, "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+                contentValues.put(MediaStore.Downloads.RELATIVE_PATH, Environment.DIRECTORY_DOWNLOADS);
+
+                OutputStream outputStream = null;
+                if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.Q) {
+                    outputStream = requireContext().getContentResolver().openOutputStream(
+                            MediaStore.Downloads.getContentUri(MediaStore.VOLUME_EXTERNAL_PRIMARY));
+                }
+                if (outputStream != null) {
+                    workbook.write(outputStream);
+                    outputStream.close();
+                    workbook.close();
+                    Toast.makeText(requireContext(), "Excel file saved to Downloads folder", Toast.LENGTH_SHORT).show();
+                } else {
+                    throw new Exception("Failed to create output stream.");
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                Toast.makeText(requireContext(), "Error saving Excel file: " + e.getMessage(), Toast.LENGTH_LONG).show();
+            }*/
         });
 
         bottomSheetDialog.show();
-
     }
 }

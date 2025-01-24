@@ -63,11 +63,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
     }
     compileSdk 34
-    buildToolsVersion '34.0.0'
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -76,12 +75,13 @@ dependencies {
     implementation 'com.firebaseui:firebase-ui-auth:8.0.1'
     implementation 'com.google.firebase:firebase-auth'
     implementation 'com.google.firebase:firebase-firestore'
-    implementation 'com.google.android.material:material:1.11.0'
+    implementation 'com.google.android.material:material:1.12.0'
     implementation 'com.google.firebase:firebase-ads:21.5.0'
     implementation 'com.google.android.gms:play-services-ads:21.5.0'
+   // implementation 'org.apache.poi:poi-ooxml:4.1.2'
 
     implementation 'androidx.multidex:multidex:2.0.1'
-    implementation 'androidx.webkit:webkit:1.10.0'
+    implementation 'androidx.webkit:webkit:1.10.0'//1.12.1 min 21
     implementation 'androidx.annotation:annotation:1.7.1'
     implementation 'androidx.navigation:navigation-fragment:2.7.7'
     implementation 'androidx.navigation:navigation-ui:2.7.7'

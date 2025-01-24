@@ -1,9 +1,11 @@
 package sss.yml.smi.ui.child;
 
 import android.app.Application;
+
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
+
 import sss.yml.smi.room.Child;
 import sss.yml.smi.room.DbRepository;
 
@@ -28,9 +30,11 @@ public class ChildRegViewModel extends AndroidViewModel {
     public void delete(Child child) {
         repository.delete(child);
     }
+
     public void deleteData(int childId) {
         repository.deleteData(childId);
     }
+
     public Integer getChildId(String name) {
         return repository.getChildId(name);
     }

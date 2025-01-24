@@ -9,11 +9,14 @@ import android.view.*;
 import android.widget.Button;
 import android.widget.Switch;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.widget.SearchView;
 import androidx.fragment.app.Fragment;
+
 import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
+
 import sss.yml.smi.R;
 import sss.yml.smi.util.CircularImageView;
 
@@ -34,8 +37,9 @@ public class RequestFragment extends Fragment {
     private CircularImageView profilePhoto;
     FirebaseFirestore db;
     ProgressDialog mProgressDialog;
+
     @Override
-    public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.admin_fragment_request, container, false);
         mProgressDialog = new ProgressDialog(requireContext());
         setHasOptionsMenu(true);
@@ -52,16 +56,16 @@ public class RequestFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         view.findViewById(R.id.fupdate).setOnClickListener(view1 -> {
-            if(id == null) return;
+            if (id == null) return;
             showProgressDialog("Saving data");
             Map<String, Object> news = new HashMap<>();
             news.put("gsmi", fsmi.isChecked());
             news.put("gwp", fwp.isChecked());
             db.collection("request")
-                    .document(id).update("gsmi", fsmi.isChecked(),"gwp", fwp.isChecked())
+                    .document(id).update("gsmi", fsmi.isChecked(), "gwp", fwp.isChecked())
                     .addOnSuccessListener(aVoid -> {
                         db.collection("users")
-                                .document(id).update("isSMI", fsmi.isChecked(),"isWP", fwp.isChecked())
+                                .document(id).update("isSMI", fsmi.isChecked(), "isWP", fwp.isChecked())
                                 .addOnSuccessListener(Void -> {
                                     hideProgressDialog();
                                 })
@@ -87,55 +91,58 @@ public class RequestFragment extends Fragment {
             @Override
             public boolean onQueryTextSubmit(String query) {
                 id = query;
-                showProgressDialog("Fetching "+id);
-                if(id.equalsIgnoreCase("all")){
+                showProgressDialog("Fetching " + id);
+                if (id.equalsIgnoreCase("all")) {
 
-                }else
+                } else
                     db.collection("request").document(id)
-                        .addSnapshotListener((snapshot, e) -> {
-                            if (snapshot != null && snapshot.exists()) {
-                                Map<String, Object> data = snapshot.getData();
-                                fsmi.setChecked(data.get("smi") != null && (boolean) data.get("smi"));
-                                fwp.setChecked(data.get("wp") != null && (boolean) data.get("wp"));
-                                db.collection("users").document(id)
-                                        .addSnapshotListener((user, e1) -> {
-                                            if (user != null && user.exists()) {
-                                                Map<String, Object> uData = user.getData();
-                                                assert uData != null;
-                                                fUser.append(uData.get("district")+" -> "+uData.get("moh")+" -> "+uData.get("range")+"\n");
-                                                Timestamp ts = ((Timestamp)uData.get("startDate"));
-                                                fUser.append(uData.get("cat")+" -> "+dt.format(ts.toDate())+"\n");
-                                                fUser.append(uData.get("pname")+"\n");
-                                                fUser.append(uData.get("pemail")+"\n");
-                                                fUser.append(uData.get("ptp")+"\n");
+                            .addSnapshotListener((snapshot, e) -> {
+                                if (snapshot != null && snapshot.exists()) {
+                                    Map<String, Object> data = snapshot.getData();
+                                    fsmi.setChecked(data.get("smi") != null && (boolean) data.get("smi"));
+                                    fwp.setChecked(data.get("wp") != null && (boolean) data.get("wp"));
+                                    db.collection("users").document(id)
+                                            .addSnapshotListener((user, e1) -> {
+                                                if (user != null && user.exists()) {
+                                                    Map<String, Object> uData = user.getData();
+                                                    assert uData != null;
+                                                    fUser.append(uData.get("district") + " -> " + uData.get("moh") + " -> " + uData.get("range") + "\n");
+                                                    Timestamp ts = ((Timestamp) uData.get("startDate"));
+                                                    fUser.append(uData.get("cat") + " -> " + dt.format(ts.toDate()) + "\n");
+                                                    fUser.append(uData.get("pname") + "\n");
+                                                    fUser.append(uData.get("pemail") + "\n");
+                                                    fUser.append(uData.get("ptp") + "\n");
 
-                                                new getImage().execute(uData.get("photo").toString());
-                                                fUser.append("\n\n\n");
+                                                    new getImage().execute(uData.get("photo").toString());
+                                                    fUser.append("\n\n\n");
 
-                                                for(Map.Entry<String, Object> entry: uData.entrySet()){
-                                                    if(entry.getKey().equalsIgnoreCase("photo") ||
-                                                            entry.getKey().equalsIgnoreCase("startDate") ||
-                                                            entry.getKey().equalsIgnoreCase("endDate") ) continue;
-                                                    fUser.append(entry.getKey()+":\t"+entry.getValue()+"\n");
+                                                    for (Map.Entry<String, Object> entry : uData.entrySet()) {
+                                                        if (entry.getKey().equalsIgnoreCase("photo") ||
+                                                                entry.getKey().equalsIgnoreCase("startDate") ||
+                                                                entry.getKey().equalsIgnoreCase("endDate"))
+                                                            continue;
+                                                        fUser.append(entry.getKey() + ":\t" + entry.getValue() + "\n");
+                                                    }
+
+                                                    hideProgressDialog();
                                                 }
-
-                                                hideProgressDialog();
-                                            }
-                                        });
-                            }
-                        });
+                                            });
+                                }
+                            });
                 return false;
             }
+
             @Override
             public boolean onQueryTextChange(String newText) {
                 return false;
             }
         });
     }
+
     private class getImage extends AsyncTask<String, Void, Bitmap> {
 
         @Override
-        protected Bitmap doInBackground(String...strings) {
+        protected Bitmap doInBackground(String... strings) {
             Bitmap bitmap = null;
             try {
                 URL imageurl = new URL(strings[0]);
@@ -151,6 +158,7 @@ public class RequestFragment extends Fragment {
             profilePhoto.setImageBitmap(result);
         }
     }
+
     private void showProgressDialog(String message) {
         mProgressDialog.setMessage(message);
         mProgressDialog.setIndeterminate(true);

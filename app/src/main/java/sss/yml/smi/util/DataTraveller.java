@@ -136,26 +136,26 @@ public class DataTraveller {
     }
 
     public static DataTable getWFH_girls_2_5_z() {
-        return (wfh_girls_2_5_z != null) ? wfh_girls_2_5_z:
+        return (wfh_girls_2_5_z != null) ? wfh_girls_2_5_z :
                 new DataTable(HomePage.application.getResources().openRawResource(R.raw.wfh_girls_2_5_z), true);
     }
 
     public static DataTable getBMI_boys_z() {
-        return (bmi_boys_z != null)?bmi_boys_z:
+        return (bmi_boys_z != null) ? bmi_boys_z :
                 new DataTable(HomePage.application.getResources().openRawResource(R.raw.bmi_boys_z));
     }
 
     public static DataTable getBMI_girls_z() {
-        return (bmi_girls_z != null)?bmi_girls_z:
+        return (bmi_girls_z != null) ? bmi_girls_z :
                 new DataTable(HomePage.application.getResources().openRawResource(R.raw.bmi_girls_z));
     }
 
     public static DataTable getHFA_boys_z() {
-        return (hfa_boys_z != null)?hfa_boys_z:new DataTable(HomePage.application.getResources().openRawResource(R.raw.hfa_boys_z));
+        return (hfa_boys_z != null) ? hfa_boys_z : new DataTable(HomePage.application.getResources().openRawResource(R.raw.hfa_boys_z));
     }
 
     public static DataTable getHFA_girls_z() {
-        return (hfa_girls_z != null)?hfa_girls_z:new DataTable(HomePage.application.getResources().openRawResource(R.raw.hfa_girls_z));
+        return (hfa_girls_z != null) ? hfa_girls_z : new DataTable(HomePage.application.getResources().openRawResource(R.raw.hfa_girls_z));
     }
 
     public static boolean isNull() {

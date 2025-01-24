@@ -46,7 +46,7 @@
     </string-array>
 
     <string-array name="sex">
-        <item>Sex</item>
+        <item>Gender</item>
         <item>Male</item>
         <item>Female</item>
     </string-array>
@@ -205,7 +205,7 @@
     <string name="check_maturity_weeks">Check Maturity weeks</string>
     <string name="data_will_lost_dueto_dob_change">Data will lost due to DOB change</string>
     <string name="data_will_lost_dueto_sex_change">Data will lost due to sex change</string>
-    <string name="sex_not_selected">Sex is not selected</string>
+    <string name="sex_not_selected">Gender is not selected</string>
     <string name="profile_not_complete">Profile not complete</string>
     <string name="profile">Profile</string>
     <string name="user_name">User name</string>
@@ -236,9 +236,12 @@
     <string name="nos">Nos</string>
     <string name="your_account_is_ban">Your Account Is Ban</string>
     <string name="asstance_contact_lakshakumara_gmail_com_or_94714396453">Asstance Contact Lakshakumara@gmail.com or +94714396453</string>
-    <string name="enter_sex">Enter Sex</string>
+    <string name="enter_sex">Enter gender</string>
     <string name="search">Search</string>
     <string name="reset">Reset</string>
     <string name="export">Export</string>
     <string name="year">Year</string>
+    <string name="wt_normal">WT Normal</string>
+    <string name="ht_normal">HT Normal</string>
+    <string name="total">Total</string>
 </resources>

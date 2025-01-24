@@ -180,7 +180,6 @@ public class DbRepository {
             Calendar c = Calendar.getInstance();
             c.set(year, 0, 1);
             this.from = c.getTime();
-            //new Date(year-
             c.set(year, 11, 31);
             this.to = c.getTime();
         }
@@ -211,15 +210,21 @@ public class DbRepository {
 
         public GetStudentList(int censusNo, int year, String grade, int order) {
             this.censusNo = censusNo;
-            this.from = new Date(year, 0, 01);
-            this.to = new Date(year, 11, 31);
+            Calendar c = Calendar.getInstance();
+            c.set(year, 0, 1);
+            this.from = c.getTime();
+            c.set(year, 11, 31);
+            this.to = c.getTime();
             this.grade = grade;
             this.order = order;
         }
 
         @Override
         protected LiveData<List<Student>> doInBackground(Void... voids) {
-            return studentDao.getStudentList(censusNo, from, to, grade, order);
+            if(grade.equalsIgnoreCase("all")){
+                return studentDao.getStudentList(censusNo, from, to, order);
+            }else
+                return studentDao.getStudentList(censusNo, from, to, grade, order);
         }
     }
 
@@ -382,7 +387,7 @@ public class DbRepository {
         }
     }
 
-   /* public LiveData<List<Integer>> getYears(int censusNo) {
+    public LiveData<List<Integer>> getYears(int censusNo) {
         LiveData<List<Integer>> textList = null;
         try {
             textList = new GetYearsAsyncTask().execute(censusNo).get();
@@ -407,27 +412,28 @@ public class DbRepository {
             Collections.sort(sortedYears);
             return new MutableLiveData<>(sortedYears);
         }
-    }*/
-   public LiveData<List<Integer>> getYears(int censusNo) {
-       MutableLiveData<List<Integer>> liveData = new MutableLiveData<>();
+    }
 
-       executorService.execute(() -> {
-           List<Date> dates = studentDao.getYears(censusNo);
+    /* public LiveData<List<Integer>> getYears(int censusNo) {
+         MutableLiveData<List<Integer>> liveData = new MutableLiveData<>();
 
-           List<Integer> years = new ArrayList<>();
-           for (Date date : dates) {
-               Calendar calendar = Calendar.getInstance();
-               calendar.setTime(date);
-               years.add(calendar.get(Calendar.YEAR));
-           }
+         executorService.execute(() -> {
+             List<Date> dates = studentDao.getYears(censusNo);
 
-           Collections.sort(years); // Sort the years
-           liveData.postValue(years); // Update LiveData on the main thread
-       });
+             List<Integer> years = new ArrayList<>();
+             for (Date date : dates) {
+                 Calendar calendar = Calendar.getInstance();
+                 calendar.setTime(date);
+                 years.add(calendar.get(Calendar.YEAR));
+             }
 
-       return liveData;
-   }
+             Collections.sort(years); // Sort the years
+             liveData.postValue(years); // Update LiveData on the main thread
+         });
 
+         return liveData;
+     }
+  */
     public Cursor getCursor(String query, Object[] args) {
         return database.query(query, args);
     }

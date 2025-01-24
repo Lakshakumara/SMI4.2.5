@@ -41,6 +41,7 @@ public class AboutFragment extends Fragment {
         super.onActivityCreated(savedInstanceState);
         //mViewModel = new ViewModelProvider(this).get(AboutViewModel.class);
     }
+
     @Override
     public void onCreateOptionsMenu(@NonNull Menu menu, @NonNull MenuInflater inflater) {
         menu.clear();

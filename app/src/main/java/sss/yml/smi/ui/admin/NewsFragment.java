@@ -32,8 +32,9 @@ public class NewsFragment extends Fragment {
     TextView msg;
     FirebaseFirestore db;
     ProgressDialog mProgressDialog;
+
     @Override
-    public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.admin_fragment_news, container, false);
         mProgressDialog = new ProgressDialog(requireContext());
 
@@ -56,14 +57,14 @@ public class NewsFragment extends Fragment {
                 .addSnapshotListener((snapshot, e) -> {
                     if (snapshot != null && snapshot.exists()) {
                         Map<String, Object> data = snapshot.getData();
-                        newsType.setText(data.get("newsType")==null?null:data.get("newsType").toString());
+                        newsType.setText(data.get("newsType") == null ? null : data.get("newsType").toString());
                         String id = data.get("newsId").toString();
                         newsId.setText(id);
-                        String newMessage = data.get("title")==null?"":data.get("title").toString();
+                        String newMessage = data.get("title") == null ? "" : data.get("title").toString();
                         title.setText(newMessage);
-                        String newSubTitle = data.get("subTitle")==null?"":data.get("subTitle").toString();
+                        String newSubTitle = data.get("subTitle") == null ? "" : data.get("subTitle").toString();
                         subTitle.setText(newSubTitle);
-                        String newDescription = data.get("description")==null?"":data.get("description").toString();
+                        String newDescription = data.get("description") == null ? "" : data.get("description").toString();
                         description.setText(newDescription);
                         String nos = data.get("nos").toString();
                         nosView.setText(nos);
@@ -83,7 +84,7 @@ public class NewsFragment extends Fragment {
             news.put("newsType", newsType.getText().toString());
             news.put("newsId", newsId.getText().toString());
             news.put("title", title.getText().toString());
-            news.put("subTitle",subTitle.getText().toString() );
+            news.put("subTitle", subTitle.getText().toString());
             news.put("description", description.getText().toString());
             news.put("nos", Integer.parseInt(nosView.getText().toString()));
             db.collection("BMIS")
@@ -92,11 +93,13 @@ public class NewsFragment extends Fragment {
                         msg.setText("Uploaded");
                         hideProgressDialog();
                     })
-            .addOnFailureListener(e -> {
-                msg.setText(R.string.error);hideProgressDialog();
-            });
+                    .addOnFailureListener(e -> {
+                        msg.setText(R.string.error);
+                        hideProgressDialog();
+                    });
         });
     }
+
     private void showProgressDialog(String message) {
         mProgressDialog.setMessage(message);
         mProgressDialog.setIndeterminate(true);
