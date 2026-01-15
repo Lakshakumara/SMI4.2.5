@@ -75,7 +75,6 @@ public class HomeView extends Fragment {
         }
         return false;
     }
-
     private class MyBrowser extends WebViewClient {
         @Override
         public boolean shouldOverrideUrlLoading(WebView view, String url) {

@@ -41,16 +41,9 @@ public class SchoolViewModel extends ViewModel {
 
     public LiveData<List<String>> getList (String query, List<String>fieldList) {
         List<String> textList = new ArrayList<>();
-        //LiveData<List<String>> lTextList = null;
+
         new GetArray(query, fieldList).execute(textList);
         return new MutableLiveData<>(textList);
-       /* try {
-            lTextList =  new GetArray(query, fieldList).execute().get();
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-        return lTextList;
-        */
     }
 
     public static class GetArray extends AsyncTask<List<String>, Void, LiveData<List<String>>> {

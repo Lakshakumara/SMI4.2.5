@@ -1,348 +1,348 @@
-Marking layout:activity_nortification:2131492895 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:smi_data_entry:2131623947 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:sch_age_group_error:2131952048 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:smi_data_entry_summary_fragment:2131493057 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:myAdView:2131296755 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:grade:2131296605 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:yy:2131297123 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:mm:2131296722 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:dd:2131296513 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:fab:2131296572 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:txtHt:2131297066 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:txtWt:2131297070 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:rbM:2131296857 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:rbF:2131296856 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:summary_table_layout:2131296985 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nos_stunting:2131296791 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nos_wasted:2131296793 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nos_ow:2131296790 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nos_ob:2131296789 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nos_ht_normal:2131296788 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nos_wt_normal:2131296794 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nos_total:2131296792 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:gradeList:2131296606 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:htRequired:2131951862 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:wtRequired:2131952102 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:htErrorZero:2131951859 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:htMinZero:2131951861 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:htMaxError:2131951860 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:wtErrorZero:2131952099 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:wtMinZero:2131952101 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:wtMaxError:2131952100 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:bmiMinError:2131951664 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:bmiMaxError:2131951663 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:enter_sex:2131951733 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:y:2131952104 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:m:2131951874 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:d:2131951712 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:auto:2131296412 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sch_measure_date:2131296891 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:showData:2131296935 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:list_item:2131492964 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:date_change:2131492910 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:change_smi_date:2131951677 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:calendarView:2131296450 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:change:2131951675 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:summary_short_popup:2131493061 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:txtAgeNote:2131297064 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:txtBMINote:2131297065 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:bmiError:2131951662 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:txtWtNote:2131297071 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:txtHtNote:2131297067 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:summary:2131952076 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:summary_title:2131493062 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:student_name:2131296979 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:update:2131952085 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:add_pop:2131951649 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:try_again_pop:2131952083 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:chart:2131951681 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:severely_stunted:2131952059 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:moderate_stunted:2131951916 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:risk_stunt:2131952039 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:normal_height:2131951997 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:over_height:2131952015 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:severely_wasted:2131952060 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:low_weight:2131951872 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:risk_low_weight:2131952037 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:normal_wt:2131951999 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:overweight:2131952017 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:obesity:2131952006 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:search:2131623944 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:search:2131296910 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:search:2131952050 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:login_personal_data:2131492965 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:progressBar:2131296850 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:profilePhoto:2131296848 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:log_email:2131296682 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:my_pin:2131296756 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:log_name:2131296685 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:log_tp:2131296687 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:log_district:2131296681 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:log_moh:2131296684 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:log_range:2131296686 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:log_job_title:2131296683 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking array:district:2130903042 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:spinner_log_category:2131296957 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking array:logging_group:2130903048 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:btnContinue:2131296432 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking xml:root_preferences:2132148225 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:cancel:2131951674 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:action_adminFragment_to_usersFragment:2131296321 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:action_adminFragment_to_newsFragment:2131296320 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:action_nav_admin_to_requestFragment:2131296349 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:admin_fragment:2131492896 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:btn_admin_user:2131296439 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:btn_admin_news:2131296436 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:btn_admin_request:2131296438 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:swDrawValue:2131296992 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_send:2131230934 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_about:2131230895 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:chart_menu_htage:2131623938 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:wfa_fragment:2131493066 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wfaGrowthChart:2131297099 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:homeview:2131492962 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:webViewer:2131297093 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:severely_wasted_short:2131952061 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:bmi:2131951661 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:required_wt:2131952035 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:for_normal:2131951751 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:Wasted:2131951616 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:Wasted_short:2131951617 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:weght_loss:2131952091 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:normal_wt_short:2131952000 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:overweight_short:2131952018 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:ideal:2131951864 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:to_normal:2131952082 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:obesity_short:2131952007 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:ht:2131951858 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:ideal_height:2131951865 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:required_ht:2131952034 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:moderate_stunted_short:2131951917 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:normal_height_short:2131951998 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:over_height_short:2131952016 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:activity_ban:2131492892 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:fade_red:2131230881 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:lhfa_boys_z:2131886085 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:lhfa_girls_z:2131886086 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:sss:2131952072 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking array:Chartlhfa_0_5_ledgen:2130903040 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:hfa_title:2131951855 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:error:2131951734 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:admin_fragment_news:2131492897 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:admin_news_type:2131296388 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:admin_news_id:2131296382 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:admin_news_tiitle:2131296387 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:admin_news_subtitle:2131296386 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:admin_news_description:2131296381 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:admin_news_nosView:2131296385 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:admin_news_msg:2131296384 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:btn_admin_news_save:2131296437 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:action_wtpost_to_childReg:2131296366 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:msg_text:2131492985 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:msg:2131296730 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:feet_inch:2131492930 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:popCmLay:2131296838 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:popfeet:2131296840 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:popinches:2131296841 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:popcm:2131296839 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:height_input_method:2131951854 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:add:2131951647 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:select_child:2131952056 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:stub_pager:2131296978 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:change_clinic_date:2131951676 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:child_main_menu:2131623941 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wp_chart:2131297104 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_show_chart:2131230935 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_show_text:2131230936 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wp_child_share:2131297110 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:delete:2131951717 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:general_fragment:2131492961 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wp_child_name:2131297107 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:entry_layout:2131296567 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wp_wt_lay:2131297116 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wp_ht_lay:2131297112 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_height:2131230913 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wp_txtWt:2131297115 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wp_txtHt:2131297114 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:viewStub:2131297084 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wp_chip:2131297111 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sex:2131296930 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:elder_popup:2131492928 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:elder_note:2131296555 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:clear:2131951686 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:sex_not_selected:2131952062 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:summary_child_new:2131493060 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:summary_wd:2131296986 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:summary_age:2131296982 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:summary_wfa_status:2131296988 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:summary_wfa_comment:2131296987 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:summary_hfa_status:2131296984 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:summary_hfa_comment:2131296983 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:summary_wfh_status:2131296990 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:summary_wfh_comment:2131296989 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:row_hfa:2131296873 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:row_wfh:2131296875 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:kg:2131951870 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:cm:2131951688 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sc_note:2131296884 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:dob_future:2131951721 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:birth_weight:2131951660 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:calculate:2131951673 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:dob_year_error:2131951723 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:dob_month_error:2131951722 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:child_not_register:2131951684 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:agelable:2131951652 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:child_data_entry_new:2131492906 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:wt_post:2131952103 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wp_child_pager:2131297108 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_length:2131230917 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:delete:2131296518 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:edit:2131296551 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:fragment_s_m_i_data:2131492932 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:item_viewer:2131296644 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:smi_data_card:2131623946 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:required_field_empty:2131952033 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:toolbar:2131297047 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:toolbar_layout:2131297048 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:request:2131296862 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:lay_my_pin:2131296655 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:rqsmi:2131296876 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:rqwp:2131296877 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:btnUpgrade:2131296435 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:menuIcon:2131296718 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:item_list_background:2131296642 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sdv_sName:2131296906 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sdv_mdate:2131296905 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sdv_ht:2131296903 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sdv_htStatus:2131296904 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sdv_wt:2131296908 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sdv_wtStatus:2131296909 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sdv_bmi:2131296900 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sdv_dob:2131296902 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sdv_sex_image:2131296907 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:admin_fragment_request:2131492898 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:fSmi:2131296571 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:fwp:2131296599 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:fuser:2131296598 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:fupdate:2131296597 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:action_nav_smi_to_smi:2131296355 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_male:2131230922 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_female:2131230909 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:student_data_view:2131493059 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:success_data_change:2131952075 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:chart_menu_bmi:2131623937 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:save:2131296879 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:fragment_vertical:2131492933 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:vertical_fragment_recycler_view:2131297081 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:divider_drawable:2131230880 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:bmi_boys_z:2131886080 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:bmi_girls_z:2131886081 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:hfa_boys_z:2131886082 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:hfa_girls_z:2131886083 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:wfa0_5_boys_z:2131886087 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:wfa0_5_girls_z:2131886088 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:wfa_boys_0_5_z_month:2131886089 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:wfa_girls_0_5_z_month:2131886090 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:wfh_boys_0_2_z:2131886091 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:wfh_boys_2_5_z:2131886092 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:wfh_girls_0_2_z:2131886093 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking raw:wfh_girls_2_5_z:2131886094 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:chart_menu_save:2131623939 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:SD4:2131296266 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking array:wt_ledgen:2130903052 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:wfh_title:2131952095 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:action_SMIData_to_smi2:2131296316 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:action_smi_to_SMIData:2131296361 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking array:ht_ledgen:2130903045 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:filter:2131296578 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking array:filter:2130903043 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:smi_data:2131623945 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:child_deleted:2131951683 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:reglayout:2131296860 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_done:2131230907 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:child_reg_menu:2131623942 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:child_reg_pop:2131492907 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_regno:2131296477 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_name:2131296473 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_maturity:2131296471 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_guard_name:2131296470 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_tp:2131296478 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:radioGroup:2131296854 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_rbM:2131296476 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_rbF:2131296475 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_note:2131296474 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_fht:2131296469 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:child_mht:2131296472 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:age_over_5_years:2131951651 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:check_maturity_weeks:2131951682 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:name_already_exists:2131951984 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:add_new_child:2131951648 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:please_enter_name:2131952025 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:data_will_lost_dueto_dob_change:2131951713 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:data_will_lost_dueto_sex_change:2131951714 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:update_child:2131952086 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:clear:2131296481 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:activity_chart_show:2131492893 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:full_screen:2131296595 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:pager:2131296819 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_delete:2131230905 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_file_download:2131230910 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:rv_slectable_item:2131493051 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:school_select:2131623943 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sch_delete:2131296889 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:sch_search:2131296892 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:school_name:2131952049 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:school_fragment:2131493052 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:download_school_lay:2131296535 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:txtzonal:2131297074 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:txtdivision:2131297072 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking array:bmi_ledgen:2130903041 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:wfa_title:2131952094 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:donation_fragment:2131492927 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:btnSupport:2131296434 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:note:2131952003 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:vertical_list_item:2131493065 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:show_mdate:2131296939 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:show_wt:2131296940 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:show_ht:2131296938 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:vertical_list_item_background:2131297082 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:fragment_about:2131492931 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:btnFacebook:2131296433 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:lay_job_title:2131296651 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:lay_moh:2131296653 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:lay_range:2131296658 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:work_institute:2131952096 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:working_division:2131952097 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:profile_not_complete:2131952028 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking anim:top_animation:2130772023 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking anim:bottom_animation:2130771980 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:splash:2131493058 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:company:2131296488 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:app_name:2131296407 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:phi:2131296832 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:phirange:2131952024 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking drawable:ic_logo_120:2131230918 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking menu:chart_menu_sd4_sd4neg:2131623940 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:toggleButton:2131297046 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:action_nav_general_to_childReg:2131296351 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:dob_year_wrong_early:2131951725 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking string:dob_year_wrong:2131951724 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_host_fragment:2131296763 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking layout:activity_home_page:2131492894 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:drawer_layout:2131296544 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_view:2131296770 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:author:2131296411 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_admin:2131296760 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_smi:2131296767 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:wtpost:2131297120 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:homeView:2131296621 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_general:2131296762 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:setting:2131296929 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_userguide:2131296769 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_profile:2131296765 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_about:2131296759 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_rate:2131296766 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
-Marking id:nav_support:2131296768 reachable: referenced from C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:activity_nortification:2131492895 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:smi_data_entry:2131623947 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:sch_age_group_error:2131952048 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:smi_data_entry_summary_fragment:2131493057 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:myAdView:2131296755 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:grade:2131296605 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:yy:2131297123 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:mm:2131296722 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:dd:2131296513 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:fab:2131296572 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:txtHt:2131297066 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:txtWt:2131297070 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:rbM:2131296857 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:rbF:2131296856 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:summary_table_layout:2131296985 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nos_stunting:2131296791 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nos_wasted:2131296793 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nos_ow:2131296790 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nos_ob:2131296789 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nos_ht_normal:2131296788 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nos_wt_normal:2131296794 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nos_total:2131296792 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:gradeList:2131296606 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:htRequired:2131951862 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:wtRequired:2131952102 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:htErrorZero:2131951859 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:htMinZero:2131951861 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:htMaxError:2131951860 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:wtErrorZero:2131952099 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:wtMinZero:2131952101 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:wtMaxError:2131952100 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:bmiMinError:2131951664 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:bmiMaxError:2131951663 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:enter_sex:2131951733 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:y:2131952104 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:m:2131951874 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:d:2131951712 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:auto:2131296412 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sch_measure_date:2131296891 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:showData:2131296935 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:list_item:2131492964 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:date_change:2131492910 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:change_smi_date:2131951677 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:calendarView:2131296450 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:change:2131951675 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:summary_short_popup:2131493061 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:txtAgeNote:2131297064 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:txtBMINote:2131297065 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:bmiError:2131951662 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:txtWtNote:2131297071 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:txtHtNote:2131297067 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:summary:2131952076 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:summary_title:2131493062 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:student_name:2131296979 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:update:2131952085 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:add_pop:2131951649 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:try_again_pop:2131952083 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:chart:2131951681 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:severely_stunted:2131952059 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:moderate_stunted:2131951916 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:risk_stunt:2131952039 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:normal_height:2131951997 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:over_height:2131952015 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:severely_wasted:2131952060 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:low_weight:2131951872 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:risk_low_weight:2131952037 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:normal_wt:2131951999 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:overweight:2131952017 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:obesity:2131952006 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:search:2131623944 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:search:2131296910 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:search:2131952050 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:login_personal_data:2131492965 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:progressBar:2131296850 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:profilePhoto:2131296848 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:log_email:2131296682 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:my_pin:2131296756 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:log_name:2131296685 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:log_tp:2131296687 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:log_district:2131296681 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:log_moh:2131296684 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:log_range:2131296686 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:log_job_title:2131296683 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking array:district:2130903042 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:spinner_log_category:2131296957 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking array:logging_group:2130903048 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:btnContinue:2131296432 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking xml:root_preferences:2132148225 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:cancel:2131951674 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:action_adminFragment_to_usersFragment:2131296321 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:action_adminFragment_to_newsFragment:2131296320 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:action_nav_admin_to_requestFragment:2131296349 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:admin_fragment:2131492896 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:btn_admin_user:2131296439 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:btn_admin_news:2131296436 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:btn_admin_request:2131296438 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:swDrawValue:2131296992 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_send:2131230934 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_about:2131230895 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:chart_menu_htage:2131623938 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:wfa_fragment:2131493066 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wfaGrowthChart:2131297099 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:homeview:2131492962 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:webViewer:2131297093 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:severely_wasted_short:2131952061 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:bmi:2131951661 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:required_wt:2131952035 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:for_normal:2131951751 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:Wasted:2131951616 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:Wasted_short:2131951617 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:weght_loss:2131952091 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:normal_wt_short:2131952000 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:overweight_short:2131952018 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:ideal:2131951864 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:to_normal:2131952082 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:obesity_short:2131952007 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:ht:2131951858 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:ideal_height:2131951865 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:required_ht:2131952034 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:moderate_stunted_short:2131951917 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:normal_height_short:2131951998 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:over_height_short:2131952016 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:activity_ban:2131492892 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:fade_red:2131230881 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:lhfa_boys_z:2131886085 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:lhfa_girls_z:2131886086 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:sss:2131952072 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking array:Chartlhfa_0_5_ledgen:2130903040 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:hfa_title:2131951855 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:error:2131951734 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:admin_fragment_news:2131492897 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:admin_news_type:2131296388 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:admin_news_id:2131296382 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:admin_news_tiitle:2131296387 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:admin_news_subtitle:2131296386 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:admin_news_description:2131296381 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:admin_news_nosView:2131296385 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:admin_news_msg:2131296384 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:btn_admin_news_save:2131296437 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:action_wtpost_to_childReg:2131296366 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:msg_text:2131492985 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:msg:2131296730 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:feet_inch:2131492930 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:popCmLay:2131296838 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:popfeet:2131296840 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:popinches:2131296841 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:popcm:2131296839 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:height_input_method:2131951854 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:add:2131951647 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:select_child:2131952056 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:stub_pager:2131296978 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:change_clinic_date:2131951676 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:child_main_menu:2131623941 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wp_chart:2131297104 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_show_chart:2131230935 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_show_text:2131230936 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wp_child_share:2131297110 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:delete:2131951717 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:general_fragment:2131492961 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wp_child_name:2131297107 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:entry_layout:2131296567 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wp_wt_lay:2131297116 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wp_ht_lay:2131297112 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_height:2131230913 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wp_txtWt:2131297115 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wp_txtHt:2131297114 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:viewStub:2131297084 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wp_chip:2131297111 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sex:2131296930 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:elder_popup:2131492928 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:elder_note:2131296555 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:clear:2131951686 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:sex_not_selected:2131952062 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:summary_child_new:2131493060 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:summary_wd:2131296986 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:summary_age:2131296982 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:summary_wfa_status:2131296988 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:summary_wfa_comment:2131296987 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:summary_hfa_status:2131296984 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:summary_hfa_comment:2131296983 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:summary_wfh_status:2131296990 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:summary_wfh_comment:2131296989 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:row_hfa:2131296873 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:row_wfh:2131296875 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:kg:2131951870 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:cm:2131951688 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sc_note:2131296884 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:dob_future:2131951721 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:birth_weight:2131951660 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:calculate:2131951673 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:dob_year_error:2131951723 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:dob_month_error:2131951722 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:child_not_register:2131951684 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:agelable:2131951652 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:child_data_entry_new:2131492906 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:wt_post:2131952103 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wp_child_pager:2131297108 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_length:2131230917 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:delete:2131296518 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:edit:2131296551 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:fragment_s_m_i_data:2131492932 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:item_viewer:2131296644 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:smi_data_card:2131623946 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:required_field_empty:2131952033 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:toolbar:2131297047 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:toolbar_layout:2131297048 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:request:2131296862 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:lay_my_pin:2131296655 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:rqsmi:2131296876 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:rqwp:2131296877 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:btnUpgrade:2131296435 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:menuIcon:2131296718 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:item_list_background:2131296642 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sdv_sName:2131296906 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sdv_mdate:2131296905 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sdv_ht:2131296903 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sdv_htStatus:2131296904 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sdv_wt:2131296908 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sdv_wtStatus:2131296909 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sdv_bmi:2131296900 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sdv_dob:2131296902 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sdv_sex_image:2131296907 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:admin_fragment_request:2131492898 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:fSmi:2131296571 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:fwp:2131296599 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:fuser:2131296598 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:fupdate:2131296597 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:action_nav_smi_to_smi:2131296355 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_male:2131230922 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_female:2131230909 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:student_data_view:2131493059 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:success_data_change:2131952075 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:chart_menu_bmi:2131623937 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:save:2131296879 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:fragment_vertical:2131492933 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:vertical_fragment_recycler_view:2131297081 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:divider_drawable:2131230880 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:bmi_boys_z:2131886080 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:bmi_girls_z:2131886081 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:hfa_boys_z:2131886082 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:hfa_girls_z:2131886083 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:wfa0_5_boys_z:2131886087 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:wfa0_5_girls_z:2131886088 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:wfa_boys_0_5_z_month:2131886089 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:wfa_girls_0_5_z_month:2131886090 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:wfh_boys_0_2_z:2131886091 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:wfh_boys_2_5_z:2131886092 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:wfh_girls_0_2_z:2131886093 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking raw:wfh_girls_2_5_z:2131886094 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:chart_menu_save:2131623939 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:SD4:2131296266 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking array:wt_ledgen:2130903052 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:wfh_title:2131952095 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:action_SMIData_to_smi2:2131296316 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:action_smi_to_SMIData:2131296361 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking array:ht_ledgen:2130903045 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:filter:2131296578 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking array:filter:2130903043 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:smi_data:2131623945 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:child_deleted:2131951683 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:reglayout:2131296860 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_done:2131230907 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:child_reg_menu:2131623942 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:child_reg_pop:2131492907 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_regno:2131296477 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_name:2131296473 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_maturity:2131296471 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_guard_name:2131296470 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_tp:2131296478 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:radioGroup:2131296854 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_rbM:2131296476 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_rbF:2131296475 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_note:2131296474 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_fht:2131296469 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:child_mht:2131296472 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:age_over_5_years:2131951651 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:check_maturity_weeks:2131951682 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:name_already_exists:2131951984 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:add_new_child:2131951648 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:please_enter_name:2131952025 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:data_will_lost_dueto_dob_change:2131951713 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:data_will_lost_dueto_sex_change:2131951714 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:update_child:2131952086 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:clear:2131296481 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:activity_chart_show:2131492893 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:full_screen:2131296595 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:pager:2131296819 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_delete:2131230905 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_file_download:2131230910 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:rv_slectable_item:2131493051 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:school_select:2131623943 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sch_delete:2131296889 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:sch_search:2131296892 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:school_name:2131952049 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:school_fragment:2131493052 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:download_school_lay:2131296535 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:txtzonal:2131297074 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:txtdivision:2131297072 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking array:bmi_ledgen:2130903041 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:wfa_title:2131952094 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:donation_fragment:2131492927 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:btnSupport:2131296434 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:note:2131952003 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:vertical_list_item:2131493065 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:show_mdate:2131296939 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:show_wt:2131296940 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:show_ht:2131296938 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:vertical_list_item_background:2131297082 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:fragment_about:2131492931 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:btnFacebook:2131296433 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:lay_job_title:2131296651 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:lay_moh:2131296653 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:lay_range:2131296658 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:work_institute:2131952096 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:working_division:2131952097 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:profile_not_complete:2131952028 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking anim:top_animation:2130772023 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking anim:bottom_animation:2130771980 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:splash:2131493058 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:company:2131296488 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:app_name:2131296407 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:phi:2131296832 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:phirange:2131952024 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking drawable:ic_logo_120:2131230918 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking menu:chart_menu_sd4_sd4neg:2131623940 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:toggleButton:2131297046 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:action_nav_general_to_childReg:2131296351 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:dob_year_wrong_early:2131951725 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking string:dob_year_wrong:2131951724 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_host_fragment:2131296763 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking layout:activity_home_page:2131492894 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:drawer_layout:2131296544 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_view:2131296770 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:author:2131296411 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_admin:2131296760 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_smi:2131296767 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:wtpost:2131297120 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:homeView:2131296621 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_general:2131296762 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:setting:2131296929 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_userguide:2131296769 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_profile:2131296765 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_about:2131296759 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_rate:2131296766 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
+Marking id:nav_support:2131296768 reachable: referenced from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\dex\release\minifyReleaseWithR8\classes2.dex
 android.content.res.Resources#getIdentifier present: true
 Web content present: true
 Referenced Strings:
@@ -484,7 +484,7 @@ last_bundled_timestamp
 test_mode
 KEY_FOREGROUND_SERVICE_TYPE
 android:style
-? ???
+ဌ ဈညည
 com.google.firebase.auth.GET_TOKEN_RE...
 /log
 is_lat
@@ -547,7 +547,7 @@ generateEventId
 ABOVE_CHART_LEFT
 time_zone_offset_minutes
 javax.net.ssl.SNIHostName
-? ??
+ဈ ဌဉ
 gads:cui_monitoring_session_sample_rate
 WEB_MESSAGE_PORT_CLOSE
 android.os.Build$VERSION
@@ -711,7 +711,7 @@ ms01
 CONNECT_ERROR
 Theme.Translucent
 admob_module_version
-? ?
+ဈ ည
 last_gclid
 LARGE_BANNER
 AdUtil.startActivityWithUnknownContext
@@ -752,7 +752,7 @@ AndroidKeyStore
 gads:video_exo_player:use_play_back_i...
 FLUID
 TLS_ECDHE_PSK_WITH_CHACHA20_POLY1305_...
-? ?
+ဈ ဈ
 :Padding
 timeout_ms
 android.support.v13.view.inputmethod....
@@ -773,7 +773,7 @@ decrypt
 i9031
 ExpiresInSecs
 CANCEL_BUTTON_TAG
-?
+Ț
 callOptions
 klass.interfaces
 redirectUrl
@@ -803,7 +803,7 @@ VideoStreamExoPlayerCache.preload
 tab_url
 FragmentManager
 ELUGA_A3_Pro
-? ?????
+ဂ ဈဈဂခက
 phoneNumber
 AppSettings.parseAppSettingsJson
 com.google.firebase.auth.internal.KEY...
@@ -860,7 +860,7 @@ KEY_WORKSPEC_ID
 required
 onRewardedVideoStarted
 modelClass.constructors
-? ?
+ဈ ဂ
 read_time_nanos
 pokeLong
 beginTime
@@ -955,7 +955,7 @@ tcl_eu
 timestampNanos
 GET_COOKIE_INFO
 main_event
-? ??
+င ညည
 gads:scar:google_click_paths
 INT32_LIST_PACKED
 TDA
@@ -1124,7 +1124,7 @@ lastScheduledTask
 %.4g
 onLMDOverlayClose
 androidx.activity.result.contract.ext...
-? ???
+ဈ ဇဇင
 VerifyPhoneFragment
 userdebug
 fingerprint
@@ -1387,7 +1387,7 @@ gads:disable_click_during_fade_in
 REWARD_BASED_VIDEO_AD
 html_containers
 locationReady
-?
+Ȉ
 bodydigest
 path.separator
 ERROR_MISSING_MULTI_FACTOR_SESSION
@@ -1421,7 +1421,7 @@ operationCase_
 state1
 index_child_name
 4fe342e2fe1a7f9b8ee7eb4a7c0f9e162bce3...
-? ???
+ဂ ငဇဃ
 event_count_filter
 is_init
 video/hevcdv
@@ -2165,7 +2165,7 @@ WB
 linkProgram
 WF
 gads:rewarded:adapter_initialization_...
-? ??
+ဂ ဈည
 android.support.v13.view.inputmethod....
 native_instance
 io.grpc.census.InternalCensusStatsAcc...
@@ -2180,13 +2180,13 @@ FOR_OF
 L153
 severity
 news
-?
+ဌ
 griffin
 androidx.appcompat.app.AppLocalesMeta...
 L150
 gads:sdk_use_dynamic_module
 L156
-?
+ဌ
 SOURCE_CLIPBOARD
 XA
 XB
@@ -2218,7 +2218,7 @@ YE
 homeview
 error_description
 gads:enable_content_fetching
-? ?????
+ဌ ဉငငငဃ
 Timeout.
 gads:new_remote_logging_utils:enabled
 okhttp
@@ -2624,7 +2624,7 @@ fre
 gads:video:metric_frame_hash_time_len...
 creationTimestamp
 ComioS1
-?
+Ȉ
 id
 https
 FirebaseAuthFallback:
@@ -2670,7 +2670,7 @@ onDestroy
 kn
 MultiSelectListPreferenceDialogFragme...
 getStackTraceDepth
-? ??
+ဌ ဉဉ
 elst
 kw
 measurement.client.firebase_feature_r...
@@ -2747,7 +2747,7 @@ nv
 addFontFromBuffer
 storage
 com.google.android.gms.ads.internal.c...
-?
+Ȉ
 Dub
 dialog
 PROFILE
@@ -2841,7 +2841,7 @@ DELETE
 se
 getProgramiv
 sh
-? ?
+ᔊ ည
 DESCRIPTION
 FirstParty
 ERROR_WEAK_PASSWORD
@@ -2992,7 +2992,7 @@ ERROR_SECOND_FACTOR_ALREADY_ENROLLED
 zn
 _state
 force
-? ???
+င ဉဉဇ
 gee
 X%s
 V_MPEG4/ISO/SP
@@ -3036,7 +3036,7 @@ debug_info_dalvik_shared_dirty
 autoCloseTimeUnit
 ad_view_tag
 create
-? ????
+ဈ ဈဂခက
 REMOVED
 PERMISSION_DENIED
 backoff_policy
@@ -3224,7 +3224,7 @@ SERVER_TRANSACTION
 gads:content_fetch_enable_new_content...
 proxyAddr
 portrait
-? ?
+ဈ ဇ
 linkFederatedCredential
 args
 gads:app_set_id_info_signal:timeout:e...
@@ -3272,7 +3272,7 @@ index_WorkSpec_schedule_requested_at
 longitude_
 cct_action
 OMX.broadcom.video_decoder.tunnel
-? ?
+ဈ ဌ
 prerequisite_id
 UNKNOWN_COMPARISON_TYPE
 isEmailVerified
@@ -3369,7 +3369,7 @@ native_required_asset_viewability
 impressionType
 TaggingLibraryJsInterface.getViewSignals
 Text/html
-? ??
+င ငင
 com.google.android.gms.providerinstal...
 elevation
 BITMAP
@@ -3508,7 +3508,7 @@ smart_banner
 SHOW
 SHUTDOWN
 SERVER_VALUE_UNSPECIFIED
-? ???
+ဌ ဉဈဈ
 bufferedDuration
 requestType
 EXISTS
@@ -3556,7 +3556,7 @@ GET
 gads:scar_signal_comparison_format:un...
 java.lang.Throwable
 CONTEXT_NOT_AN_ACTIVITY
-? ???
+င ဈငည
 OMX.MARVELL.VIDEO.HW.CODA7542DECODER
 FragmentManager:
 rtng
@@ -3881,7 +3881,7 @@ pemail
 asyncTraceEnd
 transform
 sendSignInLinkToEmail
-? ???
+ဈ ဉဂဈ
 com.google.android.gms.tagmanager.Tag...
 TLS_KRB5_EXPORT_WITH_RC4_40_MD5
 custom_targeting
@@ -3979,7 +3979,7 @@ media_metrics
 eae_prk
 LIST_EMPTY
 PADDED
-? ?????
+ဈ ဈဈဈဈဈ
 TypefaceCompatApi21Impl
 gads:signal:paid_v2_in_gam_ad_request...
 policy_validator
@@ -3992,7 +3992,7 @@ DefaultGmsgHandlers.SetPaidv2Personal...
 lastLoginAt
 IABTCF_TCString
 finishSession
-? ???????
+ဈ ဉငဉငဌဌဌ
 androidx.core:wake:
 ERROR_INVALID_CUSTOM_TOKEN
 android.intent.action.BOOT_COMPLETED
@@ -4414,7 +4414,7 @@ removed
 NavUtils
 contained_in_scroll_view
 viewState
-?
+Ț
 com.google.android.gms.auth.api.crede...
 androidx.core.app.extra.COMPAT_TEMPLATE
 DOUBLE_TAP
@@ -4514,7 +4514,7 @@ androidx.appcompat.app.ActionBar$Tab
 gads:csi:interstitial_failed_to_show:...
 Dependency
 BUILD_MESSAGE_INFO
-? ????
+ဌ ဇဈဈဈ
 adFieldEnifd
 KEY_SUPER_STATE
 MPAndroidChart
@@ -4622,7 +4622,7 @@ com.google.android.gms.ads.internal.r...
 VdcInflateDelegate
 setCurrentScreen
 adapter_init_started
-? ??
+ဇ ဇဋ
 adapterClassName
 androidx:appcompat
 layout_constraintEnd_toStartOf
@@ -4659,7 +4659,7 @@ BLOCKING
 ConstraintsCmdHandler
 widthAlignment
 gads:nonagon:banner:enabled
-? ?
+ဉ ဉ
 media_projection
 com.google.android.gms.ads.internal.m...
 AdWebViewClient.interceptRequest
@@ -4903,7 +4903,7 @@ AFTN
 com.google.android.gms.ads.internal.c...
 MULTI_PROCESS_QUERY
 gads:sai:force_through_reflection
-? ?????
+ဈ ဂဇဌဈဈ
 http://www.example.com
 audio/raw
 extras
@@ -4999,7 +4999,7 @@ DrawerLayout
 com.google.android.gms.ads.flags.Flag...
 objectId
 dialog_not_shown_reason
-? ?????
+ဉ Лညညငည
 DEBUG
 TLS_DH_anon_WITH_AES_128_CBC_SHA256
 TLS_DHE_RSA_WITH_AES_256_CBC_SHA
@@ -5036,7 +5036,7 @@ onNetworkResponse
 gads:signals:app_index:enabled
 writeMutations
 com.google.android.gms.ads.internal.c...
-? ????
+ဈ ဈဃဃဃ
 java.specification.vendor
 vnd.android.cursor.dir/event
 measurement.experiment.max_ids
@@ -5054,7 +5054,7 @@ iab_consent_info
 seekMap
 default_event_params
 reportRequestStats
-? ??
+ည ညည
 INVALID_ID_TOKEN
 MISSING_EMAIL
 getStackTraceElement
@@ -5294,7 +5294,7 @@ onhide
 cookies_include
 AUDIO
 gads:video_exo_player:byte_buffer_pre...
-? ?
+ဌ ဌ
 com.google.android.gms.providerinstal...
 setLayoutDirection
 android.graphics.drawable.ColorStateL...
@@ -5409,7 +5409,7 @@ device_info
 ERROR_API_NOT_AVAILABLE_WITHOUT_GOOGL...
 SHA256withECDSA
 INVALID_REQUEST
-? ?
+ဌ ဉ
 PATH_SEPARATOR
 _pin
 getNextValue
@@ -5530,7 +5530,7 @@ custom:
 FRAME_TOO_LARGE
 unmute
 trigger_max_content_delay
-? ?
+ဌ ဂ
 viewabilityChanged
 lcs
 gads:ad_key_enabled
@@ -5539,7 +5539,7 @@ ECIES_P256_HKDF_HMAC_SHA256_AES128_GC...
 experiment_ids
 prefetch_url
 gads:gestures:ns:enabled
-? ??
+ဂ ဌဌ
 perAttemptRecvTimeoutNanos
 RECONNECTION_TIMED_OUT
 /dbm/ad
@@ -5611,7 +5611,7 @@ exoPlayerIdleIntervalMs
 base_nonce
 ExoPlayer:MediaCodecAsyncAdapter:
 label.
-? ??
+င ဇဇ
 Normal
 u_sd
 bg_color
@@ -5931,14 +5931,14 @@ measurementDeactivated
 DOCUMENT_REMOVE
 DynamiteModule
 SHA512withRSA
-? ???
+ဉ ဌဉဉ
 ACTION_SET_SELECTION
 dc_ms
 SAFE_BROWSING_PRIVACY_POLICY_URL
 title
 MediaCodecRenderer
 mButtonDrawable
-? ????
+ဉ Лညညင
 /mfaEnrollment:start
 omx.google.
 gads:ad_source_response_info:enabled
@@ -5987,7 +5987,7 @@ init
 V_MPEG4/ISO/ASP
 cookie
 offline_notification_worker_not_sched...
-? ?
+င ဂ
 com.google.android.gms.auth.api.signi...
 http://ns.adobe.com/xap/1.0/
 NonagonUtil.isPatternMatched
@@ -6089,7 +6089,7 @@ V_VP9
 objectAnimator
 AFMA_updateActiveView
 AppOpenAd.load
-? ????
+ဌ ဈဈဇက
 onScreenInfoChanged
 autoLoadBalancerFactory
 TLS_RSA_WITH_AES_256_GCM_SHA384
@@ -6098,7 +6098,7 @@ TrustlessTokenSignal
 imageMatrixProperty
 LEFT_TOP
 gads:disable_token_under_idless:enabled
-? ?
+င င
 refresh_interval
 MenuItemCompat
 android.support.v4.media.description....
@@ -6136,7 +6136,7 @@ isPaused
 TLS_RSA_WITH_AES_256_CBC_SHA256
 gads:gestures:vdd:enabled
 DFP_BANNER
-?
+Ȉ
 myself
 validator_height
 ERROR_INVALID_VERIFICATION_CODE
@@ -6197,7 +6197,7 @@ call_to_action
 com.google.android.gms.signin.interna...
 Operations:
 firestore.googleapis.com
-? ???????
+ဂ ဂဂဂဂဂဂဂ
 androidx.profileinstaller.action.INST...
 captioning
 KEY_COMPONENT_ACTIVITY_LAUNCHED_KEYS
@@ -6292,7 +6292,7 @@ NO_PREFIX
 internal
 MLLT
 signature
-? ???
+ဉ ဉဇဈ
 android.support.BIND_NOTIFICATION_SID...
 notifyLocalViewChanges
 firebase_previous_class
@@ -6315,7 +6315,7 @@ gads:inspector:flick_count
 A_EAC3
 begin_checkout
 nullLayouts
-?
+ဉ
 federatedId
 GContainerItem
 View.kt
@@ -6360,7 +6360,7 @@ DATA
 BIDI_STREAMING
 androidx.core.view.inputmethod.Editor...
 statistic_name
-? ?????
+င ဈဉဇဇဇ
 AnimatedVDCompat
 parent_ad_config
 SystemFgService
@@ -6403,7 +6403,7 @@ offline_signal_contents
 androidx.activity.result.contract.act...
 /backButton
 REGISTERED
-? ??
+ဈ ဈဉ
 landscape
 marlin
 AdMobClearcutLogger.modify
@@ -6413,7 +6413,7 @@ setParamValue
 gads:video:spinner:enabled
 gads:interstitial_ad_parameter_handle...
 androidx.activity.result.contract.ext...
-? ???
+ဈ ဌဌဌ
 opus
 SETTINGS
 actionIntent
@@ -6421,7 +6421,7 @@ omid_partner_name
 contentVerticalOptedOutSetting
 Symphony
 delegateBuilder
-?
+Ȉ
 details_
 gads:query_map_eviction_fullinfo:enabled
 SET_PROPERTY
@@ -6521,12 +6521,12 @@ Blues
 measurement.id.redaction
 android:support:fragments
 referrer
-?
+ဌ
 UNRESTRICTED
 DirectExecutor
 OUTBOUND
 3002
-? ??
+ဈ ဌဉ
 3001
 cust_age
 is_aia
@@ -6626,7 +6626,7 @@ gad:cct_v2_beta:enabled
 type.googleapis.com/google.crypto.tin...
 TLS_DH_anon_WITH_RC4_128_MD5
 targetFragment
-? ??
+ဌ ဂည
 ad_close_time_ms
 android.view.
 FLOAT
@@ -6647,7 +6647,7 @@ document_mutations
 iconHeightPx
 Host
 gads:bg_ad_key_signal_gen:enabled
-? ??????
+င ငဂဈဈဂင
 ERROR_MISSING_CONTINUE_URI
 fieldPaths_
 custom_click_gesture_eligible
@@ -6698,7 +6698,7 @@ PositionWatcher.getParentScrollViewRects
 SPDY_SYN_STREAM
 ga_extra_parameter
 gads:video:aggressive_media_codec_rel...
-? ?
+ဇ င
 mutation_queues
 restricted_profile
 MediaCodecInfo
@@ -6735,7 +6735,7 @@ session_start
 daily_public_events_count
 GoogleCertificates
 com.google.android.gms.measurement.Ap...
-? ?
+ဇ ဋ
 DebugGestureViewWrapper
 minBound
 OMX.MS.HEVCDV.Decoder
@@ -6879,7 +6879,7 @@ Musical
 java.lang.Byte
 setEventName
 asset_view_signal
-? ????
+င ဉဉဉင
 _consensus
 com.twitter.sdk.android.core.identity...
 surfaceDestroyed
@@ -6894,7 +6894,7 @@ onLMDOverlayClicked
 valid_ad_sizes
 IS_NOT_NULL
 nextFunction
-? ??
+ဉ ညည
 reward_type
 doritos
 END_STREAM
@@ -7174,7 +7174,7 @@ chrome_custom_tab
 maxBufferMs
 Hardcore
 native_express
-?
+င
 gads:using_official_simple_exoplayer:...
 COROUTINE_SUSPENDED
 V_MPEG2
@@ -7285,7 +7285,7 @@ firebase_previous_screen
 NOT
 AndroidOpenSSL
 TLS_DHE_RSA_WITH_DES_CBC_SHA
-? ??????
+င ဈဇဉဇဇဇ
 serviceActionBundleKey
 support
 com.firebase.ui.auth.data.remote.GitH...
@@ -7462,7 +7462,7 @@ wasted
 android.speech.extra.RESULTS_PENDINGI...
 tqgt
 FirebaseAuthCredentialsProvider
-? ??
+ဌ ဈဇ
 _cis
 internal.platform
 adTypeToString
@@ -7844,7 +7844,7 @@ MultiSelectListPreferenceDialogFragme...
 gads:get_request_signals_cld:enabled
 INFLATING
 _pn
-?
+ည
 createProgram
 .vtt
 _po
@@ -7881,8 +7881,8 @@ ERROR_API_NOT_AVAILABLE
 isSuccessful
 SYNCED
 SERVER
-? ???
-?
+ည ညညည
+ဌ
 TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384
 com.google.android.gms.ads.AdOverlayC...
 measurement.redaction.enhanced_uid
@@ -7961,7 +7961,7 @@ com.google.android.gms.ads.internal.m...
 P85
 GRPC_PROXY_EXP
 gads:bg_banner_resume:enabled
-?
+ဈ
 INITIALIZED
 theme
 _vs
@@ -7992,7 +7992,7 @@ listen
 filterTypeCase_
 afmaVersion
 ConstraintTracker
-?
+ဂ
 video/mjpeg
 base_uri
 no_src
@@ -8063,7 +8063,7 @@ paw_id
 mAttachInfo
 soco
 account
-? ???
+ဌ ဌဇဂ
 content_uri_triggers
 $transitioningViews
 common_google_play_services_sign_in_f...
@@ -8098,7 +8098,7 @@ cancellation
 PGN528
 com.google.android.gms.auth.api.crede...
 interpolator
-?s
+μs
 SHA256withRSA
 TTML
 media_router
@@ -8579,7 +8579,7 @@ wifip2p
 NATIVE_CONTENT
 getHostString
 INSERT
-? ?
+ဂ ဌ
 ThirdPartyRendererBanner
 $onBackInvoked
 Psytrance
@@ -8774,7 +8774,7 @@ tableNames
 sampleRate.aCaps
 other
 FORCE_DARK_STRATEGY
-? ??????
+ဈ ဈဈဈဈဈဈ
 FLOAT_TYPE
 suggest_text_1
 suggest_text_2
@@ -9109,7 +9109,7 @@ image_value
 gads:cache:read_only_connection_timeout
 OMX.lge.ac3.decoder
 measurement.module.pixie.ees
-? ???
+ဈ ဂဂင
 MEDIATION_NO_FILL
 OMX.MTK.AUDIO.DECODER.DSPAC3
 gads:cui_buffer_size
@@ -9216,7 +9216,7 @@ ClientCall.halfClose
 package_version
 accelerateInterpolator
 com.google.android.gms.ads.internal.m...
-?
+ဈ
 Dance
 REL
 COLOR_DRAWABLE_TYPE
@@ -9331,7 +9331,7 @@ sms
 30_max
 SystemIdInfo
 table
-? ????
+ဌ ဉငငင
 type.googleapis.com/google.crypto.tin...
 com.google.android.gms.auth.APPAUTH_S...
 EverStar_S
@@ -9513,12 +9513,12 @@ dest
 pairs
 NEGATIVE_BUTTON_TEXT_KEY
 urlfacebook
-? ???
+ဌ ဈဈဉ
 rb_amount
 creative_slot
 gads:uri_query_to_map_bg_thread:min_l...
 10_20
-? ??
+ဉ ဌဉ
 isScreenOn
 dbRef
 SafetyNet.API
@@ -42901,4 +42901,4 @@ The root reachable resources are:
  xml:image_share_filepaths:2132148224
  xml:root_preferences:2132148225
 Skipped unused resource res/raw/keep.xml: 290 bytes (replaced with small dummy file of size 9 bytes)
-Resource shrinking did not work (grew from 1296417 to 1310521); using original instead
+Resource shrinking did not work (grew from 1297278 to 1311382); using original instead

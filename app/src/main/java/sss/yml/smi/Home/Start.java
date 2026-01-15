@@ -31,7 +31,6 @@ import sss.yml.smi.login.Ban;
 import sss.yml.smi.login.Profile;
 
 import java.util.*;
-
 public class Start extends AppCompatActivity {
     private final int SIGN_IN_REQUEST_CODE = 1;
     public static final int PROFILE_REQUEST_CODE = 2;
@@ -159,7 +158,7 @@ public class Start extends AppCompatActivity {
         new Handler().postDelayed(() -> {
             Calendar c = Calendar.getInstance();
             Calendar c1 = Calendar.getInstance();
-            c1.set(2024, 11, 31);
+            c1.set(2030, 11, 31);
             if (c.getTime().after(c1.getTime())) {
                 Start.this.runOnUiThread(() -> new AlertDialog.Builder(Start.this)
                         .setTitle("Compulsory Update available")
@@ -299,6 +298,7 @@ public class Start extends AppCompatActivity {
         intent.putExtra("data", bundle);
         startActivityForResult(intent, PROFILE_REQUEST_CODE);
     }
+
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);

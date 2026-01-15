@@ -7,13 +7,13 @@ plugins {
 android {
     namespace 'sss.yml.smi'
     defaultConfig {
-        compileSdk 34
+        compileSdk 36
         applicationId "sss.yml.smi"
         minSdkVersion 19
-        targetSdkVersion 34
+        targetSdkVersion 36
         multiDexEnabled true
-        versionCode 4254 //new version release 2023-02-09
-        versionName "4.2.5.4"
+        versionCode 4260 //new version release 2023-02-09
+        versionName "4.2.6.0"
         resConfigs 'en', 'si', 'ta'
         vectorDrawables {
             useSupportLibrary = true
@@ -32,7 +32,7 @@ android {
             keyPassword '50864636'
         }
         debug {
-            storeFile file('.\\SSSCert.jks')
+            storeFile file('C:\\Users\\Lenovo\\IdeaProjects\\SMI4.2.5\\myCert\\SSSCert.jks')
             storePassword '773661227'
             keyAlias = 'sssKey'
             keyPassword '50864636'
@@ -63,10 +63,10 @@ android {
         }
     }
     compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_21
+        targetCompatibility JavaVersion.VERSION_21
     }
-    compileSdk 34
+    compileSdk 36
     buildToolsVersion '34.0.0'
 }
 dependencies {
@@ -78,7 +78,6 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore'
     implementation 'com.google.android.material:material:1.11.0'
     implementation 'com.google.firebase:firebase-ads:21.5.0'
-    implementation 'com.google.android.gms:play-services-ads:21.5.0'
 
     implementation 'androidx.multidex:multidex:2.0.1'
     implementation 'androidx.webkit:webkit:1.10.0'

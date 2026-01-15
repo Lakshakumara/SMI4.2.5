@@ -4,7 +4,7 @@
             "outputFile": "sss.yml.smi.app-mergeDebugResources-61:/values-notnight-v8/values-notnight-v8.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Thathsanani\\IdeaProjects\\SMI4.2.5\\app\\src\\main\\res\\values-notnight\\theme.xml",
+                    "source": "C:\\Users\\Lenovo\\IdeaProjects\\SMI4.2.5\\app\\src\\main\\res\\values-notnight\\theme.xml",
                     "from": {
                         "startLines": "2,8,4,10",
                         "startColumns": "4,4,4,4",

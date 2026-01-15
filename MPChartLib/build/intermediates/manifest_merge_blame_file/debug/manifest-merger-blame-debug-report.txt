@@ -10,13 +10,13 @@
 10  </application>
 11    -->
 12    <uses-sdk android:minSdkVersion="19" />
-12-->C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
+12-->C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
 13
 14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-14-->C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:5:3-78
-14-->C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:5:20-75
+14-->C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:5:3-78
+14-->C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:5:20-75
 15    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-15-->C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:6:3-79
-15-->C:\Users\Thathsanani\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:6:20-76
+15-->C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:6:3-79
+15-->C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:6:20-76
 16
 17</manifest>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name" translatable="false">BMISimulator</string>
-    <string name="bmisimulator" translatable="false">BMI Simulator v4.2.5</string>
+    <string name="bmisimulator" translatable="false">BMI Simulator v4.2.6</string>
     <string name="dobSep" translatable="false">/</string>
     <string name="phirange">0</string>
     <!-- Facebook application ID and custom URL scheme (app ID prefixed by 'fb'). https://lakshakumara-1137.firebaseapp.com/__/auth/handler -->
