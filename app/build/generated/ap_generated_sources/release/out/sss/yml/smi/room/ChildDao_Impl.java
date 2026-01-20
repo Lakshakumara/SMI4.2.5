@@ -1,22 +1,18 @@
 package sss.yml.smi.room;
 
-import android.database.Cursor;
 import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
 import androidx.collection.LongSparseArray;
 import androidx.lifecycle.LiveData;
-import androidx.room.EntityDeletionOrUpdateAdapter;
-import androidx.room.EntityInsertionAdapter;
+import androidx.room.EntityDeleteOrUpdateAdapter;
+import androidx.room.EntityInsertAdapter;
 import androidx.room.RoomDatabase;
-import androidx.room.RoomSQLiteQuery;
-import androidx.room.SharedSQLiteStatement;
-import androidx.room.util.CursorUtil;
 import androidx.room.util.DBUtil;
 import androidx.room.util.RelationUtil;
+import androidx.room.util.SQLiteStatementUtil;
 import androidx.room.util.StringUtil;
-import androidx.sqlite.db.SupportSQLiteStatement;
+import androidx.sqlite.SQLiteConnection;
+import androidx.sqlite.SQLiteStatement;
 import java.lang.Class;
-import java.lang.Exception;
 import java.lang.Integer;
 import java.lang.Long;
 import java.lang.Override;
@@ -27,30 +23,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
 import java.util.List;
-import java.util.concurrent.Callable;
+import javax.annotation.processing.Generated;
 import kotlin.Unit;
 
-@SuppressWarnings({"unchecked", "deprecation"})
+@Generated("androidx.room.RoomProcessor")
+@SuppressWarnings({"unchecked", "deprecation", "removal"})
 public final class ChildDao_Impl implements ChildDao {
   private final RoomDatabase __db;
 
-  private final EntityInsertionAdapter<Child> __insertionAdapterOfChild;
+  private final EntityInsertAdapter<Child> __insertAdapterOfChild;
 
-  private final EntityInsertionAdapter<ChildWpData> __insertionAdapterOfChildWpData;
+  private final EntityInsertAdapter<ChildWpData> __insertAdapterOfChildWpData;
 
-  private final EntityDeletionOrUpdateAdapter<Child> __deletionAdapterOfChild;
+  private final EntityDeleteOrUpdateAdapter<Child> __deleteAdapterOfChild;
 
-  private final EntityDeletionOrUpdateAdapter<ChildWpData> __deletionAdapterOfChildWpData;
+  private final EntityDeleteOrUpdateAdapter<ChildWpData> __deleteAdapterOfChildWpData;
 
-  private final EntityDeletionOrUpdateAdapter<Child> __updateAdapterOfChild;
+  private final EntityDeleteOrUpdateAdapter<Child> __updateAdapterOfChild;
 
-  private final EntityDeletionOrUpdateAdapter<ChildWpData> __updateAdapterOfChildWpData;
-
-  private final SharedSQLiteStatement __preparedStmtOfDeleteData;
+  private final EntityDeleteOrUpdateAdapter<ChildWpData> __updateAdapterOfChildWpData;
 
   public ChildDao_Impl(@NonNull final RoomDatabase __db) {
     this.__db = __db;
-    this.__insertionAdapterOfChild = new EntityInsertionAdapter<Child>(__db) {
+    this.__insertAdapterOfChild = new EntityInsertAdapter<Child>() {
       @Override
       @NonNull
       protected String createQuery() {
@@ -58,22 +53,22 @@ public final class ChildDao_Impl implements ChildDao {
       }
 
       @Override
-      protected void bind(@NonNull final SupportSQLiteStatement statement, final Child entity) {
+      protected void bind(@NonNull final SQLiteStatement statement, final Child entity) {
         statement.bindLong(1, entity.getId());
         if (entity.getRegNo() == null) {
           statement.bindNull(2);
         } else {
-          statement.bindString(2, entity.getRegNo());
+          statement.bindText(2, entity.getRegNo());
         }
         if (entity.getName() == null) {
           statement.bindNull(3);
         } else {
-          statement.bindString(3, entity.getName());
+          statement.bindText(3, entity.getName());
         }
         if (entity.getSex() == null) {
           statement.bindNull(4);
         } else {
-          statement.bindString(4, entity.getSex());
+          statement.bindText(4, entity.getSex());
         }
         final Long _tmp = DateConverter.dateToTimestamp(entity.getDob());
         if (_tmp == null) {
@@ -85,17 +80,17 @@ public final class ChildDao_Impl implements ChildDao {
         if (entity.getGuardian() == null) {
           statement.bindNull(7);
         } else {
-          statement.bindString(7, entity.getGuardian());
+          statement.bindText(7, entity.getGuardian());
         }
         if (entity.getTp() == null) {
           statement.bindNull(8);
         } else {
-          statement.bindString(8, entity.getTp());
+          statement.bindText(8, entity.getTp());
         }
         if (entity.getNote() == null) {
           statement.bindNull(9);
         } else {
-          statement.bindString(9, entity.getNote());
+          statement.bindText(9, entity.getNote());
         }
         statement.bindDouble(10, entity.getFht());
         statement.bindDouble(11, entity.getMht());
@@ -109,7 +104,7 @@ public final class ChildDao_Impl implements ChildDao {
         }
       }
     };
-    this.__insertionAdapterOfChildWpData = new EntityInsertionAdapter<ChildWpData>(__db) {
+    this.__insertAdapterOfChildWpData = new EntityInsertAdapter<ChildWpData>() {
       @Override
       @NonNull
       protected String createQuery() {
@@ -117,8 +112,7 @@ public final class ChildDao_Impl implements ChildDao {
       }
 
       @Override
-      protected void bind(@NonNull final SupportSQLiteStatement statement,
-          final ChildWpData entity) {
+      protected void bind(@NonNull final SQLiteStatement statement, final ChildWpData entity) {
         statement.bindLong(1, entity.getId());
         statement.bindLong(2, entity.getChildId());
         final Long _tmp = DateConverter.dateToTimestamp(entity.mDate);
@@ -132,7 +126,7 @@ public final class ChildDao_Impl implements ChildDao {
         if (entity.getNote() == null) {
           statement.bindNull(6);
         } else {
-          statement.bindString(6, entity.getNote());
+          statement.bindText(6, entity.getNote());
         }
         statement.bindDouble(7, entity.getAgeDays());
         statement.bindLong(8, entity.getAgeYY());
@@ -144,21 +138,21 @@ public final class ChildDao_Impl implements ChildDao {
         if (entity.getWfaStatus() == null) {
           statement.bindNull(14);
         } else {
-          statement.bindString(14, entity.getWfaStatus());
+          statement.bindText(14, entity.getWfaStatus());
         }
         if (entity.getHfaStatus() == null) {
           statement.bindNull(15);
         } else {
-          statement.bindString(15, entity.getHfaStatus());
+          statement.bindText(15, entity.getHfaStatus());
         }
         if (entity.getWfhStatus() == null) {
           statement.bindNull(16);
         } else {
-          statement.bindString(16, entity.getWfhStatus());
+          statement.bindText(16, entity.getWfhStatus());
         }
       }
     };
-    this.__deletionAdapterOfChild = new EntityDeletionOrUpdateAdapter<Child>(__db) {
+    this.__deleteAdapterOfChild = new EntityDeleteOrUpdateAdapter<Child>() {
       @Override
       @NonNull
       protected String createQuery() {
@@ -166,11 +160,11 @@ public final class ChildDao_Impl implements ChildDao {
       }
 
       @Override
-      protected void bind(@NonNull final SupportSQLiteStatement statement, final Child entity) {
+      protected void bind(@NonNull final SQLiteStatement statement, final Child entity) {
         statement.bindLong(1, entity.getId());
       }
     };
-    this.__deletionAdapterOfChildWpData = new EntityDeletionOrUpdateAdapter<ChildWpData>(__db) {
+    this.__deleteAdapterOfChildWpData = new EntityDeleteOrUpdateAdapter<ChildWpData>() {
       @Override
       @NonNull
       protected String createQuery() {
@@ -178,12 +172,11 @@ public final class ChildDao_Impl implements ChildDao {
       }
 
       @Override
-      protected void bind(@NonNull final SupportSQLiteStatement statement,
-          final ChildWpData entity) {
+      protected void bind(@NonNull final SQLiteStatement statement, final ChildWpData entity) {
         statement.bindLong(1, entity.getId());
       }
     };
-    this.__updateAdapterOfChild = new EntityDeletionOrUpdateAdapter<Child>(__db) {
+    this.__updateAdapterOfChild = new EntityDeleteOrUpdateAdapter<Child>() {
       @Override
       @NonNull
       protected String createQuery() {
@@ -191,22 +184,22 @@ public final class ChildDao_Impl implements ChildDao {
       }
 
       @Override
-      protected void bind(@NonNull final SupportSQLiteStatement statement, final Child entity) {
+      protected void bind(@NonNull final SQLiteStatement statement, final Child entity) {
         statement.bindLong(1, entity.getId());
         if (entity.getRegNo() == null) {
           statement.bindNull(2);
         } else {
-          statement.bindString(2, entity.getRegNo());
+          statement.bindText(2, entity.getRegNo());
         }
         if (entity.getName() == null) {
           statement.bindNull(3);
         } else {
-          statement.bindString(3, entity.getName());
+          statement.bindText(3, entity.getName());
         }
         if (entity.getSex() == null) {
           statement.bindNull(4);
         } else {
-          statement.bindString(4, entity.getSex());
+          statement.bindText(4, entity.getSex());
         }
         final Long _tmp = DateConverter.dateToTimestamp(entity.getDob());
         if (_tmp == null) {
@@ -218,17 +211,17 @@ public final class ChildDao_Impl implements ChildDao {
         if (entity.getGuardian() == null) {
           statement.bindNull(7);
         } else {
-          statement.bindString(7, entity.getGuardian());
+          statement.bindText(7, entity.getGuardian());
         }
         if (entity.getTp() == null) {
           statement.bindNull(8);
         } else {
-          statement.bindString(8, entity.getTp());
+          statement.bindText(8, entity.getTp());
         }
         if (entity.getNote() == null) {
           statement.bindNull(9);
         } else {
-          statement.bindString(9, entity.getNote());
+          statement.bindText(9, entity.getNote());
         }
         statement.bindDouble(10, entity.getFht());
         statement.bindDouble(11, entity.getMht());
@@ -243,7 +236,7 @@ public final class ChildDao_Impl implements ChildDao {
         statement.bindLong(14, entity.getId());
       }
     };
-    this.__updateAdapterOfChildWpData = new EntityDeletionOrUpdateAdapter<ChildWpData>(__db) {
+    this.__updateAdapterOfChildWpData = new EntityDeleteOrUpdateAdapter<ChildWpData>() {
       @Override
       @NonNull
       protected String createQuery() {
@@ -251,8 +244,7 @@ public final class ChildDao_Impl implements ChildDao {
       }
 
       @Override
-      protected void bind(@NonNull final SupportSQLiteStatement statement,
-          final ChildWpData entity) {
+      protected void bind(@NonNull final SQLiteStatement statement, final ChildWpData entity) {
         statement.bindLong(1, entity.getId());
         statement.bindLong(2, entity.getChildId());
         final Long _tmp = DateConverter.dateToTimestamp(entity.mDate);
@@ -266,7 +258,7 @@ public final class ChildDao_Impl implements ChildDao {
         if (entity.getNote() == null) {
           statement.bindNull(6);
         } else {
-          statement.bindString(6, entity.getNote());
+          statement.bindText(6, entity.getNote());
         }
         statement.bindDouble(7, entity.getAgeDays());
         statement.bindLong(8, entity.getAgeYY());
@@ -278,302 +270,229 @@ public final class ChildDao_Impl implements ChildDao {
         if (entity.getWfaStatus() == null) {
           statement.bindNull(14);
         } else {
-          statement.bindString(14, entity.getWfaStatus());
+          statement.bindText(14, entity.getWfaStatus());
         }
         if (entity.getHfaStatus() == null) {
           statement.bindNull(15);
         } else {
-          statement.bindString(15, entity.getHfaStatus());
+          statement.bindText(15, entity.getHfaStatus());
         }
         if (entity.getWfhStatus() == null) {
           statement.bindNull(16);
         } else {
-          statement.bindString(16, entity.getWfhStatus());
+          statement.bindText(16, entity.getWfhStatus());
         }
         statement.bindLong(17, entity.getId());
-      }
-    };
-    this.__preparedStmtOfDeleteData = new SharedSQLiteStatement(__db) {
-      @Override
-      @NonNull
-      public String createQuery() {
-        final String _query = "DELETE FROM ChildWpData WHERE childId =? ";
-        return _query;
       }
     };
   }
 
   @Override
   public Long insert(final Child obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      final Long _result = __insertionAdapterOfChild.insertAndReturnId(obj);
-      __db.setTransactionSuccessful();
-      return _result;
-    } finally {
-      __db.endTransaction();
-    }
+    return DBUtil.performBlocking(__db, false, true, (_connection) -> {
+      return __insertAdapterOfChild.insertAndReturnId(_connection, obj);
+    });
   }
 
   @Override
   public void insert(final ChildWpData childWpData) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __insertionAdapterOfChildWpData.insert(childWpData);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+    DBUtil.performBlocking(__db, false, true, (_connection) -> {
+      __insertAdapterOfChildWpData.insert(_connection, childWpData);
+      return null;
+    });
   }
 
   @Override
   public void delete(final Child obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __deletionAdapterOfChild.handle(obj);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+    DBUtil.performBlocking(__db, false, true, (_connection) -> {
+      __deleteAdapterOfChild.handle(_connection, obj);
+      return null;
+    });
   }
 
   @Override
   public void delete(final ChildWpData childWpData) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __deletionAdapterOfChildWpData.handle(childWpData);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+    DBUtil.performBlocking(__db, false, true, (_connection) -> {
+      __deleteAdapterOfChildWpData.handle(_connection, childWpData);
+      return null;
+    });
   }
 
   @Override
   public void deleteAll(final ChildWpData... childWpData) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __deletionAdapterOfChildWpData.handleMultiple(childWpData);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+    DBUtil.performBlocking(__db, false, true, (_connection) -> {
+      __deleteAdapterOfChildWpData.handleMultiple(_connection, childWpData);
+      return null;
+    });
   }
 
   @Override
   public void update(final Child obj) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __updateAdapterOfChild.handle(obj);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
+    DBUtil.performBlocking(__db, false, true, (_connection) -> {
+      __updateAdapterOfChild.handle(_connection, obj);
+      return null;
+    });
   }
 
   @Override
   public void update(final ChildWpData childWpData) {
-    __db.assertNotSuspendingTransaction();
-    __db.beginTransaction();
-    try {
-      __updateAdapterOfChildWpData.handle(childWpData);
-      __db.setTransactionSuccessful();
-    } finally {
-      __db.endTransaction();
-    }
-  }
-
-  @Override
-  public void deleteData(final int childId) {
-    __db.assertNotSuspendingTransaction();
-    final SupportSQLiteStatement _stmt = __preparedStmtOfDeleteData.acquire();
-    int _argIndex = 1;
-    _stmt.bindLong(_argIndex, childId);
-    try {
-      __db.beginTransaction();
-      try {
-        _stmt.executeUpdateDelete();
-        __db.setTransactionSuccessful();
-      } finally {
-        __db.endTransaction();
-      }
-    } finally {
-      __preparedStmtOfDeleteData.release(_stmt);
-    }
+    DBUtil.performBlocking(__db, false, true, (_connection) -> {
+      __updateAdapterOfChildWpData.handle(_connection, childWpData);
+      return null;
+    });
   }
 
   @Override
   public LiveData<List<ChildData>> getChildData(final String name, final boolean delete) {
     final String _sql = "SELECT * FROM child WHERE name LIKE ? AND deleted = ? order by name";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
-    int _argIndex = 1;
-    if (name == null) {
-      _statement.bindNull(_argIndex);
-    } else {
-      _statement.bindString(_argIndex, name);
-    }
-    _argIndex = 2;
-    final int _tmp = delete ? 1 : 0;
-    _statement.bindLong(_argIndex, _tmp);
     return __db.getInvalidationTracker().createLiveData(new String[] {"childWpData",
-        "child"}, true, new Callable<List<ChildData>>() {
-      @Override
-      @Nullable
-      public List<ChildData> call() throws Exception {
-        __db.beginTransaction();
-        try {
-          final Cursor _cursor = DBUtil.query(__db, _statement, true, null);
-          try {
-            final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-            final int _cursorIndexOfRegNo = CursorUtil.getColumnIndexOrThrow(_cursor, "regNo");
-            final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
-            final int _cursorIndexOfSex = CursorUtil.getColumnIndexOrThrow(_cursor, "sex");
-            final int _cursorIndexOfDob = CursorUtil.getColumnIndexOrThrow(_cursor, "dob");
-            final int _cursorIndexOfMaturity = CursorUtil.getColumnIndexOrThrow(_cursor, "maturity");
-            final int _cursorIndexOfGuardian = CursorUtil.getColumnIndexOrThrow(_cursor, "guardian");
-            final int _cursorIndexOfTp = CursorUtil.getColumnIndexOrThrow(_cursor, "tp");
-            final int _cursorIndexOfNote = CursorUtil.getColumnIndexOrThrow(_cursor, "note");
-            final int _cursorIndexOfFht = CursorUtil.getColumnIndexOrThrow(_cursor, "fht");
-            final int _cursorIndexOfMht = CursorUtil.getColumnIndexOrThrow(_cursor, "mht");
-            final int _cursorIndexOfDeleted = CursorUtil.getColumnIndexOrThrow(_cursor, "deleted");
-            final int _cursorIndexOfAccessTime = CursorUtil.getColumnIndexOrThrow(_cursor, "accessTime");
-            final LongSparseArray<ArrayList<ChildWpData>> _collectionChildWpData = new LongSparseArray<ArrayList<ChildWpData>>();
-            while (_cursor.moveToNext()) {
-              final Long _tmpKey;
-              if (_cursor.isNull(_cursorIndexOfId)) {
-                _tmpKey = null;
-              } else {
-                _tmpKey = _cursor.getLong(_cursorIndexOfId);
-              }
-              if (_tmpKey != null) {
-                if (!_collectionChildWpData.containsKey(_tmpKey)) {
-                  _collectionChildWpData.put(_tmpKey, new ArrayList<ChildWpData>());
-                }
-              }
-            }
-            _cursor.moveToPosition(-1);
-            __fetchRelationshipchildWpDataAssssYmlSmiRoomChildWpData(_collectionChildWpData);
-            final List<ChildData> _result = new ArrayList<ChildData>(_cursor.getCount());
-            while (_cursor.moveToNext()) {
-              final ChildData _item;
-              final Child _tmpChild;
-              if (!(_cursor.isNull(_cursorIndexOfId) && _cursor.isNull(_cursorIndexOfRegNo) && _cursor.isNull(_cursorIndexOfName) && _cursor.isNull(_cursorIndexOfSex) && _cursor.isNull(_cursorIndexOfDob) && _cursor.isNull(_cursorIndexOfMaturity) && _cursor.isNull(_cursorIndexOfGuardian) && _cursor.isNull(_cursorIndexOfTp) && _cursor.isNull(_cursorIndexOfNote) && _cursor.isNull(_cursorIndexOfFht) && _cursor.isNull(_cursorIndexOfMht) && _cursor.isNull(_cursorIndexOfDeleted) && _cursor.isNull(_cursorIndexOfAccessTime))) {
-                _tmpChild = new Child();
-                final int _tmpId;
-                _tmpId = _cursor.getInt(_cursorIndexOfId);
-                _tmpChild.setId(_tmpId);
-                final String _tmpRegNo;
-                if (_cursor.isNull(_cursorIndexOfRegNo)) {
-                  _tmpRegNo = null;
-                } else {
-                  _tmpRegNo = _cursor.getString(_cursorIndexOfRegNo);
-                }
-                _tmpChild.setRegNo(_tmpRegNo);
-                final String _tmpName;
-                if (_cursor.isNull(_cursorIndexOfName)) {
-                  _tmpName = null;
-                } else {
-                  _tmpName = _cursor.getString(_cursorIndexOfName);
-                }
-                _tmpChild.setName(_tmpName);
-                final String _tmpSex;
-                if (_cursor.isNull(_cursorIndexOfSex)) {
-                  _tmpSex = null;
-                } else {
-                  _tmpSex = _cursor.getString(_cursorIndexOfSex);
-                }
-                _tmpChild.setSex(_tmpSex);
-                final Date _tmpDob;
-                final Long _tmp_1;
-                if (_cursor.isNull(_cursorIndexOfDob)) {
-                  _tmp_1 = null;
-                } else {
-                  _tmp_1 = _cursor.getLong(_cursorIndexOfDob);
-                }
-                _tmpDob = DateConverter.fromTimestamp(_tmp_1);
-                _tmpChild.setDob(_tmpDob);
-                final int _tmpMaturity;
-                _tmpMaturity = _cursor.getInt(_cursorIndexOfMaturity);
-                _tmpChild.setMaturity(_tmpMaturity);
-                final String _tmpGuardian;
-                if (_cursor.isNull(_cursorIndexOfGuardian)) {
-                  _tmpGuardian = null;
-                } else {
-                  _tmpGuardian = _cursor.getString(_cursorIndexOfGuardian);
-                }
-                _tmpChild.setGuardian(_tmpGuardian);
-                final String _tmpTp;
-                if (_cursor.isNull(_cursorIndexOfTp)) {
-                  _tmpTp = null;
-                } else {
-                  _tmpTp = _cursor.getString(_cursorIndexOfTp);
-                }
-                _tmpChild.setTp(_tmpTp);
-                final String _tmpNote;
-                if (_cursor.isNull(_cursorIndexOfNote)) {
-                  _tmpNote = null;
-                } else {
-                  _tmpNote = _cursor.getString(_cursorIndexOfNote);
-                }
-                _tmpChild.setNote(_tmpNote);
-                final double _tmpFht;
-                _tmpFht = _cursor.getDouble(_cursorIndexOfFht);
-                _tmpChild.setFht(_tmpFht);
-                final double _tmpMht;
-                _tmpMht = _cursor.getDouble(_cursorIndexOfMht);
-                _tmpChild.setMht(_tmpMht);
-                final boolean _tmpDeleted;
-                final int _tmp_2;
-                _tmp_2 = _cursor.getInt(_cursorIndexOfDeleted);
-                _tmpDeleted = _tmp_2 != 0;
-                _tmpChild.setDeleted(_tmpDeleted);
-                final Date _tmpAccessTime;
-                final Long _tmp_3;
-                if (_cursor.isNull(_cursorIndexOfAccessTime)) {
-                  _tmp_3 = null;
-                } else {
-                  _tmp_3 = _cursor.getLong(_cursorIndexOfAccessTime);
-                }
-                _tmpAccessTime = DateConverter.fromTimestamp(_tmp_3);
-                _tmpChild.setAccessTime(_tmpAccessTime);
-              } else {
-                _tmpChild = null;
-              }
-              final ArrayList<ChildWpData> _tmpChildWpDataCollection;
-              final Long _tmpKey_1;
-              if (_cursor.isNull(_cursorIndexOfId)) {
-                _tmpKey_1 = null;
-              } else {
-                _tmpKey_1 = _cursor.getLong(_cursorIndexOfId);
-              }
-              if (_tmpKey_1 != null) {
-                _tmpChildWpDataCollection = _collectionChildWpData.get(_tmpKey_1);
-              } else {
-                _tmpChildWpDataCollection = new ArrayList<ChildWpData>();
-              }
-              _item = new ChildData();
-              _item.child = _tmpChild;
-              _item.childWpData = _tmpChildWpDataCollection;
-              _result.add(_item);
-            }
-            __db.setTransactionSuccessful();
-            return _result;
-          } finally {
-            _cursor.close();
-          }
-        } finally {
-          __db.endTransaction();
+        "child"}, true, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        if (name == null) {
+          _stmt.bindNull(_argIndex);
+        } else {
+          _stmt.bindText(_argIndex, name);
         }
-      }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
+        _argIndex = 2;
+        final int _tmp = delete ? 1 : 0;
+        _stmt.bindLong(_argIndex, _tmp);
+        final int _columnIndexOfId = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "id");
+        final int _columnIndexOfRegNo = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "regNo");
+        final int _columnIndexOfName = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "name");
+        final int _columnIndexOfSex = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "sex");
+        final int _columnIndexOfDob = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "dob");
+        final int _columnIndexOfMaturity = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "maturity");
+        final int _columnIndexOfGuardian = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "guardian");
+        final int _columnIndexOfTp = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "tp");
+        final int _columnIndexOfNote = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "note");
+        final int _columnIndexOfFht = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "fht");
+        final int _columnIndexOfMht = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "mht");
+        final int _columnIndexOfDeleted = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "deleted");
+        final int _columnIndexOfAccessTime = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "accessTime");
+        final LongSparseArray<ArrayList<ChildWpData>> _collectionChildWpData = new LongSparseArray<ArrayList<ChildWpData>>();
+        while (_stmt.step()) {
+          final Long _tmpKey;
+          if (_stmt.isNull(_columnIndexOfId)) {
+            _tmpKey = null;
+          } else {
+            _tmpKey = _stmt.getLong(_columnIndexOfId);
+          }
+          if (_tmpKey != null) {
+            if (!_collectionChildWpData.containsKey(_tmpKey)) {
+              _collectionChildWpData.put(_tmpKey, new ArrayList<ChildWpData>());
+            }
+          }
+        }
+        _stmt.reset();
+        __fetchRelationshipchildWpDataAssssYmlSmiRoomChildWpData(_connection, _collectionChildWpData);
+        final List<ChildData> _result = new ArrayList<ChildData>();
+        while (_stmt.step()) {
+          final ChildData _item;
+          final Child _tmpChild;
+          if (!(_stmt.isNull(_columnIndexOfId) && _stmt.isNull(_columnIndexOfRegNo) && _stmt.isNull(_columnIndexOfName) && _stmt.isNull(_columnIndexOfSex) && _stmt.isNull(_columnIndexOfDob) && _stmt.isNull(_columnIndexOfMaturity) && _stmt.isNull(_columnIndexOfGuardian) && _stmt.isNull(_columnIndexOfTp) && _stmt.isNull(_columnIndexOfNote) && _stmt.isNull(_columnIndexOfFht) && _stmt.isNull(_columnIndexOfMht) && _stmt.isNull(_columnIndexOfDeleted) && _stmt.isNull(_columnIndexOfAccessTime))) {
+            _tmpChild = new Child();
+            final int _tmpId;
+            _tmpId = (int) (_stmt.getLong(_columnIndexOfId));
+            _tmpChild.setId(_tmpId);
+            final String _tmpRegNo;
+            if (_stmt.isNull(_columnIndexOfRegNo)) {
+              _tmpRegNo = null;
+            } else {
+              _tmpRegNo = _stmt.getText(_columnIndexOfRegNo);
+            }
+            _tmpChild.setRegNo(_tmpRegNo);
+            final String _tmpName;
+            if (_stmt.isNull(_columnIndexOfName)) {
+              _tmpName = null;
+            } else {
+              _tmpName = _stmt.getText(_columnIndexOfName);
+            }
+            _tmpChild.setName(_tmpName);
+            final String _tmpSex;
+            if (_stmt.isNull(_columnIndexOfSex)) {
+              _tmpSex = null;
+            } else {
+              _tmpSex = _stmt.getText(_columnIndexOfSex);
+            }
+            _tmpChild.setSex(_tmpSex);
+            final Date _tmpDob;
+            final Long _tmp_1;
+            if (_stmt.isNull(_columnIndexOfDob)) {
+              _tmp_1 = null;
+            } else {
+              _tmp_1 = _stmt.getLong(_columnIndexOfDob);
+            }
+            _tmpDob = DateConverter.fromTimestamp(_tmp_1);
+            _tmpChild.setDob(_tmpDob);
+            final int _tmpMaturity;
+            _tmpMaturity = (int) (_stmt.getLong(_columnIndexOfMaturity));
+            _tmpChild.setMaturity(_tmpMaturity);
+            final String _tmpGuardian;
+            if (_stmt.isNull(_columnIndexOfGuardian)) {
+              _tmpGuardian = null;
+            } else {
+              _tmpGuardian = _stmt.getText(_columnIndexOfGuardian);
+            }
+            _tmpChild.setGuardian(_tmpGuardian);
+            final String _tmpTp;
+            if (_stmt.isNull(_columnIndexOfTp)) {
+              _tmpTp = null;
+            } else {
+              _tmpTp = _stmt.getText(_columnIndexOfTp);
+            }
+            _tmpChild.setTp(_tmpTp);
+            final String _tmpNote;
+            if (_stmt.isNull(_columnIndexOfNote)) {
+              _tmpNote = null;
+            } else {
+              _tmpNote = _stmt.getText(_columnIndexOfNote);
+            }
+            _tmpChild.setNote(_tmpNote);
+            final double _tmpFht;
+            _tmpFht = _stmt.getDouble(_columnIndexOfFht);
+            _tmpChild.setFht(_tmpFht);
+            final double _tmpMht;
+            _tmpMht = _stmt.getDouble(_columnIndexOfMht);
+            _tmpChild.setMht(_tmpMht);
+            final boolean _tmpDeleted;
+            final int _tmp_2;
+            _tmp_2 = (int) (_stmt.getLong(_columnIndexOfDeleted));
+            _tmpDeleted = _tmp_2 != 0;
+            _tmpChild.setDeleted(_tmpDeleted);
+            final Date _tmpAccessTime;
+            final Long _tmp_3;
+            if (_stmt.isNull(_columnIndexOfAccessTime)) {
+              _tmp_3 = null;
+            } else {
+              _tmp_3 = _stmt.getLong(_columnIndexOfAccessTime);
+            }
+            _tmpAccessTime = DateConverter.fromTimestamp(_tmp_3);
+            _tmpChild.setAccessTime(_tmpAccessTime);
+          } else {
+            _tmpChild = null;
+          }
+          final ArrayList<ChildWpData> _tmpChildWpDataCollection;
+          final Long _tmpKey_1;
+          if (_stmt.isNull(_columnIndexOfId)) {
+            _tmpKey_1 = null;
+          } else {
+            _tmpKey_1 = _stmt.getLong(_columnIndexOfId);
+          }
+          if (_tmpKey_1 != null) {
+            _tmpChildWpDataCollection = _collectionChildWpData.get(_tmpKey_1);
+          } else {
+            _tmpChildWpDataCollection = new ArrayList<ChildWpData>();
+          }
+          _item = new ChildData();
+          _item.child = _tmpChild;
+          _item.childWpData = _tmpChildWpDataCollection;
+          _result.add(_item);
+        }
+        return _result;
+      } finally {
+        _stmt.close();
       }
     });
   }
@@ -581,123 +500,113 @@ public final class ChildDao_Impl implements ChildDao {
   @Override
   public LiveData<Child> getChild(final int childId, final boolean delete) {
     final String _sql = "SELECT * FROM child where id = ? and deleted = ?";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 2);
-    int _argIndex = 1;
-    _statement.bindLong(_argIndex, childId);
-    _argIndex = 2;
-    final int _tmp = delete ? 1 : 0;
-    _statement.bindLong(_argIndex, _tmp);
-    return __db.getInvalidationTracker().createLiveData(new String[] {"child"}, false, new Callable<Child>() {
-      @Override
-      @Nullable
-      public Child call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-          final int _cursorIndexOfRegNo = CursorUtil.getColumnIndexOrThrow(_cursor, "regNo");
-          final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
-          final int _cursorIndexOfSex = CursorUtil.getColumnIndexOrThrow(_cursor, "sex");
-          final int _cursorIndexOfDob = CursorUtil.getColumnIndexOrThrow(_cursor, "dob");
-          final int _cursorIndexOfMaturity = CursorUtil.getColumnIndexOrThrow(_cursor, "maturity");
-          final int _cursorIndexOfGuardian = CursorUtil.getColumnIndexOrThrow(_cursor, "guardian");
-          final int _cursorIndexOfTp = CursorUtil.getColumnIndexOrThrow(_cursor, "tp");
-          final int _cursorIndexOfNote = CursorUtil.getColumnIndexOrThrow(_cursor, "note");
-          final int _cursorIndexOfFht = CursorUtil.getColumnIndexOrThrow(_cursor, "fht");
-          final int _cursorIndexOfMht = CursorUtil.getColumnIndexOrThrow(_cursor, "mht");
-          final int _cursorIndexOfDeleted = CursorUtil.getColumnIndexOrThrow(_cursor, "deleted");
-          final int _cursorIndexOfAccessTime = CursorUtil.getColumnIndexOrThrow(_cursor, "accessTime");
-          final Child _result;
-          if (_cursor.moveToFirst()) {
-            _result = new Child();
-            final int _tmpId;
-            _tmpId = _cursor.getInt(_cursorIndexOfId);
-            _result.setId(_tmpId);
-            final String _tmpRegNo;
-            if (_cursor.isNull(_cursorIndexOfRegNo)) {
-              _tmpRegNo = null;
-            } else {
-              _tmpRegNo = _cursor.getString(_cursorIndexOfRegNo);
-            }
-            _result.setRegNo(_tmpRegNo);
-            final String _tmpName;
-            if (_cursor.isNull(_cursorIndexOfName)) {
-              _tmpName = null;
-            } else {
-              _tmpName = _cursor.getString(_cursorIndexOfName);
-            }
-            _result.setName(_tmpName);
-            final String _tmpSex;
-            if (_cursor.isNull(_cursorIndexOfSex)) {
-              _tmpSex = null;
-            } else {
-              _tmpSex = _cursor.getString(_cursorIndexOfSex);
-            }
-            _result.setSex(_tmpSex);
-            final Date _tmpDob;
-            final Long _tmp_1;
-            if (_cursor.isNull(_cursorIndexOfDob)) {
-              _tmp_1 = null;
-            } else {
-              _tmp_1 = _cursor.getLong(_cursorIndexOfDob);
-            }
-            _tmpDob = DateConverter.fromTimestamp(_tmp_1);
-            _result.setDob(_tmpDob);
-            final int _tmpMaturity;
-            _tmpMaturity = _cursor.getInt(_cursorIndexOfMaturity);
-            _result.setMaturity(_tmpMaturity);
-            final String _tmpGuardian;
-            if (_cursor.isNull(_cursorIndexOfGuardian)) {
-              _tmpGuardian = null;
-            } else {
-              _tmpGuardian = _cursor.getString(_cursorIndexOfGuardian);
-            }
-            _result.setGuardian(_tmpGuardian);
-            final String _tmpTp;
-            if (_cursor.isNull(_cursorIndexOfTp)) {
-              _tmpTp = null;
-            } else {
-              _tmpTp = _cursor.getString(_cursorIndexOfTp);
-            }
-            _result.setTp(_tmpTp);
-            final String _tmpNote;
-            if (_cursor.isNull(_cursorIndexOfNote)) {
-              _tmpNote = null;
-            } else {
-              _tmpNote = _cursor.getString(_cursorIndexOfNote);
-            }
-            _result.setNote(_tmpNote);
-            final double _tmpFht;
-            _tmpFht = _cursor.getDouble(_cursorIndexOfFht);
-            _result.setFht(_tmpFht);
-            final double _tmpMht;
-            _tmpMht = _cursor.getDouble(_cursorIndexOfMht);
-            _result.setMht(_tmpMht);
-            final boolean _tmpDeleted;
-            final int _tmp_2;
-            _tmp_2 = _cursor.getInt(_cursorIndexOfDeleted);
-            _tmpDeleted = _tmp_2 != 0;
-            _result.setDeleted(_tmpDeleted);
-            final Date _tmpAccessTime;
-            final Long _tmp_3;
-            if (_cursor.isNull(_cursorIndexOfAccessTime)) {
-              _tmp_3 = null;
-            } else {
-              _tmp_3 = _cursor.getLong(_cursorIndexOfAccessTime);
-            }
-            _tmpAccessTime = DateConverter.fromTimestamp(_tmp_3);
-            _result.setAccessTime(_tmpAccessTime);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"child"}, false, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, childId);
+        _argIndex = 2;
+        final int _tmp = delete ? 1 : 0;
+        _stmt.bindLong(_argIndex, _tmp);
+        final int _columnIndexOfId = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "id");
+        final int _columnIndexOfRegNo = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "regNo");
+        final int _columnIndexOfName = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "name");
+        final int _columnIndexOfSex = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "sex");
+        final int _columnIndexOfDob = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "dob");
+        final int _columnIndexOfMaturity = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "maturity");
+        final int _columnIndexOfGuardian = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "guardian");
+        final int _columnIndexOfTp = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "tp");
+        final int _columnIndexOfNote = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "note");
+        final int _columnIndexOfFht = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "fht");
+        final int _columnIndexOfMht = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "mht");
+        final int _columnIndexOfDeleted = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "deleted");
+        final int _columnIndexOfAccessTime = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "accessTime");
+        final Child _result;
+        if (_stmt.step()) {
+          _result = new Child();
+          final int _tmpId;
+          _tmpId = (int) (_stmt.getLong(_columnIndexOfId));
+          _result.setId(_tmpId);
+          final String _tmpRegNo;
+          if (_stmt.isNull(_columnIndexOfRegNo)) {
+            _tmpRegNo = null;
           } else {
-            _result = null;
+            _tmpRegNo = _stmt.getText(_columnIndexOfRegNo);
           }
-          return _result;
-        } finally {
-          _cursor.close();
+          _result.setRegNo(_tmpRegNo);
+          final String _tmpName;
+          if (_stmt.isNull(_columnIndexOfName)) {
+            _tmpName = null;
+          } else {
+            _tmpName = _stmt.getText(_columnIndexOfName);
+          }
+          _result.setName(_tmpName);
+          final String _tmpSex;
+          if (_stmt.isNull(_columnIndexOfSex)) {
+            _tmpSex = null;
+          } else {
+            _tmpSex = _stmt.getText(_columnIndexOfSex);
+          }
+          _result.setSex(_tmpSex);
+          final Date _tmpDob;
+          final Long _tmp_1;
+          if (_stmt.isNull(_columnIndexOfDob)) {
+            _tmp_1 = null;
+          } else {
+            _tmp_1 = _stmt.getLong(_columnIndexOfDob);
+          }
+          _tmpDob = DateConverter.fromTimestamp(_tmp_1);
+          _result.setDob(_tmpDob);
+          final int _tmpMaturity;
+          _tmpMaturity = (int) (_stmt.getLong(_columnIndexOfMaturity));
+          _result.setMaturity(_tmpMaturity);
+          final String _tmpGuardian;
+          if (_stmt.isNull(_columnIndexOfGuardian)) {
+            _tmpGuardian = null;
+          } else {
+            _tmpGuardian = _stmt.getText(_columnIndexOfGuardian);
+          }
+          _result.setGuardian(_tmpGuardian);
+          final String _tmpTp;
+          if (_stmt.isNull(_columnIndexOfTp)) {
+            _tmpTp = null;
+          } else {
+            _tmpTp = _stmt.getText(_columnIndexOfTp);
+          }
+          _result.setTp(_tmpTp);
+          final String _tmpNote;
+          if (_stmt.isNull(_columnIndexOfNote)) {
+            _tmpNote = null;
+          } else {
+            _tmpNote = _stmt.getText(_columnIndexOfNote);
+          }
+          _result.setNote(_tmpNote);
+          final double _tmpFht;
+          _tmpFht = _stmt.getDouble(_columnIndexOfFht);
+          _result.setFht(_tmpFht);
+          final double _tmpMht;
+          _tmpMht = _stmt.getDouble(_columnIndexOfMht);
+          _result.setMht(_tmpMht);
+          final boolean _tmpDeleted;
+          final int _tmp_2;
+          _tmp_2 = (int) (_stmt.getLong(_columnIndexOfDeleted));
+          _tmpDeleted = _tmp_2 != 0;
+          _result.setDeleted(_tmpDeleted);
+          final Date _tmpAccessTime;
+          final Long _tmp_3;
+          if (_stmt.isNull(_columnIndexOfAccessTime)) {
+            _tmp_3 = null;
+          } else {
+            _tmp_3 = _stmt.getLong(_columnIndexOfAccessTime);
+          }
+          _tmpAccessTime = DateConverter.fromTimestamp(_tmp_3);
+          _result.setAccessTime(_tmpAccessTime);
+        } else {
+          _result = null;
         }
-      }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
+        return _result;
+      } finally {
+        _stmt.close();
       }
     });
   }
@@ -705,267 +614,255 @@ public final class ChildDao_Impl implements ChildDao {
   @Override
   public Child getChild(final String regNo) {
     final String _sql = "SELECT * FROM child where regNo = ?";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
-    int _argIndex = 1;
-    if (regNo == null) {
-      _statement.bindNull(_argIndex);
-    } else {
-      _statement.bindString(_argIndex, regNo);
-    }
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-      final int _cursorIndexOfRegNo = CursorUtil.getColumnIndexOrThrow(_cursor, "regNo");
-      final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
-      final int _cursorIndexOfSex = CursorUtil.getColumnIndexOrThrow(_cursor, "sex");
-      final int _cursorIndexOfDob = CursorUtil.getColumnIndexOrThrow(_cursor, "dob");
-      final int _cursorIndexOfMaturity = CursorUtil.getColumnIndexOrThrow(_cursor, "maturity");
-      final int _cursorIndexOfGuardian = CursorUtil.getColumnIndexOrThrow(_cursor, "guardian");
-      final int _cursorIndexOfTp = CursorUtil.getColumnIndexOrThrow(_cursor, "tp");
-      final int _cursorIndexOfNote = CursorUtil.getColumnIndexOrThrow(_cursor, "note");
-      final int _cursorIndexOfFht = CursorUtil.getColumnIndexOrThrow(_cursor, "fht");
-      final int _cursorIndexOfMht = CursorUtil.getColumnIndexOrThrow(_cursor, "mht");
-      final int _cursorIndexOfDeleted = CursorUtil.getColumnIndexOrThrow(_cursor, "deleted");
-      final int _cursorIndexOfAccessTime = CursorUtil.getColumnIndexOrThrow(_cursor, "accessTime");
-      final Child _result;
-      if (_cursor.moveToFirst()) {
-        _result = new Child();
-        final int _tmpId;
-        _tmpId = _cursor.getInt(_cursorIndexOfId);
-        _result.setId(_tmpId);
-        final String _tmpRegNo;
-        if (_cursor.isNull(_cursorIndexOfRegNo)) {
-          _tmpRegNo = null;
+    return DBUtil.performBlocking(__db, true, false, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        if (regNo == null) {
+          _stmt.bindNull(_argIndex);
         } else {
-          _tmpRegNo = _cursor.getString(_cursorIndexOfRegNo);
+          _stmt.bindText(_argIndex, regNo);
         }
-        _result.setRegNo(_tmpRegNo);
-        final String _tmpName;
-        if (_cursor.isNull(_cursorIndexOfName)) {
-          _tmpName = null;
+        final int _columnIndexOfId = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "id");
+        final int _columnIndexOfRegNo = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "regNo");
+        final int _columnIndexOfName = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "name");
+        final int _columnIndexOfSex = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "sex");
+        final int _columnIndexOfDob = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "dob");
+        final int _columnIndexOfMaturity = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "maturity");
+        final int _columnIndexOfGuardian = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "guardian");
+        final int _columnIndexOfTp = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "tp");
+        final int _columnIndexOfNote = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "note");
+        final int _columnIndexOfFht = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "fht");
+        final int _columnIndexOfMht = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "mht");
+        final int _columnIndexOfDeleted = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "deleted");
+        final int _columnIndexOfAccessTime = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "accessTime");
+        final Child _result;
+        if (_stmt.step()) {
+          _result = new Child();
+          final int _tmpId;
+          _tmpId = (int) (_stmt.getLong(_columnIndexOfId));
+          _result.setId(_tmpId);
+          final String _tmpRegNo;
+          if (_stmt.isNull(_columnIndexOfRegNo)) {
+            _tmpRegNo = null;
+          } else {
+            _tmpRegNo = _stmt.getText(_columnIndexOfRegNo);
+          }
+          _result.setRegNo(_tmpRegNo);
+          final String _tmpName;
+          if (_stmt.isNull(_columnIndexOfName)) {
+            _tmpName = null;
+          } else {
+            _tmpName = _stmt.getText(_columnIndexOfName);
+          }
+          _result.setName(_tmpName);
+          final String _tmpSex;
+          if (_stmt.isNull(_columnIndexOfSex)) {
+            _tmpSex = null;
+          } else {
+            _tmpSex = _stmt.getText(_columnIndexOfSex);
+          }
+          _result.setSex(_tmpSex);
+          final Date _tmpDob;
+          final Long _tmp;
+          if (_stmt.isNull(_columnIndexOfDob)) {
+            _tmp = null;
+          } else {
+            _tmp = _stmt.getLong(_columnIndexOfDob);
+          }
+          _tmpDob = DateConverter.fromTimestamp(_tmp);
+          _result.setDob(_tmpDob);
+          final int _tmpMaturity;
+          _tmpMaturity = (int) (_stmt.getLong(_columnIndexOfMaturity));
+          _result.setMaturity(_tmpMaturity);
+          final String _tmpGuardian;
+          if (_stmt.isNull(_columnIndexOfGuardian)) {
+            _tmpGuardian = null;
+          } else {
+            _tmpGuardian = _stmt.getText(_columnIndexOfGuardian);
+          }
+          _result.setGuardian(_tmpGuardian);
+          final String _tmpTp;
+          if (_stmt.isNull(_columnIndexOfTp)) {
+            _tmpTp = null;
+          } else {
+            _tmpTp = _stmt.getText(_columnIndexOfTp);
+          }
+          _result.setTp(_tmpTp);
+          final String _tmpNote;
+          if (_stmt.isNull(_columnIndexOfNote)) {
+            _tmpNote = null;
+          } else {
+            _tmpNote = _stmt.getText(_columnIndexOfNote);
+          }
+          _result.setNote(_tmpNote);
+          final double _tmpFht;
+          _tmpFht = _stmt.getDouble(_columnIndexOfFht);
+          _result.setFht(_tmpFht);
+          final double _tmpMht;
+          _tmpMht = _stmt.getDouble(_columnIndexOfMht);
+          _result.setMht(_tmpMht);
+          final boolean _tmpDeleted;
+          final int _tmp_1;
+          _tmp_1 = (int) (_stmt.getLong(_columnIndexOfDeleted));
+          _tmpDeleted = _tmp_1 != 0;
+          _result.setDeleted(_tmpDeleted);
+          final Date _tmpAccessTime;
+          final Long _tmp_2;
+          if (_stmt.isNull(_columnIndexOfAccessTime)) {
+            _tmp_2 = null;
+          } else {
+            _tmp_2 = _stmt.getLong(_columnIndexOfAccessTime);
+          }
+          _tmpAccessTime = DateConverter.fromTimestamp(_tmp_2);
+          _result.setAccessTime(_tmpAccessTime);
         } else {
-          _tmpName = _cursor.getString(_cursorIndexOfName);
+          _result = null;
         }
-        _result.setName(_tmpName);
-        final String _tmpSex;
-        if (_cursor.isNull(_cursorIndexOfSex)) {
-          _tmpSex = null;
-        } else {
-          _tmpSex = _cursor.getString(_cursorIndexOfSex);
-        }
-        _result.setSex(_tmpSex);
-        final Date _tmpDob;
-        final Long _tmp;
-        if (_cursor.isNull(_cursorIndexOfDob)) {
-          _tmp = null;
-        } else {
-          _tmp = _cursor.getLong(_cursorIndexOfDob);
-        }
-        _tmpDob = DateConverter.fromTimestamp(_tmp);
-        _result.setDob(_tmpDob);
-        final int _tmpMaturity;
-        _tmpMaturity = _cursor.getInt(_cursorIndexOfMaturity);
-        _result.setMaturity(_tmpMaturity);
-        final String _tmpGuardian;
-        if (_cursor.isNull(_cursorIndexOfGuardian)) {
-          _tmpGuardian = null;
-        } else {
-          _tmpGuardian = _cursor.getString(_cursorIndexOfGuardian);
-        }
-        _result.setGuardian(_tmpGuardian);
-        final String _tmpTp;
-        if (_cursor.isNull(_cursorIndexOfTp)) {
-          _tmpTp = null;
-        } else {
-          _tmpTp = _cursor.getString(_cursorIndexOfTp);
-        }
-        _result.setTp(_tmpTp);
-        final String _tmpNote;
-        if (_cursor.isNull(_cursorIndexOfNote)) {
-          _tmpNote = null;
-        } else {
-          _tmpNote = _cursor.getString(_cursorIndexOfNote);
-        }
-        _result.setNote(_tmpNote);
-        final double _tmpFht;
-        _tmpFht = _cursor.getDouble(_cursorIndexOfFht);
-        _result.setFht(_tmpFht);
-        final double _tmpMht;
-        _tmpMht = _cursor.getDouble(_cursorIndexOfMht);
-        _result.setMht(_tmpMht);
-        final boolean _tmpDeleted;
-        final int _tmp_1;
-        _tmp_1 = _cursor.getInt(_cursorIndexOfDeleted);
-        _tmpDeleted = _tmp_1 != 0;
-        _result.setDeleted(_tmpDeleted);
-        final Date _tmpAccessTime;
-        final Long _tmp_2;
-        if (_cursor.isNull(_cursorIndexOfAccessTime)) {
-          _tmp_2 = null;
-        } else {
-          _tmp_2 = _cursor.getLong(_cursorIndexOfAccessTime);
-        }
-        _tmpAccessTime = DateConverter.fromTimestamp(_tmp_2);
-        _result.setAccessTime(_tmpAccessTime);
-      } else {
-        _result = null;
+        return _result;
+      } finally {
+        _stmt.close();
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+    });
   }
 
   @Override
   public Child getChildByName(final String name) {
     final String _sql = "SELECT * FROM child WHERE upper(name) = upper(?)";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
-    int _argIndex = 1;
-    if (name == null) {
-      _statement.bindNull(_argIndex);
-    } else {
-      _statement.bindString(_argIndex, name);
-    }
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final int _cursorIndexOfId = CursorUtil.getColumnIndexOrThrow(_cursor, "id");
-      final int _cursorIndexOfRegNo = CursorUtil.getColumnIndexOrThrow(_cursor, "regNo");
-      final int _cursorIndexOfName = CursorUtil.getColumnIndexOrThrow(_cursor, "name");
-      final int _cursorIndexOfSex = CursorUtil.getColumnIndexOrThrow(_cursor, "sex");
-      final int _cursorIndexOfDob = CursorUtil.getColumnIndexOrThrow(_cursor, "dob");
-      final int _cursorIndexOfMaturity = CursorUtil.getColumnIndexOrThrow(_cursor, "maturity");
-      final int _cursorIndexOfGuardian = CursorUtil.getColumnIndexOrThrow(_cursor, "guardian");
-      final int _cursorIndexOfTp = CursorUtil.getColumnIndexOrThrow(_cursor, "tp");
-      final int _cursorIndexOfNote = CursorUtil.getColumnIndexOrThrow(_cursor, "note");
-      final int _cursorIndexOfFht = CursorUtil.getColumnIndexOrThrow(_cursor, "fht");
-      final int _cursorIndexOfMht = CursorUtil.getColumnIndexOrThrow(_cursor, "mht");
-      final int _cursorIndexOfDeleted = CursorUtil.getColumnIndexOrThrow(_cursor, "deleted");
-      final int _cursorIndexOfAccessTime = CursorUtil.getColumnIndexOrThrow(_cursor, "accessTime");
-      final Child _result;
-      if (_cursor.moveToFirst()) {
-        _result = new Child();
-        final int _tmpId;
-        _tmpId = _cursor.getInt(_cursorIndexOfId);
-        _result.setId(_tmpId);
-        final String _tmpRegNo;
-        if (_cursor.isNull(_cursorIndexOfRegNo)) {
-          _tmpRegNo = null;
+    return DBUtil.performBlocking(__db, true, false, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        if (name == null) {
+          _stmt.bindNull(_argIndex);
         } else {
-          _tmpRegNo = _cursor.getString(_cursorIndexOfRegNo);
+          _stmt.bindText(_argIndex, name);
         }
-        _result.setRegNo(_tmpRegNo);
-        final String _tmpName;
-        if (_cursor.isNull(_cursorIndexOfName)) {
-          _tmpName = null;
+        final int _columnIndexOfId = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "id");
+        final int _columnIndexOfRegNo = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "regNo");
+        final int _columnIndexOfName = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "name");
+        final int _columnIndexOfSex = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "sex");
+        final int _columnIndexOfDob = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "dob");
+        final int _columnIndexOfMaturity = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "maturity");
+        final int _columnIndexOfGuardian = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "guardian");
+        final int _columnIndexOfTp = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "tp");
+        final int _columnIndexOfNote = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "note");
+        final int _columnIndexOfFht = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "fht");
+        final int _columnIndexOfMht = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "mht");
+        final int _columnIndexOfDeleted = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "deleted");
+        final int _columnIndexOfAccessTime = SQLiteStatementUtil.getColumnIndexOrThrow(_stmt, "accessTime");
+        final Child _result;
+        if (_stmt.step()) {
+          _result = new Child();
+          final int _tmpId;
+          _tmpId = (int) (_stmt.getLong(_columnIndexOfId));
+          _result.setId(_tmpId);
+          final String _tmpRegNo;
+          if (_stmt.isNull(_columnIndexOfRegNo)) {
+            _tmpRegNo = null;
+          } else {
+            _tmpRegNo = _stmt.getText(_columnIndexOfRegNo);
+          }
+          _result.setRegNo(_tmpRegNo);
+          final String _tmpName;
+          if (_stmt.isNull(_columnIndexOfName)) {
+            _tmpName = null;
+          } else {
+            _tmpName = _stmt.getText(_columnIndexOfName);
+          }
+          _result.setName(_tmpName);
+          final String _tmpSex;
+          if (_stmt.isNull(_columnIndexOfSex)) {
+            _tmpSex = null;
+          } else {
+            _tmpSex = _stmt.getText(_columnIndexOfSex);
+          }
+          _result.setSex(_tmpSex);
+          final Date _tmpDob;
+          final Long _tmp;
+          if (_stmt.isNull(_columnIndexOfDob)) {
+            _tmp = null;
+          } else {
+            _tmp = _stmt.getLong(_columnIndexOfDob);
+          }
+          _tmpDob = DateConverter.fromTimestamp(_tmp);
+          _result.setDob(_tmpDob);
+          final int _tmpMaturity;
+          _tmpMaturity = (int) (_stmt.getLong(_columnIndexOfMaturity));
+          _result.setMaturity(_tmpMaturity);
+          final String _tmpGuardian;
+          if (_stmt.isNull(_columnIndexOfGuardian)) {
+            _tmpGuardian = null;
+          } else {
+            _tmpGuardian = _stmt.getText(_columnIndexOfGuardian);
+          }
+          _result.setGuardian(_tmpGuardian);
+          final String _tmpTp;
+          if (_stmt.isNull(_columnIndexOfTp)) {
+            _tmpTp = null;
+          } else {
+            _tmpTp = _stmt.getText(_columnIndexOfTp);
+          }
+          _result.setTp(_tmpTp);
+          final String _tmpNote;
+          if (_stmt.isNull(_columnIndexOfNote)) {
+            _tmpNote = null;
+          } else {
+            _tmpNote = _stmt.getText(_columnIndexOfNote);
+          }
+          _result.setNote(_tmpNote);
+          final double _tmpFht;
+          _tmpFht = _stmt.getDouble(_columnIndexOfFht);
+          _result.setFht(_tmpFht);
+          final double _tmpMht;
+          _tmpMht = _stmt.getDouble(_columnIndexOfMht);
+          _result.setMht(_tmpMht);
+          final boolean _tmpDeleted;
+          final int _tmp_1;
+          _tmp_1 = (int) (_stmt.getLong(_columnIndexOfDeleted));
+          _tmpDeleted = _tmp_1 != 0;
+          _result.setDeleted(_tmpDeleted);
+          final Date _tmpAccessTime;
+          final Long _tmp_2;
+          if (_stmt.isNull(_columnIndexOfAccessTime)) {
+            _tmp_2 = null;
+          } else {
+            _tmp_2 = _stmt.getLong(_columnIndexOfAccessTime);
+          }
+          _tmpAccessTime = DateConverter.fromTimestamp(_tmp_2);
+          _result.setAccessTime(_tmpAccessTime);
         } else {
-          _tmpName = _cursor.getString(_cursorIndexOfName);
+          _result = null;
         }
-        _result.setName(_tmpName);
-        final String _tmpSex;
-        if (_cursor.isNull(_cursorIndexOfSex)) {
-          _tmpSex = null;
-        } else {
-          _tmpSex = _cursor.getString(_cursorIndexOfSex);
-        }
-        _result.setSex(_tmpSex);
-        final Date _tmpDob;
-        final Long _tmp;
-        if (_cursor.isNull(_cursorIndexOfDob)) {
-          _tmp = null;
-        } else {
-          _tmp = _cursor.getLong(_cursorIndexOfDob);
-        }
-        _tmpDob = DateConverter.fromTimestamp(_tmp);
-        _result.setDob(_tmpDob);
-        final int _tmpMaturity;
-        _tmpMaturity = _cursor.getInt(_cursorIndexOfMaturity);
-        _result.setMaturity(_tmpMaturity);
-        final String _tmpGuardian;
-        if (_cursor.isNull(_cursorIndexOfGuardian)) {
-          _tmpGuardian = null;
-        } else {
-          _tmpGuardian = _cursor.getString(_cursorIndexOfGuardian);
-        }
-        _result.setGuardian(_tmpGuardian);
-        final String _tmpTp;
-        if (_cursor.isNull(_cursorIndexOfTp)) {
-          _tmpTp = null;
-        } else {
-          _tmpTp = _cursor.getString(_cursorIndexOfTp);
-        }
-        _result.setTp(_tmpTp);
-        final String _tmpNote;
-        if (_cursor.isNull(_cursorIndexOfNote)) {
-          _tmpNote = null;
-        } else {
-          _tmpNote = _cursor.getString(_cursorIndexOfNote);
-        }
-        _result.setNote(_tmpNote);
-        final double _tmpFht;
-        _tmpFht = _cursor.getDouble(_cursorIndexOfFht);
-        _result.setFht(_tmpFht);
-        final double _tmpMht;
-        _tmpMht = _cursor.getDouble(_cursorIndexOfMht);
-        _result.setMht(_tmpMht);
-        final boolean _tmpDeleted;
-        final int _tmp_1;
-        _tmp_1 = _cursor.getInt(_cursorIndexOfDeleted);
-        _tmpDeleted = _tmp_1 != 0;
-        _result.setDeleted(_tmpDeleted);
-        final Date _tmpAccessTime;
-        final Long _tmp_2;
-        if (_cursor.isNull(_cursorIndexOfAccessTime)) {
-          _tmp_2 = null;
-        } else {
-          _tmp_2 = _cursor.getLong(_cursorIndexOfAccessTime);
-        }
-        _tmpAccessTime = DateConverter.fromTimestamp(_tmp_2);
-        _result.setAccessTime(_tmpAccessTime);
-      } else {
-        _result = null;
+        return _result;
+      } finally {
+        _stmt.close();
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+    });
   }
 
   @Override
   public LiveData<List<String>> getChildName(final boolean delete) {
     final String _sql = "SELECT name FROM child WHERE deleted = ? order by name";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
-    int _argIndex = 1;
-    final int _tmp = delete ? 1 : 0;
-    _statement.bindLong(_argIndex, _tmp);
-    return __db.getInvalidationTracker().createLiveData(new String[] {"child"}, false, new Callable<List<String>>() {
-      @Override
-      @Nullable
-      public List<String> call() throws Exception {
-        final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-        try {
-          final List<String> _result = new ArrayList<String>(_cursor.getCount());
-          while (_cursor.moveToNext()) {
-            final String _item;
-            if (_cursor.isNull(0)) {
-              _item = null;
-            } else {
-              _item = _cursor.getString(0);
-            }
-            _result.add(_item);
+    return __db.getInvalidationTracker().createLiveData(new String[] {"child"}, false, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        final int _tmp = delete ? 1 : 0;
+        _stmt.bindLong(_argIndex, _tmp);
+        final List<String> _result = new ArrayList<String>();
+        while (_stmt.step()) {
+          final String _item;
+          if (_stmt.isNull(0)) {
+            _item = null;
+          } else {
+            _item = _stmt.getText(0);
           }
-          return _result;
-        } finally {
-          _cursor.close();
+          _result.add(_item);
         }
-      }
-
-      @Override
-      protected void finalize() {
-        _statement.release();
+        return _result;
+      } finally {
+        _stmt.close();
       }
     });
   }
@@ -973,31 +870,46 @@ public final class ChildDao_Impl implements ChildDao {
   @Override
   public Integer getChildId(final String name) {
     final String _sql = "SELECT id FROM child WHERE upper(name) = upper(?) ";
-    final RoomSQLiteQuery _statement = RoomSQLiteQuery.acquire(_sql, 1);
-    int _argIndex = 1;
-    if (name == null) {
-      _statement.bindNull(_argIndex);
-    } else {
-      _statement.bindString(_argIndex, name);
-    }
-    __db.assertNotSuspendingTransaction();
-    final Cursor _cursor = DBUtil.query(__db, _statement, false, null);
-    try {
-      final Integer _result;
-      if (_cursor.moveToFirst()) {
-        if (_cursor.isNull(0)) {
-          _result = null;
+    return DBUtil.performBlocking(__db, true, false, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        if (name == null) {
+          _stmt.bindNull(_argIndex);
         } else {
-          _result = _cursor.getInt(0);
+          _stmt.bindText(_argIndex, name);
         }
-      } else {
-        _result = null;
+        final Integer _result;
+        if (_stmt.step()) {
+          if (_stmt.isNull(0)) {
+            _result = null;
+          } else {
+            _result = (int) (_stmt.getLong(0));
+          }
+        } else {
+          _result = null;
+        }
+        return _result;
+      } finally {
+        _stmt.close();
       }
-      return _result;
-    } finally {
-      _cursor.close();
-      _statement.release();
-    }
+    });
+  }
+
+  @Override
+  public void deleteData(final int childId) {
+    final String _sql = "DELETE FROM ChildWpData WHERE childId =? ";
+    DBUtil.performBlocking(__db, false, true, (_connection) -> {
+      final SQLiteStatement _stmt = _connection.prepare(_sql);
+      try {
+        int _argIndex = 1;
+        _stmt.bindLong(_argIndex, childId);
+        _stmt.step();
+        return null;
+      } finally {
+        _stmt.close();
+      }
+    });
   }
 
   @NonNull
@@ -1006,133 +918,132 @@ public final class ChildDao_Impl implements ChildDao {
   }
 
   private void __fetchRelationshipchildWpDataAssssYmlSmiRoomChildWpData(
+      @NonNull final SQLiteConnection _connection,
       @NonNull final LongSparseArray<ArrayList<ChildWpData>> _map) {
     if (_map.isEmpty()) {
       return;
     }
-    if (_map.size() > RoomDatabase.MAX_BIND_PARAMETER_CNT) {
-      RelationUtil.recursiveFetchLongSparseArray(_map, true, (map) -> {
-        __fetchRelationshipchildWpDataAssssYmlSmiRoomChildWpData(map);
+    if (_map.size() > 999) {
+      RelationUtil.recursiveFetchLongSparseArray(_map, true, (_tmpMap) -> {
+        __fetchRelationshipchildWpDataAssssYmlSmiRoomChildWpData(_connection, _tmpMap);
         return Unit.INSTANCE;
       });
       return;
     }
-    final StringBuilder _stringBuilder = StringUtil.newStringBuilder();
+    final StringBuilder _stringBuilder = new StringBuilder();
     _stringBuilder.append("SELECT `id`,`childId`,`mDate`,`wt`,`ht`,`note`,`ageDays`,`ageYY`,`ageMM`,`ageDD`,`wfaZ`,`hfaZ`,`wfhZ`,`wfaStatus`,`hfaStatus`,`wfhStatus` FROM `childWpData` WHERE `childId` IN (");
     final int _inputSize = _map.size();
     StringUtil.appendPlaceholders(_stringBuilder, _inputSize);
     _stringBuilder.append(")");
     final String _sql = _stringBuilder.toString();
-    final int _argCount = 0 + _inputSize;
-    final RoomSQLiteQuery _stmt = RoomSQLiteQuery.acquire(_sql, _argCount);
+    final SQLiteStatement _stmt = _connection.prepare(_sql);
     int _argIndex = 1;
     for (int i = 0; i < _map.size(); i++) {
       final long _item = _map.keyAt(i);
       _stmt.bindLong(_argIndex, _item);
       _argIndex++;
     }
-    final Cursor _cursor = DBUtil.query(__db, _stmt, false, null);
     try {
-      final int _itemKeyIndex = CursorUtil.getColumnIndex(_cursor, "childId");
+      final int _itemKeyIndex = SQLiteStatementUtil.getColumnIndex(_stmt, "childId");
       if (_itemKeyIndex == -1) {
         return;
       }
-      final int _cursorIndexOfId = 0;
-      final int _cursorIndexOfChildId = 1;
-      final int _cursorIndexOfMDate = 2;
-      final int _cursorIndexOfWt = 3;
-      final int _cursorIndexOfHt = 4;
-      final int _cursorIndexOfNote = 5;
-      final int _cursorIndexOfAgeDays = 6;
-      final int _cursorIndexOfAgeYY = 7;
-      final int _cursorIndexOfAgeMM = 8;
-      final int _cursorIndexOfAgeDD = 9;
-      final int _cursorIndexOfWfaZ = 10;
-      final int _cursorIndexOfHfaZ = 11;
-      final int _cursorIndexOfWfhZ = 12;
-      final int _cursorIndexOfWfaStatus = 13;
-      final int _cursorIndexOfHfaStatus = 14;
-      final int _cursorIndexOfWfhStatus = 15;
-      while (_cursor.moveToNext()) {
+      final int _columnIndexOfId = 0;
+      final int _columnIndexOfChildId = 1;
+      final int _columnIndexOfMDate = 2;
+      final int _columnIndexOfWt = 3;
+      final int _columnIndexOfHt = 4;
+      final int _columnIndexOfNote = 5;
+      final int _columnIndexOfAgeDays = 6;
+      final int _columnIndexOfAgeYY = 7;
+      final int _columnIndexOfAgeMM = 8;
+      final int _columnIndexOfAgeDD = 9;
+      final int _columnIndexOfWfaZ = 10;
+      final int _columnIndexOfHfaZ = 11;
+      final int _columnIndexOfWfhZ = 12;
+      final int _columnIndexOfWfaStatus = 13;
+      final int _columnIndexOfHfaStatus = 14;
+      final int _columnIndexOfWfhStatus = 15;
+      while (_stmt.step()) {
         final long _tmpKey;
-        _tmpKey = _cursor.getLong(_itemKeyIndex);
+        _tmpKey = _stmt.getLong(_itemKeyIndex);
         final ArrayList<ChildWpData> _tmpRelation = _map.get(_tmpKey);
         if (_tmpRelation != null) {
           final ChildWpData _item_1;
           _item_1 = new ChildWpData();
           final int _tmpId;
-          _tmpId = _cursor.getInt(_cursorIndexOfId);
+          _tmpId = (int) (_stmt.getLong(_columnIndexOfId));
           _item_1.setId(_tmpId);
           final int _tmpChildId;
-          _tmpChildId = _cursor.getInt(_cursorIndexOfChildId);
+          _tmpChildId = (int) (_stmt.getLong(_columnIndexOfChildId));
           _item_1.setChildId(_tmpChildId);
           final Long _tmp;
-          if (_cursor.isNull(_cursorIndexOfMDate)) {
+          if (_stmt.isNull(_columnIndexOfMDate)) {
             _tmp = null;
           } else {
-            _tmp = _cursor.getLong(_cursorIndexOfMDate);
+            _tmp = _stmt.getLong(_columnIndexOfMDate);
           }
           _item_1.mDate = DateConverter.fromTimestamp(_tmp);
           final double _tmpWt;
-          _tmpWt = _cursor.getDouble(_cursorIndexOfWt);
+          _tmpWt = _stmt.getDouble(_columnIndexOfWt);
           _item_1.setWt(_tmpWt);
           final double _tmpHt;
-          _tmpHt = _cursor.getDouble(_cursorIndexOfHt);
+          _tmpHt = _stmt.getDouble(_columnIndexOfHt);
           _item_1.setHt(_tmpHt);
           final String _tmpNote;
-          if (_cursor.isNull(_cursorIndexOfNote)) {
+          if (_stmt.isNull(_columnIndexOfNote)) {
             _tmpNote = null;
           } else {
-            _tmpNote = _cursor.getString(_cursorIndexOfNote);
+            _tmpNote = _stmt.getText(_columnIndexOfNote);
           }
           _item_1.setNote(_tmpNote);
           final float _tmpAgeDays;
-          _tmpAgeDays = _cursor.getFloat(_cursorIndexOfAgeDays);
+          _tmpAgeDays = (float) (_stmt.getDouble(_columnIndexOfAgeDays));
           _item_1.setAgeDays(_tmpAgeDays);
           final int _tmpAgeYY;
-          _tmpAgeYY = _cursor.getInt(_cursorIndexOfAgeYY);
+          _tmpAgeYY = (int) (_stmt.getLong(_columnIndexOfAgeYY));
           _item_1.setAgeYY(_tmpAgeYY);
           final int _tmpAgeMM;
-          _tmpAgeMM = _cursor.getInt(_cursorIndexOfAgeMM);
+          _tmpAgeMM = (int) (_stmt.getLong(_columnIndexOfAgeMM));
           _item_1.setAgeMM(_tmpAgeMM);
           final int _tmpAgeDD;
-          _tmpAgeDD = _cursor.getInt(_cursorIndexOfAgeDD);
+          _tmpAgeDD = (int) (_stmt.getLong(_columnIndexOfAgeDD));
           _item_1.setAgeDD(_tmpAgeDD);
           final double _tmpWfaZ;
-          _tmpWfaZ = _cursor.getDouble(_cursorIndexOfWfaZ);
+          _tmpWfaZ = _stmt.getDouble(_columnIndexOfWfaZ);
           _item_1.setWfaZ(_tmpWfaZ);
           final double _tmpHfaZ;
-          _tmpHfaZ = _cursor.getDouble(_cursorIndexOfHfaZ);
+          _tmpHfaZ = _stmt.getDouble(_columnIndexOfHfaZ);
           _item_1.setHfaZ(_tmpHfaZ);
           final double _tmpWfhZ;
-          _tmpWfhZ = _cursor.getDouble(_cursorIndexOfWfhZ);
+          _tmpWfhZ = _stmt.getDouble(_columnIndexOfWfhZ);
           _item_1.setWfhZ(_tmpWfhZ);
           final String _tmpWfaStatus;
-          if (_cursor.isNull(_cursorIndexOfWfaStatus)) {
+          if (_stmt.isNull(_columnIndexOfWfaStatus)) {
             _tmpWfaStatus = null;
           } else {
-            _tmpWfaStatus = _cursor.getString(_cursorIndexOfWfaStatus);
+            _tmpWfaStatus = _stmt.getText(_columnIndexOfWfaStatus);
           }
           _item_1.setWfaStatus(_tmpWfaStatus);
           final String _tmpHfaStatus;
-          if (_cursor.isNull(_cursorIndexOfHfaStatus)) {
+          if (_stmt.isNull(_columnIndexOfHfaStatus)) {
             _tmpHfaStatus = null;
           } else {
-            _tmpHfaStatus = _cursor.getString(_cursorIndexOfHfaStatus);
+            _tmpHfaStatus = _stmt.getText(_columnIndexOfHfaStatus);
           }
           _item_1.setHfaStatus(_tmpHfaStatus);
           final String _tmpWfhStatus;
-          if (_cursor.isNull(_cursorIndexOfWfhStatus)) {
+          if (_stmt.isNull(_columnIndexOfWfhStatus)) {
             _tmpWfhStatus = null;
           } else {
-            _tmpWfhStatus = _cursor.getString(_cursorIndexOfWfhStatus);
+            _tmpWfhStatus = _stmt.getText(_columnIndexOfWfhStatus);
           }
           _item_1.setWfhStatus(_tmpWfhStatus);
           _tmpRelation.add(_item_1);
         }
       }
     } finally {
-      _cursor.close();
+      _stmt.close();
     }
   }
 }

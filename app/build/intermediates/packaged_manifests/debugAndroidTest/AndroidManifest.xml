@@ -3,8 +3,8 @@
     package="sss.yml.smi.test" >
 
     <uses-sdk
-        android:minSdkVersion="19"
-        android:targetSdkVersion="34" />
+        android:minSdkVersion="23"
+        android:targetSdkVersion="36" />
 
     <instrumentation
         android:name="android.test.InstrumentationTestRunner"
@@ -13,7 +13,9 @@
         android:label="Tests for sss.yml.smi"
         android:targetPackage="sss.yml.smi" />
 
-    <application android:debuggable="true" >
+    <application
+        android:debuggable="true"
+        android:extractNativeLibs="false" >
         <uses-library android:name="android.test.runner" />
     </application>
 

@@ -2,10 +2,7 @@
 manifest
 ADDED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:2:1-15:12
 INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:2:1-15:12
-INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:2:1-15:12
 	package
-		INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:2:1-15:12
 		INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:2:11-69
@@ -21,13 +18,7 @@ uses-sdk
 INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
 INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
-INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
 	android:targetSdkVersion
 		INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
-		INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
-		ADDED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml

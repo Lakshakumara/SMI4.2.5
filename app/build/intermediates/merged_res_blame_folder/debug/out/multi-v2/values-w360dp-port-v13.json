@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "sss.yml.smi.app-mergeDebugResources-61:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
+            "outputFile": "sss.yml.smi.app-mergeDebugResources-58:/values-w360dp-port-v13/values-w360dp-port-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\efc7985a351a5b97df45c73c75452215\\transformed\\material-1.11.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\6c95e4ff47e2b59f4793a8ff1d2bcb34\\transformed\\material-1.13.0\\res\\values-w360dp-port-v13\\values-w360dp-port-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9",
                         "startColumns": "4,4,4,4,4,4,4,4",

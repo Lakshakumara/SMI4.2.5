@@ -1,5 +1,4 @@
 sss.yml.smi.test.app-androidTest-0 C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\generated\res\resValues\androidTest\debug
-sss.yml.smi.test.app-androidTest-1 C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\generated\res\rs\androidTest\debug
-sss.yml.smi.test.app-mergeDebugAndroidTestResources-2 C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
-sss.yml.smi.test.app-mergeDebugAndroidTestResources-3 C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
-sss.yml.smi.test.app-merged_res-4 C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\merged_res\debugAndroidTest
+sss.yml.smi.test.app-mergeDebugAndroidTestResources-1 C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\merged.dir
+sss.yml.smi.test.app-mergeDebugAndroidTestResources-2 C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\incremental\debugAndroidTest\mergeDebugAndroidTestResources\stripped.dir
+sss.yml.smi.test.app-merged_res-3 C:\Users\Lenovo\IdeaProjects\SMI4.2.5\app\build\intermediates\merged_res\debugAndroidTest

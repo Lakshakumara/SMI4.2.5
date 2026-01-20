@@ -28,6 +28,7 @@ import sss.yml.smi.Home.HomePage;
 import sss.yml.smi.room.DbRepository;
 import sss.yml.smi.room.School;
 
+/*@noinspection ALL*/
 public class SchoolViewModel extends ViewModel {
     private final DbRepository repository = new DbRepository();
     private static final String txtUrl = PreferenceManager.getDefaultSharedPreferences(
@@ -94,8 +95,7 @@ public class SchoolViewModel extends ViewModel {
                         list.add(array.getJSONObject(i).getString(fieldList.get(0)));
                     }
                 }
-            } catch (IOException | JSONException ex) {
-                ex.printStackTrace();
+            } catch (IOException | JSONException ignored) {
             }
             return new MutableLiveData<>(list);
         }

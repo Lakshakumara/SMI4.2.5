@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "sss.yml.smi.app-mergeDebugResources-61:/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "outputFile": "sss.yml.smi.app-mergeDebugResources-58:/values-sw360dp-v13/values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\5f375f31ef5d1cc407b2af8aae69f5f6\\transformed\\jetified-firebase-ui-auth-8.0.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\1d7958849afa3dc68626389e59878ea9\\transformed\\jetified-firebase-ui-auth-8.0.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",
@@ -21,7 +21,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\efeeb2d909fef39d57ab676773e2807b\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\247de6359763be3b4841eb2bc93637ce\\transformed\\preference-1.2.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

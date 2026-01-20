@@ -1,59 +1,27 @@
-# Built application files
-*.apk
-*.aab
-
-# Files for the ART/Dalvik VM
-*.dex
-
-# Java class files
-*.class
+# Build outputs
+/build/
 
 # Generated files
-bin/
-gen/
-out/
-build/
-/debug/
-/release/
+*.apk
+*.aab
+*.dex
+*.class
 
-# Gradle files
-.gradle/
-gradle-app.setting
-!gradle-wrapper.jar
-
-# Local configuration file (SDK path, etc.)
+# Local configuration
 local.properties
 
-# Proguard
-proguard/
-
-# Log files
-*.log
-
-# Android Studio / IntelliJ
-.idea/
-*.iml
-*.iws
-*.ipr
-
-# Keystore files (IMPORTANT: do not commit these)
-# *.jks
-# *.keystore
-
-# External native build
+# Native build
 .externalNativeBuild/
 .cxx/
 
-# Google Services (optional — remove if you want to commit it)
-# google-services.json
+# Logs
+*.log
 
-# Firebase Crashlytics
+# Crashlytics
 crashlytics.properties
 crashlytics-build.properties
 firebase.json
 
-# Windows
+# OS
 Thumbs.db
-
-# Linux
 *.swp

@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "sss.yml.smi.app-mergeReleaseResources-61:/values-ldltr-v21/values-ldltr-v21.xml",
+            "outputFile": "sss.yml.smi.app-mergeReleaseResources-58:/values-ldltr-v21/values-ldltr-v21.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-3\\7b1b716cdba189774d35ec16d1d97939\\transformed\\appcompat-1.6.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\132e68d919b534bb16596c0225e52e23\\transformed\\appcompat-1.7.1\\res\\values-ldltr-v21\\values-ldltr-v21.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",

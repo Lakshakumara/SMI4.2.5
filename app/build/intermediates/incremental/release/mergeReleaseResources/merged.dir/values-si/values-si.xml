@@ -76,10 +76,16 @@
     <string name="bottomsheet_action_collapse">පහළම පත්‍රය හකුළන්න</string>
     <string name="bottomsheet_action_expand">පහළම පත්‍රය දිග හරින්න</string>
     <string name="bottomsheet_action_expand_halfway">අඩක් දිග හරින්න</string>
-    <string name="bottomsheet_drag_handle_clicked">ඇදීම් හැඬලය දෙවරක් තට්ටු කර ඇත</string>
     <string name="bottomsheet_drag_handle_content_description">හැඬලය අදින්න</string>
     <string name="calBMI">Calculated BMI</string>
     <string name="calculate">ගණනය</string>
+    <string msgid="881409763997275156" name="call_notification_answer_action">"පිළිතුරු දෙ."</string>
+    <string msgid="8793775615905189152" name="call_notification_answer_video_action">"වීඩියෝ"</string>
+    <string msgid="3229508546291798546" name="call_notification_decline_action">"ප්‍රතික්ෂේප ක"</string>
+    <string msgid="2659457946726154263" name="call_notification_hang_up_action">"විසන්ධි කරන්න"</string>
+    <string msgid="6107532579223922871" name="call_notification_incoming_text">"එන ඇමතුම"</string>
+    <string msgid="8623827134497363134" name="call_notification_ongoing_text">"කරගෙන යන ඇමතුම"</string>
+    <string msgid="59049573811482460" name="call_notification_screening_text">"එන ඇමතුමක් පරීක්ෂා කරන්න"</string>
     <string name="cancel">අවලංගු</string>
     <string name="change">Change</string>
     <string name="change_clinic_date">බර මනින දිනය</string>
@@ -136,6 +142,7 @@
     <string name="email">Email*</string>
     <string name="enter_sex">Enter Sex</string>
     <string name="error">වැරදි…</string>
+    <string name="error_a11y_label">දෝෂය: වලංගු නැත</string>
     <string name="error_icon_content_description">දෝෂය</string>
     <string msgid="2427401033573778270" name="expand_button_title">"උසස්"</string>
     <string name="exposed_dropdown_menu_content_description">පතන මෙනුව පෙන්වන්න</string>
@@ -170,6 +177,7 @@
     <string name="low_weight">අඩු බර</string>
     <string name="low_weight_short">අඩු බර</string>
     <string name="m">මා</string>
+    <string name="m3_loading_indicator_content_description">පූරණය වේ</string>
     <string name="male">පුරුෂ</string>
     <string name="material_clock_toggle_content_description">පෙරවරු හෝ පස්වරු තෝරන්න</string>
     <string name="material_hour_24h_suffix">පැය %1$sක්</string>
@@ -177,6 +185,9 @@
     <string name="material_hour_suffix">%1$sයි</string>
     <string name="material_minute_selection">මිනිත්තු තෝරන්න</string>
     <string name="material_minute_suffix">මිනිත්තු %1$sයි</string>
+    <string name="material_slider_range_end">පරාස නිමාව</string>
+    <string name="material_slider_range_start">පරාස ආරම්භය</string>
+    <string name="material_slider_value">අගය</string>
     <string name="material_timepicker_am">පෙව</string>
     <string name="material_timepicker_clock_mode_description">වේලා ආදානය සඳහා ඔරලෝසු ප්‍රකාරය වෙත මාරු වෙන්න.</string>
     <string name="material_timepicker_hour">පැය</string>
@@ -192,6 +203,9 @@
     <string name="mother_father_guardian_s_name">මව/පියා/භාරකරුගේ නම</string>
     <string name="mother_height">මවගේ උස</string>
     <string name="mtrl_badge_numberless_content_description">නව දැනුම්දීම</string>
+    <string name="mtrl_checkbox_state_description_checked">සලකුණු කරන ලදි</string>
+    <string name="mtrl_checkbox_state_description_indeterminate">අඩ වශයෙන් ලකුණු කළ</string>
+    <string name="mtrl_checkbox_state_description_unchecked">හරි ලකුණ නොයෙදූ</string>
     <string name="mtrl_chip_close_icon_content_description">%1$s ඉවත් කරන්න</string>
     <string name="mtrl_exceed_max_badge_number_content_description" ns2:ignore="PluralsCandidate">නව දැනුම්දීම් %1$dකට වඩා</string>
     <string name="mtrl_picker_a11y_next_month">ලබන මාසයට වෙනස් කරන්න</string>
@@ -204,7 +218,7 @@
     <string name="mtrl_picker_date_header_selected">%1$s</string>
     <string name="mtrl_picker_date_header_title">දිනය තෝරන්න</string>
     <string name="mtrl_picker_date_header_unselected">තේරූ දිනය</string>
-    <string name="mtrl_picker_day_of_week_column_header">දින තීරුව: %1$s</string>
+    <string name="mtrl_picker_day_of_week_column_header">%1$s</string>
     <string name="mtrl_picker_end_date_description">අවසාන දිනය %1$s</string>
     <string name="mtrl_picker_invalid_format">අවලංගු ආකෘතියකි.</string>
     <string name="mtrl_picker_invalid_format_example">උදාහරණය: %1$s</string>
@@ -228,9 +242,11 @@
     <string name="mtrl_picker_text_input_year_abbr">ව</string>
     <string name="mtrl_picker_today_description">අද %1$s</string>
     <string name="mtrl_picker_toggle_to_calendar_input_mode">දින දර්ශන ආදාන ප්‍රකාරයට මාරු වන්න</string>
-    <string name="mtrl_picker_toggle_to_day_selection">දින දර්ශන දසුන වෙත මාරු වීමට තට්ටු කරන්න</string>
+    <string name="mtrl_picker_toggle_to_day_selection">දින දර්ශන දසුනට මාරු වන්න</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">පෙළ ආදාන ප්‍රකාරයට මාරු වන්න</string>
-    <string name="mtrl_picker_toggle_to_year_selection">වසරේ දසුන වෙත මාරු වීමට තට්ටු කරන්න</string>
+    <string name="mtrl_picker_toggle_to_year_selection">වසර දසුනට මාරු වන්න</string>
+    <string name="mtrl_picker_toggled_to_day_selection">දින දර්ශන දසුන වෙත මාරු විය</string>
+    <string name="mtrl_picker_toggled_to_year_selection">වසර දසුන වෙත මාරු විය</string>
     <string name="mtrl_timepicker_cancel">අවලංගු කරන්න</string>
     <string name="mtrl_timepicker_confirm">හරි</string>
     <string name="name">නම*</string>
@@ -296,6 +312,8 @@
     <string name="school_name">පාසලේ නම</string>
     <string name="search">Search</string>
     <string msgid="6264217191555673260" name="search_menu_title">"සෙවීම"</string>
+    <string name="searchview_clear_text_content_description">පෙළ හිස් කරන්න</string>
+    <string name="searchview_navigation_content_description">ආපසු</string>
     <string name="select_category">Select category</string>
     <string name="select_child">Select a child</string>
     <string name="select_school">Select School</string>
@@ -307,6 +325,7 @@
     <string name="share">හුවමාරු</string>
     <string name="show_legend">Show Legend</string>
     <string name="show_user_values">Show User Values</string>
+    <string name="side_sheet_accessibility_pane_title">පැති පත්‍රය</string>
     <string name="smi_abbry">පා. වෛ. ප.</string>
     <string name="smi_date">පාවෛප දිනය</string>
     <string name="soft_solution_software">Soft Solution Software</string>

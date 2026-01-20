@@ -1,28 +1,18 @@
 package sss.yml.smi.service;
 
-import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
 import android.os.Build;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
-
 import androidx.annotation.Nullable;
-import androidx.core.app.NotificationCompat;
-import androidx.core.app.NotificationManagerCompat;
-import androidx.core.app.RemoteInput;
-
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.Map;
 import java.util.Objects;
-
-import sss.yml.smi.R;
-import sss.yml.smi.util.NortificationActivity;
 
 public class Notify extends Service {
     private final String CHANNEL_ID = "m";
@@ -59,7 +49,7 @@ public class Notify extends Service {
                             int nosShown = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getInt(newsId, 0);
                             if (nosShown < nos) {
                                // Logger.setMsg("xyz", "shown " + nosShown + " " + newsId);
-                                simpleNotification(newsId, nosShown + 1, newMessage, newSubTitle, newDescription);
+                                //simpleNotification(newsId, nosShown + 1, newMessage, newSubTitle, newDescription);
                             } else {
                                // Logger.setMsg("xyz", "all shown");
                             }
@@ -101,6 +91,12 @@ public class Notify extends Service {
             notificationManager.createNotificationChannel(channel);
         }
     }
+
+
+    /*private Intent getMessageReplyIntent(int i) {
+        return new Intent(this, NortificationActivity.class);
+    }
+
     private void simpleNotification(String newsId, int nosShown, String title, String subTitle, String description){
         Intent intentp = new Intent(this, ReplyReceive.class);
         final PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intentp, 0);
@@ -133,6 +129,7 @@ public class Notify extends Service {
         notificationManager.notify(1, builder.build());
         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putInt(newsId, nosShown).apply();
     }
+
     private void replyNotification(){
         Intent intent = new Intent(this, NortificationActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -167,40 +164,6 @@ public class Notify extends Service {
         notificationManager.notify(1, builder.build());
     }
 
-    private Intent getMessageReplyIntent(int i) {
-        return new Intent(this, NortificationActivity.class);
-    }
-
-    /*protected BroadcastReceiver stopReceiver = new BroadcastReceiver() {
-        @Override
-        public void onReceive(Context context, Intent intent) {
-//Unregister the BroadcastReceiver when the notification is tapped//
-            unregisterReceiver(stopReceiver);
-//Stop the Service//
-            stopSelf();
-        }
-    };*/
-
-    /*private void simpleNotification(String newsId, int nosShown, String title, String subTitle, String description){
-        //Intent intent = new Intent(this, NortificationActivity.class);
-       // intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-       // PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
-
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setSmallIcon(R.drawable.ic_about)
-                .setContentTitle(title)
-                .setContentText(subTitle)
-                .setStyle(new NotificationCompat.BigTextStyle()
-                        .bigText(description))
-                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                // Set the intent that will fire when the user taps the notification
-                //.setContentIntent(pendingIntent)
-                .setAutoCancel(true);
-        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
-        notificationManager.notify(1, builder.build());
-        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putInt(newsId, nosShown).apply();
-        Log.e("xyz", "saved "+nosShown+" "+newsId);
-    }*/
     private void buildNotification(String title, String msg) {
         String stop = "stop";
         //registerReceiver(stopReceiver, new IntentFilter(stop));
@@ -216,5 +179,5 @@ public class Notify extends Service {
                 .setContentIntent(broadcastIntent)
                 .setSmallIcon(android.R.drawable.ic_menu_send);
         startForeground(1, builder.build());
-    }
+    }*/
 }

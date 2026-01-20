@@ -1,64 +1,30 @@
-apply plugin: 'com.android.library'
-apply plugin: 'maven-publish'
+plugins {
+    id 'com.android.library'
+}
 
 android {
     namespace 'com.github.mikephil.charting'
+    compileSdk 36
+
     defaultConfig {
-        compileSdk 34
-        minSdkVersion 19
-        targetSdkVersion 34
+        minSdk 23
+        targetSdk 36
     }
+
     buildTypes {
         release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        }
-        debug {
-            signingConfig signingConfigs.debug
+            minifyEnabled true
         }
     }
 
-    productFlavors {
-    }
-    compileSdk 34
-    buildToolsVersion '34.0.0'
     lint {
         abortOnError false
     }
 }
 
-dependencies {
-}
-
-android.libraryVariants.configureEach { variant ->
-    def name = variant.buildType.name
-    def task = project.tasks.create "jar${name.capitalize()}", Jar
-    artifacts.add('archives', task)
-}
-
-tasks.register('sourcesJar', Jar) {
-    from android.sourceSets.main.java.srcDirs
-    archiveClassifier.set("sources")
-}
-
-tasks.register('javadoc', Javadoc) {
-    failOnError false
-    source = android.sourceSets.main.java.sourceFiles
-    classpath += project.files(android.getBootClasspath().join(File.pathSeparator))
-}
-
-tasks.register('javadocJar', Jar) {
-    dependsOn javadoc
-    archiveClassifier.set("javadoc")
-    from javadoc.destinationDir
-}
-
-artifacts {
-    archives sourcesJar
-    archives javadocJar
-}
 java {
     toolchain {
-        languageVersion = JavaLanguageVersion.of(17)
+        languageVersion = JavaLanguageVersion.of(21)
     }
 }
+

@@ -9,8 +9,7 @@
 9      android:theme="@style/AppTheme" >
 10  </application>
 11    -->
-12    <uses-sdk android:minSdkVersion="19" />
-12-->C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml
+12    <uses-sdk android:minSdkVersion="23" />
 13
 14    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 14-->C:\Users\Lenovo\IdeaProjects\SMI4.2.5\MPChartLib\src\main\AndroidManifest.xml:5:3-78

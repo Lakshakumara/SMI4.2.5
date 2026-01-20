@@ -1,7 +1,7 @@
 {
     "logs": [
         {
-            "outputFile": "sss.yml.smi.app-mergeReleaseResources-61:/values-notnight-v8/values-notnight-v8.xml",
+            "outputFile": "sss.yml.smi.app-mergeReleaseResources-58:/values-notnight-v8/values-notnight-v8.xml",
             "map": [
                 {
                     "source": "C:\\Users\\Lenovo\\IdeaProjects\\SMI4.2.5\\app\\src\\main\\res\\values-notnight\\theme.xml",
