@@ -1,4 +1,69 @@
-.gradle
-.idea
+# Built application files
+*.apk
+*.aab
+*.ap_
+
+# Files for the Dalvik VM
+*.dex
+
+# Java class files
+*.class
+
+# Generated files
+bin/
+gen/
+out/
+
+# Gradle files
+.gradle/
+build/
+
+# Local configuration file
+local.properties
+
+# Proguard
+proguard/
+
+# Log files
+*.log
+
+# Android Studio / IntelliJ
+.idea/
+*.iml
+*.ipr
+*.iws
+
+# Mac
 .DS_Store
-/build
+
+# Windows
+Thumbs.db
+
+# Keystore files
+*.jks
+*.keystore
+
+# External native build
+.externalNativeBuild
+.cxx/
+
+# Firebase
+google-services.json
+
+# NDK
+obj/
+
+# Captures
+captures/
+
+# Navigation editor
+.navigation/
+
+# Kotlin
+.kotlin/
+
+# IntelliJ workspace
+.idea/workspace.xml
+.idea/tasks.xml
+.idea/dictionaries
+.idea/libraries
