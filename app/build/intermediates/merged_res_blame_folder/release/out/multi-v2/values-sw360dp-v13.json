@@ -4,7 +4,7 @@
             "outputFile": "sss.yml.smi.app-mergeReleaseResources-58:/values-sw360dp-v13/values-sw360dp-v13.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\1d7958849afa3dc68626389e59878ea9\\transformed\\jetified-firebase-ui-auth-8.0.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\53aff197cb68506bc4d191ee826bfdb6\\transformed\\firebase-ui-auth-8.0.1\\res\\values-sw360dp-v13\\values-sw360dp-v13.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
                         "startColumns": "4,4,4,4,4,4,4",

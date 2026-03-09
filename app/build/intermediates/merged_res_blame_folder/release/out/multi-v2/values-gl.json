@@ -4,23 +4,6 @@
             "outputFile": "sss.yml.smi.app-mergeReleaseResources-58:/values-gl/values-gl.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\1a141f186bf4a228b3f4ae33231cf072\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-gl\\values.xml",
-                    "from": {
-                        "startLines": "4",
-                        "startColumns": "0",
-                        "startOffsets": "195",
-                        "endColumns": "129",
-                        "endOffsets": "324"
-                    },
-                    "to": {
-                        "startLines": "55",
-                        "startColumns": "4",
-                        "startOffsets": "5488",
-                        "endColumns": "133",
-                        "endOffsets": "5617"
-                    }
-                },
-                {
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\247de6359763be3b4841eb2bc93637ce\\transformed\\preference-1.2.1\\res\\values-gl\\values-gl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8",
@@ -35,6 +18,23 @@
                         "startOffsets": "6744,7061,13358,14161,15140,15309,15397",
                         "endColumns": "69,100,80,137,168,87,81",
                         "endOffsets": "6809,7157,13434,14294,15304,15392,15474"
+                    }
+                },
+                {
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\0d7b0cc5d188d89975ab4c2817e6bff5\\transformed\\play-services-basement-18.0.0\\res\\values-gl\\values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "195",
+                        "endColumns": "129",
+                        "endOffsets": "324"
+                    },
+                    "to": {
+                        "startLines": "55",
+                        "startColumns": "4",
+                        "startOffsets": "5488",
+                        "endColumns": "133",
+                        "endOffsets": "5617"
                     }
                 },
                 {
@@ -89,6 +89,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\fc3969f47dbd49867862ffcdc74aa4e7\\transformed\\play-services-ads-21.5.0\\res\\values-gl\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,241,288,350,426,533,583,702,753,870,959,999,1094,1129,1165,1219,1306",
+                        "endColumns": "41,46,61,75,106,49,118,50,116,88,39,94,34,35,53,86,41",
+                        "endOffsets": "240,287,349,425,532,582,701,752,869,958,998,1093,1128,1164,1218,1305,1347"
+                    },
+                    "to": {
+                        "startLines": "140,141,142,146,147,148,149,150,151,152,155,156,157,158,159,160,161",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "12955,13001,13052,13439,13519,13630,13684,13807,13862,13983,14299,14343,14442,14481,14521,14579,14670",
+                        "endColumns": "45,50,65,79,110,53,122,54,120,92,43,98,38,39,57,90,45",
+                        "endOffsets": "12996,13047,13113,13514,13625,13679,13802,13857,13978,14071,14338,14437,14476,14516,14574,14665,14711"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\6254cbaf93c70dab3480c43651f1f920\\transformed\\browser-1.4.0\\res\\values-gl\\values-gl.xml",
                     "from": {
                         "startLines": "2,3,4,5",
@@ -125,7 +142,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\75112d4529683bc3b2eb5a7c4634fad0\\transformed\\jetified-play-services-base-18.0.1\\res\\values-gl\\values.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\ae7284bc1536c2973981f3d2155132ee\\transformed\\play-services-base-18.0.1\\res\\values-gl\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -139,23 +156,6 @@
                         "startOffsets": "4463,4569,4732,4861,4969,5128,5260,5379,5622,5793,5902,6071,6206,6371,6523,6590,6659",
                         "endColumns": "105,162,128,107,158,131,118,108,170,108,168,134,164,151,66,68,84",
                         "endOffsets": "4564,4727,4856,4964,5123,5255,5374,5483,5788,5897,6066,6201,6366,6518,6585,6654,6739"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\2a33830e04ad64738a67b0878c938eb6\\transformed\\jetified-play-services-ads-21.5.0\\res\\values-gl\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "199,241,288,350,426,533,583,702,753,870,959,999,1094,1129,1165,1219,1306",
-                        "endColumns": "41,46,61,75,106,49,118,50,116,88,39,94,34,35,53,86,41",
-                        "endOffsets": "240,287,349,425,532,582,701,752,869,958,998,1093,1128,1164,1218,1305,1347"
-                    },
-                    "to": {
-                        "startLines": "140,141,142,146,147,148,149,150,151,152,155,156,157,158,159,160,161",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "12955,13001,13052,13439,13519,13630,13684,13807,13862,13983,14299,14343,14442,14481,14521,14579,14670",
-                        "endColumns": "45,50,65,79,110,53,122,54,120,92,43,98,38,39,57,90,45",
-                        "endOffsets": "12996,13047,13113,13514,13625,13679,13802,13857,13978,14071,14338,14437,14476,14516,14574,14665,14711"
                     }
                 }
             ]

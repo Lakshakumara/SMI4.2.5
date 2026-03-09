@@ -4,7 +4,7 @@
             "outputFile": "sss.yml.smi.app-mergeReleaseResources-58:/values-v26/values-v26.xml",
             "map": [
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\1d7958849afa3dc68626389e59878ea9\\transformed\\jetified-firebase-ui-auth-8.0.1\\res\\values-v26\\values-v26.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\53aff197cb68506bc4d191ee826bfdb6\\transformed\\firebase-ui-auth-8.0.1\\res\\values-v26\\values-v26.xml",
                     "from": {
                         "startLines": "2,6,10,14",
                         "startColumns": "4,4,4,4",

@@ -39,7 +39,7 @@ public class SchoolViewModel extends ViewModel {
     public void delete (School school) {
         repository.delete(school);
     }
-
+@SuppressWarnings("uncheck")
     public LiveData<List<String>> getList (String query, List<String>fieldList) {
         List<String> textList = new ArrayList<>();
 

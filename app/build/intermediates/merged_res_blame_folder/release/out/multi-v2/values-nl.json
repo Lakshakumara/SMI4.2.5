@@ -40,6 +40,23 @@
                     }
                 },
                 {
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\fc3969f47dbd49867862ffcdc74aa4e7\\transformed\\play-services-ads-21.5.0\\res\\values-nl\\values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "199,249,293,348,427,545,595,705,765,884,972,1018,1108,1146,1182,1231,1312",
+                        "endColumns": "49,43,54,78,117,49,109,59,118,87,45,89,37,35,48,80,42",
+                        "endOffsets": "248,292,347,426,544,594,704,764,883,971,1017,1107,1145,1181,1230,1311,1354"
+                    },
+                    "to": {
+                        "startLines": "230,231,232,236,237,238,239,240,241,242,245,246,247,248,249,250,251",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "21706,21760,21808,22168,22251,22373,22427,22541,22605,22728,23047,23097,23191,23233,23273,23326,23411",
+                        "endColumns": "53,47,58,82,121,53,113,63,122,91,49,93,41,39,52,84,46",
+                        "endOffsets": "21755,21803,21862,22246,22368,22422,22536,22600,22723,22815,23092,23186,23228,23268,23321,23406,23453"
+                    }
+                },
+                {
                     "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\132e68d919b534bb16596c0225e52e23\\transformed\\appcompat-1.7.1\\res\\values-nl\\values-nl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
@@ -74,7 +91,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\1d7958849afa3dc68626389e59878ea9\\transformed\\jetified-firebase-ui-auth-8.0.1\\res\\values-nl\\values-nl.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\53aff197cb68506bc4d191ee826bfdb6\\transformed\\firebase-ui-auth-8.0.1\\res\\values-nl\\values-nl.xml",
                     "from": {
                         "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,76,77,78,79,80,81,82,83,84,85,86,87,88,89,90,91",
                         "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
@@ -91,7 +108,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\75112d4529683bc3b2eb5a7c4634fad0\\transformed\\jetified-play-services-base-18.0.1\\res\\values-nl\\values.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\ae7284bc1536c2973981f3d2155132ee\\transformed\\play-services-base-18.0.1\\res\\values-nl\\values.xml",
                     "from": {
                         "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
                         "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
@@ -108,24 +125,7 @@
                     }
                 },
                 {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\2a33830e04ad64738a67b0878c938eb6\\transformed\\jetified-play-services-ads-21.5.0\\res\\values-nl\\values.xml",
-                    "from": {
-                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
-                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
-                        "startOffsets": "199,249,293,348,427,545,595,705,765,884,972,1018,1108,1146,1182,1231,1312",
-                        "endColumns": "49,43,54,78,117,49,109,59,118,87,45,89,37,35,48,80,42",
-                        "endOffsets": "248,292,347,426,544,594,704,764,883,971,1017,1107,1145,1181,1230,1311,1354"
-                    },
-                    "to": {
-                        "startLines": "230,231,232,236,237,238,239,240,241,242,245,246,247,248,249,250,251",
-                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
-                        "startOffsets": "21706,21760,21808,22168,22251,22373,22427,22541,22605,22728,23047,23097,23191,23233,23273,23326,23411",
-                        "endColumns": "53,47,58,82,121,53,113,63,122,91,49,93,41,39,52,84,46",
-                        "endOffsets": "21755,21803,21862,22246,22368,22422,22536,22600,22723,22815,23092,23186,23228,23268,23321,23406,23453"
-                    }
-                },
-                {
-                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\1a141f186bf4a228b3f4ae33231cf072\\transformed\\jetified-play-services-basement-18.0.0\\res\\values-nl\\values.xml",
+                    "source": "C:\\Users\\Lenovo\\.gradle\\caches\\transforms-4\\0d7b0cc5d188d89975ab4c2817e6bff5\\transformed\\play-services-basement-18.0.0\\res\\values-nl\\values.xml",
                     "from": {
                         "startLines": "4",
                         "startColumns": "0",
