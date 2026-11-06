@@ -7,7 +7,7 @@ plugins {
 android {
     namespace 'sss.yml.smi'
     defaultConfig {
-        compileSdk 36
+        compileSdk 37
         applicationId "sss.yml.smi"
         minSdkVersion 21
         targetSdkVersion 34
@@ -68,7 +68,7 @@ android {
     buildFeatures {
         buildConfig true
     }
-    compileSdk 36
+    compileSdk 37
 }
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')

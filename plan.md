@@ -58,6 +58,27 @@ git diff → only build files changed (0 Java files)
 
 ---
 
+## Step 1b — Toolchain finalization ✅ DONE (2026-11-06)
+
+Followed Android Studio Upgrade Assistant recommendations:
+
+| File | Change |
+|---|---|
+| `gradle-wrapper.properties` | Gradle `8.11.1` → **`8.13`** (min for AGP 8.13.2) |
+| `build.gradle` (root) | AGP `8.9.2` → **`8.13.2`** |
+| `app/build.gradle` | `compileSdk` 36 → **37** (targetSdk still 34) |
+| `MPChartLib/build.gradle` | `compileSdk` → **37** |
+
+- **compileSdk ≠ targetSdk**: compiling against 37 is compile-only (no runtime
+  behavior change); `targetSdk` goes to **36** in Step 3 — deliberately NOT 37,
+  so Android 17 behavior changes don't apply prematurely.
+- Library/dependency bumps intentionally deferred to **Step 7** (one variable
+  at a time; this project has zero tests).
+- Verified: `gradlew assembleDebug` → BUILD SUCCESSFUL (Gradle 9.0 deprecation
+  warnings exist — future-proofing item, non-blocking).
+
+---
+
 ## Step 2 — OS crash fixes (minimal code, no behavior change)
 
 These are **bugs on Android 12+/14+ devices today**, independent of Play:
