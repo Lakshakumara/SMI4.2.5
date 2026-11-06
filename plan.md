@@ -141,19 +141,59 @@ launch normally (past the old 2024-12-31 date), notification tap must open
 
 ---
 
-## Step 4 — Storage modernization (needed on Android 10+ anyway)
+## Step 4 — Storage modernization ✅ DONE (2026-11-06)
 
-1. DB backup/restore — `ui/setting/Settings.java` uses
-   `Environment.getExternalStorageDirectory()/BMIS/*.sss` → SAF
-   (`ACTION_CREATE_DOCUMENT` / `ACTION_OPEN_DOCUMENT`) — works on all APIs, no permission
-2. Chart PNG export — `chdr/BFA_5_19.java`, `chdr/HFA_5_19.java`,
-   `MPChartLib .../Chart.java saveToGallery()` use `/DCIM/BMISimulator/` →
-   `MediaStore.Downloads/Images` API (or SAF)
-3. `READ_EXTERNAL_STORAGE` → add `android:maxSdkVersion="32"`; check merged
-   `WRITE_EXTERNAL_STORAGE` from MPChartLib manifest — scope it too
+1. ✅ **DB backup/restore → SAF** — `ui/setting/Settings.java`:
+   - Backup: `ActivityResultContracts.CreateDocument("application/octet-stream")`,
+     suggested name `<timestamp>.sss` (user picks location — any cloud/SAF provider)
+   - Restore: `ActivityResultContracts.OpenDocument()` with `{"*/*"}` (shows all
+     files; the old in-app directory listing dialog is gone)
+   - `DatabaseBackup`/`DatabaseRestore` now take `Uri` and stream via
+     `ContentResolver.openOutputStream/openInputStream`
+   - Removed: `permission()` method, `requestPermissionLauncher`, `Environment`/
+     `File` dir listing, "Keep Previous / Delete Previous" dialog, unused imports
+     (`Manifest`, `PackageManager`, `Environment`, `ActivityCompat`, `ContextCompat`,
+     `SimpleDateFormat`, `ArrayList`, …)
+   - Restore now returns `false` on IO failure (old code returned `true` even on
+     error and could NPE in `finally` when the file was missing)
+2. ✅ **Chart PNG export → MediaStore** — `MPChartLib .../Chart.java`:
+   - `saveToGallery(…)` on **API 29+**: `MediaStore` insert with `RELATIVE_PATH`
+     `DCIM/BMISimulator`, `IS_PENDING` flow; **API ≤28**: legacy file write +
+     MediaStore `DATA` insert (parity with old behavior)
+   - New fields `lastSavedUri` (content Uri, Q+) / `lastSavedFile` (File, ≤28)
+     + getters; `saveChart(fileName)` delegates to `saveToGallery(…, PNG, 100)`
+   - `chdr/BFA519ViewModel.java`, `chdr/HFA519ViewModel.java`: removed debug
+     leftover `saveToGallery("ab", 100)` (was saving a second junk JPEG); added
+     `getLastSavedUri()`/`getLastSavedFile()` delegates
+3. ✅ **Share fix** — `chdr/BFA_5_19.java`, `chdr/HFA_5_19.java`:
+   - old code shared `Uri.fromFile(/DCIM/…/fname.png)` with wrong mime
+     (`image/jpeg`) and a filename that was never written (`fname.png` ≠
+     `todayTimeStamp()`) → `FileUriExposedException` on API 24+
+   - now: shares the Uri returned by the save (MediaStore Uri on Q+, FileProvider
+     `${applicationId}.fileprovider` on ≤28), mime `image/png`,
+     `FLAG_GRANT_READ_URI_PERMISSION`
+   - removed the duplicate second `saveChart()` block (was saving twice + two
+     snackbars)
+4. ✅ **Permissions scoped** — `app` + `MPChartLib` manifests:
+   `READ_EXTERNAL_STORAGE` and `WRITE_EXTERNAL_STORAGE` get
+   `android:maxSdkVersion="28"` *(plan said 32; 28 is tighter and correct: the
+   legacy file path only runs ≤28, and on Q+ apps read their own MediaStore rows
+   without permission)*
+5. ✅ **FileProvider** — app manifest declares `androidx.core.content.FileProvider`
+   with `android:resource="@xml/file_paths"`; new `res/xml/file_paths.xml`
+   (`<external-path name="dcim" path="DCIM/"/>`)
+6. ✅ **Vestigial gate removed** — `ui/child/WpChild.java`: deleted the
+   "Save Charts" `READ_EXTERNAL_STORAGE` permission block (empty granted branch)
+   + unused `requestPermissionLauncher`/`PERMISSION_REQUEST_STORAGE`/imports
 
-**Verify:** backup → restore round-trip on Android 13+ device; chart save
-appears in Gallery/Files.
+**Verify:** `gradlew assembleDebug` → BUILD SUCCESSFUL.
+**On-device checklist:**
+- Settings → Backup → system file picker appears; save succeeds; file readable
+- Settings → Restore → picker shows the `.sss`; round-trip restores data
+- Chart screens → Save → snackbar "Image Saved.." (once); image appears in
+  Photos under `DCIM/BMISimulator`
+- "Share To" opens chooser and target app can display the image (no crash)
+- WpChild opens with no permission dialog
 
 ---
 

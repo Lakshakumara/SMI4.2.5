@@ -4,6 +4,7 @@ package com.github.mikephil.charting.charts;
 import android.animation.ValueAnimator;
 import android.animation.ValueAnimator.AnimatorUpdateListener;
 import android.annotation.SuppressLint;
+import android.content.ContentResolver;
 import android.content.ContentValues;
 import android.content.Context;
 import android.graphics.Bitmap;
@@ -16,6 +17,8 @@ import android.graphics.PointF;
 import android.graphics.RectF;
 import android.graphics.Typeface;
 import android.graphics.drawable.Drawable;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore.Images;
 import android.text.TextUtils;
@@ -1563,26 +1566,19 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         return true;
     }
 
-    public boolean saveChart(String fileName) {
-        Bitmap b = getChartBitmap();
-        OutputStream stream;
-        try {
-            File f = new File(Environment.getExternalStorageDirectory().getPath()+ "/DCIM/BMISimulator/");
-            if(!f.exists()) f.mkdirs();
-            stream = new FileOutputStream(Environment.getExternalStorageDirectory().getPath()
-                    +  "/DCIM/BMISimulator/" + fileName + ".png");
+    private Uri lastSavedUri;
+    private File lastSavedFile;
 
-            /*
-             * Write bitmap to file using JPEG or PNG and 40% quality hint for
-             * JPEG.
-             */
-            b.compress(CompressFormat.PNG, 40, stream);
-            stream.close();
-        } catch (Exception e) {
-            e.printStackTrace();
-            return false;
-        }
-        return true;
+    public Uri getLastSavedUri() {
+        return lastSavedUri;
+    }
+
+    public File getLastSavedFile() {
+        return lastSavedFile;
+    }
+
+    public boolean saveChart(String fileName) {
+        return saveToGallery(fileName, "BMISimulator", "", CompressFormat.PNG, 100);
     }
 
 
@@ -1604,15 +1600,8 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
         if (quality < 0 || quality > 100)
             quality = 50;
 
-        long currentTime = System.currentTimeMillis();
-
-        File extBaseDir = Environment.getExternalStorageDirectory();
-        File file = new File(extBaseDir.getAbsolutePath() + "/DCIM/" + subFolderPath);
-        if (!file.exists()) {
-            if (!file.mkdirs()) {
-                return false;
-            }
-        }
+        lastSavedUri = null;
+        lastSavedFile = null;
 
         String mimeType = "";
         switch (format) {
@@ -1634,38 +1623,68 @@ public abstract class Chart<T extends ChartData<? extends IDataSet<? extends Ent
                 break;
         }
 
-        String filePath = file.getAbsolutePath() + "/" + fileName;
-        FileOutputStream out = null;
+        Bitmap b = getChartBitmap();
+        ContentResolver cr = getContext().getContentResolver();
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.Q) {
+            ContentValues values = new ContentValues();
+            values.put(Images.Media.DISPLAY_NAME, fileName);
+            values.put(Images.Media.MIME_TYPE, mimeType);
+            values.put(Images.Media.DESCRIPTION, fileDescription);
+            values.put(Images.Media.RELATIVE_PATH, Environment.DIRECTORY_DCIM
+                    + (subFolderPath == null || subFolderPath.isEmpty() ? "" : "/" + subFolderPath));
+            values.put(Images.Media.IS_PENDING, 1);
+            Uri uri = cr.insert(Images.Media.EXTERNAL_CONTENT_URI, values);
+            if (uri == null) return false;
+            try {
+                OutputStream out = cr.openOutputStream(uri);
+                if (out == null) {
+                    cr.delete(uri, null, null);
+                    return false;
+                }
+                b.compress(format, quality, out);
+                out.flush();
+                out.close();
+                values.clear();
+                values.put(Images.Media.IS_PENDING, 0);
+                cr.update(uri, values, null, null);
+                lastSavedUri = uri;
+                return true;
+            } catch (IOException e) {
+                e.printStackTrace();
+                return false;
+            }
+        }
+
+        File file;
         try {
-            out = new FileOutputStream(filePath);
-
-            Bitmap b = getChartBitmap();
+            File extBaseDir = Environment.getExternalStorageDirectory();
+            File dir = new File(extBaseDir.getAbsolutePath() + "/DCIM/" + subFolderPath);
+            if (!dir.exists() && !dir.mkdirs()) {
+                return false;
+            }
+            file = new File(dir, fileName);
+            FileOutputStream out = new FileOutputStream(file);
             b.compress(format, quality, out);
-
             out.flush();
             out.close();
-
+            lastSavedFile = file;
         } catch (IOException e) {
             e.printStackTrace();
-
             return false;
         }
 
-        long size = new File(filePath).length();
-
         ContentValues values = new ContentValues(8);
-
-        // store the details
         values.put(Images.Media.TITLE, fileName);
         values.put(Images.Media.DISPLAY_NAME, fileName);
-        values.put(Images.Media.DATE_ADDED, currentTime);
+        values.put(Images.Media.DATE_ADDED, System.currentTimeMillis() / 1000);
         values.put(Images.Media.MIME_TYPE, mimeType);
         values.put(Images.Media.DESCRIPTION, fileDescription);
         values.put(Images.Media.ORIENTATION, 0);
-        values.put(Images.Media.DATA, filePath);
-        values.put(Images.Media.SIZE, size);
-
-        return getContext().getContentResolver().insert(Images.Media.EXTERNAL_CONTENT_URI, values) != null;
+        values.put(Images.Media.DATA, file.getAbsolutePath());
+        values.put(Images.Media.SIZE, file.length());
+        cr.insert(Images.Media.EXTERNAL_CONTENT_URI, values);
+        return true;
     }
 
     /**

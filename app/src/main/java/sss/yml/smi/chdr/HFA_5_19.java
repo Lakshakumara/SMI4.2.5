@@ -3,7 +3,6 @@ package sss.yml.smi.chdr;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.os.Environment;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -13,6 +12,7 @@ import android.view.ViewGroup;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.FileProvider;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
@@ -85,27 +85,31 @@ public class HFA_5_19 extends Fragment {
                 sharingIntent.setType("image/jpeg");
                 sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
                 startActivity(Intent.createChooser(sharingIntent, "BMISimulator Share image using"));*/
-                if(mViewModel.saveChart()){
-                    final String finalFname = "fname";
+                if (mViewModel.saveChart()) {
                     Snackbar snackbar = Snackbar
-                            .make(view,"Image Saved.. to "+finalFname,
+                            .make(view, "Image Saved..",
                                     Snackbar.LENGTH_LONG)
                             .setAction("Share To", view -> {
+                                Uri shareUri = mViewModel.getLastSavedUri();
+                                if (shareUri == null) {
+                                    File f = mViewModel.getLastSavedFile();
+                                    if (f == null) {
+                                        Snackbar.make(view, "Error Sharing Image..", Snackbar.LENGTH_SHORT).show();
+                                        return;
+                                    }
+                                    shareUri = FileProvider.getUriForFile(requireContext(),
+                                            requireContext().getPackageName() + ".fileprovider", f);
+                                }
                                 Intent sharingIntent = new Intent(Intent.ACTION_SEND);
-                                File f = new File(Environment.getExternalStorageDirectory().getPath()
-                                        +  "/DCIM/BMISimulator/" + finalFname + ".png");
-                                sharingIntent.setType("image/jpeg");
-                                sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(f));
+                                sharingIntent.setType("image/png");
+                                sharingIntent.putExtra(Intent.EXTRA_STREAM, shareUri);
+                                sharingIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
                                 startActivity(Intent.createChooser(sharingIntent, "BMISimulator Share image using"));
                             });
-
                     snackbar.show();
-                }else Snackbar.make(view, "Error Saving Image..", Snackbar.LENGTH_SHORT).show();
-                if (mViewModel.saveChart())
-                    Snackbar.make(view, "Image Saved..", Snackbar.LENGTH_SHORT)
-                            .setAction("Action", null).show();
-                else
+                } else {
                     Snackbar.make(view, "Error Saving Image..", Snackbar.LENGTH_SHORT).show();
+                }
                 break;
         }
         return super.onOptionsItemSelected(item);

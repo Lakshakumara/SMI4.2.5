@@ -291,8 +291,15 @@ public class BFA519ViewModel extends ViewModel {
     }
     public boolean saveChart() {
         String fileName = SMIConstants.todayTimeStamp();
-        mChart.saveToGallery("ab", 100);
         return mChart.saveChart(fileName);
+    }
+
+    public android.net.Uri getLastSavedUri() {
+        return mChart.getLastSavedUri();
+    }
+
+    public java.io.File getLastSavedFile() {
+        return mChart.getLastSavedFile();
     }
     private ValueFormatter valueFormatterForBMI() {
         return (value, entry, dataSetIndex, viewPortHandler) -> {

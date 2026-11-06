@@ -1,10 +1,8 @@
 package sss.yml.smi.ui.child;
 
-import android.Manifest;
 import android.annotation.SuppressLint;
 import android.app.AlertDialog;
 import android.content.Context;
-import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -14,12 +12,8 @@ import android.util.TypedValue;
 import android.view.*;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.*;
-import androidx.activity.result.ActivityResultLauncher;
-import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.core.app.ActivityCompat;
-import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
@@ -59,7 +53,6 @@ import java.util.HashMap;
 import java.util.concurrent.TimeUnit;
 
 public class WpChild extends Fragment implements History.SingleClickListener {
-    private static final int PERMISSION_REQUEST_STORAGE = 0;
     private View view;
     private ViewPager mViewPager;
     private boolean graphics = true;
@@ -86,44 +79,11 @@ public class WpChild extends Fragment implements History.SingleClickListener {
     private enum CHOICE{
         ADD,UPDATE,DELETE
     }
-    private final ActivityResultLauncher<String> requestPermissionLauncher =
-            registerForActivityResult(new ActivityResultContracts.RequestPermission(), isGranted -> {
-                if (isGranted) {
-                    // Permission is granted. Continue the action or workflow in your
-                    // app.
-                } else {
-                    // Explain to the user that the feature is unavailable because the
-                    // features requires a permission that the user has denied. At the
-                    // same time, respect the user's decision. Don't link to system
-                    // settings in an effort to convince the user to change their
-                    // decision.
-                }
-            });
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.child_data_entry_new, container, false);
         setHasOptionsMenu(true);
         ((HomePage) getActivity()) .setActionBarTitle(getString(R.string.wt_post));
-
-        if (ContextCompat.checkSelfPermission(
-                requireContext(), Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            if (shouldShowRequestPermissionRationale(Manifest.permission.READ_EXTERNAL_STORAGE)) {
-                new AlertDialog.Builder(requireActivity())
-                        .setMessage("Need Storage access permission to Save Charts. Please provide permission to access your Storage.")
-                        .setPositiveButton("Ok", (dialog, whichButton) ->
-                                ActivityCompat.requestPermissions(requireActivity(),
-                                new String[]{Manifest.permission.READ_EXTERNAL_STORAGE},
-                                201))
-                        .setNegativeButton(getString(R.string.cancel), (dialog, whichButton) -> {})
-                        .create()
-                        .show();
-            } else {
-                // You can directly ask for the permission.
-                // The registered ActivityResultCallback gets the result of this request.
-                requestPermissionLauncher.launch(
-                        Manifest.permission.READ_EXTERNAL_STORAGE);
-            }
-        }
 
         boolean adEnable = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).getBoolean("ad", true);
         AdView mAdView = view.findViewById(R.id.myAdView);
