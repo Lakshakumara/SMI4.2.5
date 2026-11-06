@@ -10,7 +10,7 @@ android {
         compileSdk 37
         applicationId "sss.yml.smi"
         minSdkVersion 21
-        targetSdkVersion 34
+        targetSdkVersion 36
         versionCode 4255 //step 1: toolchain upgrade only, 2026-11-05
         versionName "4.2.5.5"
         resConfigs 'en', 'si', 'ta'

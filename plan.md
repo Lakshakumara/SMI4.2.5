@@ -111,23 +111,33 @@ launch normally (past the old 2024-12-31 date), notification tap must open
 
 ---
 
-## Step 3 — Raise `targetSdk 34 → 36` + forced behavior changes
+## Step 3 — Raise `targetSdk 34 → 36` + forced behavior changes ✅ DONE (2026-11-06)
 
-1. `targetSdkVersion 34 → 36` in `app/build.gradle` + `MPChartLib/build.gradle`
-2. **Predictive back** (API 36: `onBackPressed()` silently ignored):
-   - quick: `android:enableOnBackInvokedCallback="false"` in `<application>` (1 line)
-   - proper (recommended): migrate `chdr/ChartShow.java` `onBackPressed()` →
-     `OnBackPressedCallback`; audit other back handling
-3. **Edge-to-edge** (no opt-out on API 36): add `WindowInsetsCompat` padding to
-   activities/fragments — test chart screens, dialogs, WebView home, SMIData entry
-4. **`POST_NOTIFICATIONS` runtime request** (API 33+): request in `Start` flow
-   before `Notify` posts anything (`ActivityResultLauncher`)
-5. **Backup rules**: keep `android:fullBackupContent`, add
-   `android:dataExtractionRules` (API 31+) pointing to new
-   `res/xml/data_extraction_rules.xml`
+1. ✅ `targetSdkVersion 34 → 36` in `app/build.gradle` + `MPChartLib/build.gradle`
+2. ✅ **Predictive back** (API 36: system ignores `onBackPressed()`):
+   - `chdr/ChartShow.java`: no-op `onBackPressed()` override **deleted**;
+     `onRestart()` now calls `getOnBackPressedDispatcher().onBackPressed()`
+   - No `enableOnBackInvokedCallback` opt-out needed — no custom back logic exists
+     anywhere else (verified: no `KEYCODE_BACK`/`onKeyDown` handlers in codebase)
+3. ✅ **Edge-to-edge** (opt-out removed at API 36):
+   - New `util/EdgeToEdge.java`: `WindowCompat.setDecorFitsSystemWindows(false)` +
+     pads `android.R.id.content` from `systemBars|displayCutout` insets
+   - Hooked via `App implements Application.ActivityLifecycleCallbacks` →
+     automatically covers **all 8 activities** (Start, HomePage, ChartShow,
+     Profile, Ban, SMIData, NortificationActivity, ReplyReceive) — no
+     per-activity edits, future activities covered too
+   - Returns `WindowInsetsCompat.CONSUMED` so existing `fitsSystemWindows`
+     children (HomePage drawer, Profile layout) don't double-pad
+4. ✅ **`POST_NOTIFICATIONS` runtime request** — `Start.onCreate` requests it
+   on API 33+ via `ActivityResultLauncher` before anything posts
+5. ✅ **Backup rules** — added `android:dataExtractionRules="@xml/data_extraction_rules"`
+   (cloud-backup + device-transfer `include-all`, parity with `fullBackupContent="true"`)
 
-**Verify:** run on Android 16 emulator + Android 15 device; back gesture shows
-system animation; no content under status bar; notifications appear after grant.
+**Verify:** `gradlew assembleDebug` → BUILD SUCCESSFUL. **On-device checklist:**
+- no content under status bar on any screen (incl. chart screens)
+- back gesture shows system animation; ChartShow `onRestart` finish works
+- permission dialog appears on first launch; notifications post after grant
+- ChartShow immersive (hide bars) still works — padding must drop to 0 when hidden
 
 ---
 

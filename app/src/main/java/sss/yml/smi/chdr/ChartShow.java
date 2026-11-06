@@ -161,11 +161,7 @@ public class ChartShow extends AppCompatActivity {//implements com.github.mikeph
     @Override
     protected void onRestart() {
         super.onRestart();
-        if(student == null) onBackPressed();
-    }
-    @Override
-    public void onBackPressed() {
-        super.onBackPressed();
+        if(student == null) getOnBackPressedDispatcher().onBackPressed();
     }
 
     private void toggle() {

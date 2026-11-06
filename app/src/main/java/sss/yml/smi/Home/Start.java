@@ -1,6 +1,8 @@
 package sss.yml.smi.Home;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
@@ -13,8 +15,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 import androidx.activity.result.ActivityResultLauncher;
+import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 import com.firebase.ui.auth.AuthUI;
 import com.firebase.ui.auth.FirebaseAuthUIActivityResultContract;
 import com.firebase.ui.auth.IdpResponse;
@@ -45,6 +49,11 @@ public class Start extends AppCompatActivity {
             new FirebaseAuthUIActivityResultContract(),
             this::onSignInResult
     );
+    private final ActivityResultLauncher<String> notificationPermissionLauncher = registerForActivityResult(
+            new ActivityResultContracts.RequestPermission(),
+            result -> {
+            }
+    );
     @Override
     public void onStart() {
         super.onStart();
@@ -59,6 +68,11 @@ public class Start extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         App.getInstance().initAppLanguage(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                && ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
+                != PackageManager.PERMISSION_GRANTED) {
+            notificationPermissionLauncher.launch(Manifest.permission.POST_NOTIFICATIONS);
+        }
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         topAnimation = AnimationUtils.loadAnimation(this, R.anim.top_animation);
         bottomAnimation = AnimationUtils.loadAnimation(this, R.anim.bottom_animation);
