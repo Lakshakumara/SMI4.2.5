@@ -103,7 +103,7 @@ public class Notify extends Service {
     }
     private void simpleNotification(String newsId, int nosShown, String title, String subTitle, String description){
         Intent intentp = new Intent(this, ReplyReceive.class);
-        final PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intentp, 0);
+        final PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intentp, PendingIntent.FLAG_MUTABLE);
 
         String replyLabel = "Your Response";
         RemoteInput remoteInput = new RemoteInput.Builder(KEY_TEXT_REPLY)
@@ -117,7 +117,7 @@ public class Notify extends Service {
 
         Intent intent = new Intent(this, NortificationActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
 
         NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
                 .setSmallIcon(R.drawable.ic_about)
@@ -136,7 +136,7 @@ public class Notify extends Service {
     private void replyNotification(){
         Intent intent = new Intent(this, NortificationActivity.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
         String replyLabel = "Reply";//getResources().getString(R.string.reply_label)";
         RemoteInput remoteInput = new RemoteInput.Builder(KEY_TEXT_REPLY)
                 .setLabel(replyLabel)
@@ -145,7 +145,7 @@ public class Notify extends Service {
         PendingIntent replyPendingIntent = PendingIntent.getBroadcast(getApplicationContext(),
                 1,
                 getMessageReplyIntent(1),
-                PendingIntent.FLAG_UPDATE_CURRENT);
+                PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_MUTABLE);
         NotificationCompat.Action action = new NotificationCompat.Action.Builder(R.drawable.ic_send,
                 "Reply", replyPendingIntent)
                 .addRemoteInput(remoteInput)
@@ -205,7 +205,7 @@ public class Notify extends Service {
         String stop = "stop";
         //registerReceiver(stopReceiver, new IntentFilter(stop));
         PendingIntent broadcastIntent = PendingIntent.getBroadcast(
-                this, 0, new Intent(stop), PendingIntent.FLAG_UPDATE_CURRENT);
+                this, 0, new Intent(stop), PendingIntent.FLAG_UPDATE_CURRENT | PendingIntent.FLAG_IMMUTABLE);
 
 // Create the persistent notification//
         Notification.Builder builder = new Notification.Builder(this)

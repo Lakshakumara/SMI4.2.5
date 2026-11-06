@@ -44,6 +44,14 @@
             android:theme="@style/Theme.smi.NoActionBar"
             android:screenOrientation="portrait"/>
 
+        <activity
+            android:name=".util.NortificationActivity"
+            android:exported="false" />
+
+        <activity
+            android:name=".service.ReplyReceive"
+            android:exported="false" />
+
         <receiver
             android:name=".service.NotificationReceiver"
             android:enabled="true"
@@ -54,7 +62,8 @@
         </receiver>
         <service
             android:name=".service.Notify"
-            android:enabled="true" />
+            android:enabled="true"
+            android:foregroundServiceType="dataSync" />
         <!-- Sample AdMob app ID: ca-app-pub-3940256099942544~3347511713 -->
         <!-- my AdMob app ID: ca-app-pub-8089124274727865~9448002468 -->
         <meta-data

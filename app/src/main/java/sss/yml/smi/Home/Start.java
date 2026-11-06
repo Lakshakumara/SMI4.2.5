@@ -157,23 +157,6 @@ public class Start extends AppCompatActivity {
                     });
         }
         new Handler().postDelayed(() -> {
-            Calendar c = Calendar.getInstance();
-            Calendar c1 = Calendar.getInstance();
-            c1.set(2024, 11, 31);
-            if (c.getTime().after(c1.getTime())) {
-                Start.this.runOnUiThread(() -> new AlertDialog.Builder(Start.this)
-                        .setTitle("Compulsory Update available")
-                        .setMessage("Current Version is Obsolete.. Update new version")
-                        .setIcon(R.drawable.ic_logo_120)
-                        .setCancelable(false)
-                        .setPositiveButton("Update", (dialog, which) -> {
-                            updateApp();
-                            moveTaskToBack(true);
-                            android.os.Process.killProcess(android.os.Process.myPid());
-                            System.exit(1);
-                        }).create().show());
-                return;
-            }
             // if(BuildConfig.DEBUG) launchApp();
             if (currentUser != null) launchApp();
             else createSignInIntent();

@@ -79,28 +79,35 @@ Followed Android Studio Upgrade Assistant recommendations:
 
 ---
 
-## Step 2 — OS crash fixes (minimal code, no behavior change)
+## Step 2 — OS crash fixes ✅ DONE (2026-11-06)
 
-These are **bugs on Android 12+/14+ devices today**, independent of Play:
+**Goal:** these are **bugs on Android 12+/14+ devices today**, independent of Play:
 
-1. **`PendingIntent` mutability crash** — `app/src/main/java/sss/yml/smi/service/Notify.java`
-   lines ~106, 120, 139, 207: flag `0` → add `PendingIntent.FLAG_IMMUTABLE`
-   (crashes with `IllegalArgumentException` on Android 12+ when posting notifications)
-2. **Missing manifest entries** — declare in `app/src/main/AndroidManifest.xml`:
-   - `sss.yml.smi.util.NortificationActivity` (notification tap target — currently `ActivityNotFoundException`)
-   - `sss.yml.smi.service.ReplyReceive` (RemoteInput broadcast receiver)
-3. **Foreground service type** — `Notify` service:
-   `android:foregroundServiceType="dataSync"` (+ `FOREGROUND_SERVICE_TYPE_DATA_SYNC`
-   is covered by the `FOREGROUND_SERVICE` permission merged from libs; add
-   `<uses-permission android:name="android.permission.FOREGROUND_SERVICE"/>` explicitly if missing)
-4. **Kill-switch removal** — `Home/Start.java` ~line 162:
-   `c1.set(2024, 11, 31)` fires `killProcess()` after 2024-12-31 → app
-   self-bricks. Remove the forced-update/kill block (keep normal "update
-   available" prompt pointing to Dropbox/Play URL if desired).
-   *Note: `origin/2026` branch only extended it to 2030 — removal is better.*
+1. ✅ **`PendingIntent` mutability** — `service/Notify.java`:
+   - line ~106 Reply action (has RemoteInput) → `FLAG_MUTABLE`
+     *(must be mutable — RemoteInput results are never delivered to immutable intents)*
+   - line ~120 tap intent → `FLAG_IMMUTABLE`
+   - dead-code `replyNotification()`/`buildNotification()` (lines ~139/145/207)
+     fixed too: 139 → `IMMUTABLE`, 145 → `|FLAG_MUTABLE`, 207 → `|IMMUTABLE`
+2. ✅ **Manifest declarations** — added:
+   - `<activity android:name=".util.NortificationActivity" android:exported="false"/>`
+     (was `ActivityNotFoundException` on notification tap)
+   - `<activity android:name=".service.ReplyReceive" android:exported="false"/>`
+     (it is an **Activity** that reads RemoteInput results — not a receiver)
+   - `android:foregroundServiceType="dataSync"` on the `Notify` service (preemptive;
+     service is still started normally — FGS rework is Step 5)
+3. ✅ **Kill-switch removed** — `Home/Start.java`: deleted the
+   `c1.set(2024,11,31)` → "Compulsory Update" → `killProcess()` block; the
+   2s delayed `launchApp()`/`createSignInIntent()` remains. `updateApp()`
+   method kept (unused for now — can power a non-fatal update prompt in Step 8).
+   *(`origin/2026` only pushed the date to 2030 — removal is better.)*
 
-**Verify:** `gradlew assembleDebug`, install on Android 12+ device, trigger a
-Firestore news notification, tap it, reboot device.
+**Verify:** `gradlew assembleDebug` → BUILD SUCCESSFUL. On-device: app must
+launch normally (past the old 2024-12-31 date), notification tap must open
+`NortificationActivity`, Reply action must not crash.
+
+**Still deferred (by design):** `POST_NOTIFICATIONS` runtime request → Step 3;
+`startService()` from `BOOT_COMPLETED` → Step 5.
 
 ---
 
