@@ -4,8 +4,8 @@ apply plugin: 'maven-publish'
 android {
     namespace 'com.github.mikephil.charting'
     defaultConfig {
-        compileSdk 34
-        minSdkVersion 19
+        compileSdk 36
+        minSdkVersion 21
         targetSdkVersion 34
     }
     buildTypes {
@@ -20,8 +20,7 @@ android {
 
     productFlavors {
     }
-    compileSdk 34
-    buildToolsVersion '34.0.0'
+    compileSdk 36
     lint {
         abortOnError false
     }
