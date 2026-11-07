@@ -1,7 +1,8 @@
 package sss.yml.smi.smi;
 
-import android.os.AsyncTask;
-import android.preference.PreferenceManager;
+import android.os.Handler;
+import android.os.Looper;
+import androidx.preference.PreferenceManager;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
@@ -23,6 +24,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import sss.yml.smi.Home.HomePage;
 import sss.yml.smi.room.DbRepository;
@@ -32,6 +35,9 @@ public class SchoolViewModel extends ViewModel {
     private final DbRepository repository = new DbRepository();
     private static final String txtUrl = PreferenceManager.getDefaultSharedPreferences(
             HomePage.application.getApplicationContext()).getString("urlschool", "");
+    private static final ExecutorService EXECUTOR = Executors.newSingleThreadExecutor();
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
+
     public void insert (School school) {
         repository.insert(school);
     }
@@ -41,169 +47,129 @@ public class SchoolViewModel extends ViewModel {
 
     public LiveData<List<String>> getList (String query, List<String>fieldList) {
         List<String> textList = new ArrayList<>();
-        //LiveData<List<String>> lTextList = null;
-        new GetArray(query, fieldList).execute(textList);
-        return new MutableLiveData<>(textList);
-       /* try {
-            lTextList =  new GetArray(query, fieldList).execute().get();
-        } catch (ExecutionException | InterruptedException e) {
-            e.printStackTrace();
-        }
-        return lTextList;
-        */
-    }
-
-    public static class GetArray extends AsyncTask<List<String>, Void, LiveData<List<String>>> {
-        private final String query;
-        private final List<String> fieldList;
-        GetArray(String query, List<String> fieldList) {
-            this.query = query;
-            this.fieldList = fieldList;
-        }
-        @SafeVarargs
-        @Override
-        protected final LiveData<List<String>> doInBackground(List<String>... textList) {
-            List<String> list = textList[0];
-            try {
-                URL url = new URL(txtUrl);
-                Map<String,Object> params = new LinkedHashMap<>();
-                params.put("auth", "Manjula");
-                params.put("query", query);
-
-                StringBuilder postData = new StringBuilder();
-                for (Map.Entry<String,Object> param : params.entrySet()) {
-                    if (postData.length() != 0) postData.append('&');
-                    postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
-                    postData.append('=');
-                    postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
-                }
-                byte[] postDataBytes = postData.toString().getBytes(StandardCharsets.UTF_8);
-
-                HttpURLConnection conn = (HttpURLConnection)url.openConnection();
-                conn.setRequestMethod("POST");
-                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-                conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
-                conn.setDoOutput(true);
-                conn.getOutputStream().write(postDataBytes);
-
-                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
-                String inputLine;
-                StringBuilder response = new StringBuilder();
-
-                while ((inputLine = in.readLine()) != null) {
-                    response.append(inputLine);
-                }
-                JSONObject jsonResponse = new JSONObject(response.toString());
-                int success = (int) jsonResponse.get("success");
-                if (success == 1) {
-                    JSONArray array = jsonResponse.getJSONArray("data");
-                    for(int i = 0 ; i < array.length() ; i++){
-                        list.add(array.getJSONObject(i).getString(fieldList.get(0)));
-                    }
-                }
-            } catch (IOException | JSONException ex) {
-                ex.printStackTrace();
-            }
-            return new MutableLiveData<>(list);
-        }
-        @Override
-        protected void onPreExecute() {
+        mainHandler.post(() -> {
             HomePage.progress.setMessage("Data fetching");
             HomePage.progress.show();
-        }
-        @Override
-        protected void onPostExecute(final LiveData<List<String>> list) {
-            if(HomePage.progress.isShowing()) HomePage.progress.dismiss();
-        }
+        });
+        EXECUTOR.execute(() -> {
+            fetchArray(query, fieldList, textList);
+            mainHandler.post(() -> {
+                if (HomePage.progress.isShowing()) HomePage.progress.dismiss();
+            });
+        });
+        return new MutableLiveData<>(textList);
+    }
 
-        @Override
-        protected void onCancelled() {
+    private static void fetchArray(String query, List<String> fieldList, List<String> list) {
+        try {
+            URL url = new URL(txtUrl);
+            Map<String,Object> params = new LinkedHashMap<>();
+            params.put("auth", "Manjula");
+            params.put("query", query);
+
+            StringBuilder postData = new StringBuilder();
+            for (Map.Entry<String,Object> param : params.entrySet()) {
+                if (postData.length() != 0) postData.append('&');
+                postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
+                postData.append('=');
+                postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
+            }
+            byte[] postDataBytes = postData.toString().getBytes(StandardCharsets.UTF_8);
+
+            HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+            conn.setDoOutput(true);
+            conn.getOutputStream().write(postDataBytes);
+
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+            JSONObject jsonResponse = new JSONObject(response.toString());
+            int success = (int) jsonResponse.get("success");
+            if (success == 1) {
+                JSONArray array = jsonResponse.getJSONArray("data");
+                for(int i = 0 ; i < array.length() ; i++){
+                    list.add(array.getJSONObject(i).getString(fieldList.get(0)));
+                }
+            }
+        } catch (IOException | JSONException ex) {
+            ex.printStackTrace();
         }
     }
 
     public List<School> downloadSchool (String query) {
         List<School> textList = null;
         try {
-            textList = new GetSchool(query).execute().get();
+            textList = EXECUTOR.submit(() -> fetchSchools(query)).get();
         } catch (ExecutionException | InterruptedException e) {
             e.printStackTrace();
         }
         return textList;
     }
-    private static class GetSchool extends AsyncTask<Void, Void, List<School>> {
-        private final String query;
 
-        GetSchool(String query) {
-            this.query = query;
-        }
-        @Override
-        protected List<School> doInBackground(Void... params1) {
-            List<School> list = new ArrayList<>();
-            try {
+    private static List<School> fetchSchools(String query) {
+        List<School> list = new ArrayList<>();
+        try {
+            URL url = new URL(txtUrl);
+            Map<String,Object> params = new LinkedHashMap<>();
+            params.put("auth", "Manjula");
+            params.put("query", query);
 
-                URL url = new URL(txtUrl);
-                Map<String,Object> params = new LinkedHashMap<>();
-                params.put("auth", "Manjula");
-                params.put("query", query);
-
-                StringBuilder postData = new StringBuilder();
-                for (Map.Entry<String,Object> param : params.entrySet()) {
-                    if (postData.length() != 0) postData.append('&');
-                    postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
-                    postData.append('=');
-                    postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
-                }
-                byte[] postDataBytes = postData.toString().getBytes(StandardCharsets.UTF_8);
-
-                HttpURLConnection conn = (HttpURLConnection)url.openConnection();
-                conn.setRequestMethod("POST");
-                conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
-                conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
-                conn.setDoOutput(true);
-                conn.getOutputStream().write(postDataBytes);
-
-                BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
-                String inputLine;
-                StringBuilder response = new StringBuilder();
-
-                while ((inputLine = in.readLine()) != null) {
-                    response.append(inputLine);
-                }
-
-                JSONObject jsonResponse = new JSONObject(response.toString());
-                int success = (int) jsonResponse.get("success");
-                if (success == 1) {
-                    JSONArray array = jsonResponse.getJSONArray("data");
-                    for(int i = 0 ; i < array.length() ; i++){
-                        JSONObject oo = array.getJSONObject(i);
-                        School sch = new School(oo.getInt("censusNo"),
-                                oo.getString("name"),
-                                oo.getString("address"),
-                                oo.getString("province"),
-                                oo.getString("district"),
-                                oo.getString("zone"),
-                                oo.getString("division"),
-                                oo.getString("level"),
-                                oo.getString("span"),
-                                oo.getInt("male"),
-                                oo.getInt("female"),
-                                false);
-                        list.add(sch);
-                    }
-                }
-            } catch (IOException | JSONException ex) {
-                ex.printStackTrace();
+            StringBuilder postData = new StringBuilder();
+            for (Map.Entry<String,Object> param : params.entrySet()) {
+                if (postData.length() != 0) postData.append('&');
+                postData.append(URLEncoder.encode(param.getKey(), "UTF-8"));
+                postData.append('=');
+                postData.append(URLEncoder.encode(String.valueOf(param.getValue()), "UTF-8"));
             }
-            return list;
-        }
+            byte[] postDataBytes = postData.toString().getBytes(StandardCharsets.UTF_8);
 
-        @Override
-        protected void onPostExecute(final List<School> list) {
-        }
+            HttpURLConnection conn = (HttpURLConnection)url.openConnection();
+            conn.setRequestMethod("POST");
+            conn.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+            conn.setRequestProperty("Content-Length", String.valueOf(postDataBytes.length));
+            conn.setDoOutput(true);
+            conn.getOutputStream().write(postDataBytes);
 
-        @Override
-        protected void onCancelled() {
+            BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream(), StandardCharsets.UTF_8));
+            String inputLine;
+            StringBuilder response = new StringBuilder();
+
+            while ((inputLine = in.readLine()) != null) {
+                response.append(inputLine);
+            }
+
+            JSONObject jsonResponse = new JSONObject(response.toString());
+            int success = (int) jsonResponse.get("success");
+            if (success == 1) {
+                JSONArray array = jsonResponse.getJSONArray("data");
+                for(int i = 0 ; i < array.length() ; i++){
+                    JSONObject oo = array.getJSONObject(i);
+                    School sch = new School(oo.getInt("censusNo"),
+                            oo.getString("name"),
+                            oo.getString("address"),
+                            oo.getString("province"),
+                            oo.getString("district"),
+                            oo.getString("zone"),
+                            oo.getString("division"),
+                            oo.getString("level"),
+                            oo.getString("span"),
+                            oo.getInt("male"),
+                            oo.getInt("female"),
+                            false);
+                    list.add(sch);
+                }
+            }
+        } catch (IOException | JSONException ex) {
+            ex.printStackTrace();
         }
+        return list;
     }
 
     public List<School> getSchoolList (boolean selected) {

@@ -250,7 +250,7 @@ launch normally (past the old 2024-12-31 date), notification tap must open
 
 ---
 
-## Step 6 — Deprecation cleanup (refactor, no feature changes)
+## Step 6 — Deprecation cleanup (refactor, no feature changes) ✅ DONE (tag `v4.2.5.5-step6`)
 
 | Deprecated API | Where | Replace with |
 |---|---|---|
@@ -261,7 +261,33 @@ launch normally (past the old 2024-12-31 date), notification tap must open
 | `NetworkInfo` / `getActiveNetworkInfo` | `Ban.java`, `HomeView.java` | `ConnectivityManager.getNetworkCapabilities` |
 | `startActivityForResult` | `Start.java` | existing `ActivityResultLauncher` pattern |
 | `getSerializableExtra` untyped | `ChartShow.java` | API 33 typed overload |
-| platform `onBackPressed` | `ChartShow.java` | (done properly in Step 3) |
+| `platform `onBackPressed` | `ChartShow.java` | (done properly in Step 3) |
+
+**Completed changes:**
+- **AsyncTask → Executor (5 files):** `DbRepository` got a static single-thread
+  `DB_EXECUTOR` (`ExecutorService`) replacing AsyncTask's process-wide serial
+  executor — blocking methods use `submit(...).get()`, fire-and-forget use
+  `execute(...)`; all 16 inner AsyncTask classes removed. `SchoolViewModel`
+  `GetArray`/`GetSchool` → static `fetchArray`/`fetchSchools` + shared
+  `EXECUTOR` (progress show/dismiss posted to main handler; `downloadSchool`
+  keeps `Future.get()` with existing try/catch). `Profile.getImage`,
+  `RequestFragment.getImage`, `Settings.DatabaseBackup`/`DatabaseRestore` →
+  plain methods on single-thread executors + main-thread callbacks.
+  `gt/DataTable.java` AsyncTask references were already comments only.
+- **ProgressDialog → `util/ProgressBanner`** (new `res/layout/progress_banner.xml`
+  + Material dialog with spinner, `setTitle`/`setMessage`/`show`/`isShowing`/
+  `dismiss`): `HomePage.progress` static field retyped; `Settings` backup/
+  restore banners keep title "Please wait.."; `RequestFragment`/`NewsFragment`
+  helpers swapped; `HomePage` dropped redundant `setIndeterminate`/
+  `setCancelable` (banner is always indeterminate, dialogs default cancelable).
+  `UsersFragment` already used an inline `ProgressBar`; `CloudAccess` refs were
+  comments only.
+- **PreferenceManager:** all 13 files switched to `androidx.preference`.
+- **Handlers:** `Start.java:175`, `ChartShow` mHideHandler → `Looper.getMainLooper()`.
+- **Misc:** `ChartShow` typed `getSerializableExtra` branch on API 33;
+  `Ban`/`HomeView` → `getNetworkCapabilities` + `NET_CAPABILITY_INTERNET`;
+  `Start.java` `startActivityForResult` → `profileLauncher` (replicates old
+  onActivityResult PROFILE branch) + no-op `legacySignInLauncher` for `login()`.
 
 Note: `origin/master` branch ("Asyck Remove") attempted AsyncTask removal on an
 **unrelated history** — use only as reference, do not merge.

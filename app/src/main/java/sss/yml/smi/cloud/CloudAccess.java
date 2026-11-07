@@ -1,6 +1,6 @@
 package sss.yml.smi.cloud;
 
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.util.Log;
 
 import androidx.annotation.NonNull;

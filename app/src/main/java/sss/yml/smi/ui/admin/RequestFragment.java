@@ -1,10 +1,10 @@
 package sss.yml.smi.ui.admin;
 
-import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.view.*;
 import android.widget.Button;
 import android.widget.Switch;
@@ -16,15 +16,19 @@ import com.google.firebase.Timestamp;
 import com.google.firebase.firestore.FirebaseFirestore;
 import sss.yml.smi.R;
 import sss.yml.smi.util.CircularImageView;
+import sss.yml.smi.util.ProgressBanner;
 
 import java.io.IOException;
 import java.net.URL;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 import static sss.yml.smi.util.SMIConstants.dt;
 
 public class RequestFragment extends Fragment {
+    private static final Executor IMAGE_EXECUTOR = Executors.newSingleThreadExecutor();
     View view;
     Switch fsmi;
     Switch fwp;
@@ -33,11 +37,11 @@ public class RequestFragment extends Fragment {
     TextView fUser;
     private CircularImageView profilePhoto;
     FirebaseFirestore db;
-    ProgressDialog mProgressDialog;
+    ProgressBanner mProgressDialog;
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.admin_fragment_request, container, false);
-        mProgressDialog = new ProgressDialog(requireContext());
+        mProgressDialog = new ProgressBanner(requireContext());
         setHasOptionsMenu(true);
         fsmi = view.findViewById(R.id.fSmi);
         fwp = view.findViewById(R.id.fwp);
@@ -109,7 +113,7 @@ public class RequestFragment extends Fragment {
                                                 fUser.append(uData.get("pemail")+"\n");
                                                 fUser.append(uData.get("ptp")+"\n");
 
-                                                new getImage().execute(uData.get("photo").toString());
+                                                getImage(uData.get("photo").toString());
                                                 fUser.append("\n\n\n");
 
                                                 for(Map.Entry<String, Object> entry: uData.entrySet()){
@@ -132,28 +136,21 @@ public class RequestFragment extends Fragment {
             }
         });
     }
-    private class getImage extends AsyncTask<String, Void, Bitmap> {
-
-        @Override
-        protected Bitmap doInBackground(String...strings) {
+    private void getImage(String photoUrl) {
+        IMAGE_EXECUTOR.execute(() -> {
             Bitmap bitmap = null;
             try {
-                URL imageurl = new URL(strings[0]);
+                URL imageurl = new URL(photoUrl);
                 bitmap = BitmapFactory.decodeStream(imageurl.openConnection().getInputStream());
             } catch (IOException e) {
                 e.printStackTrace();
             }
-            return bitmap;
-        }
-
-        @Override
-        protected void onPostExecute(Bitmap result) {
-            profilePhoto.setImageBitmap(result);
-        }
+            Bitmap result = bitmap;
+            new Handler(Looper.getMainLooper()).post(() -> profilePhoto.setImageBitmap(result));
+        });
     }
     private void showProgressDialog(String message) {
         mProgressDialog.setMessage(message);
-        mProgressDialog.setIndeterminate(true);
         mProgressDialog.show();
     }
 

@@ -1,11 +1,11 @@
 package sss.yml.smi.ui.setting;
 
 import android.app.AlertDialog;
-import android.app.ProgressDialog;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -20,6 +20,8 @@ import java.io.BufferedOutputStream;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
@@ -28,8 +30,14 @@ import sss.yml.smi.Home.App;
 import sss.yml.smi.Home.HomePage;
 import sss.yml.smi.R;
 import sss.yml.smi.room.DbRepository;
+import sss.yml.smi.util.ProgressBanner;
 
 public class Settings extends PreferenceFragmentCompat {
+    // Replaces the two AsyncTasks (which shared AsyncTask's global serial
+    // executor): one thread keeps backup/restore from interleaving, as before.
+    private static final Executor TASK_EXECUTOR = Executors.newSingleThreadExecutor();
+    private final Handler mainHandler = new Handler(Looper.getMainLooper());
+
     private final ActivityResultLauncher<String> createBackupLauncher =
             registerForActivityResult(new ActivityResultContracts.CreateDocument("application/octet-stream"), uri -> {
                 if (uri != null) new DatabaseBackup().execute(uri);
@@ -84,22 +92,25 @@ public class Settings extends PreferenceFragmentCompat {
         }
     }
 
-    private class DatabaseBackup extends AsyncTask<Uri, Void, Boolean> {
+    private class DatabaseBackup {
         DbRepository repo;
         Uri backupUri;
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            HomePage.progress = ProgressDialog.show(requireContext(), "Please wait..",
-                    "Dumping", false, false);
+        void execute(Uri uri) {
+            HomePage.progress = new ProgressBanner(requireContext());
+            HomePage.progress.setTitle("Please wait..");
+            HomePage.progress.setMessage("Dumping");
+            HomePage.progress.show();
             repo = new DbRepository();
             repo.close();
+            backupUri = uri;
+            TASK_EXECUTOR.execute(() -> {
+                Boolean ok = doBackup();
+                mainHandler.post(() -> onPostExecute(ok));
+            });
         }
 
-        @Override
-        protected Boolean doInBackground(Uri... uris) {
-            backupUri = uris[0];
+        private Boolean doBackup() {
             boolean ok = false;
             byte[] buffer = new byte[1024];
             ZipOutputStream zos = null;
@@ -134,9 +145,8 @@ public class Settings extends PreferenceFragmentCompat {
             }
             return ok;
         }
-        @Override
-        protected void onPostExecute(Boolean done) {
-            super.onPostExecute(done);
+
+        private void onPostExecute(Boolean done) {
             repo.setNull();
             HomePage.progress.dismiss();
             if (!done) {
@@ -151,16 +161,20 @@ public class Settings extends PreferenceFragmentCompat {
         }
     }
 
-    private class DatabaseRestore extends AsyncTask<Uri, Void, Boolean> {
+    private class DatabaseRestore {
         DbRepository repo;
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            HomePage.progress = ProgressDialog.show(requireContext(), "Please wait..",
-                    "Restoring", false, false);
+        void execute(Uri uri) {
+            HomePage.progress = new ProgressBanner(requireContext());
+            HomePage.progress.setTitle("Please wait..");
+            HomePage.progress.setMessage("Restoring");
+            HomePage.progress.show();
             repo = new DbRepository();
             repo.close();
+            TASK_EXECUTOR.execute(() -> {
+                Boolean ok = doRestore(uri);
+                mainHandler.post(() -> onPostExecute(ok));
+            });
         }
 
         private void extractFile(ZipInputStream zipIn, String filePath) {
@@ -184,11 +198,10 @@ public class Settings extends PreferenceFragmentCompat {
             }
         }
 
-        @Override
-        protected Boolean doInBackground(Uri... uris) {
+        private Boolean doRestore(Uri uri) {
             ZipInputStream zipIn = null;
             try {
-                zipIn = new ZipInputStream(requireContext().getContentResolver().openInputStream(uris[0]));
+                zipIn = new ZipInputStream(requireContext().getContentResolver().openInputStream(uri));
                 ZipEntry entry = zipIn.getNextEntry();
                 // iterates over entries in the zip file
                 while (entry != null) {
@@ -208,9 +221,7 @@ public class Settings extends PreferenceFragmentCompat {
             return true;
         }
 
-        @Override
-        protected void onPostExecute(Boolean done) {
-            super.onPostExecute(done);
+        private void onPostExecute(Boolean done) {
             repo.setNull();
             HomePage.progress.dismiss();
             String msg = "Database restored Successfully..";

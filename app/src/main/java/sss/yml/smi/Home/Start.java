@@ -9,7 +9,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
-import android.preference.PreferenceManager;
+import android.os.Looper;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
@@ -36,6 +36,8 @@ import sss.yml.smi.R;
 import sss.yml.smi.login.Ban;
 import sss.yml.smi.login.Profile;
 
+import androidx.preference.PreferenceManager;
+
 import java.util.*;
 
 public class Start extends AppCompatActivity {
@@ -50,6 +52,22 @@ public class Start extends AppCompatActivity {
     private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
             new FirebaseAuthUIActivityResultContract(),
             this::onSignInResult
+    );
+    private final ActivityResultLauncher<Intent> legacySignInLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> { }
+    );
+    private final ActivityResultLauncher<Intent> profileLauncher = registerForActivityResult(
+            new ActivityResultContracts.StartActivityForResult(),
+            result -> {
+                if (result.getResultCode() == RESULT_OK) {
+                    launchApp();
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            R.string.profile_not_complete,
+                            Toast.LENGTH_LONG).show();
+                }
+            }
     );
     private final ActivityResultLauncher<String> notificationPermissionLauncher = registerForActivityResult(
             new ActivityResultContracts.RequestPermission(),
@@ -172,7 +190,7 @@ public class Start extends AppCompatActivity {
                         }
                     });
         }
-        new Handler().postDelayed(() -> {
+        new Handler(Looper.getMainLooper()).postDelayed(() -> {
             // if(BuildConfig.DEBUG) launchApp();
             if (currentUser != null) launchApp();
             else createSignInIntent();
@@ -180,12 +198,6 @@ public class Start extends AppCompatActivity {
     }
 
     public void createSignInIntent() {
-        // [START auth_fui_create_intent]
-        // Choose authentication providers
-        //List<String> permissions = Arrays.asList("email", "public_profile");
-        //AuthUI.IdpConfig.FacebookBuilder fb = new AuthUI.IdpConfig.FacebookBuilder();
-        //fb.setPermissions(permissions);
-
         List<AuthUI.IdpConfig> providers = Collections.singletonList(
                 new AuthUI.IdpConfig.GoogleBuilder().build());
         //fb.build()
@@ -196,7 +208,6 @@ public class Start extends AppCompatActivity {
                 .setAvailableProviders(providers)
                 .build();
         signInLauncher.launch(signInIntent);
-        // [END auth_fui_create_intent]
     }
     private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
         IdpResponse response = result.getIdpResponse();
@@ -225,7 +236,7 @@ public class Start extends AppCompatActivity {
         // new AuthUI.IdpConfig.EmailBuilder().build(),
         // new AuthUI.IdpConfig.AnonymousBuilder().build());
 
-        startActivityForResult(
+        legacySignInLauncher.launch(
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
@@ -233,8 +244,7 @@ public class Start extends AppCompatActivity {
                         .setLogo(R.drawable.ic_logo_120)
                         .setIsSmartLockEnabled(!BuildConfig.DEBUG, true /* hints */) //!BuildConfig.DEBUG /* credentials */
                         //.setDefaultProvider(providers.get(1))
-                        .build(),
-                SIGN_IN_REQUEST_CODE);
+                        .build());
     }
 
     public void updateApp() {
@@ -297,45 +307,6 @@ public class Start extends AppCompatActivity {
         Bundle bundle = new Bundle();
         bundle.putBoolean("create", true);
         intent.putExtra("data", bundle);
-        startActivityForResult(intent, PROFILE_REQUEST_CODE);
-    }
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        /*if (requestCode == SIGN_IN_REQUEST_CODE) {
-            IdpResponse response = IdpResponse.fromResultIntent(data);
-            if (resultCode == RESULT_OK) {
-                FirebaseUserMetadata metadata = FirebaseAuth.getInstance().getCurrentUser().getMetadata();
-                if(metadata != null) {
-                    if (metadata.getCreationTimestamp() == metadata.getLastSignInTimestamp()) {
-                        Logger.setMsg("The user is new, new User screen!");
-                        showWelComeScreen = true;
-                    } else {
-                        Logger.setMsg("This is an existing user,  welcome back screen.");
-                        showWelComeScreen = false;
-                        // This is an existing user, show them a welcome back screen.
-                    }
-                    launchProfile();
-                }
-            } else {
-                Toast.makeText(getApplicationContext(),
-                        response.getError().getMessage(),
-                        Toast.LENGTH_LONG).show();
-                finish();
-            }
-            if (response.getError().getErrorCode() == ErrorCodes.NO_NETWORK) {
-                Toast.makeText(this, "Check network connection and try again", Toast.LENGTH_LONG).show();
-                return;
-            }
-        }*/
-        if (requestCode == PROFILE_REQUEST_CODE) { // && resultCode == RESULT_OK) {
-            if (resultCode == RESULT_OK) {
-                launchApp();
-            } else {
-                Toast.makeText(getApplicationContext(),
-                        R.string.profile_not_complete,
-                        Toast.LENGTH_LONG).show();
-            }
-        }
+        profileLauncher.launch(intent);
     }
 }

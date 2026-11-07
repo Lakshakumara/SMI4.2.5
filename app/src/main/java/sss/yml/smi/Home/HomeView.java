@@ -3,9 +3,10 @@ package sss.yml.smi.Home;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
+import android.net.Network;
+import android.net.NetworkCapabilities;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -70,8 +71,10 @@ public class HomeView extends Fragment {
         ConnectivityManager cm = (ConnectivityManager) HomePage.application
                 .getSystemService(Context.CONNECTIVITY_SERVICE);
         if (null != cm) {
-            NetworkInfo info = cm.getActiveNetworkInfo();
-            return (info != null && info.isConnected());
+            Network network = cm.getActiveNetwork();
+            if (network == null) return false;
+            NetworkCapabilities caps = cm.getNetworkCapabilities(network);
+            return caps != null && caps.hasCapability(NetworkCapabilities.NET_CAPABILITY_INTERNET);
         }
         return false;
     }

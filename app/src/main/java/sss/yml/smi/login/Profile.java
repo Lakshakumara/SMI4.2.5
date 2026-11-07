@@ -5,9 +5,8 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Patterns;
@@ -41,12 +40,15 @@ import java.net.URL;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
 
 import sss.yml.smi.R;
 import sss.yml.smi.util.CircularImageView;
 
 public class Profile extends AppCompatActivity {
     public static final String EXTRA_REPLY = "Profile.REPLY";
+    private static final Executor IMAGE_EXECUTOR = Executors.newSingleThreadExecutor();
     private FirebaseAuth mAuth;
     private FirebaseUser currentUser;
     private TextInputEditText txtEmail;
@@ -201,7 +203,7 @@ public class Profile extends AppCompatActivity {
             txtName.setText(currentUser.getDisplayName());
             txtTp.setText(currentUser.getPhoneNumber());
             //profilePhoto.setImageURI(Uri.parse(currentUser.getPhotoUrl().toString()));
-            new getImage().execute(currentUser.getPhotoUrl().toString());
+            getImage(currentUser.getPhotoUrl().toString());
         }
 
         FirebaseFirestore.getInstance()
@@ -317,18 +319,14 @@ public class Profile extends AppCompatActivity {
         return ok;
     }
 
-    private class getImage extends AsyncTask<String, Void, Boolean> {
-        Bitmap bitmap;
-        @Override
-        protected Boolean doInBackground(String...strings) {
-            URL imageurl;
-            boolean saved = false;
+    private void getImage(String photoUrl) {
+        IMAGE_EXECUTOR.execute(() -> {
             try {
-                imageurl = new URL(strings[0]);
-                bitmap = BitmapFactory.decodeStream(imageurl.openConnection().getInputStream());
+                URL imageurl = new URL(photoUrl);
+                Bitmap bitmap = BitmapFactory.decodeStream(imageurl.openConnection().getInputStream());
                 File folder = new File(getFilesDir().getAbsoluteFile(), "/profile/");
                 folder.mkdir();
-                File file = new File(folder.getAbsoluteFile(),  "profile.jpg") ;
+                File file = new File(folder.getAbsoluteFile(), "profile.jpg");
                 try {
                     FileOutputStream out = new FileOutputStream(file);
                     bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
@@ -337,26 +335,14 @@ public class Profile extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
-
-                saved = true;
             } catch (IOException e) {
-                //bitmap = ((BitmapDrawable)getResources().getDrawable(R.drawable.ic_person)).getBitmap();
                 e.printStackTrace();
             }
-            return saved;
-        }
-
-        @Override
-        protected void onPostExecute(Boolean saved) {
-            /*DrawableUtils.
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
-                profilePhoto.setImageDrawable(getResources().getDrawable(R.drawable.ic_full_sad, context.getTheme()));
-            } else {
-                profilePhoto.setImageDrawable(getResources().getDrawable(R.drawable.ic_full_sad));
-            }*/
-            File f = new File(getFilesDir().getPath() + "/profile/profile.jpg");
-           profilePhoto.setImageURI(Uri.parse(f.toString()));
-        }
+            runOnUiThread(() -> {
+                File f = new File(getFilesDir().getPath() + "/profile/profile.jpg");
+                profilePhoto.setImageURI(Uri.parse(f.toString()));
+            });
+        });
     }
 
 }

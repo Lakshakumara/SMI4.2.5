@@ -1,9 +1,8 @@
 package sss.yml.smi.Home;
 
 import android.app.Application;
-import android.app.ProgressDialog;
 import android.os.Bundle;
-import android.preference.PreferenceManager;
+import androidx.preference.PreferenceManager;
 import android.provider.Settings;
 import android.text.TextUtils;
 import android.view.Menu;
@@ -22,10 +21,11 @@ import com.google.android.material.navigation.NavigationView;
 import java.lang.reflect.Field;
 
 import sss.yml.smi.R;
+import sss.yml.smi.util.ProgressBanner;
 
 public class HomePage extends AppCompatActivity{
     public static Application application;
-    public static ProgressDialog progress;
+    public static ProgressBanner progress;
     //private AdView mAdView;
     private AppBarConfiguration mAppBarConfiguration;
    // CollapsingToolbarLayout toolBarLayout;
@@ -40,7 +40,7 @@ public class HomePage extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         application = App.getInstance();
         App.getInstance().initAppLanguage(this);
-        progress = new ProgressDialog(this);
+        progress = new ProgressBanner(this);
         setContentView(R.layout.activity_home_page);
         toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -111,9 +111,7 @@ public class HomePage extends AppCompatActivity{
             });
         } else mAdView.setVisibility(View.GONE);
 */
-        progress.setIndeterminate(true);
         progress.setMessage("Loading...");
-        progress.setCancelable(true);
         progress.show();
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);

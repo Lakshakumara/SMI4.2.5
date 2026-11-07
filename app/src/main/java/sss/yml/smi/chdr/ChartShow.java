@@ -2,8 +2,10 @@ package sss.yml.smi.chdr;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.Looper;
 import android.view.MotionEvent;
 import android.view.View;
 
@@ -44,7 +46,7 @@ public class ChartShow extends AppCompatActivity {//implements com.github.mikeph
      * and a change of the status and navigation bar.
      */
     private static final int UI_ANIMATION_DELAY = 300;
-    private final Handler mHideHandler = new Handler();
+    private final Handler mHideHandler = new Handler(Looper.getMainLooper());
     private InterstitialAd mInterstitialAd;
     private ViewPager mViewPager;
     private FloatingActionButton fab;
@@ -137,7 +139,11 @@ public class ChartShow extends AppCompatActivity {//implements com.github.mikeph
         });
 
         Intent i = getIntent();
-        student = (Student)i.getSerializableExtra("student");
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            student = i.getSerializableExtra("student", Student.class);
+        } else {
+            student = (Student) i.getSerializableExtra("student");
+        }
 
         mViewPager = findViewById(R.id.pager);
         PagerAdapter pagerAdapter = new SMIChartPagerAdapter(getSupportFragmentManager(), student);

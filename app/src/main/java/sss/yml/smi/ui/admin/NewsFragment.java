@@ -1,6 +1,5 @@
 package sss.yml.smi.ui.admin;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,6 +18,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import sss.yml.smi.R;
+import sss.yml.smi.util.ProgressBanner;
 
 
 public class NewsFragment extends Fragment {
@@ -31,11 +31,11 @@ public class NewsFragment extends Fragment {
     TextInputEditText nosView;
     TextView msg;
     FirebaseFirestore db;
-    ProgressDialog mProgressDialog;
+    ProgressBanner mProgressDialog;
     @Override
     public View onCreateView( LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.admin_fragment_news, container, false);
-        mProgressDialog = new ProgressDialog(requireContext());
+        mProgressDialog = new ProgressBanner(requireContext());
 
         newsType = view.findViewById(R.id.admin_news_type);
         ArrayAdapter<String> adapter = new ArrayAdapter<>(requireContext(), R.layout.list_item, new String[]{"Simple", "Icon", "Image"});
@@ -99,7 +99,6 @@ public class NewsFragment extends Fragment {
     }
     private void showProgressDialog(String message) {
         mProgressDialog.setMessage(message);
-        mProgressDialog.setIndeterminate(true);
         mProgressDialog.show();
     }
 
