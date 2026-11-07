@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.core.app.RemoteInput;
+import androidx.core.content.ContextCompat;
 
 public class NotificationReceiver extends BroadcastReceiver {
     final String KEY_TEXT_REPLY = "key_text_reply";
@@ -25,7 +26,20 @@ public class NotificationReceiver extends BroadcastReceiver {
     }
     private void startNotification(Context context){
         Intent i = new Intent(context, Notify.class);
-        context.startService(i);
+        try {
+            // API 26+: plain startService() throws IllegalStateException when the
+            // app is in background (incl. boot receivers). startForegroundService()
+            // is exempted for BOOT_COMPLETED; Notify.onCreate() calls
+            // startForeground() immediately. ContextCompat falls back to
+            // startService() below API 26.
+            ContextCompat.startForegroundService(context, i);
+        } catch (RuntimeException e) {
+            // Never crash the boot path on OEM quirks — degrade silently.
+            try {
+                context.startService(i);
+            } catch (RuntimeException ignored) {
+            }
+        }
     }
 
 }

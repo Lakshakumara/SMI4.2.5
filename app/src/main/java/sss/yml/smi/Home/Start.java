@@ -1,5 +1,7 @@
 package sss.yml.smi.Home;
 
+import static com.google.android.gms.common.util.CollectionUtils.listOf;
+
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -227,6 +229,7 @@ public class Start extends AppCompatActivity {
                 AuthUI.getInstance()
                         .createSignInIntentBuilder()
                         .setAvailableProviders(providers)
+                        //.setAvailableProviders(listOf(new AuthUI.IdpConfig.EmailBuilder().build()))
                         .setLogo(R.drawable.ic_logo_120)
                         .setIsSmartLockEnabled(!BuildConfig.DEBUG, true /* hints */) //!BuildConfig.DEBUG /* credentials */
                         //.setDefaultProvider(providers.get(1))

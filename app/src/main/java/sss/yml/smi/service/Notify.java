@@ -1,16 +1,19 @@
 package sss.yml.smi.service;
 
+import android.Manifest;
 import android.app.Notification;
 import android.app.NotificationChannel;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.os.Build;
 import android.os.IBinder;
 import android.preference.PreferenceManager;
 
 import androidx.annotation.Nullable;
+import androidx.core.app.ActivityCompat;
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
 import androidx.core.app.RemoteInput;
@@ -26,6 +29,8 @@ import sss.yml.smi.util.NortificationActivity;
 
 public class Notify extends Service {
     private final String CHANNEL_ID = "m";
+    private final String FOREGROUND_CHANNEL_ID = "svc";
+    private static final int FOREGROUND_NOTIFICATION_ID = 2;
     FirebaseFirestore db = FirebaseFirestore.getInstance();
     public static final String KEY_TEXT_REPLY = "key_text_reply";
     @Nullable
@@ -41,8 +46,25 @@ public class Notify extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        if(db == null) return;
         createNotificationChannel();
+        // Started via startForegroundService() from NotificationReceiver:
+        // startForeground() must run within ~5s of creation, before anything else.
+        // Id 2 keeps it distinct from news notifications (id 1) so a posted news
+        // notification can never replace/cancel the FGS notification.
+        Notification foregroundNotification = new NotificationCompat.Builder(this, FOREGROUND_CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_about)
+                .setContentTitle(getString(R.string.app_name))
+                .setContentText("News service running")
+                .setOngoing(true)
+                .setSilent(true)
+                .build();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.UPSIDE_DOWN_CAKE) {
+            startForeground(FOREGROUND_NOTIFICATION_ID, foregroundNotification,
+                    android.content.pm.ServiceInfo.FOREGROUND_SERVICE_TYPE_SPECIAL_USE);
+        } else {
+            startForeground(FOREGROUND_NOTIFICATION_ID, foregroundNotification);
+        }
+        if(db == null) return;
         db.collection("BMIS")
                 .document("news")
                 .addSnapshotListener((snapshot, e) -> {
@@ -95,12 +117,63 @@ public class Notify extends Service {
             int importance = NotificationManager.IMPORTANCE_DEFAULT;
             NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
             channel.setDescription(description);
-            // Register the channel with the system; you can't change the importance
+            // Register the channel with the system. You can't change the importance
             // or other notification behaviors after this
             NotificationManager notificationManager = getSystemService(NotificationManager.class);
             notificationManager.createNotificationChannel(channel);
+
+            NotificationChannel foregroundChannel = new NotificationChannel(FOREGROUND_CHANNEL_ID,
+                    "Service", NotificationManager.IMPORTANCE_LOW);
+            foregroundChannel.setDescription("Background service");
+            notificationManager.createNotificationChannel(foregroundChannel);
         }
     }
+    private void simpleNotification(String newsId, int nosShown, String title, String subTitle, String description){
+        Intent intentp = new Intent(this, ReplyReceive.class);
+        final PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intentp, PendingIntent.FLAG_MUTABLE);
+
+        String replyLabel = "Your Response";
+        RemoteInput remoteInput = new RemoteInput.Builder(KEY_TEXT_REPLY)
+                .setLabel(replyLabel)
+                .build();
+
+        NotificationCompat.Action action =
+                new NotificationCompat.Action.Builder(R.drawable.ic_send, "Reply", pIntent)
+                        .addRemoteInput(remoteInput)
+                        .build();
+
+        Intent intent = new Intent(this, NortificationActivity.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_IMMUTABLE);
+
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(this, CHANNEL_ID)
+                .setSmallIcon(R.drawable.ic_about)
+                .setContentTitle(title)
+                .setContentText(subTitle)
+                .setStyle(new NotificationCompat.BigTextStyle().bigText(description))
+                .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+                // Set the intent that will fire when the user taps the notification
+                .setContentIntent(pendingIntent)
+                .addAction(action)
+                .setAutoCancel(true);
+        NotificationManagerCompat notificationManager = NotificationManagerCompat.from(this);
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
+                && ActivityCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+            // TODO: Consider calling
+            //    ActivityCompat#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for ActivityCompat#requestPermissions for more details.
+            return;
+        }
+        notificationManager.notify(1, builder.build());
+        PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putInt(newsId, nosShown).apply();
+    }
+
+}
+    /*
     private void simpleNotification(String newsId, int nosShown, String title, String subTitle, String description){
         Intent intentp = new Intent(this, ReplyReceive.class);
         final PendingIntent pIntent = PendingIntent.getActivity(this, (int) System.currentTimeMillis(), intentp, PendingIntent.FLAG_MUTABLE);
@@ -200,7 +273,7 @@ public class Notify extends Service {
         notificationManager.notify(1, builder.build());
         PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).edit().putInt(newsId, nosShown).apply();
         Log.e("xyz", "saved "+nosShown+" "+newsId);
-    }*/
+    }
     private void buildNotification(String title, String msg) {
         String stop = "stop";
         //registerReceiver(stopReceiver, new IntentFilter(stop));
@@ -217,4 +290,4 @@ public class Notify extends Service {
                 .setSmallIcon(android.R.drawable.ic_menu_send);
         startForeground(1, builder.build());
     }
-}
+}*/

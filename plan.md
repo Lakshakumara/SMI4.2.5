@@ -197,20 +197,56 @@ launch normally (past the old 2024-12-31 date), notification tap must open
 
 ---
 
-## Step 5 — Notifications & background
+## Step 5 — Notifications & background ✅ DONE (2026-11-07)
 
-1. `service/NotificationReceiver.java` (~line 28): `context.startService()` on
-   `BOOT_COMPLETED` → background-start restricted on API 26+; options:
-   - `ContextCompat.startForegroundService()` + FGS type (from Step 2)
-   - **Recommended:** replace boot receiver + persistent Firestore listener
-     service with **FCM push** (fewer moving parts, better battery, survives
-     boot restrictions)
-2. Android 15+: `BOOT_COMPLETED` no longer delivered in stopped state and
-   restricted FGS types can't start at boot — `dataSync` type is OK-ish but
-   test on Android 15/16
+### Platform rules verified against current Android docs (targetSdk 36)
 
-**Verify:** reboot device → notifications still arrive; force-stop app →
-behavior matches design.
+1. Plain `startService()` from a `BOOT_COMPLETED` receiver: app is in
+   background on API 26+ → `IllegalStateException` risk (confirmed by docs +
+   real crash reports). Fix: `startForegroundService()`.
+2. `BOOT_COMPLETED` **is** on the exemption list for background FGS starts
+   (Android 12+) → `startForegroundService()` from boot is legal…
+3. **…but Android 15+ (apps targeting 35+) forbids launching `dataSync` (and
+   camera/mediaPlayback/phoneCall/mediaProjection/microphone) FGS from
+   `BOOT_COMPLETED`** → `ForegroundServiceStartNotAllowedException`.
+   → Step 2's preemptive `dataSync` type was **wrong for boot**; switched to
+   **`specialUse`** (not on the ban list, no runtime prerequisites, no 6h
+   dataSync timeout).
+4. `startForeground()` requires the `FOREGROUND_SERVICE` permission (was
+   **missing** from the manifest) and, for `specialUse` on API 34+,
+   `FOREGROUND_SERVICE_SPECIAL_USE`.
+
+### Changes
+
+| File | Change |
+|---|---|
+| `service/NotificationReceiver.java` | `context.startService()` → `ContextCompat.startForegroundService()` with try/catch fallback to `startService()` and finally silent degrade — the boot path must never crash the app |
+| `service/Notify.java` | `onCreate()` now: create channels → **`startForeground()` first** (must run within ~5s of `startForegroundService()`), before any Firestore work; FGS notification id **2** (news uses id 1, so a posted news notification can never replace/cancel the FGS one), ongoing, silent, on a new **LOW-importance `svc` channel**; `specialUse` type overload on API 34+, 2-arg below; `createNotificationChannel()` also creates the `svc` channel |
+| `AndroidManifest.xml` | added `FOREGROUND_SERVICE` + `FOREGROUND_SERVICE_SPECIAL_USE` (normal/install-time, no runtime prompt); service `foregroundServiceType` `dataSync` → **`specialUse`** + `<property PROPERTY_SPECIAL_USE_FGS_SUBTYPE>` explanation |
+| `service/Notify.java` (your addition, kept) | `POST_NOTIFICATIONS` guard in `simpleNotification()` — **fixed**: version-gated to API 33+ (`Build.VERSION_CODES.TIRAMISU`), otherwise `checkSelfPermission(POST_NOTIFICATIONS)` returns DENIED on API ≤32 (permission doesn't exist there) and news would never post on Android 8–12 |
+| `Home/Start.java` (your edit, kept) | commented-out `setAvailableProviders` line + import (cosmetic) |
+
+### Known behavior changes (intended)
+
+- After every reboot the user sees a **permanent low-priority notification**
+  ("BMI Simulator — News service running", not swipeable). This is the
+  unavoidable cost of a reliable persistent listener on modern Android —
+  without it the news listener silently dies on Android 8+.
+- News listener now survives as an FGS instead of a killable background
+  service; **FCM push** (the "recommended" alternative) deferred — it needs
+  backend work (Cloud Function on the Firestore `news` doc) we can't do offline.
+- `BOOT_COMPLETED` is still not delivered while the app is in *stopped*
+  state (force-stopped) — documented platform behavior, no code change;
+  service starts again on next app launch? No — boot-only by design (unchanged).
+
+**Verify:** `gradlew assembleDebug` → BUILD SUCCESSFUL.
+**On-device checklist:**
+- reboot → app does **not** crash at boot; low-priority "News service running"
+  notification appears once (channel `Service`, silent)
+- post news from admin → notification still arrives (id 1, separate from FGS)
+- revoke POST_NOTIFICATIONS (Android 13+) → no news notification, no crash;
+  grant it back → pending news appears on next snapshot
+- force-stop app → reboot → no broadcast (expected), no crash
 
 ---
 
