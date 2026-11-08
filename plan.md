@@ -294,19 +294,36 @@ Note: `origin/master` branch ("Asyck Remove") attempted AsyncTask removal on an
 
 ---
 
-## Step 7 — Dependency updates
+## Step 7 — Dependency updates ✅ DONE (2026-11-08)
 
-- Firebase BOM `30.2.2` → latest stable (`34.x`), google-services `4.4.1` → `4.4.4+`
-- Navigation / SafeArgs `2.7.7` → `2.9.x`
-- Room `2.6.1` → `2.7.x` (keep `room.schemaLocation` arg)
-- AppCompat/Material/RecyclerView — bump to latest
-- Ads: `play-services-ads:21.5.0` → latest (24.x) + **UMP consent SDK**
-  (AdMob confirmed still active; UMP required for EEA/UK consent)
-- Remove `androidx.legacy:legacy-support-v4` if unused after audit
-- Remove dead `implementation fileTree(libs/*.jar)` if `libs/` still absent
+- ✅ Firebase BOM `30.2.0` → `35.1.0`, google-services `4.4.1` → `4.5.0`
+- ✅ Navigation / SafeArgs `2.7.7` → `2.10.2`
+- ✅ Room `2.6.1` → `2.8.5` (kept `room.schemaLocation` arg)
+- ✅ AppCompat `1.6.1` → `1.8.0`, Material `1.11.0` → `1.14.0`,
+  RecyclerView `1.3.2` → `1.4.0`; also webkit `1.17.1`, annotation `1.11.0`,
+  constraintlayout `2.2.2`, firebase-ui-auth `9.1.1`
+- ✅ Ads: `firebase-ads` removed (unused), `play-services-ads:25.5.0` +
+  **UMP** `user-messaging-platform:4.0.0` — new `util/ConsentManager.java`
+  (consent form on first launch in `Start.onCreate`, privacy-options form from
+  new Settings → "Privacy & ads settings" preference + string
+  `privacy_options_unavailable`)
+- ✅ Removed `androidx.legacy:legacy-support-v4` and dead
+  `implementation fileTree(libs/*.jar)` (`libs/` absent); dropped deprecated
+  `androidx.lifecycle:lifecycle-extensions`
+- ✅ Toolchain alignment: `minSdk 21 → 24` (app + MPChartLib), Java
+  `1.8 → 17` compileOptions (app + MPChartLib)
+- ✅ Auth API migration: `setIsSmartLockEnabled` →
+  `setCredentialManagerEnabled` (firebase-ui-auth 9.x); fixed invalid
+  `root_preferences.xml` icon attr (`/ >` → `>`)
+- ✅ **Lint fix (Step 3 artifact):** `data_extraction_rules.xml` used
+  illegal `<include-all/>` → replaced with per-domain
+  `<include domain="..." path="."/>` (root/file/database/sharedpref/external)
+  under both `cloud-backup` and `device-transfer` (Android 12+ schema allows
+  only `include`/`exclude`)
 
-**Verify:** `gradlew assembleDebug assembleRelease`; smoke test login, charts,
-backup, ads.
+**Verify:** ✅ `gradlew assembleDebug assembleRelease` both BUILD SUCCESSFUL
+(2026-11-08, release APK 7.4 MB). ⏳ Manual smoke test still pending:
+login, charts, backup, ads (device needed).
 
 ---
 

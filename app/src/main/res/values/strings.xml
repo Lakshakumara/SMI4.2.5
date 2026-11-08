@@ -239,4 +239,5 @@
     <string name="enter_sex">Enter Sex</string>
     <string name="search">Search</string>
     <string name="reset">Reset</string>
+    <string name="privacy_options_unavailable">Privacy options are not available in your region</string>
 </resources>

@@ -31,6 +31,7 @@ import sss.yml.smi.Home.HomePage;
 import sss.yml.smi.R;
 import sss.yml.smi.room.DbRepository;
 import sss.yml.smi.util.ProgressBanner;
+import sss.yml.smi.util.ConsentManager;
 
 public class Settings extends PreferenceFragmentCompat {
     // Replaces the two AsyncTasks (which shared AsyncTask's global serial
@@ -87,6 +88,13 @@ public class Settings extends PreferenceFragmentCompat {
         if (btnRestore != null) {
             btnRestore.setOnPreferenceClickListener(arg0 -> {
                 openBackupLauncher.launch(new String[]{"*/*"});
+                return true;
+            });
+        }
+        Preference btnPrivacy = findPreference("privacy");
+        if (btnPrivacy != null) {
+            btnPrivacy.setOnPreferenceClickListener(arg0 -> {
+                ConsentManager.showPrivacyOptions(requireActivity());
                 return true;
             });
         }

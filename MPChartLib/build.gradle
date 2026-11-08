@@ -5,7 +5,7 @@ android {
     namespace 'com.github.mikephil.charting'
     defaultConfig {
         compileSdk 37
-        minSdkVersion 21
+        minSdkVersion 24
         targetSdkVersion 36
     }
     buildTypes {
@@ -21,6 +21,10 @@ android {
     productFlavors {
     }
     compileSdk 37
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
     lint {
         abortOnError false
     }
