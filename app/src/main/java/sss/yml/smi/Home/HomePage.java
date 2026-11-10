@@ -1,6 +1,8 @@
 package sss.yml.smi.Home;
 
 import android.app.Application;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import androidx.preference.PreferenceManager;
 import android.provider.Settings;
@@ -141,6 +143,14 @@ public class HomePage extends AppCompatActivity{
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        navigationView.getMenu().findItem(R.id.nav_web).setOnMenuItemClickListener(item -> {
+            try {
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://bmisimulator.web.app")));
+            } catch (Exception ignored) {
+            }
+            return true;
+        });
 
         CloudRestore.maybeAutoPrompt(this);
     }

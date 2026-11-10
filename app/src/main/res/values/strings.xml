@@ -271,4 +271,5 @@
     <string name="cloud_restore_census_msg">Enter the CensusNo shown next to your school name. Separate several numbers with commas.</string>
     <string name="cloud_restore_census_hint">10012, 10013</string>
     <string name="cloud_restore_census_invalid">Enter one or more numbers, e.g. 10012</string>
+    <string name="web_version">Web version</string>
 </resources>
