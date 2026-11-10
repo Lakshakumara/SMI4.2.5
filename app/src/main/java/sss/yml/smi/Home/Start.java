@@ -1,7 +1,5 @@
 package sss.yml.smi.Home;
 
-import static com.google.android.gms.common.util.CollectionUtils.listOf;
-
 import android.Manifest;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -10,9 +8,11 @@ import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Looper;
+import android.text.InputType;
 import android.view.WindowManager;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -31,7 +31,8 @@ import com.google.firebase.auth.FirebaseUserMetadata;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.Source;
-import sss.yml.smi.BuildConfig;
+import com.google.android.gms.common.ConnectionResult;
+import com.google.android.gms.common.GoogleApiAvailability;
 import sss.yml.smi.R;
 import sss.yml.smi.login.Ban;
 import sss.yml.smi.login.Profile;
@@ -53,10 +54,6 @@ public class Start extends AppCompatActivity {
     private final ActivityResultLauncher<Intent> signInLauncher = registerForActivityResult(
             new FirebaseAuthUIActivityResultContract(),
             this::onSignInResult
-    );
-    private final ActivityResultLauncher<Intent> legacySignInLauncher = registerForActivityResult(
-            new ActivityResultContracts.StartActivityForResult(),
-            result -> { }
     );
     private final ActivityResultLauncher<Intent> profileLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -200,6 +197,10 @@ public class Start extends AppCompatActivity {
     }
 
     public void createSignInIntent() {
+        if (!isGmsAvailable()) {
+            showGmsDialog();
+            return;
+        }
         List<AuthUI.IdpConfig> providers = Collections.singletonList(
                 new AuthUI.IdpConfig.GoogleBuilder().build());
         //fb.build()
@@ -211,6 +212,70 @@ public class Start extends AppCompatActivity {
                 .build();
         signInLauncher.launch(signInIntent);
     }
+
+    private void showGmsDialog() {
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.gms_missing_title)
+                .setMessage(R.string.gms_missing_message)
+                .setCancelable(false)
+                .setPositiveButton(R.string.skip, (dialog, which) -> createEmailSignInIntent())
+                .setNeutralButton(R.string.forgot_password, (dialog, which) -> showForgotPasswordDialog())
+                .setNegativeButton(R.string.exit, (dialog, which) -> finish())
+                .show();
+    }
+
+    private void showForgotPasswordDialog() {
+        EditText input = new EditText(this);
+        input.setInputType(InputType.TYPE_TEXT_VARIATION_EMAIL_ADDRESS);
+        input.setHint(R.string.email);
+        new AlertDialog.Builder(this)
+                .setTitle(R.string.forgot_password_title)
+                .setMessage(R.string.forgot_password_message)
+                .setView(input)
+                .setCancelable(false)
+                .setPositiveButton(R.string.send, (dialog, which) ->
+                        sendResetEmail(input.getText().toString().trim()))
+                .setNegativeButton(R.string.cancel, (dialog, which) -> showGmsDialog())
+                .show();
+    }
+
+    private void sendResetEmail(String email) {
+        if (email.isEmpty() || !android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+            Toast.makeText(this, R.string.invalid_email, Toast.LENGTH_LONG).show();
+            showForgotPasswordDialog();
+            return;
+        }
+        FirebaseAuth.getInstance().sendPasswordResetEmail(email)
+                .addOnSuccessListener(t -> Toast.makeText(this,
+                        R.string.reset_email_sent, Toast.LENGTH_LONG).show())
+                .addOnFailureListener(e -> {
+                    Toast.makeText(this, R.string.reset_email_failed, Toast.LENGTH_LONG).show();
+                    showForgotPasswordDialog();
+                });
+    }
+
+    private void createEmailSignInIntent() {
+        // Email/password sign-in works without Google Play Services;
+        // Credential Manager is disabled because it requires GMS.
+        List<AuthUI.IdpConfig> providers = Collections.singletonList(
+                new AuthUI.IdpConfig.EmailBuilder().build());
+        Intent signInIntent = AuthUI.getInstance()
+                .createSignInIntentBuilder()
+                .setAvailableProviders(providers)
+                .setCredentialManagerEnabled(false)
+                .build();
+        signInLauncher.launch(signInIntent);
+    }
+
+    private boolean isGmsAvailable() {
+        try {
+            return GoogleApiAvailability.getInstance()
+                    .isGooglePlayServicesAvailable(this) == ConnectionResult.SUCCESS;
+        } catch (Throwable t) {
+            return false;
+        }
+    }
+
     private void onSignInResult(FirebaseAuthUIAuthenticationResult result) {
         IdpResponse response = result.getIdpResponse();
         if (result.getResultCode() == RESULT_OK) {
@@ -220,33 +285,16 @@ public class Start extends AppCompatActivity {
                 launchProfile();
             }
         } else {
+            if (response != null && response.getError() != null) {
+                Toast.makeText(getApplicationContext(), R.string.sign_in_failed,
+                        Toast.LENGTH_LONG).show();
+            }
             finish();
             // Sign in failed. If response is null the user canceled the
             // sign-in flow using the back button. Otherwise check
             // response.getError().getErrorCode() and handle the error.
             // ...
         }
-    }
-
-    private void login() {
-        List<String> permissions = Arrays.asList("email", "public_profile");
-        AuthUI.IdpConfig.FacebookBuilder fb = new AuthUI.IdpConfig.FacebookBuilder();
-        fb.setPermissions(permissions);
-        List<AuthUI.IdpConfig> providers = Arrays.asList(
-                new AuthUI.IdpConfig.GoogleBuilder().build(),
-                fb.build());//34.32mb
-        // new AuthUI.IdpConfig.EmailBuilder().build(),
-        // new AuthUI.IdpConfig.AnonymousBuilder().build());
-
-        legacySignInLauncher.launch(
-                AuthUI.getInstance()
-                        .createSignInIntentBuilder()
-                        .setAvailableProviders(providers)
-                        //.setAvailableProviders(listOf(new AuthUI.IdpConfig.EmailBuilder().build()))
-                        .setLogo(R.drawable.ic_logo_120)
-                        .setCredentialManagerEnabled(!BuildConfig.DEBUG) //!BuildConfig.DEBUG /* credentials */
-                        //.setDefaultProvider(providers.get(1))
-                        .build());
     }
 
     public void updateApp() {

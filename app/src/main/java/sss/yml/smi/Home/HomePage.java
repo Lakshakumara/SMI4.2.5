@@ -21,6 +21,7 @@ import com.google.android.material.navigation.NavigationView;
 import java.lang.reflect.Field;
 
 import sss.yml.smi.R;
+import sss.yml.smi.util.CloudRestore;
 import sss.yml.smi.util.ProgressBanner;
 
 public class HomePage extends AppCompatActivity{
@@ -140,6 +141,8 @@ public class HomePage extends AppCompatActivity{
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment);
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
+
+        CloudRestore.maybeAutoPrompt(this);
     }
 
     @Override

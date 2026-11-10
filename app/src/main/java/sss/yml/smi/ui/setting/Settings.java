@@ -31,6 +31,7 @@ import sss.yml.smi.Home.HomePage;
 import sss.yml.smi.R;
 import sss.yml.smi.room.DbRepository;
 import sss.yml.smi.util.ProgressBanner;
+import sss.yml.smi.util.CloudRestore;
 import sss.yml.smi.util.ConsentManager;
 
 public class Settings extends PreferenceFragmentCompat {
@@ -88,6 +89,18 @@ public class Settings extends PreferenceFragmentCompat {
         if (btnRestore != null) {
             btnRestore.setOnPreferenceClickListener(arg0 -> {
                 openBackupLauncher.launch(new String[]{"*/*"});
+                return true;
+            });
+        }
+        Preference btnCloudRestore = findPreference("restore_cloud");
+        if (btnCloudRestore != null) {
+            btnCloudRestore.setOnPreferenceClickListener(arg0 -> {
+                new AlertDialog.Builder(requireContext())
+                        .setTitle(R.string.cloud_restore_confirm_title)
+                        .setMessage(R.string.cloud_restore_confirm_msg)
+                        .setPositiveButton(R.string.restore, (dialog, which) -> CloudRestore.run(requireContext()))
+                        .setNegativeButton(R.string.skip, null)
+                        .show();
                 return true;
             });
         }

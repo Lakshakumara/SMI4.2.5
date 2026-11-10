@@ -31,4 +31,10 @@ public interface StudentDao extends BaseDao<Student> {
 
     @Query("SELECT distinct grade FROM student where censusNo=:censusNo and mdate BETWEEN :from and :to order by grade")
     LiveData<List<String>> getGradeList(int censusNo, Date from, Date to);
+
+    @Query("SELECT COUNT(*) FROM student")
+    int count();
+
+    @Query("SELECT * FROM student")
+    List<Student> getAllSync();
 }

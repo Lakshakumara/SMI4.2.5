@@ -54,6 +54,28 @@ public class DbRepository {
         return future.get();
     }
 
+    public int countStudents() {
+        try {
+            return DB_EXECUTOR.submit(() -> studentDao.count()).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return -1;
+        }
+    }
+
+    public List<Student> getAllStudentsSync() throws ExecutionException, InterruptedException {
+        return DB_EXECUTOR.submit(() -> studentDao.getAllSync()).get();
+    }
+
+    public List<Integer> getCensusIds() {
+        try {
+            return DB_EXECUTOR.submit(() -> schoolDao.getCensusIds()).get();
+        } catch (ExecutionException | InterruptedException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
+    }
+
     public void update(Student student) {
         DB_EXECUTOR.execute(() -> studentDao.update(student));
     }

@@ -15,4 +15,7 @@ public interface SchoolDao extends BaseDao<School>{
 
     @Query("SELECT * FROM school where selected = :deleted")
     List<School> getSchoolList(boolean deleted);
+
+    @Query("SELECT DISTINCT censusNo FROM school")
+    List<Integer> getCensusIds();
 }
