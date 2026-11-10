@@ -25,16 +25,26 @@ android {
     }
     signingConfigs {
         release {
-            storeFile file('.\\SSSCert.jks')
-            storePassword '773661227'
-            keyAlias = 'sssKey'
-            keyPassword '50864636'
+            def propsFile = rootProject.file('keystore.properties')
+            if (propsFile.exists()) {
+                def props = new Properties()
+                propsFile.withInputStream { props.load(it) }
+                storeFile file(props.getProperty('storeFile', 'SSSCert.jks'))
+                storePassword props.getProperty('storePassword')
+                keyAlias props.getProperty('keyAlias')
+                keyPassword props.getProperty('keyPassword')
+            }
         }
         debug {
-            storeFile file('.\\SSSCert.jks')
-            storePassword '773661227'
-            keyAlias = 'sssKey'
-            keyPassword '50864636'
+            def propsFile = rootProject.file('keystore.properties')
+            if (file('.\\SSSCert.jks').exists() && propsFile.exists()) {
+                def props = new Properties()
+                propsFile.withInputStream { props.load(it) }
+                storeFile file('.\\SSSCert.jks')
+                storePassword props.getProperty('storePassword')
+                keyAlias props.getProperty('keyAlias')
+                keyPassword props.getProperty('keyPassword')
+            }
         }
     }
     buildTypes {
@@ -42,12 +52,16 @@ android {
             shrinkResources true
             minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-            signingConfig signingConfigs.release
+            if (rootProject.file('keystore.properties').exists()) {
+                signingConfig signingConfigs.release
+            }
         }
         debug {
             //shrinkResources true
             //minifyEnabled true
-            signingConfig signingConfigs.debug
+            if (file('.\\SSSCert.jks').exists()) {
+                signingConfig signingConfigs.debug
+            }
         }
     }
     bundle {
