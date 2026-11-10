@@ -32,7 +32,6 @@ import sss.yml.smi.R;
 import sss.yml.smi.room.DbRepository;
 import sss.yml.smi.util.ProgressBanner;
 import sss.yml.smi.util.CloudRestore;
-import sss.yml.smi.util.ConsentManager;
 
 public class Settings extends PreferenceFragmentCompat {
     // Replaces the two AsyncTasks (which shared AsyncTask's global serial
@@ -101,13 +100,6 @@ public class Settings extends PreferenceFragmentCompat {
                         .setPositiveButton(R.string.restore, (dialog, which) -> CloudRestore.run(requireContext()))
                         .setNegativeButton(R.string.skip, null)
                         .show();
-                return true;
-            });
-        }
-        Preference btnPrivacy = findPreference("privacy");
-        if (btnPrivacy != null) {
-            btnPrivacy.setOnPreferenceClickListener(arg0 -> {
-                ConsentManager.showPrivacyOptions(requireActivity());
                 return true;
             });
         }

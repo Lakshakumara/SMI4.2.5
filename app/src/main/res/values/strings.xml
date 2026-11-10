@@ -90,7 +90,6 @@
     <string name="rate_app">Rate App</string>
     <string name="support">Donate</string>
 
-    <string name="banner_ad_id" translatable="false">ca-app-pub-8089124274727865/3482600581</string>
 
     <!-- Strings related Nutritional Report -->
     <string name="severely_wasted">Severely Wasted</string>
@@ -239,7 +238,6 @@
     <string name="enter_sex">Enter Sex</string>
     <string name="search">Search</string>
     <string name="reset">Reset</string>
-    <string name="privacy_options_unavailable">Privacy options are not available in your region</string>
     <string name="gms_missing_title">Google Play Services missing</string>
     <string name="gms_missing_message">Google Play Services isn\'t available on this device, so Google sign-in can\'t be used. Tap Skip to sign in with email and password. If you don\'t have a password yet, tap Forgot password first.</string>
     <string name="skip">Skip</string>

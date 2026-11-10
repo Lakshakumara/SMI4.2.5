@@ -36,7 +36,6 @@ import com.google.android.gms.common.GoogleApiAvailability;
 import sss.yml.smi.R;
 import sss.yml.smi.login.Ban;
 import sss.yml.smi.login.Profile;
-import sss.yml.smi.util.ConsentManager;
 
 import androidx.preference.PreferenceManager;
 
@@ -86,7 +85,6 @@ public class Start extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         App.getInstance().initAppLanguage(this);
-        ConsentManager.ensure(this);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU
                 && ContextCompat.checkSelfPermission(this, Manifest.permission.POST_NOTIFICATIONS)
                 != PackageManager.PERMISSION_GRANTED) {

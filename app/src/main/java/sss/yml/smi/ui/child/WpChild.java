@@ -22,8 +22,6 @@ import androidx.navigation.NavDirections;
 import androidx.navigation.fragment.NavHostFragment;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.chip.Chip;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
@@ -39,7 +37,6 @@ import sss.yml.smi.gt.AnalyseChild;
 import sss.yml.smi.gt.DataTable;
 import sss.yml.smi.room.ChildData;
 import sss.yml.smi.room.ChildWpData;
-import sss.yml.smi.util.AdLoader;
 import sss.yml.smi.util.DataTraveller;
 import sss.yml.smi.util.Util;
 import sss.yml.smi.util.ZoomOutPageTransformer;
@@ -84,14 +81,6 @@ public class WpChild extends Fragment implements History.SingleClickListener {
         view = inflater.inflate(R.layout.child_data_entry_new, container, false);
         setHasOptionsMenu(true);
         ((HomePage) getActivity()) .setActionBarTitle(getString(R.string.wt_post));
-
-        boolean adEnable = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).getBoolean("ad", true);
-        AdView mAdView = view.findViewById(R.id.myAdView);
-        if (adEnable) {
-            MobileAds.initialize(requireContext(), initializationStatus -> {
-                mAdView.loadAd(AdLoader.getRequest());
-            });
-        } else mAdView.setVisibility(View.GONE);
 
         childName = view.findViewById(R.id.wp_child_name);
         childName.setOnItemClickListener((parent, view, position, id) -> {

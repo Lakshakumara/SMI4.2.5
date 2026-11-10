@@ -27,9 +27,6 @@
             android:title="Theme"
             app:icon="@drawable/ic_dark_mode"
             app:useSimpleSummaryProvider="true" />
-        <Preference
-            android:key="privacy"
-            android:title="Privacy &amp; ads settings" />
     </PreferenceCategory>
     <PreferenceCategory
         android:title="Chart Settings">

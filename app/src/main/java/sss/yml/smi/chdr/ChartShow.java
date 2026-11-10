@@ -17,7 +17,6 @@ import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.PagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
-import com.google.android.gms.ads.interstitial.InterstitialAd;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import sss.yml.smi.Home.HomeView;
@@ -47,7 +46,6 @@ public class ChartShow extends AppCompatActivity {//implements com.github.mikeph
      */
     private static final int UI_ANIMATION_DELAY = 300;
     private final Handler mHideHandler = new Handler(Looper.getMainLooper());
-    private InterstitialAd mInterstitialAd;
     private ViewPager mViewPager;
     private FloatingActionButton fab;
     private Student student;

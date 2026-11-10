@@ -28,8 +28,6 @@ import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavDirections;
 import androidx.navigation.Navigation;
 
-import com.google.android.gms.ads.AdView;
-import com.google.android.gms.ads.MobileAds;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.textfield.TextInputEditText;
@@ -46,7 +44,6 @@ import sss.yml.smi.R;
 import sss.yml.smi.chdr.ChartShow;
 import sss.yml.smi.gt.AnalyseStudent;
 import sss.yml.smi.room.Student;
-import sss.yml.smi.util.AdLoader;
 import sss.yml.smi.util.DataTraveller;
 import sss.yml.smi.util.SMIConstants;
 
@@ -76,14 +73,6 @@ public class SmiDataEntry extends Fragment {
         view = inflater.inflate(R.layout.smi_data_entry_summary_fragment, container, false);
         setHasOptionsMenu(true);
         mViewModel = new ViewModelProvider(this).get(SmiDataEntryViewModel.class);
-
-        boolean adEnable = PreferenceManager.getDefaultSharedPreferences(getActivity().getApplicationContext()).getBoolean("ad", true);
-        AdView mAdView = view.findViewById(R.id.myAdView);
-        if (adEnable) {
-            MobileAds.initialize(requireContext(), initializationStatus ->
-                    mAdView.loadAd(AdLoader.getRequest()));
-        }
-        else mAdView.setVisibility(View.GONE);
 
         txtGrade = view.findViewById(R.id.grade);
         yy = view.findViewById(R.id.yy);

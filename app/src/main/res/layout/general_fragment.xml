@@ -36,12 +36,4 @@
         android:layout_alignParentTop="true"
         android:inflatedId="@+id/stubView"
         android:layout="@layout/chart_view" />
-
-    <include
-        android:id="@+id/add_lay"
-        layout="@layout/my_banner_ad"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
 </RelativeLayout>

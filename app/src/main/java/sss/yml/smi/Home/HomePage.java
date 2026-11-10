@@ -29,7 +29,6 @@ import sss.yml.smi.util.ProgressBanner;
 public class HomePage extends AppCompatActivity{
     public static Application application;
     public static ProgressBanner progress;
-    //private AdView mAdView;
     private AppBarConfiguration mAppBarConfiguration;
    // CollapsingToolbarLayout toolBarLayout;
     Toolbar toolbar;
@@ -59,61 +58,6 @@ public class HomePage extends AppCompatActivity{
         }catch(NoSuchFieldException ignored){} catch (IllegalAccessException e) {
             e.printStackTrace();
         }
-        /*
-        boolean adEnable = PreferenceManager.getDefaultSharedPreferences(getApplicationContext()).getBoolean("ad", true);
-        if (adEnable) {
-            mAdView = findViewById(R.id.adView1);
-            if (BuildConfig.DEBUG) {
-                MobileAds.initialize(this, new OnInitializationCompleteListener() {
-                    @Override
-                    public void onInitializationComplete(InitializationStatus initializationStatus) {
-                        mAdView.loadAd(new AdRequest.Builder().build());
-                    }
-                });
-                /*AdRequest adRequest = new AdRequest.Builder()
-                        //.addTestDevice("71228269EE062EAE468CEE26EEEC9AEB")
-                        .build();
-                mAdView.loadAd(adRequest);*/
-            /*}else {
-                MobileAds.initialize(this, new OnInitializationCompleteListener() {
-                    @Override
-                    public void onInitializationComplete(InitializationStatus initializationStatus) {
-                        mAdView.loadAd(new AdRequest.Builder().build());
-                    }
-                });
-            }
-
-            mAdView.setAdListener(new AdListener() {
-                @Override
-                public void onAdLoaded() {
-                    // Code to be executed when an ad finishes loading.
-                }
-
-                @Override
-                public void onAdFailedToLoad(LoadAdError adError) {
-                    mAdView.setVisibility(View.GONE);
-                    Logger.setMsg(adError.getDomain() + "\t" + adError.getMessage());
-                }
-
-                @Override
-                public void onAdOpened() {
-                    // Code to be executed when an ad opens an overlay that
-                    // covers the screen.
-                }
-
-                @Override
-                public void onAdClicked() {
-                    // Code to be executed when the user clicks on an ad.
-                }
-
-                @Override
-                public void onAdClosed() {
-                    // Code to be executed when the user is about to return
-                    // to the app after tapping on an ad.
-                }
-            });
-        } else mAdView.setVisibility(View.GONE);
-*/
         progress.setMessage("Loading...");
         progress.show();
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
